@@ -1,0 +1,23 @@
+html,body,blockquote,p,ul{margin:0;padding:0}
+body{font:85%/1.5 Ubuntu,"Lucida Sans Unicode","Lucida Grande",sans-serif;color:#272d33;background:#f4f5f7 url(/i/body.jpg)}
+#c p{padding:0 0 10px 0}
+#c ul{list-style:none}
+a:link{color:#069}
+a:visited{color:#53606d}
+a:hover,a:active{color:#f17b24}
+
+#w{max-width:950px;margin:0 auto}
+#c{float:left;width:500px;padding-top:20px}
+#r{float:right;width:400px;padding-top:20px}
+#r h2{margin-bottom:0;padding-bottom:0}
+h1,h2{font-size:24px;letter-spacing:-1px;font-weight:normal;padding-top:20px;margin-top:0}
+h2 small{font-size:12px;letter-spacing:0}
+#t{padding:0 40px 50px 0;min-height:200px}
+#intro{padding-right:40px}
+#intro,
+#t li{padding-bottom:15px}
+blockquote,#c img{border-bottom:4px solid #dbe0e4}
+blockquote.first{padding-top:16px;margin-top:0}
+#c img{border-top:4px solid #dbe0e4}
+#c{border-right:4px solid #dbe0e4}
+blockquote{padding:20px 0}
