@@ -246,13 +246,16 @@ Note: Updated to include proper handling of a redirect to SSL version.</p>
 <p><img width="360" height="320" src="initial-SEO-strategy_files/image009.jpg" alt="" /></p>
 <ul>
 <li>City, state/province and country should be required. This will help designers to determine where the supplier is located and whether it is possible to use his products in the project. This data is also needed to get products ranking for local searches. Additionally in a situation where a supplier uploads e.g. 1000 products, his profile will be a strong page and it will most probably rank in search engines in the top results for terms like “interior design Florida”, “architecture New York”, see the new note below about how to construct page titles.</li>
-<li>Display the placeholders only if the data for the placeholder are not empty. This can be expressed in Rails with the view code similar to the following snippet <code>&lt;%if @user.phone != "" %&gt;&lt;div&gt;Phone: &lt;%=h @user.phone %&gt;&lt;/div&gt;&lt;%end%&gt;</code> and it will avoid displaying empty data, see above.</li>
-<li>Title tag for the profile should ideally match the following pattern: <code>&lt;title&gt;*first name* *last name*, *job title* *city* *state/province* at Designer pages&lt;title&gt;</code> OR <code>&lt;title&gt;*company* *city* *state/province* *, country if different form US* at Designer pages&lt;title&gt;</code> if the company name is available.</li>
-<li>Fist heading in the profile should contain company name if this is available or name and job title if this is available.</li>
-<li>Links to User’s homepages should have rel=”nofollow” on them to avoid spammers.</li>
+<li>Display the placeholders only if the data for the placeholder is available. This can be expressed in Rails with the view code similar to the following snippet:<br>
+<code>&lt;%if @user.phone != "" %&gt;&lt;div&gt;Phone: &lt;%=h @user.phone %&gt;&lt;/div&gt;&lt;%end%&gt;</code><br><br>
+so as to avoid displaying empty placeholders, see above.</li>
+<li>Title tag for the profile should ideally match the following pattern:<br> <code>&lt;title&gt;*first name* *last name*, *job title* *city* *state/province* at Designer pages&lt;title&gt;</code> or<br> <code>&lt;title&gt;*company* *city* *state/province* *, country if different form US* at Designer pages&lt;title&gt;</code><br>
+if the company name is available.</li>
+<li>Fist heading in the profile should contain company name if this is available or name and job title if available.</li>
+<li>Links to new untrusted user’s homepages could have <code>rel=”nofollow”</code> to prevent spam.</li>
 </ul>
 <h2 id="toc89">Offsite Optimization</h2>
-<p>Key factors in a links value to the search engines are (note the granularity):</p>
+<p>Following are the key factors contributing to the value of a link in gaining search traffic:</p>
 <ul>
 <li>the anchor text &amp; age of the link</li>
 <li>the strength &amp; relevancy of the linking page</li>
@@ -271,12 +274,12 @@ Note: Updated to include proper handling of a redirect to SSL version.</p>
 <dt>Web 2.0 opportunities; social web, bookmarks, forum and blogging opportunities</dt>
 <dd>These all are used.</dd>
 <dt>XML sitemaps</dt>
-<dd>Are only useful if pages are not already being picked up by the major search engines. If traditional techniques are working correctly and all relevant pages are already being picked by the search engines, XML sitemaps will not be used.</dd>
+<dd>will be used to complement traditional information architecture techniques when all relevant pages will be picked up by the search engines using internal navigation.</dd>
 <dt>News/Article submissions</dt>
-<dd>I’ll submit press releases and news articles to the relevant places when they have been provided by Designer Pages. This depends on the precise nature of the articles and press release provided.</dd>
+<dd>Press releases and news articles will be submitted to relevant aggregators as provided by Designer Pages. This depends on the precise nature of the articles and press release provided.</dd>
 </dl>
 <h3 id="toc90">Inbound links</h3>
-<p>This issue is addressed with link-building campaign.</p>
+<p>Addressed by ongoing link-building campaign.</p>
 <ul>
 <li>Blog-advertising</li>
 <li>Sponsored posts and reviews</li>
@@ -284,15 +287,15 @@ Note: Updated to include proper handling of a redirect to SSL version.</p>
 <li>building industry relationships with trustworthy website owners such as “.edu” and “.gov” sites</li>
 <li>Social media</li>
 </ul>
-<p>All listed above are among the current link-building strategies for designerpages.com.</p>
+<p>These are the current link-building strategies used for designerpages.com.</p>
 <h3 id="toc91">Using updating services</h3>
-<p>Designerpages.com do not use remote procedure calls (XML-RPC) and pinging when products and uploaded and updated. Remote procedure calls are widely used in blogging engines. However it is a clever way to get any regularly updated and growing content in search engine indexes.</p>
+<p>Designerpages.com do not use remote procedure calls (XML-RPC) and pinging when products and uploaded and updated. Remote procedure calls are widely used in blogging engines. However it is a clever way to get regularly updated and growing content into search engine indexes.</p>
 <p>Please check the following resource for hints how to implement RPC</p>
 <p><a href="http://codex.wordpress.org/Update_Services">http://codex.wordpress.org/Update_Services</a></p>
-<p>XML-RPC should be implemented for all products and user-profiles.</p>
-<p>Rounded link building strategy will fill the issues such as low pagerank and nearly no inbound links. There are many market opportunities and services used to deliver quality and relevant inbound links for the site.</p>
+<p>XML-RPC can be implemented for all products and user-profiles.</p>
+<p>Rounded link building strategy will treat issues such as low pagerank and lack of inbound links. There are many market opportunities and services used to deliver quality and relevant inbound links for the site.</p>
 <h2 id="toc92">Keyword benchmarks</h2>
-<p>Google does not serve more than 1000 results for any query. For this reason it was needed to work on link-building and quick-wins before it was possible to benchmark positions.</p>
+<p>Google does not serve more than 1000 results for any query. For this reason we needed to work on link-building and quick-wins before it was possible to benchmark any positions.</p>
 <p>At present the designerpages.com website can be found on the following positions for some of the generic targeted keywords in Google (UK).</p>
 <p>These benchmarks will serve as an additional measure for success of the campaign.</p>
 <ul>
@@ -306,19 +309,19 @@ Note: Updated to include proper handling of a redirect to SSL version.</p>
 </ul>
 <p>Positions for generic keywords are important from the benchmarking perspective as they show the overall strength of the site in terms of search engine rankings.</p>
 <h2 id="toc93">Competitor analysis</h2>
-<p>Looking at some of these companies in more detail will help us identify opportunities and threats. The following is the breakdown.</p>
+<p>Looking at some of these companies in more detail will help us identify opportunities and threats.</p>
 <table>
 <caption>Competitor analysis</caption>
 <tr>
 <td></td>
 <td><b>Google indexed pages</b></td>
-<td><b>Google Backlinks</b></td>
+<td><b>Google backlinks</b></td>
 <td><b>Yahoo indexed pages</b></td>
-<td><b>Yahoo Backlinks</b></td>
+<td><b>Yahoo backlinks</b></td>
 </tr>
 <tr>
 <td>
-<p><a href="http://products.construction.com">http://products.construction.com</a> Fortunately this site does not have unique titles for product pages and generates way too complicated URLs.</p></td>
+<p><a href="http://products.construction.com">http://products.construction.com</a> Fortunately for us this site does not have unique titles for product pages and generates way too complicated URLs.</p></td>
 <td>22,800</td>
 <td>376</td>
 <td>8630</td>
@@ -327,7 +330,7 @@ Note: Updated to include proper handling of a redirect to SSL version.</p>
 <tr>
 <td>
 <p><a href="http://www.arcat.com">http://www.arcat.com</a></p>
-<p>The site has12 years old domain name, thought it does not host product information and link to products on the offsite pages. Lots of content is hidden from search engines within images and search unfriendly formats.</p>
+<p>The site has 12 years old domain name, thought it does not host product information and links to products offsite. Lots of content is hidden from search engines within images and search unfriendly formats.</p>
 <p>There is a link-building opportunity at <a href="http://www.arcat.com/architectural_resources.shtml">http://www.arcat.com/architectural_resources.shtml</a></p>
 </td>
 <td>42,900</td>
@@ -337,7 +340,7 @@ Note: Updated to include proper handling of a redirect to SSL version.</p>
 </tr>
 <tr>
 <td>
-<p>www.architonic.com: The site has many quality Backlinks – These Backlinks data are very good resource for our link building campaign.</p>
+<p>www.architonic.com: The site has lots of quality backlinks. Competitor backlinks data is a good resource to inspire our link building campaign.</p>
 </td>
 <td>228,000</td>
 <td>1,060</td>
@@ -396,14 +399,14 @@ Note: Updated to include proper handling of a redirect to SSL version.</p>
 <hr>
 <h3 id="toc95">Mass product upload</h3>
 <p>This is more an educated feature request and something you’ve probably considered before. Allow submission of product feeds ala Google Base. This feature would be useful for power users and large corporate suppliers. It would also help to get whole corporate databases of products on the site.</p>
-<p>This would be implemented as a CSV file upload. The products will be uploaded and displayed after processing and confirmation.</p>
+<p>This could be implemented as a CSV file upload. The products will be uploaded and displayed after processing and confirmation.</p>
 <p>CSV file format could be as follows:</p>
 <pre>
 Product name; category number; tags; long description; short description; image URLs
 </pre>
-<p>Anyone can create this kind of feeds in Excel. HTML tags, SQL, JavaScript, CSS and similar needs to be stripped down from the feeds. You may want to allow simplified textile.</p>
-<p>Content from the feeds will be very often a dump of the supplier’s database. However many suppliers do not have search engine friendly websites or their websites have very low pagerank. Google has no issues against this type of publishing as far as the interface adds value to the content.</p>
-<p>The point is: If two resources publish the same content at once, the resource with higher pagerank (more quality links pointing to the resource) will rank. If a page which published the duplicated content links to the original resource Google will easily recognize and display the original. Therefore no external links on the product page should be allowed. </p>
+<p>Anyone can create this kind of feeds in Excel. HTML tags and any code needs stripping down. You may want to allow markdown.</p>
+<p>Content of the feeds will be often a dump of the supplier’s database. Many suppliers do not have search engine friendly websites or have poorly designed ones. Google has no issues with this type of re-publishing as far as it adds value to users.</p>
+<p>The point is: If two resources publish the same content at once, the resource with higher pagerank (more quality links pointing to the resource) will rank. If a page which published the duplicated content links to the original resource Google will easily recognize this and display the original.</p>
 <p>There is a sample implementation: <a href="https://github.com/BrewhouseTeam/csv-importer">CSV Import for humans on Ruby / Ruby on Rails</a>. See also <a href="https://support.google.com/merchants/answer/188494">Google Merchant - Products Feed Specification</a></p>
 <h3 id="toc96">Webmaster tools</h3>
 <p>Please upload blank file named “googledfa35a6dd61677d3.html” to the Rails public folder. This will allow us to use Google webmaster tools to identify threats on the site.</p>
