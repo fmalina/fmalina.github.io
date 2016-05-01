@@ -1,0 +1,80 @@
+A) Quick fixes addressable right away
+- New search friendly template for clippings will increase the chances of clippings to rank in search results. Easy to implememnt HTML template with added CSS/JQuery provides the same functionality.
+- SEO fixes in 3 Rings theme
+
+B) Techniques that require further development
+- Pinging XML-RPC services (complete walktrough of the implementation)
+- Other SEO related fixes (Bug reports)
+- Link-builiding
+
+First page of /clippings/source is enabled. Ranking for searches such as "miele.com" can not hurt.
+Especially as Miele disallowed all robots http://miele.com/robots.txt
+
+There are many minor search engines that do not understand regular expressions in robots.txt. Let them crawl where they like.
+
+Remove the noindex, nofollow meta tags from search results.
+
+Inline Guidelines, hints for inputting data
+-------------------------------------------
+Some of this is carried over form the first strategy document.
+
+Tags should be just 1 or 2 (rarely 3 words). Inline guidelines for users are needed.
+
+Empty pages: Clicking on "Acoustically-challenged spaces" will return empty page, this might be a bug.
+
+BLOG - QUICK WINS
+-----------------
+The 2 fixes for blog below will easily increase Google traffic by 25-40%.
+
+LINEAR STRUCTURE
+----------------
+Swap the the content and sidebar in HTML structure. Use CSS to keep the layout. Unique content needs to be first in the linearised structure, generic elements on the bottom. This is especially important now as there is a blogroll full of external links on the homepage.
+Links "Skip to navigation", "Skip to content", "Skip to sidebar" should be removed. Users of screen readers use headings and links for navigation. Skip to links have no additional benefit. Heading 1 will be the first element on the page which is very beneficial for rankings.
+
+TITLE TAGS
+----------
+Remove the "Blog archive" form the title tags of single posts as it suggests the post is old and decreases CTR, furthermore the unique bits could be nearer to the start of title tag.
+
+<title><?php 
+if(is_homepage() OR is_404()){
+    bloginfo('name'); echo " &raquo; "; bloginfo('description');
+} else {
+    bloginfo('name'); echo " &raquo; "; echo the_title();
+} ?></title>
+
+GUIDELINES
+More meaningful title tags would halp a lot as well. Users read title tags search results completely out of context. Therefore headlines/titles should be on the web in plain English reavealing the article content.
+
+GOLDEN RULE: What it says on the tin?
+
+BAD FINDABILITY: "At Bklyn Designs: A Purple Heart"
+GOOD: "At Bklyn Designs: Purple Heart Dining Table"
+EVEN EASIER TO FIND: "At Bklyn Designs: Purple Heart Solid Walnut Dining Table"
+
+First sentence of the article would ideally also mention what it says on the tin.
+
+USABILITY ISSUES
+----------------
+
+NEWS
+Incorrect encoding in the news and on the homepage causes strange characters in place where the feeds are displayed. Try to convert all feeds text to UTF-8 before outputting. http://www.igvita.com/2007/04/11/secure-utf-8-input-in-rails/
+
+COMPOSE A MESSAGE
+http://www.designerpages.com/messages/new
+It is not clear that you can send message to members only. Short note would do.
+
+NEW CLIPPING BOOKMARKLET
+Doesn't offer thumbnail, if a page for clipping is the picture itself.
+Imagine you find a JPEG of a product somewhere and want to clip it to your project on designer pages, no thumbnail is on offer.
+To find most relevant thumbnail order images linked from original URL descending by size. This way you'll get the biggest picture on the page as a first offered thumbnail. This is very handy when a clipped page contains a lot of small images. Sometimes there are tens and hundreds of emoticons, logos, blogroll banners, navigation pictures and so on.
+
+404 PAGE
+It would help adding a link to the homepage http://www.designerpages.com/wrong
+
+Goals
+-----
+1,100 average daily visitors from search engines per day achieved over the campaign. Current average (last 31 days) is 330 daily visitors.
+
+Monthly management fee
+----------------------
+$2,950 (includes the SEO related spend such as links & directory submissions)
