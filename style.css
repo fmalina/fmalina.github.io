@@ -19,7 +19,6 @@ img{max-width:100%;height:auto}
 
 .btn{border:1px solid #555;color:#555;background:#fff;
     font-size:.9em;border-radius:.5em;padding:.5em 1em;text-decoration:none}
-.btn img{vertical-align:middle}
 .btn:hover{border-color:#555;color:#555}
 
 @media (min-width:960px) {
