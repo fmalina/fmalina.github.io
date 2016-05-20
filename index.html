@@ -22,6 +22,8 @@ img{max-width:100%;height:auto;padding-bottom:1em}
 .btn{border:1px solid #555;color:#555;background:#fff;
     font-size:.9em;border-radius:.5em;padding:.5em 1em;text-decoration:none}
 .btn:hover{border-color:#555;color:#555}
+.btn.btn-invert{background:rgba(0,0,0,.7);border-color:black;color:#eee}
+.btn.btn-invert:hover{background:rgba(0,0,0,.75);color:white}
 kbd{color:#999;font:.9em monospace}
 @media (min-width: 940px) {
     main{max-width:940px;margin:0 auto}
@@ -63,9 +65,10 @@ var lunch = "Buy us lunch by PayPal. Add a place and two datetimes. We'll eat an
 <p>
    Join me via
    <a class="btn" href="https://github.com/fmalina">Github</a>
-   <a class="btn" href="https://www.facebook.com/fmalina">Facebook</a>
+   <a class="btn" href="https://www.facebook.com/fmalina">Fb</a>
    <a class="btn" href="https://twitter.com/fmalina">Twitter</a>
-   <a class="btn" href="https://fmalina.github.io/pay.html"
+   <a class="btn btn-invert"
+                  href="https://fmalina.github.io/pay.html"
                   onclick="return confirm(lunch)">Lunch</a>
 <hr>
 <p>Versing code daily in <kbd>Python, HTML, CSS, JS, SQL, BASH, XML (SVG, SKOS)</kbd><br>
