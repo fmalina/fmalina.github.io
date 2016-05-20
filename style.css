@@ -12,6 +12,9 @@ h3{color:#B19759}
 hr{border:0;border-top:1px solid #ddd;margin:2em 5em}
 blockquote{margin:0}
 
+.btn-invert{background:rgba(0,0,0,.7);border-color:black;color:#eee}
+.btn-invert:hover{background:rgba(0,0,0,.75);color:white}
+
 table{border-collapse:collapse}
 td,th{padding:.5em 1em;border:1px solid #ddd}
 
