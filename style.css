@@ -23,7 +23,7 @@ img{max-width:100%;height:auto}
 .btn.btn-invert{background:rgba(0,0,0,.7);border-color:black;color:#eee}
 .btn.btn-invert:hover{background:rgba(0,0,0,.75);color:white}
 
-object{width:100%}
+object{width:100%;overflow:hidden}
 
 @media screen and (min-width:960px) {
     main{text-align:left;max-width:960px;margin:0 auto}
