@@ -37,9 +37,10 @@ function prefillAmount(){
 	document.getElementById('input_amount_2').checked = false;
 	document.getElementById('currency_amount_selector').style.display = "none";
 	document.getElementById('prefilled_amount').innerHTML = "£"+amount;
+	document.getElementById('submit_button').innerHTML = "Purchase";
 	document.getElementById('cmd_donation').value = "_xclick";
 	}
-	var msg = getQueryVariable("msg").replace('_', ' ');
+	var msg = getQueryVariable("msg").replace(/_/g, ' ');
 	if (msg) {
 	document.forms[0].os1.value = msg;
 	}
@@ -105,7 +106,7 @@ function prefillAmount(){
 <input type="hidden" name="on1" value="Message"> 
 <input type="text" name="os1" id="os1" size="45">
 
-<button type="submit" class="btn">Send</button>
+<button type="submit" id="submit_button" class="btn">Send</button>
 </fieldset>
 </form>
 
