@@ -36,8 +36,12 @@ function prefillAmount(){
 	document.forms[0].amountEntered.value = amount;
 	document.getElementById('input_amount_2').checked = false;
 	document.getElementById('currency_amount_selector').style.display = "none";
-	document.getElementById('prefilled_amount').innerHTML = "€"+amount;
+	document.getElementById('prefilled_amount').innerHTML = "£"+amount;
 	document.getElementById('cmd_donation').value = "_xclick";
+	}
+	var msg = getQueryVariable("msg");
+	if (msg) {
+	document.forms[0].os1.value = msg;
 	}
 }
 </script>
@@ -53,8 +57,8 @@ function prefillAmount(){
 
 <p id="currency_amount_selector">
 <label id="amount_label">Choose currency and amount.</label><br>
-<select name="currency_code" id="input_currency_code" size="1"> 
-<option value="EUR">EUR - €</option>
+<select name="currency_code" id="input_currency_code" size="1">
+<option value="GBP">GBP - £</option>
 <option value="">- - - </option>
 <option value="USD">USD - $</option>
 <option value="GBP">GBP - £</option>
