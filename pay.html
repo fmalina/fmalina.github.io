@@ -16,7 +16,8 @@ fieldset{border:1px solid #ccc;border-bottom-width:2px;border-radius:5px}
 legend{position:relative;}
 legend img{padding:0 .5em;background:#fff}
 main{text-align:center}
-#product{font-size:1.5em}
+#product_msg{font-size:1.5em}
+#prefilled_amount{font-size:1.2em;color:green;padding-top:.5em;}
 #os1{padding:8px;border-radius:.5em;border:1px solid #ddd}
 </style>
 <script>
@@ -55,10 +56,8 @@ function prefillAmount(){
 <legend>
 <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal">
 </legend>
-<div id="product">
-<span id="product_msg"></span>
-(<span id="prefilled_amount"></span>)
-</div>
+<div id="product_msg"></div>
+<div id="prefilled_amount"></div>
 
 <p id="currency_amount_selector">
 <label id="amount_label">Choose currency and amount.</label><br>
