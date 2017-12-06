@@ -42,6 +42,17 @@ kbd{color:#999;font:.9em monospace}
 .photos a{font-size:18px;color:#ccc;text-decoration:none;padding:0 5px}
 .photos a:hover{color:#777}
 </style>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script>
+	$(function(){
+		$('.photos a').on('click', function(e){
+			e.preventDefault();
+			var link_target = $(this).attr('href');
+			$('#photo-link').attr('href', link_target);
+			$('#photo-img').attr('src', link_target);
+		});
+	});
+</script>
 </head>
 <body>
 <main>
