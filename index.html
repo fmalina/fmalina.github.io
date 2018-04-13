@@ -38,10 +38,9 @@ kbd{color:#999;font:.9em monospace}
     #r{float:right;width:400px;padding:2em 0}
     #c{border-right:1px solid #ddd}
 }
-#gallery{position:relative;}
-.photos{position:absolute;top:0;left:0;width:10px;}
-.photos a{font-size:18px;color:#ccc;text-decoration:none;padding:0 5px}
-.photos a:hover{color:#777}
+#gallery{position:relative;min-height:600px}
+.photos{position:absolute;top:0;left:0;width:30px}
+.photos a img{width:30px;margin:3px 0 0 3px;border:1px solid #ddd;padding-bottom:0}
 </style>
 <script src="https://code.jquery.com/jquery.min.js"></script>
 <script>
@@ -60,7 +59,7 @@ kbd{color:#999;font:.9em monospace}
 <div id="c">
 <div id="intro">
 <h1>F. Malina &mdash; Python/JS Web Software Engineer and Developer</h1>
-<p class="me"><cite>I undesign, I strip systems bare to make people love&nbsp;them.</cite>
+<!--p class="me"><cite>I undesign, I strip systems bare to make people love&nbsp;them.</cite-->
 <p>Hi, I am František (or Francis), the technical director of <a href="https://dentistetc.co.uk">Etcetera Media Group</a> and
 	<a href="https://www.flatmaterooms.co.uk" title="Rooms to rent, online letting agency">Flatmate Rooms</a> Limited.
 	I build things.
@@ -92,15 +91,22 @@ Usually found in coffee shops and on client sites working on web systems and sof
 
 <div id="gallery">
 <div class="photos">
-	<a href="me5.jpg">&bull;</a>
-	<a href="me4.jpg">&bull;</a>
-	<a href="me3.jpg">&bull;</a>
-	<a href="me2.jpg">&bull;</a>
-	<a href="me.jpg">&bull;</a>
+        <a href="photos/natural3.jpg"><img src="photos/natural3.jpg" alt=""></a>
+        <a href="photos/natural.jpg" ><img src="photos/natural.jpg"  alt=""></a>
+        <a href="photos/sport2.jpg"  ><img src="photos/sport2.jpg"   alt=""></a>
+        <a href="photos/sport.jpg"   ><img src="photos/sport.jpg"    alt=""></a>
+        <a href="photos/suit2.jpg"   ><img src="photos/suit2.jpg"    alt=""></a>
+        <a href="photos/suit3.jpg"   ><img src="photos/suit3.jpg"    alt=""></a>
+        <a href="photos/suit.jpg"    ><img src="photos/suit.jpg"     alt=""></a>
+        <a href="photos/me5.jpg"     ><img src="photos/me5.jpg"      alt=""></a>
+        <a href="photos/me4.jpg"     ><img src="photos/me4.jpg"      alt=""></a>
+        <a href="photos/me3.jpg"     ><img src="photos/me3.jpg"      alt=""></a>
+        <a href="photos/me2.jpg"     ><img src="photos/me2.jpg"      alt=""></a>
+        <a href="photos/me.jpg"      ><img src="photos/me.jpg"       alt=""></a>
 </div>
 
-<a id="photo-link" href="me5.jpg">
-    <img id="photo-img" src="me5.jpg" width="500"
+<a id="photo-link" href="photos/natural3.jpg">
+    <img id="photo-img" src="photos/natural3.jpg" width="500"
         alt="Francis Malina (František, Frank)"></a>
 </div>
 
