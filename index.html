@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html ⚡>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <title>F. Malina: Python/JS Web Software Engineer, London</title>
 <link rel="canonical" href="https://vizualbod.com">
-<link rel="stylesheet" href="https://vizualbod.com/style.css">
-<style>
+<script async custom-element="amp-carousel"
+        src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-analytics"
+        src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<style amp-custom>
+<!--# include file="style.css" -->
 main{margin:1em}
 #c ul{list-style:none}
 h1,h2{text-align:center}
@@ -19,6 +24,7 @@ cite a:link{color:#888}
 img{max-width:100%;height:auto;padding-bottom:1em}
 
 abbr{color:#555;font-size:.8em;border-bottom:1px dotted #555}
+.nowrap{white-space:nowrap}
 @media (min-width: 940px) {
     main{max-width:940px;margin:0 auto}
     #c h1, #c p{padding-right:2em}
@@ -26,21 +32,8 @@ abbr{color:#555;font-size:.8em;border-bottom:1px dotted #555}
     #r{float:right;width:400px;padding:2em 0}
     #c{border-right:1px solid #ddd}
 }
-#gallery{position:relative;min-height:400px}
-.photos{position:absolute;top:0;left:0;width:30px}
-.photos a img{width:30px;margin:3px 0 0 3px;border:1px solid #ddd;padding-bottom:0}
 </style>
-<script src="//code.jquery.com/jquery.min.js"></script>
-<script>
-	$(function(){
-		$('.photos a').on('click', function(e){
-			e.preventDefault();
-			var link_target = $(this).attr('href');
-			$('#photo-link').attr('href', link_target);
-			$('#photo-img').attr('src', link_target);
-		});
-	});
-</script>
+<!--# include file="amp-boilerplate.html" -->
 </head>
 <body>
 <main>
@@ -58,8 +51,7 @@ abbr{color:#555;font-size:.8em;border-bottom:1px dotted #555}
 <p>Based in Billinge in the North West of England, regularly migrating to London and such places.<br>
     Email: <a href="mailto:fmalina@gmail.com">fmalina@gmail.com</a>,
     call or text
-    <a href="tel:00447715342265"
-        style="white-space:nowrap">+44 (0) 7715 342 265</a>.</p>
+    <a href="tel:00447715342265" class="nowrap">+44 (0) 7715 342 265</a>.</p>
 <p>Slovak/Moravian 🇸🇰 of origin, living in England for 12 years. Apart from other work
     I built and run a popular room rental website
 <a title="UK Flatshare, Rooms to Rent, Houses &amp; Flats"
@@ -78,21 +70,19 @@ and <a href="https://eatetc.co.uk" title="British restaurants and eateries with 
 See my <a href="https://vizualbod.com/cv/">CV</a>.</p>
 </div>
 
-<div id="gallery">
-<div class="photos">
-        <a href="photos/natural3.jpg"><img src="photos/natural3.jpg" alt=""></a>
-        <a href="photos/natural.jpg"><img src="photos/natural.jpg" alt=""></a>
-        <a href="photos/sport2.jpg"><img src="photos/sport2.jpg" alt=""></a>
-        <a href="photos/sport.jpg"><img src="photos/sport.jpg" alt=""></a>
-        <a href="photos/suit2.jpg"><img src="photos/suit2.jpg" alt=""></a>
-        <a href="photos/suit.jpg"><img src="photos/suit.jpg" alt=""></a>
-        <a href="photos/me5.jpg"><img src="photos/me5.jpg" alt=""></a>
-</div>
-
-<a id="photo-link" href="photos/me5.jpg">
-    <img id="photo-img" src="photos/me5.jpg" width="500"
-        alt="Francis Malina (František, Frank)"></a>
-</div>
+<amp-carousel width="500" height="755" layout="responsive" type="slides">
+    <amp-img width="500" height="755" alt="" layout="responsive" src="photos/natural3.jpg"></amp-img>
+    <amp-img width="500" height="755" alt="" layout="responsive" src="photos/natural.jpg"></amp-img>
+    <amp-img width="500" height="755" alt="" layout="responsive" src="photos/sport2.jpg"></amp-img>
+    <amp-img width="500" height="755" alt="" layout="responsive" src="photos/sport.jpg"></amp-img>
+    <amp-img width="500" height="755" alt="" layout="responsive" src="photos/suit2.jpg"></amp-img>
+    <amp-img width="500" height="755" alt="" layout="responsive" src="photos/suit.jpg"></amp-img>
+    <amp-img width="500" height="556"
+             src="photos/me5.jpg"
+             alt="Francis Malina (František, Frank)"
+             layout="responsive">
+    </amp-img>
+</amp-carousel>
 
 <p>
    Join me via &nbsp;
@@ -211,6 +201,6 @@ Top qualities: Good Value, On Time, High Integrity</p>
 </blockquote>
 </div><!--/r-->
 </main>
-<script src="https://vizualbod.com/scripts.js"></script>
+<!--# include file="amp-analytics.html" -->
 </body>
 </html>
