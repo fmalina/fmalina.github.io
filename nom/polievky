@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Polievky 🍲  - Normy jedál</title>
+<meta name="description" content="Hovädzia polievka 15g predné hovädzie mäso &#x2f;20g hovädzích kostí&#x2f; 30g koreňová zelenina &#x2f;10g mrkva, petržlen, zeler&#x2f; 10g cibuľa 10g rezance štipka vňate…">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<base href="/nom/">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/nom/style.css">
+<link rel="canonical" href="https://somstrom.com/nom/polievky">
+<script src="scripts.js"></script>
+</head>
+<body class="polievky">
+<header class="nav">
+    <div class="brand">
+        <a href="/"><img src="/logo.svg" width="50" height="92" alt=""></a>
+        <a href="/nom/">Normy jedál</a>
+    </div>
+</header>
+<div class="container">
+<main>
+<div class="content">
+
+<h1>Polievky 🍲</h1>
+<h2>Hovädzia polievka</h2>
+
+<ul>
+<li>15g predné hovädzie mäso /20g hovädzích kostí/</li>
+<li>30g koreňová zelenina /10g mrkva, petržlen, zeler/</li>
+<li>10g cibuľa</li>
+<li>10g rezance</li>
+<li>štipka vňate petržlenu, čierne korenie mleté, soľ</li>
+</ul>
+
+<h2>Hovädzia polievka s pečeňovou ryžou (Hovädzia+)</h2>
+
+<ul>
+<li>30g hovädzia pečeň</li>
+<li>3g slnečnicový olej</li>
+<li>10g vajec /1ks – 5 porcií/</li>
+<li>10g strúhanka</li>
+<li>cesnak, korenie ml., majoránka, petržlenová vňať</li>
+</ul>
+
+<h2>Hovädzia polievka s krupicovými haluškami (Hovädzia+)</h2>
+
+<ul>
+<li>10g vajec</li>
+<li>10g krupica</li>
+<li>petržlenová vňať, mleté korenie, soľ</li>
+</ul>
+
+<h2>Hovädzia polievka s ryžou a hráškom (Hovädzia+)</h2>
+
+<ul>
+<li>10g varená ryža</li>
+<li>5g sterilizovaného hrášku</li>
+<li>1g slnečnicový olej</li>
+<li>petržlenová vňať, soľ</li>
+</ul>
+
+<h2>Rascová polievka s vajcom</h2>
+
+<ul>
+<li>15g predného hovädzieho mäsa /20g hovädzích kostí/</li>
+<li>30g koreňová zelenina</li>
+<li>10g cibuľa</li>
+<li>5g slnečnicový olej</li>
+<li>10g hladká múka</li>
+<li>10g vajec</li>
+<li>soľ, mleté korenie, drtená rasca</li>
+</ul>
+
+<h2>Hašé polievka</h2>
+
+<ul>
+<li>30g predné hovädzie mäso bez kosti</li>
+<li>5g slnečnicový olej</li>
+<li>10g cibuľa</li>
+<li>soľ, majoránka, štipka petržlenovej vňate</li>
+</ul>
+
+<h2>Ragú polievka</h2>
+
+<ul>
+<li>30g zadné hovädzie mäso /30g hov.kostí-150g vývaru/</li>
+<li>30g koreňová zelenina /mrkva, petržlen, zeler/</li>
+<li>5g slnečnicový olej</li>
+<li>5g hladká múka</li>
+<li>30g egalizované mlieko</li>
+<li>soľ, mletý muškátový oriešok, mleté čierne korenie, petržlenová vňať</li>
+</ul>
+
+<h2>Talianska polievka</h2>
+
+<ul>
+<li>150g vývaru z kostí /30g – kosti/</li>
+<li>50g rajčín</li>
+<li>30g kapusty hlávkovej</li>
+<li>10g cibuľa</li>
+<li>5g slnečnicový olej</li>
+<li>3g rajčinový pretlak</li>
+<li>10g varená ryža</li>
+<li>2g soľ /vegeta/, štipka petržlenovej vňate</li>
+</ul>
+
+<h2><a name="rajcinova"></a>Rajčinová polievka s ryžou</h2>
+
+<ul>
+<li>15g zadné hovädzie mäso /20g – hovädz. kostí – vývar/</li>
+<li>5g cibuľa</li>
+<li>5g slnečnicový olej</li>
+<li>5g hladká múka</li>
+<li>15g rajčinového pretlaku</li>
+<li>5g varená ryža</li>
+<li>soľ, vegeta, korenie</li>
+</ul>
+
+<h2>Rajčinová polievka s cestovinou (Rajčinová+)</h2>
+
+<ul>
+<li>podobná norma ako <a href="#rajcinova">Rajčinová polievka s ryžou</a></li>
+<li>5g varená cestovina</li>
+</ul>
+
+<h2>Rajčinová polievka s cesnakom a zemiakmi (Rajčinová+)</h2>
+
+<ul>
+<li>podobná norma ako <a href="#rajcinova">Rajčinová polievka s ryžou</a></li>
+<li>20g zemiaky</li>
+<li>2g pasírovaný cesnak</li>
+</ul>
+
+<h2><a name="drobkova"></a> Drobková, kuracia polievka s rezancami</h2>
+
+<ul>
+<li>50g kurčacích drobkov /300g vývaru, kocka slepačieho bujónu na 3 porcie/</li>
+<li>30g očistenej koreňovej zeleniny<br />
+mrkva, petržlen, zeler</li>
+<li>10g varených polievkových rezancov /5g cestovina/</li>
+<li>3g slnečnicový olej</li>
+<li>soľ, štipka petržlenovej vňate, biele korenie ml. celé nové korenie, celé čierne korenie</li>
+</ul>
+
+<h2>Drobková polievka s ryžou</h2>
+
+<ul>
+<li>tá istá norma ako <a href="#drobkova">Drobková, kuracia polievka s rezancami</a></li>
+<li>10g varená ryža</li>
+<li>10g cibuľa</li>
+</ul>
+
+<h2>Zeleninová polievka s krupicovými cesnakovými haluškami</h2>
+
+<ul>
+<li>300g vývar /zeleninový bujón/</li>
+<li>10g mrkva</li>
+<li>10g petržlen</li>
+<li>10g zeler /+ 10g kaleráb/</li>
+<li>10g cibuľa</li>
+<li>soľ, vegeta, biele korenie, celé korenie, nové korenie, štipka petržlenovej vňate</li>
+<li>10g detská krupica</li>
+<li>10g vajec</li>
+<li>3g olej</li>
+<li>2g cesnak</li>
+</ul>
+
+<h2>Valašský kysel /horácka kulajda/</h2>
+
+<ul>
+<li>200g vývar s kostí / 30g kosti/</li>
+<li>30g očistená zelenina /mrkva, petržlen, zeler/</li>
+<li>20g zemiaky</li>
+<li>10g huby čerstvé /5g sušené/</li>
+<li>5g slnečnicový olej</li>
+<li>5g hladká múka</li>
+<li>30g egalizované mlieko</li>
+<li>3g ocot</li>
+<li>5g cukor /dia. sladidlo - sacharín, aspartam/</li>
+<li>20g vajec</li>
+<li>soľ, vegeta, biele korenie mleté, celé korenie, nové korenie, štipka petržlenovej vňate,
+čerstvej majoránky a bazalky, bobkový list</li>
+</ul>
+
+<h2><a name="kapustnica"></a> Vianočná kapustnica /Novoročná kapustnica/</h2>
+
+<ul>
+<li>150g mäsového vývaru</li>
+<li>50g kyslej kapusty</li>
+<li>10g slivky bystričky mrazené bez kôstok /5g sušené/</li>
+<li>10g huby sušené</li>
+<li>5g cukor karamel. základ /alebo diasladidlo/</li>
+<li>5g slnečnicový olej</li>
+<li>5g cibuľa</li>
+<li>20g osobitne varené zemiaky</li>
+<li>10g hladkej múky</li>
+<li>30g smotana /kyslá, šľahačková/</li>
+<li>50g údené koleno /alebo šunka/</li>
+<li>30g debrecínskej /vianočnej/ domácej klobásy</li>
+<li>drvená rasca, kôpor podľa chuti alebo štipka petržlenovej vňate, cesnak, soľ, červená paprika mletá</li>
+</ul>
+
+<h2>Kapustnica s mäsom a klobásou - Silvestrovská (Kapustnica+)</h2>
+
+<ul>
+<li>podobná norma ako <a href="#kapustnica">Vianočná kapustnica</a> bez smotany a papriky</li>
+<li>15g bravčové mäso, 150g vývar z kostí /šunky/</li>
+<li>3g cesnak /čistá, pikantnejšia/</li>
+</ul>
+
+<p>Po pridaní cesnaku bude polievka čistá, pikantnejšia.</p>
+
+<h2>Boršč</h2>
+
+<ul>
+<li>15g Predného /zadného/ hovädzieho mäsa</li>
+<li>15g bravčového mäsa</li>
+<li>150g mäsového vývaru – 20g špikových kostí</li>
+<li>5g slnečnicový olej, bravčová masť</li>
+<li>40g koreňová zelenina /20g-mrkva/ krájať na rezance</li>
+<li>10g cibuľa</li>
+<li>5g rajčinový pretlak</li>
+<li>30g cvikla /sterilizovaná/</li>
+<li>40g hlávková kapusta</li>
+<li>20g kyslá smotana</li>
+<li>10g hladká múka</li>
+<li>soľ, nové korenie, biele korenie, bobkový list, sladká červená paprika</li>
+</ul>
+
+<h2>Držková polievka</h2>
+
+<ul>
+<li>50g držky</li>
+<li>15g koreňová zelenina /30g-držiek, 20g-zemiakov/</li>
+<li>10g cibuľa</li>
+<li>10g hladká múka</li>
+<li>5g bravčová masť, olej</li>
+<li>červená paprika, majorán, soľ, čierne korenie, cesnak</li>
+</ul>
+
+<p>Vodu počas varenia držiek niekoľko krát vymieňame.</p>
+
+<h2>Jaternicová polievka</h2>
+
+<ul>
+<li>15g bravčový lalok /podhrdlie na vývar/</li>
+<li>100g bravčová krv</li>
+<li>5g bravčová masť</li>
+<li>10g cibuľa</li>
+<li>5g varených jačmenných krúpov</li>
+<li>cesnak, nové a čierne korenie, mleté korenie, soľ, majorán</li>
+</ul>
+
+<h2>Rybia polievka vývarová</h2>
+
+<ul>
+<li>100g rybie mäso /rybie filé/</li>
+<li>30g koreňová zelenina</li>
+<li>20g pór</li>
+<li>10g cesnak</li>
+<li>soľ, mleté korenie biele, štipka petržlenovej vňate</li>
+</ul>
+
+<h2><a name="rybacia"></a> Slávnostná rybacia polievka</h2>
+
+<ul>
+<li>100g rybie filé</li>
+<li>30g kreviet</li>
+<li>10g cibuľa</li>
+<li>10g paprika</li>
+<li>10g zeler</li>
+<li>20g zelený hrášok</li>
+<li>30g až 50g rajčiny</li>
+<li>10g masla</li>
+<li>100g zeleninový vývar /zo zeleninového bujónu/</li>
+<li>soľ /vegeta/, estragón, šafran, petržlenová vňať, suché biele vínko</li>
+</ul>
+
+<h2>Halászlé - rybia polievka</h2>
+
+<ul>
+<li>podobná norma ako <a href="#rybacia">Slávnostná rybacia polievka</a></li>
+<li>120g rybie mäso</li>
+<li>150g rybieho zeleninového vývaru</li>
+<li>20g cibuľa /cesnak/</li>
+<li>5g masti</li>
+<li>5g hladká múka</li>
+<li>3g feferónky, červená paprika sladká maďarská a červená paprika maďarská štipľavá,</li>
+<li>tlčená rasca, biele korenie, vegeta</li>
+</ul>
+
+<h2>Hubová polievka</h2>
+
+<ul>
+<li>30g čerstvých /primerane/ sušených húb</li>
+<li>5g masti /olej/</li>
+<li>20g zemiaky</li>
+<li>10g hladká múka</li>
+<li>20g koreňová zelenina</li>
+<li>20g suchého postrúhaného cesta /vajce, hrubá múka/
+/alebo cestovina široké rezance, fliačiky, alebo krúpy/</li>
+<li>10g cibuľa</li>
+<li>150g vývar /voda/</li>
+<li>2g soľ, vegeta, biele a čierne korenie, nové korenie, štipka zeleného petržlenu</li>
+</ul>
+
+<h2>Krémová šampiňónová polievka</h2>
+
+<ul>
+<li>30g olúpaných nakrájaných šampiňónov
+/nahradíme sterilizovanými bez nálevu/</li>
+<li>5g maslo /5g-margarín/</li>
+<li>10g hladká múka</li>
+<li>30g mlieko</li>
+<li>150g zeleninový vývar /zeleninový bujón/</li>
+<li>2g soľ, vegeta, korenie biele /sóju/</li>
+<li>3g olej</li>
+<li>20g opražený chlieb, štipka petržlenovej vňate</li>
+</ul>
+
+<h2>Karfiolová polievka so syrom, smotanou, šunkou</h2>
+
+<ul>
+<li>50g karfiol /100g – zeleninový vývar/</li>
+<li>20g vaječný žĺtok</li>
+<li>20g ušľahanej smotany</li>
+<li>10g postrúhaného syra</li>
+<li>30g šunka pokrájaná na pásiky /20g-zemiaky/</li>
+<li>soľ, vegeta, petržlenová vňať /kôpor/ biele korenie</li>
+</ul>
+
+<h2>Karfiolová polievka</h2>
+
+<ul>
+<li>50g karfiol</li>
+<li>5g maslo, masť</li>
+<li>10g hladká múka</li>
+<li>10g cibuľa</li>
+<li>150g zeleninový vývar</li>
+<li>soľ, vegeta, čierne korenie, štipka petržlenovej vňate</li>
+</ul>
+
+<h2>Krémová mrkvová polievka</h2>
+
+<ul>
+<li>30g až 50g mrkvy</li>
+<li>5g maslo</li>
+<li>10g hladká múka</li>
+<li>50g mlieko</li>
+<li>soľ, voda, vegeta, štipka petržlenovej vňate</li>
+</ul>
+
+<h2>Špenátová polievka</h2>
+
+<ul>
+<li>50g špenátu</li>
+<li>5g maslo, masť</li>
+<li>10g hladká múka</li>
+<li>10g cibule</li>
+<li>50g mlieko</li>
+<li>voda, soľ, biele, čierne korenie, cesnak</li>
+</ul>
+
+<h2>Fazuľková polievka</h2>
+
+<ul>
+<li>50g zelená fazuľka /sterilizované, mrazené lusky/</li>
+<li>5g masť</li>
+<li>10g hladká múka</li>
+<li>10g cibuľa</li>
+<li>20g zemiaky</li>
+<li>voda, soľ, petržlenová vňať alebo pažítka</li>
+</ul>
+
+<h2>Kyslá fazuľková polievka</h2>
+
+<ul>
+<li>50g zelená fazuľka</li>
+<li>50g mlieko</li>
+<li>10g hladká múka</li>
+<li>5g masť, olej</li>
+<li>voda, soľ, vegeta, ocot, cukor - sacharín, korenie, kôpor</li>
+<li><h2><a name="kelova"></a>Kelová polievka</h2></li>
+<li><p>40g kel</p></li>
+<li>5g masť, olej</li>
+<li>10g hladká múka</li>
+<li>20g zemiakov</li>
+<li>10g cibuľa</li>
+<li>voda, soľ, majoránka, cesnak, biele a čierne korenie</li>
+</ul>
+
+<h2>Kalerábová polievka</h2>
+
+<p>podobná norma ako <a href="#kelova">Kelová polievka</a>
+* 30g kaleráb, pokrájaný na rezance
+* + iná zelenina, mrkva
+* 5g masť, olej
+* 10g hladká múka
+* karfiol, hrášok, voda, soľ, korenie, zelený petržlen</p>
+
+<h2>Párková polievka</h2>
+
+<ul>
+<li>30g párky diétne</li>
+<li>10g cibuľa</li>
+<li>5g masť, olej</li>
+<li>10g hladká múka</li>
+<li>20g zemiakov</li>
+<li>voda, soľ, červená paprika, majorán, čierne korenie</li>
+</ul>
+
+<h2>Frankfurtská polievka</h2>
+
+<ul>
+<li>50g párky alebo údenina či kabanos, klobása</li>
+<li>10g cibuľa</li>
+<li>5g masť, olej</li>
+<li>50g mlieko</li>
+<li>10g múka hladká</li>
+<li>voda - vývar z kostí, soľ, cesnak, červená paprika, majoránka, štipka petržlen. vňate</li>
+</ul>
+
+<h2>Zemiaková polievka na kyslo</h2>
+
+<ul>
+<li>30g zemiaky</li>
+<li>10g slaninky</li>
+<li>5g masť, olej</li>
+<li>50g mlieka alebo 30g smotany</li>
+<li>10g múka hladká</li>
+<li>voda, soľ, korenie, bobkový list, cukor, ocot</li>
+</ul>
+
+<h2>Fazuľová polievka s údeným mäsom zemiakmi a zeleninou</h2>
+
+<ul>
+<li>50g údené mäso /údené koleno, inak 3hod. namočiť/</li>
+<li>30g bielej fazule</li>
+<li>30g zemiaky</li>
+<li>10g mrkva</li>
+<li>10g petržlen</li>
+<li>10g zeler</li>
+<li>10g cibuľa</li>
+<li>5g cesnak</li>
+<li>5g masť, olej</li>
+<li>voda, soľ, korenie, vegeta</li>
+</ul>
+
+<p>Suché strukoviny je lepšie večer pred varením namočiť do vody so štipkou sódy bikarbóny.</p>
+
+<h2>Fazuľová so slaninou a kapustou</h2>
+
+<ul>
+<li>50g bravčových kostí</li>
+<li>50g kyslej kapusty</li>
+<li>10g hladká múka</li>
+<li>10g údenej slaninky</li>
+<li>voda, mletá červená paprika, mleté korenie</li>
+</ul>
+
+<h2>Fazuľová polievka na kyslo so zemiakmi</h2>
+
+<ul>
+<li>20g fazuľa biela</li>
+<li>20g zemiaky</li>
+<li>10g múka hladká</li>
+<li>5g masť, olej</li>
+<li>100g mlieko</li>
+<li>voda, soľ, biele korenie, cesnak, bobkový list, cukor - diabetické sladidlo, ocot</li>
+</ul>
+
+<h2>Kyslá šošovicová polievka (Fazuľová+)</h2>
+
+<p>podobná norma ako <a href="#fazulova">Fazuľová so slaninou a kapustou</a></p>
+
+<ul>
+<li>20g šošovica</li>
+<li>20g zemiaky</li>
+</ul>
+
+<h2>Šošovicová polievka so zeleninou</h2>
+
+<ul>
+<li>20g šošovica</li>
+<li>20g koreňová zelenina</li>
+<li>5g masť, olej</li>
+<li>10g hladká múka</li>
+<li>10g Slaninka, údenina</li>
+<li>10g cibuľa</li>
+<li>voda, soľ, vegeta, cesnak, korenie</li>
+</ul>
+
+<h2>Hrachová polievka s párkom</h2>
+
+<ul>
+<li>20g hrach polený</li>
+<li>20g koreňová zelenina /cibuľa/</li>
+<li>30g párky alebo údenina</li>
+<li>5g masť, olej</li>
+<li>10g múka hladká</li>
+<li>20g opekanej žemle alebo chleba</li>
+<li>3g olej</li>
+<li>voda, soľ, cesnak, majoránka, korenie, vegeta</li>
+</ul>
+
+<h2>Hrstková polievka</h2>
+
+<ul>
+<li>10g šošovica</li>
+<li>10g biela fazuľa</li>
+<li>10g fazule alebo 5g polený hrach</li>
+<li>10g cibuľa</li>
+<li>10g hladká múka</li>
+<li>5g jemné krúpky</li>
+<li>5g masť, olej</li>
+<li>voda, soľ, vegeta, korenie, posekaný zelený petržlen alebo pažítky</li>
+</ul>
+
+<h2>Sedliacka polievka</h2>
+
+<ul>
+<li>10g masť /olej/</li>
+<li>10g hladká múka</li>
+<li>10g cibuľa</li>
+<li>20g mlieko</li>
+<li>20g čerstvých hríbov alebo 10g sušených</li>
+<li>10g rezancov domácich /širších/</li>
+<li>soľ, vegeta, mleté čierne - biele korenie, zelený petržlen, pažítka, majoránka, bazalka</li>
+</ul>
+
+<h2>Cesnačka–cesnaková polievka</h2>
+
+<ul>
+<li>5g masť /olej/</li>
+<li>10g hladká múka</li>
+<li>20g opražený chleba alebo žemľa</li>
+<li>5g cesnak /prelisovaný/</li>
+<li>voda, soľ, červená paprika sladká /maďarská/</li>
+</ul>
+
+<h2>Krúpová polievka s údeným a zeleninou</h2>
+
+<ul>
+<li>20g krúpov</li>
+<li>5g masť, olej</li>
+<li>10g sušených húb /čerstvých raz toľko/</li>
+<li>20g zemiakov</li>
+<li>20g koreňová zelenina</li>
+<li>10g cibuľa</li>
+<li>10g hladká múka</li>
+<li>30g údené koleno alebo 20g klobásy</li>
+<li>voda, soľ, vegeta, čierne - biele korenie, červená paprika, štipka zeleného petržlenu</li>
+</ul>
+
+<h2>Kyslá hubová polievka</h2>
+
+<ul>
+<li>20g čerstvých húb</li>
+<li>5g masť /olej/</li>
+<li>10g hladkej múky</li>
+<li>10g cibule</li>
+<li>50g mlieko</li>
+<li>voda, soľ, vegeta, bobkový list, korenie, cukor - diasladidlo, ocot, červená paprika</li>
+</ul>
+
+<h2>Šarišská máčanka z kapustnice s hubami</h2>
+
+<ul>
+<li>150g kapustnica na vývar</li>
+<li>60g údené koleno</li>
+<li>30g huby alebo 20g sušené</li>
+<li>10g masť /olej/</li>
+<li>20g hladká múka, +smotana 20g jemná</li>
+<li>voda, soľ, vegeta, korenie, červená paprika</li>
+</ul>
+
+<p>Podávame s chlebom, ktorý máčame v stredne zahustenej máčanke.</p>
+
+<h2>Záhorácka kapustová polievka (podľa starej mamy)</h2>
+
+<ul>
+<li>60g hlávkovej kapusty</li>
+<li>40g paradajok</li>
+<li>30g zelenej papriky</li>
+<li>30g koreňová zelenina</li>
+<li>10g cibuľa</li>
+<li>5g rajčinový pretlak</li>
+<li>5g masť /olej/</li>
+<li>10g hladká múka</li>
+<li>30g domáca klobása</li>
+<li>voda, soľ, vegeta, cesnak, korenie, cukor, ocot</li>
+</ul>
+
+<h2>Istebnícka kapusta - chalupárska</h2>
+
+<ul>
+<li>50g kyslej domácej kapusty /100g kyslej, cukor, olej/</li>
+<li>50g sterilizovanej kapusty</li>
+<li>30g paradajok</li>
+<li>20g paprík</li>
+<li>5g olej</li>
+<li>100g domáca alebo kvalitnejšia klobása</li>
+<li>30g kyslá /šľahačková/ smotana</li>
+<li>soľ, vegeta, biele korenie, červená paprika - chilli paprička</li>
+</ul>
+
+<h2>Vločková polievka so zeleninou</h2>
+
+<ul>
+<li>30g miešaná zelenina</li>
+<li>20g ovsených vločiek</li>
+<li>5g masť /olej alebo maslo/</li>
+<li>10g cibuľa alebo pažítka</li>
+<li>voda, soľ, vegeta, korenie ml., zelený petržlen</li>
+</ul>
+
+<h2>Zimná polievka</h2>
+
+<ul>
+<li>30g suchej bielej fazule</li>
+<li>20g koreňovej zeleniny /mrkva, petržlen/</li>
+<li>10g masť /olej/</li>
+<li>5g hladkej múky</li>
+<li>10g cibuľa</li>
+<li>voda, soľ, vegeta, č. paprika, čierne korenie</li>
+</ul>
+
+<p>Závarku urobíme z vajíčka a krupicovej múky.</p>
+
+<h2>Bryndzová polievka (podobne Demikát)</h2>
+
+<ul>
+<li>150g vývar so zemiakov</li>
+<li>50g bryndza</li>
+<li>10g masla</li>
+<li>50g mlieko</li>
+<li>20g domácich rezancov</li>
+<li>soľ, vegeta, červená paprika, kôpor</li>
+</ul>
+
+</div>
+</main>
+<nav>
+    <ul>
+    <li><a href="polievky">Polievky</a></li>
+    <li><a href="bylinky">Použitie bylín</a></li>
+    <li><b>Stravovanie</b>
+        <ul>
+        <li><a href="slovenske">Typické slovenské jedlá</a></li>
+        <li><a href="smasombezmasa">Rôzne mäsité a bezmäsité jedlá</a></li>
+        <li><a href="miesane">Miešané pokrmy</a></li>
+        <li><a href="omacky-salaty">Omáčky, prílohy a šaláty</a></li>
+        <li><a href="predjedla">Predjedlá teplé a studené, nátierky</a></li>
+        <li><a href="mucniky">Múčniky a pečenie</a></li>
+        <li><a href="kolace">Koláče a iné</a></li>
+        <li><a href="napoje">Kokteily, drinky</a></li>
+        <li><a href="recepty">Recepty pokračovanie</a></li>
+        <li><a href="recepty-zo-zivota">Výber receptov zo života</a></li>
+        <li><a href="zkazdehorozka">Z každého rožka troška</a></li>
+        <li><a href="gurman">Gurmánske tajomstvá</a></li>
+        <li><a href="tabulka">Normovacia tabuľka</a></li>
+        <li><a href="tech-stolovanie">Technológia a stolovanie</a></li>
+        <li><a href="jedalne-listky">Výberové jedálne lístky</a></li>
+        </ul></li>
+    <li><b>Mäso</b>
+        <ul>
+        <li><a href="bravcove">Bravčové</a></li>
+        <li><a href="bravcove-gulase">Bravčové, miešané guláše</a></li>
+        <li><a href="gulase">Pravé guláše</a></li>
+        <li><a href="bravcove-minutky">Minútky z bravčoviny, vnútornosti</a></li>
+        <li><a href="minutky">Minútky</a></li>
+        <li><a href="jahnacie-baranie">Jahňacie a baranina</a></li>
+        <li><a href="mlete-maso">Mleté mäso</a></li>
+        <li><a href="hovadzie">Hovädzie</a></li>
+        <li><a href="hovadzie-rostenky">Hovädzie roštenky a plátky</a></li>
+        <li><a href="telacie">Teľacie mäso</a></li>
+        <li><a href="telacie-dusene">Teľacie dusené</a></li>
+        <li><a href="telacie-pecene">Teľacie pečené</a></li>
+        <li><a href="hydina">Hydinové jedlá a pochúťky</a></li>
+        <li><a href="zverina">Zverina/Divina</a></li>
+        <li><a href="ryby">Ryby</a></li>
+        </ul></li>
+    </ul>
+</nav>
+</div>
+<footer>
+  <span>© 2002-2026 <a href="/">somstrom</a> · <a href="/nom/">Normy jedál</a></span>
+  <span>Všetky práva vyhradené · <a href="https://unilexicon.com/fm">F. Malina</a></span>
+</footer>
+</body>
+</html>

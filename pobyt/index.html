@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kamenná sýpka — ubytovanie v Hornej Štubni</title>
+  <meta name="description" content="Útulné ubytovanie v obnovenej 100-ročnej kamennej sýpke v Hornej Štubni.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="../"><img src="../logo.svg" width="50" height="92" alt=""> somstrom<span>&nbsp;· pobyt</span></a>
+  <a class="nav-link" href="#rezervacia">Rezervovať</a>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-image" role="img" aria-label="Kamenná sýpka v Hornej Štubni" style="background-image:url(../photos/sypka.jpg)"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Horná Štubňa · Slovensko</p>
+      <h1>100-ročná kamenná sýpka premenená na miesto, kde sa dobre spomaľuje.</h1>
+      <p class="lead">Súkromie, pokoj a charakter starého domu. Ubytovanie pre 1–3 hostí, ideálne na víkend mimo mesta.</p>
+      <a class="button" href="#rezervacia">Pozrieť dostupnosť</a>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div>
+      <p class="eyebrow">O mieste</p>
+      <h2>Staré múry. Nový pokoj.</h2>
+    </div>
+    <p>Kamenná sýpka si zachovala svoj pôvodný charakter a zároveň dostala pohodlie potrebné na príjemný pobyt. Príďte si oddýchnuť, prejsť sa po okolí a na chvíľu vypnúť.</p>
+  </section>
+
+  <section class="features">
+    <article><strong>01</strong><h3>Pre 1–3 hostí</h3><p>Komornejšie ubytovanie pre páry, jednotlivcov alebo malú rodinu.</p></article>
+    <article><strong>02</strong><h3>Charakter miesta</h3><p>100-ročná kamenná sýpka s atmosférou, ktorú nový apartmán nenahradí.</p></article>
+    <article><strong>03</strong><h3>Horná Štubňa</h3><p>Pokojná lokalita na oddych a výlety v okolí.</p></article>
+  </section>
+  <div id="rezervacia"></div>
+  <section class="booking" id="rezervacia-disabled" style="display:none">
+    <div class="booking-copy">
+      <p class="eyebrow">Rezervácia</p>
+      <h2>Vyberte si termín.</h2>
+      <p>Kalendár číta statický export dostupnosti. Po odoslaní rezervácie vám príde potvrdenie e-mailom a údaje na bankový prevod.</p>
+      <p class="small">Aktualizácia dostupnosti môže mať krátke oneskorenie oproti Airbnb.</p>
+    </div>
+
+    <form class="booking-card" id="bookingForm">
+      <div class="calendar-head">
+        <button type="button" class="icon-button" id="prevMonth" aria-label="Predchádzajúci mesiac">‹</button>
+        <h3 id="monthTitle"></h3>
+        <button type="button" class="icon-button" id="nextMonth" aria-label="Nasledujúci mesiac">›</button>
+      </div>
+      <div class="weekdays"><span>Po</span><span>Ut</span><span>St</span><span>Št</span><span>Pi</span><span>So</span><span>Ne</span></div>
+      <div class="days" id="days"></div>
+
+      <div class="selection">
+        <div><span>Príchod</span><strong id="checkInLabel">—</strong></div>
+        <div><span>Odchod</span><strong id="checkOutLabel">—</strong></div>
+      </div>
+
+      <label>Meno
+        <input name="name" required autocomplete="name" placeholder="Vaše meno">
+      </label>
+      <label>E-mail
+        <input name="email" type="email" required autocomplete="email" placeholder="vas@email.sk">
+      </label>
+      <label>Počet hostí
+        <select name="guests">
+          <option>1</option><option selected>2</option><option>3</option>
+        </select>
+      </label>
+      <label>Poznámka <span class="optional">(voliteľné)</span>
+        <textarea name="note" rows="3" placeholder="Čokoľvek, čo nám chcete povedať"></textarea>
+      </label>
+
+      <div class="price-box">
+        <span>Odhad ceny</span>
+        <strong id="price">Vyberte termín</strong>
+      </div>
+      <button class="button full" type="submit">Odoslať rezerváciu</button>
+      <p>Rezervácia je platná po prijatí Vašej platby na účet František Malina <b>BE28 9675 9263 6620</b>
+      <p class="form-status" id="formStatus" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="cta">
+    <p class="eyebrow">Chcete sa pozrieť najprv na Airbnb?</p>
+    <h2>Pre viac fotografií a recenzií</h2>
+    <a class="text-link" href="https://sk.airbnb.com/rooms/1565205259627467455" target="_blank" rel="noopener">Otvoriť Airbnb ↗</a>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 somstrom · pobyt</span>
+  <span>Horná Štubňa, Slovensko</span>
+</footer>
+<script src="/pobyt/app.js"></script>
+</body>
+</html>

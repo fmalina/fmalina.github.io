@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reumel elixír - Bylinky</title>
+<meta name="description" content="Reumel je prírodný prostriedok napomáhajúci regenerácii kĺbových chrupaviek a väzivového tkaniva. Podporuje vyplavovanie nežiadúcich metabolických splodín…">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/sip/style.css">
+<link rel="canonical" href="https://somstrom.com/sip/elixiry/reumel">
+</head>
+<body class="reumel">
+<header class="nav">
+    <div class="brand">
+        <a href="/"><img src="/logo.svg" width="50" height="92" alt=""></a>
+        <span><b>somstrom</b> &rsaquo; <a href="/sip/">Bylinky</a>
+            &rsaquo; <a href="/sip/elixiry">Elixíry</a></span>
+    </div>
+</header>
+<div class="container">
+<main>
+<div class="content">
+<h1>Reumel elixír</h1>
+<p><strong>Reumel</strong> je prírodný prostriedok napomáhajúci regenerácii kĺbových chrupaviek
+a väzivového tkaniva. Podporuje vyplavovanie nežiadúcich metabolických splodín z
+organizmu, predchádza vzniku kĺbových problémov, zmierňuje zápalové stavy kĺbov,
+šliach a ich bolestivosť.</p>
+
+<p>Obsahuje bylinky:</p>
+
+<ul>
+<li><a href="../bylinky/pakost-smradlavy">pakost smradľavý</a></li>
+<li><a href="../bylinky/echinacea-purpurea">echinacea purpurea</a></li>
+<li><a href="../bylinky/tuzobnik-brestovy">túžobník brestový</a></li>
+<li><a href="../bylinky/mrlik-dobry">mrlík dobrý</a></li>
+<li><a href="../bylinky/breza-previsnuta">breza previsnutá</a>.</li>
+</ul>
+
+<p>Upozornenie: <em>Výrobok nie je určený pre deti. Dávkovanie pre dospelých 3 x 15
+kvapiek za deň; riediť v nemineralizovanej vode 20 ml na jednu dávku. Potom sa
+podrží v ústach a po 20 s až 30 s sa prehltne. Pitný režim pokračuje asi po pol
+hodine.</em></p>
+
+<p><em>Obsah: 50 ml macerátu</em></p>
+
+</div>
+</main>
+<nav>
+    <ul>
+    <li><a href="/sip/elixiry/alersan">Alersan elixír</a></li>
+    <li><a href="/sip/elixiry/cardolen">Cardolen elixír</a></li>
+    <li><a href="/sip/elixiry/dermasan">Dermasan elixír</a></li>
+    <li><a href="/sip/elixiry/diasan">Diasan elixír</a></li>
+    <li><a href="/sip/elixiry/disbiosan">Disbiosan elixír</a></li>
+    <li><a href="/sip/elixiry/duhovy-detoxilen">Detoxilen</a></li>
+    <li><a href="/sip/elixiry/duhovy-fructavit">Fructavit</a></li>
+    <li><a href="/sip/elixiry/duhovy-fungilen">Fungilen</a></li>
+    <li><a href="/sip/elixiry/duhovy-imunex">Imunex</a></li>
+    <li><a href="/sip/elixiry/feminan">Feminan elixír</a></li>
+    <li><a href="/sip/elixiry/hepaven">Hepaven elixír</a></li>
+    <li><a href="/sip/elixiry/hypnosan">Hypnosan elixír </a></li>
+    <li><a href="/sip/elixiry/klimakten">Klimakten elixír </a></li>
+    <li><a href="/sip/elixiry/lymfavit">Lymfavit elixír</a></li>
+    <li><a href="/sip/elixiry/masculan">Masculan elixír</a></li>
+    <li><a href="/sip/elixiry/migresan">Migresan elixír </a></li>
+    <li><a href="/sip/elixiry/myorel">Myorel elixír</a></li>
+    <li><a href="/sip/elixiry/nefronen">Nefronen elixír</a></li>
+    <li><a href="/sip/elixiry/neuren">Neuren elixír</a></li>
+    <li><a href="/sip/elixiry/prostaten">Prostaten elixír</a></li>
+    <li><a href="/sip/elixiry/respiran">Respiran elixír</a></li>
+    <li><a href="/sip/elixiry/reumel">Reumel elixír</a></li>
+    <li><a href="/sip/elixiry/stimulen">Stimulen elixír</a></li>
+    <li><a href="/sip/elixiry/venavit">Venavit elixír</a></li>
+    <li><a href="/sip/elixiry/vitalit">Vitalit elixír</a></li>
+    </ul>
+</nav>
+</div>
+<footer>
+  <span>© 2005-2026 <a href="/">somstrom</a> · <a href="/sip/">Bylinky</a></span>
+  <span>Všetky práva vyhradené · <a href="https://unilexicon.com/fm">F. Malina</a></span>
+</footer>
+</body>
+</html>

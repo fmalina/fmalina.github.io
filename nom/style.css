@@ -1,0 +1,36 @@
+table p{margin:.3em}
+header{position:sticky;top:0;z-index:2}
+header input{width:9em;margin-top:0}
+nav li{list-style:none;padding:0 0 .3em 0}
+
+h2,h3{padding-top:1.5em}
+main a img{height:150px;object-fit:cover;margin:.5rem .5rem 0 0;padding:1px;border:1px solid gray;border-radius:4px}
+main a:hover img{border-color:darkslategray}
+table{border-collapse:collapse}
+table.strips tbody tr:nth-child(odd){background:whitesmoke}
+
+nav{padding:20px 5vw}
+nav li, aside li{list-style:none;padding:.1em 0}
+nav ul{padding:0}
+nav a,nav b{padding:.1em .5em;display:inline-block}
+
+aside{margin-top:3em}
+aside p, aside ul{float:left;margin-top:0}
+p.time,p.portion,p.subheading{color:green;font-weight:bold}
+
+#toc{padding:1em 5vw}
+#toc div{display:none}
+#toc a{display:block;padding:.2rem 0}
+#toc a.b{font-weight:bold}
+#toc a.indent{padding-left:1em}
+#toc a.extraindent{padding-left:2em}
+
+h1,h2,h3{position:relative}
+.anchor{font-size:smaller;display:inline-block;color:#aaa;
+    text-decoration:none;position:absolute;left:-.7em;top:2em}
+.anchor:hover{color:dodgerblue}
+.index .anchor{display:none}
+.content{display:block;padding:50px 5vw;border-bottom:1px solid var(--line)}
+
+main:has(.feature){padding:2em;font-family:sans-serif}
+img.feature{max-width:800px;max-height:initial}

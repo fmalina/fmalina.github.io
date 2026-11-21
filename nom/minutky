@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Minútky  - Normy jedál</title>
+<meta name="description" content="Tatársky biftek 120g sviečkovice 1ks žĺtok 35g cibule 5g sardelová pasta 15g horčica kečup, worcester, mleté korenie, sójová omáčka, soľ, červená mletá…">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<base href="/nom/">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/nom/style.css">
+<link rel="canonical" href="https://somstrom.com/nom/minutky">
+<script src="scripts.js"></script>
+</head>
+<body class="minutky">
+<header class="nav">
+    <div class="brand">
+        <a href="/"><img src="/logo.svg" width="50" height="92" alt=""></a>
+        <a href="/nom/">Normy jedál</a>
+    </div>
+</header>
+<div class="container">
+<main>
+<div class="content">
+
+<h1>Minútky</h1>
+<h2>Tatársky biftek</h2>
+
+<ul>
+<li>120g sviečkovice</li>
+<li>1ks žĺtok</li>
+<li>35g cibule</li>
+<li>5g sardelová pasta</li>
+<li>15g horčica</li>
+<li>kečup, worcester, mleté korenie, sójová omáčka,
+soľ, červená mletá paprika</li>
+</ul>
+
+<p>Pripravujeme tesne pred podaním ozdobené sformované biftečky,
+inak mäso státím stráca sviežu farbu.</p>
+
+<h2>Rezne zo sviečkovice so šunkou a vajcom a zemiakmi</h2>
+
+<ul>
+<li>120g sviečkovice</li>
+<li>10g masť, olej</li>
+<li>5g masla</li>
+<li>40g šunky</li>
+<li>90g zemiakov</li>
+<li>1 ks vajce</li>
+<li>5g hladkej múky</li>
+<li>soľ, mleté korenie</li>
+</ul>
+
+<p>Sviečkovicu môžeme nahradiť mladou falošnou sviečkovou zo stehna.</p>
+
+<h2>Srbské rezne zo sviečkovice</h2>
+
+<ul>
+<li>120g sviečkovice</li>
+<li>5g slnečnicový olej, masť</li>
+<li>10g údenej prerastanej slaninky</li>
+<li>20g cibule</li>
+<li>20g zelenej papriky</li>
+<li>20g rajčín alebo lečo bez tuku</li>
+<li>soľ, vegeta, mleté korenie</li>
+</ul>
+
+<h2>Ruská roštenka</h2>
+
+<ul>
+<li>120g hovädzieho roštenca (min.60g- ½ porcia)</li>
+<li>20g slaniny</li>
+<li>5g masť, olej</li>
+<li>80g zemiakov</li>
+<li>30g cvikle</li>
+<li>5g čerstvého chrenu</li>
+<li>5g hladkej múky</li>
+<li>soľ, korenie</li>
+</ul>
+
+<h2>Anglická roštenka, roastbeef</h2>
+
+<ul>
+<li>150g mäsa zo spodnej časti roštenky</li>
+<li>20g olej</li>
+<li>10g masla</li>
+<li>soľ, čierne korenie</li>
+</ul>
+
+<p>Robíme aspoň zo 600g kusa roštenca. Upečené krájame na zvnútra ružové plátky.</p>
+
+<h2>*** Špecialita:** Roštenka kniežaťa Stojslava</h2>
+
+<ul>
+<li>100g hovädzej roštenky</li>
+<li>20g olej/maslo</li>
+<li>20g cibuľa</li>
+<li>1 dl bieleho vína</li>
+<li>15g sušené dubáky (hrsť)</li>
+<li>10g polohrubej múky</li>
+<li>15g horčica</li>
+<li>½ dl šľahačková smotana, štipka cukru/umelé sladidlo</li>
+<li>soľ, mleté čierne korenie, štipka cukru</li>
+</ul>
+
+<p>Na noc pácujeme v zmesi vína a oleja, posolenú, okorenenú, opečenú z oboch strán.</p>
+
+<h2>Rezňová zrazová roštenka</h2>
+
+<ul>
+<li>100g hovädzieho mladého stehna</li>
+<li>30g strúhanka</li>
+<li>7g maizena, solamyl</li>
+<li>20g vajce</li>
+<li>50ml trvanlivé mlieko</li>
+<li>20g olej</li>
+<li>soľ, biele korenie, voda</li>
+</ul>
+
+</div>
+</main>
+<nav>
+    <ul>
+    <li><a href="polievky">Polievky</a></li>
+    <li><a href="bylinky">Použitie bylín</a></li>
+    <li><b>Stravovanie</b>
+        <ul>
+        <li><a href="slovenske">Typické slovenské jedlá</a></li>
+        <li><a href="smasombezmasa">Rôzne mäsité a bezmäsité jedlá</a></li>
+        <li><a href="miesane">Miešané pokrmy</a></li>
+        <li><a href="omacky-salaty">Omáčky, prílohy a šaláty</a></li>
+        <li><a href="predjedla">Predjedlá teplé a studené, nátierky</a></li>
+        <li><a href="mucniky">Múčniky a pečenie</a></li>
+        <li><a href="kolace">Koláče a iné</a></li>
+        <li><a href="napoje">Kokteily, drinky</a></li>
+        <li><a href="recepty">Recepty pokračovanie</a></li>
+        <li><a href="recepty-zo-zivota">Výber receptov zo života</a></li>
+        <li><a href="zkazdehorozka">Z každého rožka troška</a></li>
+        <li><a href="gurman">Gurmánske tajomstvá</a></li>
+        <li><a href="tabulka">Normovacia tabuľka</a></li>
+        <li><a href="tech-stolovanie">Technológia a stolovanie</a></li>
+        <li><a href="jedalne-listky">Výberové jedálne lístky</a></li>
+        </ul></li>
+    <li><b>Mäso</b>
+        <ul>
+        <li><a href="bravcove">Bravčové</a></li>
+        <li><a href="bravcove-gulase">Bravčové, miešané guláše</a></li>
+        <li><a href="gulase">Pravé guláše</a></li>
+        <li><a href="bravcove-minutky">Minútky z bravčoviny, vnútornosti</a></li>
+        <li><a href="minutky">Minútky</a></li>
+        <li><a href="jahnacie-baranie">Jahňacie a baranina</a></li>
+        <li><a href="mlete-maso">Mleté mäso</a></li>
+        <li><a href="hovadzie">Hovädzie</a></li>
+        <li><a href="hovadzie-rostenky">Hovädzie roštenky a plátky</a></li>
+        <li><a href="telacie">Teľacie mäso</a></li>
+        <li><a href="telacie-dusene">Teľacie dusené</a></li>
+        <li><a href="telacie-pecene">Teľacie pečené</a></li>
+        <li><a href="hydina">Hydinové jedlá a pochúťky</a></li>
+        <li><a href="zverina">Zverina/Divina</a></li>
+        <li><a href="ryby">Ryby</a></li>
+        </ul></li>
+    </ul>
+</nav>
+</div>
+<footer>
+  <span>© 2002-2026 <a href="/">somstrom</a> · <a href="/nom/">Normy jedál</a></span>
+  <span>Všetky práva vyhradené · <a href="https://unilexicon.com/fm">F. Malina</a></span>
+</footer>
+</body>
+</html>

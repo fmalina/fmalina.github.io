@@ -1,0 +1,71 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#c4d6b0"/>
+
+  <!-- Arrow base -->
+  <path d="M14 42 
+           H36 
+           C37 42 38 41 38 40 
+           V38 
+           L52 44 
+           L38 50 
+           V48 
+           C38 47 37 46 36 46 
+           H14 
+           C13 46 12 45 12 44 
+           C12 43 13 42 14 42 Z"
+        fill="#291f1e"/>
+
+  <!-- Arrow highlight -->
+  <path d="M18 43 H34" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Map pin shadow -->
+  <path d="M32 12
+           C24 12 19 18 19 24
+           C19 34 32 50 32 50
+           C32 50 45 34 45 24
+           C45 18 40 12 32 12 Z"
+        fill="#1f2e3a"/>
+
+  <!-- Map pin main -->
+  <path d="M32 14
+           C25 14 21 19 21 24
+           C21 32 32 47 32 47
+           C32 47 43 32 43 24
+           C43 19 39 14 32 14 Z"
+        fill="#477998"/>
+
+  <!-- Pin shading -->
+  <path d="M32 14
+           C39 14 43 19 43 24
+           C43 32 32 47 32 47 Z"
+        fill="#2f6f95"/>
+
+  <!-- Gloss highlight -->
+  <ellipse cx="28" cy="20" rx="5.5" ry="3.2"
+           fill="#ffffff" opacity="0.25"/>
+
+  <!-- Inner circle -->
+  <circle cx="32" cy="24" r="6.5" fill="#0d4f7a"/>
+  <circle cx="32" cy="24" r="5" fill="#eaeaea"/>
+
+  <!-- Explosion outer -->
+  <path d="M46 14
+           L49 20 L56 20
+           L51 24 L53 32
+           L46 28 L39 32
+           L41 24 L36 20
+           L43 20 Z"
+        fill="#a3333d"/>
+
+  <!-- Explosion inner -->
+  <path d="M46 18
+           L48 21 L52 21
+           L49 24 L50 29
+           L46 26 L42 29
+           L43 24 L40 21
+           L44 21 Z"
+        fill="#f64740"/>
+
+</svg>

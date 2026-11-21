@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Kalkulačná normovacia tabuľka  - Normy jedál</title>
+<meta name="description" content="Výživová hodnota: kcal | kJ &#x2f; VH | tuk(g); t.vs. = tuk v sušine; B = veľa bielkovín, v strave uplatňovať; T = veľa tuku, jesť opatrne; S = veľa sacharidov…">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<base href="/nom/">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/nom/style.css">
+<link rel="canonical" href="https://somstrom.com/nom/tabulka">
+<script src="scripts.js"></script>
+</head>
+<body class="tabulka">
+<header class="nav">
+    <div class="brand">
+        <a href="/"><img src="/logo.svg" width="50" height="92" alt=""></a>
+        <a href="/nom/">Normy jedál</a>
+    </div>
+</header>
+<div class="container">
+<main>
+<div class="content">
+
+<h1>Kalkulačná normovacia tabuľka</h1>
+<p><strong>Výživová hodnota</strong>:
+kcal | kJ / VH | tuk(g);<br />
+t.vs. = tuk v sušine;<br />
+B = veľa bielkovín, v strave uplatňovať;<br />
+T = veľa tuku, jesť opatrne;<br />
+S = veľa sacharidov jesť premyslene;<br />
+M = veľa minerálnych látok, v strave uprednostňovať;<br />
+V = veľa vitamínov, v strave uprednostňovať;<br />
+Vl = vláknina, jesť účelovo;<br />
+R, O1, O2, V neuvedené;<br />
+orientačná cena v Sk (2005 👾🕹️);</p>
+
+<table>
+<thead>
+<tr>
+  <th>č.</th>
+  <th>Potravina</th>
+  <th>kcal</th>
+  <th>kJ / VH</th>
+  <th>tuk(g)</th>
+  <th>cena</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1.</td>
+  <td>bravč.mäso-pliecko</td>
+  <td>163</td>
+  <td>682 T</td>
+  <td>9</td>
+  <td>169,30</td>
+</tr>
+<tr>
+  <td>2.</td>
+  <td>bravč.karé</td>
+  <td>131</td>
+  <td>548 T</td>
+  <td>4,5</td>
+  <td>167,10</td>
+</tr>
+<tr>
+  <td>3.</td>
+  <td>bravč.krkovička</td>
+  <td>149</td>
+  <td>624 T</td>
+  <td>7</td>
+  <td>140,50</td>
+</tr>
+<tr>
+  <td>4.</td>
+  <td>bravč.bôčik</td>
+  <td>167</td>
+  <td>700 T</td>
+  <td>10</td>
+  <td>105,20</td>
+</tr>
+<tr>
+  <td>5.</td>
+  <td>bravč.pečeň</td>
+  <td>123</td>
+  <td>515</td>
+  <td>3</td>
+  <td>64,10</td>
+</tr>
+<tr>
+  <td>6.</td>
+  <td>bravč.kosti</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>13,30</td>
+</tr>
+<tr>
+  <td>7.</td>
+  <td>bravč.rezeň-stehno</td>
+  <td>107</td>
+  <td>448 B</td>
+  <td>2</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>8.</td>
+  <td>hovädzie.mäso-pliecko</td>
+  <td>151</td>
+  <td>632 T</td>
+  <td>4</td>
+  <td>143,30</td>
+</tr>
+<tr>
+  <td>9.</td>
+  <td>hovädz.stehno</td>
+  <td>160</td>
+  <td>670 TB</td>
+  <td>7</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>10.</td>
+  <td>hovädz.orech</td>
+  <td>220</td>
+  <td>921</td>
+  <td>2</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>11.</td>
+  <td>hovädz.srdce</td>
+  <td>133</td>
+  <td>557 TB</td>
+  <td>6</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>12.</td>
+  <td>teľacie pliecko</td>
+  <td>108</td>
+  <td>452 B</td>
+  <td>2,4</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>13.</td>
+  <td>teľacie stehno</td>
+  <td>96</td>
+  <td>402 B</td>
+  <td>1,6</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>14.</td>
+  <td>teľacia hruď</td>
+  <td>132</td>
+  <td>553 TB</td>
+  <td>6</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>15.</td>
+  <td>jahňacie pliecko</td>
+  <td>306</td>
+  <td>1281T</td>
+  <td>18</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>16.</td>
+  <td>jahňacie stehno</td>
+  <td>250</td>
+  <td>1047 T</td>
+  <td>18</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>17.</td>
+  <td>srnčie stehno</td>
+  <td>106</td>
+  <td>444 B</td>
+  <td>1,3</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>18.</td>
+  <td>srnčí chrbát</td>
+  <td>133</td>
+  <td>557 B</td>
+  <td>3,7</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>19.</td>
+  <td>hovädz. kosti</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>19,90</td>
+</tr>
+<tr>
+  <td>20.</td>
+  <td>údený bôčik</td>
+  <td>450</td>
+  <td>1884 T</td>
+  <td>41</td>
+  <td>107,20</td>
+</tr>
+<tr>
+  <td>21.</td>
+  <td>údené bravč.karé</td>
+  <td>260</td>
+  <td>1089 T</td>
+  <td>17</td>
+  <td>169,-</td>
+</tr>
+<tr>
+  <td>22.</td>
+  <td>údená šunka</td>
+  <td>366</td>
+  <td>1532 T</td>
+  <td>33</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>23.</td>
+  <td>údená slanina</td>
+  <td>858</td>
+  <td>3592 T</td>
+  <td>65</td>
+  <td>59,60</td>
+</tr>
+<tr>
+  <td>24.</td>
+  <td>kabanos</td>
+  <td>195</td>
+  <td>816 T</td>
+  <td>15</td>
+  <td>80,10</td>
+</tr>
+<tr>
+  <td>25.</td>
+  <td>klobása domáca br.</td>
+  <td>364</td>
+  <td>1524 T</td>
+  <td>31</td>
+  <td>118,50</td>
+</tr>
+<tr>
+  <td>26.</td>
+  <td>párky obyčajné</td>
+  <td>339</td>
+  <td>1420</td>
+  <td>25</td>
+  <td>80,10</td>
+</tr>
+<tr>
+  <td>27.</td>
+  <td>párky spišské</td>
+  <td>286</td>
+  <td>1197</td>
+  <td>24</td>
+  <td>115,-</td>
+</tr>
+<tr>
+  <td>28.</td>
+  <td>špekáčiky</td>
+  <td>339</td>
+  <td>1420</td>
+  <td>35</td>
+  <td>67,10</td>
+</tr>
+<tr>
+  <td>29.</td>
+  <td>Gothaj saláma</td>
+  <td>324</td>
+  <td>1357</td>
+  <td>24</td>
+  <td>67,10</td>
+</tr>
+<tr>
+  <td>30.</td>
+  <td>Strážov saláma</td>
+  <td>390</td>
+  <td>1633</td>
+  <td>34</td>
+  <td>82,30</td>
+</tr>
+<tr>
+  <td>31.</td>
+  <td>Šunková saláma</td>
+  <td>162</td>
+  <td>678 BT</td>
+  <td>10</td>
+  <td>139,70</td>
+</tr>
+<tr>
+  <td>32.</td>
+  <td>Bratislav.párky</td>
+  <td>241</td>
+  <td>1009</td>
+  <td>25</td>
+  <td>73,70</td>
+</tr>
+<tr>
+  <td>33.</td>
+  <td>údená tlačenka</td>
+  <td>322</td>
+  <td>1348 T</td>
+  <td>25</td>
+  <td>87,70</td>
+</tr>
+<tr>
+  <td>34.</td>
+  <td>nátierka 80 Labužník</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>9,40</td>
+</tr>
+<tr>
+  <td>35.</td>
+  <td>-bôčiková</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>12,90</td>
+</tr>
+<tr>
+  <td>36.</td>
+  <td>Majka</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>8,20</td>
+</tr>
+<tr>
+  <td>37.</td>
+  <td>Svačinka</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>9,80</td>
+</tr>
+<tr>
+  <td>38.</td>
+  <td>Luncheon Meat180</td>
+  <td>278</td>
+  <td>1166 T</td>
+  <td>29</td>
+  <td>17,20</td>
+</tr>
+<tr>
+  <td>39.</td>
+  <td>Hydinový nárez180</td>
+  <td>-</td>
+  <td>-</td>
+  <td>B</td>
+  <td>19,50</td>
+</tr>
+<tr>
+  <td>40.</td>
+  <td>Rybie filé- (kg)</td>
+  <td>260</td>
+  <td>1089 BT</td>
+  <td>7</td>
+  <td>135,70</td>
+</tr>
+<tr>
+  <td>41.</td>
+  <td>pečeňový syr</td>
+  <td>368</td>
+  <td>1541</td>
+  <td>26</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>42.</td>
+  <td>tuniak vo vl.šťave</td>
+  <td>340</td>
+  <td>1424</td>
+  <td>23</td>
+  <td>20,40</td>
+</tr>
+<tr>
+  <td>43.</td>
+  <td>sardinky v oleji</td>
+  <td>55</td>
+  <td>230 T</td>
+  <td>3</td>
+  <td>9,-</td>
+</tr>
+<tr>
+  <td>43.</td>
+  <td>baltické sardinky v rajčinovej omáčke</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>14,30</td>
+</tr>
+<tr>
+  <td>44.</td>
+  <td>-„- (250g) -120g</td>
+  <td>-</td>
+  <td>T</td>
+  <td>-</td>
+  <td>10,50</td>
+</tr>
+<tr>
+  <td>45.</td>
+  <td>Tresky</td>
+  <td>75</td>
+  <td>314 B</td>
+  <td>0,3</td>
+  <td>19,-</td>
+</tr>
+<tr>
+  <td>46.</td>
+  <td>maslo</td>
+  <td>748</td>
+  <td>3132 T</td>
+  <td>83</td>
+  <td>135,70</td>
+</tr>
+<tr>
+  <td>47.</td>
+  <td>maslo polotučné</td>
+  <td>364</td>
+  <td>1524 T</td>
+  <td>39</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>48.</td>
+  <td>maslo polot.25g</td>
+  <td>91</td>
+  <td>381 T</td>
+  <td>10</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>49.</td>
+  <td>Rama (400g)</td>
+  <td>682</td>
+  <td>2800 T</td>
+  <td>75</td>
+  <td>29,40</td>
+</tr>
+<tr>
+  <td>50.</td>
+  <td>tuk pok.(250g)</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>17,20</td>
+</tr>
+<tr>
+  <td>51.</td>
+  <td>olej Raciol</td>
+  <td>819</td>
+  <td>3429 T</td>
+  <td>91</td>
+  <td>40,40</td>
+</tr>
+<tr>
+  <td>52.</td>
+  <td>mlieko sl.(400g)</td>
+  <td>320</td>
+  <td>1340 B</td>
+  <td>9</td>
+  <td>83,90</td>
+</tr>
+<tr>
+  <td>53.</td>
+  <td>vajíčka(60g)</td>
+  <td>84</td>
+  <td>352</td>
+  <td>6</td>
+  <td>3,20</td>
+</tr>
+<tr>
+  <td>54.</td>
+  <td>tvrdý syr</td>
+  <td>299</td>
+  <td>1252 T</td>
+  <td>19</td>
+  <td>124,40</td>
+</tr>
+<tr>
+  <td>55.</td>
+  <td>olej slneč.100g</td>
+  <td>830</td>
+  <td>3475</td>
+  <td>91</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>56.</td>
+  <td>Syrokrém (ks)</td>
+  <td>300</td>
+  <td>1256 TB</td>
+  <td>18</td>
+  <td>9,30</td>
+</tr>
+<tr>
+  <td>57.</td>
+  <td>syr Karička</td>
+  <td>-//-</td>
+  <td>-//- TB</td>
+  <td>-//-</td>
+  <td>3,30</td>
+</tr>
+<tr>
+  <td>58.</td>
+  <td>Jogurt.smot.</td>
+  <td>230</td>
+  <td>963 BT</td>
+  <td>15</td>
+  <td>9,30</td>
+</tr>
+<tr>
+  <td>59.</td>
+  <td>zakysanka</td>
+  <td>136</td>
+  <td>569 B</td>
+  <td>7</td>
+  <td>13</td>
+</tr>
+<tr>
+  <td>60.</td>
+  <td>mlieko(200) trvanlivé(1l)</td>
+  <td>64</td>
+  <td>270 B</td>
+  <td>3,5</td>
+  <td>19,30</td>
+</tr>
+<tr>
+  <td>61.</td>
+  <td>mlieko nt. sáčk.egaliz.</td>
+  <td>88</td>
+  <td>368 B</td>
+  <td>0,3</td>
+  <td>16,30</td>
+</tr>
+<tr>
+  <td>62.</td>
+  <td>Chlieb</td>
+  <td>230</td>
+  <td>963 S Vl</td>
+  <td>1</td>
+  <td>24,90</td>
+</tr>
+<tr>
+  <td>63.</td>
+  <td>Rožok</td>
+  <td>140</td>
+  <td>586 TS</td>
+  <td>10</td>
+  <td>1,60</td>
+</tr>
+<tr>
+  <td>65.</td>
+  <td>šišky s náplňou</td>
+  <td>-</td>
+  <td>TS</td>
+  <td>-</td>
+  <td>6,90</td>
+</tr>
+<tr>
+  <td>66.</td>
+  <td>Vianočka (Bábovka)</td>
+  <td>361</td>
+  <td>1510 TS</td>
+  <td>1,5</td>
+  <td>20,60</td>
+</tr>
+<tr>
+  <td>67.</td>
+  <td>moravské koláče</td>
+  <td>-</td>
+  <td>S</td>
+  <td>-</td>
+  <td>5,20</td>
+</tr>
+<tr>
+  <td>68.</td>
+  <td>makovka</td>
+  <td>-</td>
+  <td>S</td>
+  <td>-</td>
+  <td>4,40</td>
+</tr>
+<tr>
+  <td>69.</td>
+  <td>strúhanka * 500g</td>
+  <td>280</td>
+  <td>1172 S</td>
+  <td>3</td>
+  <td>8,70</td>
+</tr>
+<tr>
+  <td>70.</td>
+  <td>Horalky 50g</td>
+  <td>506</td>
+  <td>2118 S</td>
+  <td>30</td>
+  <td>5,90</td>
+</tr>
+<tr>
+  <td>71.</td>
+  <td>tyč.Cappuccino32g</td>
+  <td>143</td>
+  <td>599 S</td>
+  <td>10</td>
+  <td>6,50</td>
+</tr>
+<tr>
+  <td>72.</td>
+  <td>tyčinka Najet 32g</td>
+  <td>-</td>
+  <td>S</td>
+  <td>-</td>
+  <td>4,90</td>
+</tr>
+<tr>
+  <td>73.</td>
+  <td>oplátka čoko 35g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>74.</td>
+  <td>oplát.rezy DRU DRU 45g</td>
+  <td>106</td>
+  <td>445 S</td>
+  <td>7</td>
+  <td>6,60</td>
+</tr>
+<tr>
+  <td>75.</td>
+  <td>tyčinka JAM 35g</td>
+  <td>-</td>
+  <td>S</td>
+  <td>-</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>76.</td>
+  <td>Fazuľa farebná 500g</td>
+  <td>-//-</td>
+  <td>-//- V</td>
+  <td>-</td>
+  <td>17,10</td>
+</tr>
+<tr>
+  <td>77.</td>
+  <td>Fazuľa biela 500g</td>
+  <td>158</td>
+  <td>662 Vl, B</td>
+  <td>1,4</td>
+  <td>15,50</td>
+</tr>
+<tr>
+  <td>78.</td>
+  <td>Šošovica</td>
+  <td>317</td>
+  <td>1327 S, Vl</td>
+  <td>1,4</td>
+  <td>17,-</td>
+</tr>
+<tr>
+  <td>79.</td>
+  <td>Hrach 500g</td>
+  <td>269</td>
+  <td>1126 V, Vl</td>
+  <td>1,4</td>
+  <td>11,20</td>
+</tr>
+<tr>
+  <td>80.</td>
+  <td>Krúpy jačmenné</td>
+  <td>370</td>
+  <td>1549 B</td>
+  <td>0</td>
+  <td>10,30</td>
+</tr>
+<tr>
+  <td>81.</td>
+  <td>Detská krupica</td>
+  <td>345</td>
+  <td>1444 S</td>
+  <td>0,5</td>
+  <td>10,70</td>
+</tr>
+<tr>
+  <td>82.</td>
+  <td>Múka hladká</td>
+  <td>351</td>
+  <td>1470</td>
+  <td>1,7</td>
+  <td>11,80</td>
+</tr>
+<tr>
+  <td>83.</td>
+  <td>Múka výberová</td>
+  <td>„</td>
+  <td>„</td>
+  <td>„</td>
+  <td>11,80</td>
+</tr>
+<tr>
+  <td>84.</td>
+  <td>Múka hrubá</td>
+  <td>„</td>
+  <td>„</td>
+  <td>„</td>
+  <td>11.80</td>
+</tr>
+<tr>
+  <td>85.</td>
+  <td>Ovsené vločky</td>
+  <td>386</td>
+  <td>1616 B</td>
+  <td>6</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>87.</td>
+  <td>Tvaroh 40%</td>
+  <td>167</td>
+  <td>699 B, T</td>
+  <td>11</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>88.</td>
+  <td>Lekvár slivkový</td>
+  <td>230</td>
+  <td>963</td>
+  <td>0</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>89.</td>
+  <td>Makové semeno</td>
+  <td>536</td>
+  <td>2244 T</td>
+  <td>22</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>90.</td>
+  <td>Džem, marmeláda</td>
+  <td>26</td>
+  <td>109 S</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>91.</td>
+  <td>Med 20g</td>
+  <td>66</td>
+  <td>276 S</td>
+  <td>0</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>92.</td>
+  <td>cestoviny Niťovky 400g</td>
+  <td>390</td>
+  <td>1633</td>
+  <td>3</td>
+  <td>10,40</td>
+</tr>
+<tr>
+  <td>93.</td>
+  <td>široké rezance 500g</td>
+  <td>„</td>
+  <td>„</td>
+  <td>„</td>
+  <td>18,10</td>
+</tr>
+<tr>
+  <td>94.</td>
+  <td>cestoviny kolienka 400g</td>
+  <td>„</td>
+  <td>„</td>
+  <td>„</td>
+  <td>10,10</td>
+</tr>
+<tr>
+  <td>95.</td>
+  <td>cestoviny špagety 400g</td>
+  <td>„</td>
+  <td>„</td>
+  <td>„</td>
+  <td>10,40</td>
+</tr>
+<tr>
+  <td>96.</td>
+  <td>Slovenská ryža</td>
+  <td>„</td>
+  <td>„</td>
+  <td>„</td>
+  <td>16,80</td>
+</tr>
+<tr>
+  <td>97.</td>
+  <td>Tarhoňa</td>
+  <td>„</td>
+  <td>„</td>
+  <td>„</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>98.</td>
+  <td>Cukor práškový</td>
+  <td>394</td>
+  <td>1650 S</td>
+  <td>-</td>
+  <td>38,60</td>
+</tr>
+<tr>
+  <td>99.</td>
+  <td>Cukor kryštál</td>
+  <td>„</td>
+  <td>„ S</td>
+  <td>-</td>
+  <td>32,60</td>
+</tr>
+<tr>
+  <td>100.</td>
+  <td>Ryža guľatá</td>
+  <td>340</td>
+  <td>1424 M, V, S</td>
+  <td>0,5</td>
+  <td>18,90</td>
+</tr>
+<tr>
+  <td>101.</td>
+  <td>Ryža naturál</td>
+  <td>347</td>
+  <td>1453M, V</td>
+  <td>2,2</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>102.</td>
+  <td>cibuľa (jarná)</td>
+  <td>40</td>
+  <td>167</td>
+  <td>0</td>
+  <td>18,90</td>
+</tr>
+<tr>
+  <td>103.</td>
+  <td>mrkva (500g)</td>
+  <td>112</td>
+  <td>469 M, V</td>
+  <td>0,8</td>
+  <td>17,-</td>
+</tr>
+<tr>
+  <td>104.</td>
+  <td>petržlen (koreň)</td>
+  <td>40</td>
+  <td>167 V</td>
+  <td>0,5</td>
+  <td>24,-</td>
+</tr>
+<tr>
+  <td>105.</td>
+  <td>zeler</td>
+  <td>38</td>
+  <td>159 MV</td>
+  <td>0,3</td>
+  <td>24,-</td>
+</tr>
+<tr>
+  <td>106.</td>
+  <td>karfiól</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>40,-</td>
+</tr>
+<tr>
+  <td>107.</td>
+  <td>zemiaky</td>
+  <td>70</td>
+  <td>293 V</td>
+  <td>0,1</td>
+  <td>7,-</td>
+</tr>
+<tr>
+  <td>108.</td>
+  <td>zemiaky nové kg</td>
+  <td>560</td>
+  <td>2345 V</td>
+  <td>0,8</td>
+  <td>19,90</td>
+</tr>
+<tr>
+  <td>109.</td>
+  <td>steriliz. hrášok 400g</td>
+  <td>73</td>
+  <td>306</td>
+  <td>0,7</td>
+  <td>13,40</td>
+</tr>
+<tr>
+  <td>110.</td>
+  <td>Mrkva 530g</td>
+  <td>-</td>
+  <td>M, V</td>
+  <td>-</td>
+  <td>35,90</td>
+</tr>
+<tr>
+  <td>111.</td>
+  <td>Kôpor 120g</td>
+  <td>-</td>
+  <td>M, V</td>
+  <td>-</td>
+  <td>11,70</td>
+</tr>
+<tr>
+  <td>112.</td>
+  <td>Šampiňóny steriliz.400g</td>
+  <td>16</td>
+  <td>67 B</td>
+  <td>0,5</td>
+  <td>20,40</td>
+</tr>
+<tr>
+  <td>113.</td>
+  <td>Hríby sušené</td>
+  <td>27</td>
+  <td>113 MV</td>
+  <td>O,5</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>114.</td>
+  <td>Ster.fazuľka struky 660g</td>
+  <td>23</td>
+  <td>96</td>
+  <td>0,2</td>
+  <td>34,60</td>
+</tr>
+<tr>
+  <td>115.</td>
+  <td>Chren mletý 200g</td>
+  <td>63</td>
+  <td>263 V</td>
+  <td>O,3</td>
+  <td>15,-</td>
+</tr>
+<tr>
+  <td>116.</td>
+  <td>Cesnaková pasta 850g</td>
+  <td>36</td>
+  <td>151</td>
+  <td>0,3</td>
+  <td>41,80</td>
+</tr>
+<tr>
+  <td>117.</td>
+  <td>Čalamáda 640g</td>
+  <td>28</td>
+  <td>117</td>
+  <td>0,5</td>
+  <td>29,80</td>
+</tr>
+<tr>
+  <td>118.</td>
+  <td>Cvikla 390g</td>
+  <td>36</td>
+  <td>151 S</td>
+  <td>-</td>
+  <td>27,30</td>
+</tr>
+<tr>
+  <td>119.</td>
+  <td>Šalát moravský 670g</td>
+  <td>28</td>
+  <td>117</td>
+  <td>0,5</td>
+  <td>26,20</td>
+</tr>
+<tr>
+  <td>120.</td>
+  <td>Kapusta (červená)</td>
+  <td>25</td>
+  <td>105 V</td>
+  <td>0,2</td>
+  <td>30,-</td>
+</tr>
+<tr>
+  <td>121.</td>
+  <td>Kapusta bielá 3500g(kyslá)</td>
+  <td>17</td>
+  <td>71, V, Vl</td>
+  <td>0,3</td>
+  <td>76,50</td>
+</tr>
+<tr>
+  <td>122.</td>
+  <td>Kapusta bielá 640g</td>
+  <td>„</td>
+  <td>„</td>
+  <td>„</td>
+  <td>22,90</td>
+</tr>
+<tr>
+  <td>123.</td>
+  <td>Cesnak biely</td>
+  <td>36</td>
+  <td>151, V</td>
+  <td>0,3</td>
+  <td>39,90</td>
+</tr>
+<tr>
+  <td>124.</td>
+  <td>Paprika</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>79,90</td>
+</tr>
+<tr>
+  <td>125.</td>
+  <td>Pór</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>29,90</td>
+</tr>
+<tr>
+  <td>126.</td>
+  <td>Hruška Hardy</td>
+  <td>55</td>
+  <td>230 V, Vl</td>
+  <td>0,3</td>
+  <td>26,90</td>
+</tr>
+<tr>
+  <td>127.</td>
+  <td>Závin bratisl. makový</td>
+  <td>-</td>
+  <td>S</td>
+  <td>-</td>
+  <td>22,90</td>
+</tr>
+<tr>
+  <td>128.</td>
+  <td>Chlieb rascový 1000g</td>
+  <td>226</td>
+  <td>946 S, Vl</td>
+  <td>1,1</td>
+  <td>23,90</td>
+</tr>
+<tr>
+  <td>128.</td>
+  <td>Rožok grahamový</td>
+  <td>-</td>
+  <td>Vl</td>
+  <td>-</td>
+  <td>2,50</td>
+</tr>
+<tr>
+  <td>129.</td>
+  <td>Káva RIO štandard zmes</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>99,90</td>
+</tr>
+<tr>
+  <td>130.</td>
+  <td>Deli tyčinka 40g</td>
+  <td>-</td>
+  <td>S</td>
+  <td>-</td>
+  <td>6,50</td>
+</tr>
+<tr>
+  <td>131.</td>
+  <td>Fidorka biela</td>
+  <td>-</td>
+  <td>S</td>
+  <td>-</td>
+  <td>7,90</td>
+</tr>
+<tr>
+  <td>132.</td>
+  <td>Arašidové chrumky 60g</td>
+  <td>-</td>
+  <td>S, T</td>
+  <td>-</td>
+  <td>8,50</td>
+</tr>
+<tr>
+  <td>133.</td>
+  <td>Sezamové tyčinky 170g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>19,90</td>
+</tr>
+<tr>
+  <td>134.</td>
+  <td>Kečup 480g</td>
+  <td>105</td>
+  <td>440 S</td>
+  <td>1</td>
+  <td>31,-</td>
+</tr>
+<tr>
+  <td>135.</td>
+  <td>Lečo 700g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>30,10</td>
+</tr>
+<tr>
+  <td>136.</td>
+  <td>Lečo 3500g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>134,40</td>
+</tr>
+<tr>
+  <td>137.</td>
+  <td>Par.pretlak 400g</td>
+  <td>24</td>
+  <td>100</td>
+  <td>0,3</td>
+  <td>22,60</td>
+</tr>
+<tr>
+  <td>138.</td>
+  <td>Par.pretl.700g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>46,10</td>
+</tr>
+<tr>
+  <td>139.</td>
+  <td>Par.pretl.800g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>47,60</td>
+</tr>
+<tr>
+  <td>140.</td>
+  <td>Ster.uhorky 660g</td>
+  <td>47</td>
+  <td>197</td>
+  <td>0,7</td>
+  <td>33,-</td>
+</tr>
+<tr>
+  <td>141.</td>
+  <td>St.uhorky 3500</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>103,10</td>
+</tr>
+<tr>
+  <td>142.</td>
+  <td>Kompót jablká 3000g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>127,40</td>
+</tr>
+<tr>
+  <td>143.</td>
+  <td>Kompót jablká 620g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>32,10</td>
+</tr>
+<tr>
+  <td>144.</td>
+  <td>Kompót slivky 700g</td>
+  <td>75</td>
+  <td>314 S</td>
+  <td>0,1</td>
+  <td>32,90</td>
+</tr>
+<tr>
+  <td>145.</td>
+  <td>Kom.broskyne 2650g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>149,40</td>
+</tr>
+<tr>
+  <td>146.</td>
+  <td>Kom.ringloty 700g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>29,30</td>
+</tr>
+<tr>
+  <td>147.</td>
+  <td>Komp.broskyne 820g</td>
+  <td>69</td>
+  <td>289 S</td>
+  <td>0,1</td>
+  <td>45,20</td>
+</tr>
+<tr>
+  <td>148.</td>
+  <td>Komp.marhule 3500g</td>
+  <td>93</td>
+  <td>389 S</td>
+  <td>0,2</td>
+  <td>177,50</td>
+</tr>
+<tr>
+  <td>149.</td>
+  <td>Marmeláda marhuľová</td>
+  <td>1 ČL 26</td>
+  <td>109 S</td>
+  <td>-</td>
+  <td>42,80</td>
+</tr>
+<tr>
+  <td>150.</td>
+  <td>Džem jahody 350g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>39,50</td>
+</tr>
+<tr>
+  <td>151.</td>
+  <td>Džem marhule 350g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>33,60</td>
+</tr>
+<tr>
+  <td>152.</td>
+  <td>Džem jahody 20g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>3,20</td>
+</tr>
+<tr>
+  <td>153.</td>
+  <td>Džem marhule 20g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>3,20</td>
+</tr>
+<tr>
+  <td>154.</td>
+  <td>Výživa koj.</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,60</td>
+</tr>
+<tr>
+  <td>155.</td>
+  <td>Výživa koj.</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>14,-</td>
+</tr>
+<tr>
+  <td>156.</td>
+  <td>Nápoj ovocný 200ml</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>7,10</td>
+</tr>
+<tr>
+  <td>157.</td>
+  <td>Sušené droždie</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>5,80</td>
+</tr>
+<tr>
+  <td>158.</td>
+  <td>Podravka vegeta 125g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>26,90</td>
+</tr>
+<tr>
+  <td>159.</td>
+  <td>Vitana vegeta 170g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>24,30</td>
+</tr>
+<tr>
+  <td>160.</td>
+  <td>Vitana 1000g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>108,90</td>
+</tr>
+<tr>
+  <td>161.</td>
+  <td>Celé koren.20g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>6,10</td>
+</tr>
+<tr>
+  <td>162.</td>
+  <td>Nové kor.15g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>7,-</td>
+</tr>
+<tr>
+  <td>163.</td>
+  <td>Nové kor.20g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>7,70</td>
+</tr>
+<tr>
+  <td>164.</td>
+  <td>Mleté kor. 20g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>6,60</td>
+</tr>
+<tr>
+  <td>165.</td>
+  <td>Biele kor. ml.20g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,-</td>
+</tr>
+<tr>
+  <td>166.</td>
+  <td>Gýros</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>8,-</td>
+</tr>
+<tr>
+  <td>167.</td>
+  <td>Bobkový list 10</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>4,-</td>
+</tr>
+<tr>
+  <td>168.</td>
+  <td>Majoránka 5</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>2,10</td>
+</tr>
+<tr>
+  <td>169.</td>
+  <td>Aroma mix 100g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>17,-</td>
+</tr>
+<tr>
+  <td>170.</td>
+  <td>Paprika sladká 30g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>6,20</td>
+</tr>
+<tr>
+  <td>171.</td>
+  <td>Paprika štipl.30</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>6,20</td>
+</tr>
+<tr>
+  <td>172.</td>
+  <td>Rasca 20g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>3,90</td>
+</tr>
+<tr>
+  <td>173.</td>
+  <td>Rasca 30g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>4,80</td>
+</tr>
+<tr>
+  <td>174.</td>
+  <td>Rasca ml.</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>4,80</td>
+</tr>
+<tr>
+  <td>175.</td>
+  <td>Mäsox</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,70</td>
+</tr>
+<tr>
+  <td>176.</td>
+  <td>Slapačí bujón</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,70</td>
+</tr>
+<tr>
+  <td>177.</td>
+  <td>Zelenin.bujón</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,70</td>
+</tr>
+<tr>
+  <td>178.</td>
+  <td>Zmes guláš.korenie</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>6,90</td>
+</tr>
+<tr>
+  <td>179.</td>
+  <td>Kor.pečené kurča 30g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,70</td>
+</tr>
+<tr>
+  <td>180.</td>
+  <td>Sirup Malina</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,70</td>
+</tr>
+<tr>
+  <td>181.</td>
+  <td>Sirup Cola</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>13,90</td>
+</tr>
+<tr>
+  <td>182.</td>
+  <td>Sirup orange</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,70</td>
+</tr>
+<tr>
+  <td>183.</td>
+  <td>Sirup malina</td>
+  <td>3,8</td>
+  <td>16,1 S</td>
+  <td>-</td>
+  <td>13,70</td>
+</tr>
+<tr>
+  <td>184.</td>
+  <td>Puding</td>
+  <td>108</td>
+  <td>452 S</td>
+  <td>1</td>
+  <td>5,30</td>
+</tr>
+<tr>
+  <td>185.</td>
+  <td>Ocot 1 l</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>10,90</td>
+</tr>
+<tr>
+  <td>186.</td>
+  <td>Ocot 1 l</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>15,10</td>
+</tr>
+<tr>
+  <td>187.</td>
+  <td>Horčica 350g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>12,50</td>
+</tr>
+<tr>
+  <td>188.</td>
+  <td>Med 20g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>3,80</td>
+</tr>
+<tr>
+  <td>189.</td>
+  <td>Čaj pigi</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,20</td>
+</tr>
+<tr>
+  <td>190.</td>
+  <td>Čaj čierny</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>17,-</td>
+</tr>
+<tr>
+  <td>191.</td>
+  <td>Čaj zelený</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>22,-</td>
+</tr>
+<tr>
+  <td>192.</td>
+  <td>Čaj ovocný</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>17.-</td>
+</tr>
+<tr>
+  <td>193.</td>
+  <td>Gramko 400g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>53,20</td>
+</tr>
+<tr>
+  <td>194.</td>
+  <td>Kakao 100g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>21,70</td>
+</tr>
+<tr>
+  <td>195.</td>
+  <td>Kakao 100g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>23,20</td>
+</tr>
+<tr>
+  <td>196.</td>
+  <td>Káva mletá 500g</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>19.80</td>
+</tr>
+<tr>
+  <td>197.</td>
+  <td>Soľ jedlá</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>7,-</td>
+</tr>
+<tr>
+  <td>198.</td>
+  <td>Citrovit</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>10,20</td>
+</tr>
+<tr>
+  <td>199.</td>
+  <td>Srvítky papierové</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>11,15</td>
+</tr>
+<tr>
+  <td>200.</td>
+  <td>Saponát na podl 5l</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>70,70</td>
+</tr>
+<tr>
+  <td>201.</td>
+  <td>Pur na riad 1l</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>57,90</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</main>
+<nav>
+    <ul>
+    <li><a href="polievky">Polievky</a></li>
+    <li><a href="bylinky">Použitie bylín</a></li>
+    <li><b>Stravovanie</b>
+        <ul>
+        <li><a href="slovenske">Typické slovenské jedlá</a></li>
+        <li><a href="smasombezmasa">Rôzne mäsité a bezmäsité jedlá</a></li>
+        <li><a href="miesane">Miešané pokrmy</a></li>
+        <li><a href="omacky-salaty">Omáčky, prílohy a šaláty</a></li>
+        <li><a href="predjedla">Predjedlá teplé a studené, nátierky</a></li>
+        <li><a href="mucniky">Múčniky a pečenie</a></li>
+        <li><a href="kolace">Koláče a iné</a></li>
+        <li><a href="napoje">Kokteily, drinky</a></li>
+        <li><a href="recepty">Recepty pokračovanie</a></li>
+        <li><a href="recepty-zo-zivota">Výber receptov zo života</a></li>
+        <li><a href="zkazdehorozka">Z každého rožka troška</a></li>
+        <li><a href="gurman">Gurmánske tajomstvá</a></li>
+        <li><a href="tabulka">Normovacia tabuľka</a></li>
+        <li><a href="tech-stolovanie">Technológia a stolovanie</a></li>
+        <li><a href="jedalne-listky">Výberové jedálne lístky</a></li>
+        </ul></li>
+    <li><b>Mäso</b>
+        <ul>
+        <li><a href="bravcove">Bravčové</a></li>
+        <li><a href="bravcove-gulase">Bravčové, miešané guláše</a></li>
+        <li><a href="gulase">Pravé guláše</a></li>
+        <li><a href="bravcove-minutky">Minútky z bravčoviny, vnútornosti</a></li>
+        <li><a href="minutky">Minútky</a></li>
+        <li><a href="jahnacie-baranie">Jahňacie a baranina</a></li>
+        <li><a href="mlete-maso">Mleté mäso</a></li>
+        <li><a href="hovadzie">Hovädzie</a></li>
+        <li><a href="hovadzie-rostenky">Hovädzie roštenky a plátky</a></li>
+        <li><a href="telacie">Teľacie mäso</a></li>
+        <li><a href="telacie-dusene">Teľacie dusené</a></li>
+        <li><a href="telacie-pecene">Teľacie pečené</a></li>
+        <li><a href="hydina">Hydinové jedlá a pochúťky</a></li>
+        <li><a href="zverina">Zverina/Divina</a></li>
+        <li><a href="ryby">Ryby</a></li>
+        </ul></li>
+    </ul>
+</nav>
+</div>
+<footer>
+  <span>© 2002-2026 <a href="/">somstrom</a> · <a href="/nom/">Normy jedál</a></span>
+  <span>Všetky práva vyhradené · <a href="https://unilexicon.com/fm">F. Malina</a></span>
+</footer>
+</body>
+</html>

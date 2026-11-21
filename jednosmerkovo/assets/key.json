@@ -1,0 +1,1363 @@
+{
+  "NdnDruhKomunikaceKm": {
+    "-1": "nezadané",
+    "0": "diaľnica D",
+    "20": "diaľnica R",
+    "10": "diaľničný privádzač PD",
+    "21": "diaľničný privádzač PR",
+    "1": "cesta I. triedy",
+    "2": "cesta II. triedy",
+    "3": "cesta III. triedy",
+    "7": "komunikácia účelová - poľné a lesné cesty",
+    "8": "komunikácia účelová - ostatné (parkoviská, príjazdy k továrňam, pieskovňam, skladom a pod.)",
+    "6": "komunikácia v km systéme nesledovaná"
+  },
+  "NdnKatVozidla": {
+    "-1": {
+      "value": "nezadané",
+      "children": {
+        "-1": "nezadané"
+      }
+    },
+    "29": {
+      "value": "L - dvojkolesové motorové vozidlá, trojkolesové motorové vozidlá a štvorkolky",
+      "children": {
+        "01": "L1e, bicykel s pohonným systémom, dvojkolesový moped",
+        "02": "L2e, trojkolesový moped určený na prepravu osôb alebo na pracovné účely",
+        "03": "L3e, motocykel s nízkym, stredným alebo vysokým výkonom, enduro, trialový motocykel",
+        "04": "L4e, dvojkolesový motocykel s postranným vozíkom",
+        "05": "L5e, motorová trojkolka určená na prepravu osôb alebo na prepravu tovaru",
+        "06": "L6e, ľahká cestná štvorkolka, ľahká štvorkolka na pracovné účely alebo na prepravu osôb",
+        "07": "L7e, ťažká cestná alebo terénna štvorkolka konštruovaná na prepravu tovaru alebo hlavne na prepravu osôb"
+      }
+    },
+    "30": {
+      "value": "M - motorové vozidlá s najmenej štyrmi kolesami navrhnuté a konštruované najmä na prepravu osôb a ich batožiny",
+      "children": {
+        "01": "M1, s najviac s ôsmimi miestami na sedenie okrem miesta na sedenie vodiča",
+        "02": "M1G, terénne, s najviac s ôsmimi miestami na sedenie okrem miesta na sedenie vodiča",
+        "03": "M1S, na špeciálne účely, s najviac s ôsmimi miestami na sedenie okrem miesta na sedenie vodiča",
+        "04": "M1SG, na špeciálne účely, terénne, s najviac s ôsmimi miestami na sedenie okrem miesta na sedenie vodiča",
+        "05": "M2, s viac ako ôsmimi miestami na sedenie okrem miesta na sedenie vodiča a s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 5 000 kg, okrem miest na sedenie môžu mať priestor pre stojacich cestujúcich",
+        "06": "M2G, terénne, s viac ako ôsmimi miestami na sedenie okrem miesta na sedenie vodiča a s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 5 000 kg, okrem miest na sedenie môžu mať priestor pre stojacich cestujúcich",
+        "07": "M2S, na špeciálne účely, s viac ako ôsmimi miestami na sedenie okrem miesta na sedenie vodiča a s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 5 000 kg, okrem miest na sedenie môžu mať priestor pre stojacich cestujúcich",
+        "08": "M2SG, na špeciálne účely, terénne, s viac ako ôsmimi miestami na sedenie okrem miesta na sedenie vodiča a s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 5 000 kg, okrem miest na sedenie môžu mať priestor pre stojacich cestujúcich",
+        "09": "M3, s viac ako ôsmimi miestami na sedenie okrem miesta na sedenie vodiča a s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 5 000 kg. Vozidlá kategórie M3 môžu mať priestor pre stojacich cestujúcich",
+        "10": "M3G, terénne, s viac ako ôsmimi miestami na sedenie okrem miesta na sedenie vodiča a s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 5 000 kg. Vozidlá kategórie M3 môžu mať priestor pre stojacich cestujúcich",
+        "11": "M3S, na špeciálne účely, s viac ako ôsmimi miestami na sedenie okrem miesta na sedenie vodiča a s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 5 000 kg. Vozidlá kategórie M3 môžu mať priestor pre stojacich cestujúcich",
+        "12": "M3SG, na špeciálne účely, terénne, s viac ako ôsmimi miestami na sedenie okrem miesta na sedenie vodiča a s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 5 000 kg. Vozidlá kategórie M3 môžu mať priestor pre stojacich cestujúcich"
+      }
+    },
+    "31": {
+      "value": "N - motorové vozidlá s najmenej štyrmi kolesami navrhnuté a konštruované najmä na prepravu nákladu",
+      "children": {
+        "01": "N1, s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 3 500 kg",
+        "02": "N1G, terénne, s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 3 500 kg",
+        "03": "N1S, na špeciálne účely, s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 3 500 kg",
+        "04": "N1SG, na špeciálne účely, terénne, s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 3 500 kg",
+        "05": "N2, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg, ale neprevyšujúcou 12 000 kg",
+        "06": "N2G, terénne, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg, ale neprevyšujúcou 12 000 kg",
+        "07": "N2S, na špeciálne účely, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg, ale neprevyšujúcou 12 000 kg",
+        "08": "N2SG, na špeciálne účely, terénne, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg, ale neprevyšujúcou 12 000 kg",
+        "09": "N3, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 12 000 kg",
+        "10": "N3G, terénne, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 12 000 kg",
+        "11": "N3S, na špeciálne účely, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 12 000 kg",
+        "12": "N3SG, na špeciálne účely, terénne, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 12 000 kg"
+      }
+    },
+    "32": {
+      "value": "O - prípojné vozidlá projektované a konštruované na prepravu nákladu alebo osôb ako aj na ubytovanie osôb",
+      "children": {
+        "01": "O1, s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 750 kg",
+        "02": "O1S, na špeciálne účely, s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 750 kg",
+        "03": "O2, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 750 kg, ale neprevyšujúcou 3 500 kg",
+        "04": "O2S, na špeciálne účely, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 750 kg, ale neprevyšujúcou 3 500 kg",
+        "05": "O3, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg, ale neprevyšujúcou 10 000 kg",
+        "06": "O3S, na špeciálne účely, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg, ale neprevyšujúcou 10 000 kg",
+        "07": "O4, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 10 000 kg",
+        "08": "O4S, na špeciálne účely, s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 10 000 kg"
+      }
+    },
+    "33": {
+      "value": "T - kolesové traktory",
+      "children": {
+        "01": "T1, s nápravou, ktorá je najbližšie k vodičovi a má minimálny rozchod kolies aspoň 1 150 mm, s pohotovostnou hmotnosťou väčšou než 600 kg a so svetlou výškou maximálne 1 000 mm",
+        "02": "T2, s minimálnym rozchodom kolies menším než 1 150 mm, s pohotovostnou hmotnosťou väčšou než 600 kg a so svetlou výškou maximálne 600 mm, ak výška ťažiska traktora (meraná od zeme) vydelená priemerným minimálnym rozchodom kolies každej nápravy presiahne 0,90, maximálna konštrukčná rýchlosť sa obmedzí na 30 km⋅h⁻¹",
+        "03": "T3, s pohotovostnou hmotnosťou maximálne 600 kg",
+        "04": "T4, na osobitné účely"
+      }
+    },
+    "34": {
+      "value": "C - pásové traktory",
+      "children": {
+        "01": "C1, s minimálnym rozchodom aspoň 1 150 mm, s pohotovostnou hmotnosťou väčšou než 600 kg a so svetlou výškou maximálne 1 000 mm",
+        "02": "C2, s minimálnym rozchodom menším než 1 150 mm, s pohotovostnou hmotnosťou väčšou než 600 kg a so svetlou výškou maximálne 600 mm",
+        "03": "C3, pásové traktory s pohotovostnou hmotnosťou maximálne 600 kg",
+        "04": "C4, pásové traktory na osobitné účely"
+      }
+    },
+    "35": {
+      "value": "R - prípojné vozidlá za traktor",
+      "children": {
+        "01": "R1, ktorých súčet technicky prípustnej hmotnosti na nápravu nepresahuje 1 500 kg",
+        "02": "R2, ktorých súčet technicky prípustnej hmotnosti na nápravu presahuje 1 500 kg, ale nepresahuje 3 500 kg",
+        "03": "R3, ktorých súčet technicky prípustnej hmotnosti na nápravu presahuje 3 500 kg, ale nepresahuje 21 000 kg",
+        "04": "R4, ktorých súčet technicky prípustnej hmotnosti na nápravu presahuje 21 000 kg"
+      }
+    },
+    "36": {
+      "value": "S - ťahané vymeniteľné zariadenia",
+      "children": {
+        "01": "S1, ktorých súčet technicky prípustnej hmotnosti na nápravu nepresahuje 3 500 kg",
+        "02": "S2, ktorých súčet technicky prípustnej hmotnosti na nápravu presahuje 3 500 kg"
+      }
+    },
+    "37": {
+      "value": "P - pracovné stroje",
+      "children": {
+        "01": "PS, pracovný stroj samohybný, zvláštne vozidlo",
+        "02": "PN, nesený, vymeniteľný stroj (nadstavba)"
+      }
+    },
+    "38": {
+      "value": "LS - snežné skútre",
+      "children": {
+        "01": "LS - snežný skúter"
+      }
+    },
+    "39": {
+      "value": "V - ostatné vozidlá",
+      "children": {
+        "01": "záprahové vozidlo",
+        "02": "bicykel",
+        "03": "bicykel s pomocným motorčekom",
+        "04": "kolobežka s pomocným motorčekom",
+        "05": "motorový ručný vozík",
+        "06": "jednonápravový traktor s prívesom",
+        "07": "samovyvažovacie vozidlo",
+        "08": "neuvedené iné cestné vozidlo"
+      }
+    },
+    "11": {
+      "value": "nezistený druh cestného vozidla",
+      "children": {
+        "01": "nezistený druh cestného vozidla"
+      }
+    },
+    "12": {
+      "value": "ELEK - električkové dráhové vozidlo",
+      "children": {
+        "01": "H - osobné hnacie",
+        "02": "T - osobné ťahané",
+        "03": "S - špeciálne(na údržbu)"
+      }
+    },
+    "13": {
+      "value": "TR - trolejbusové dráhové vozidlo",
+      "children": {
+        "01": "O - osobné",
+        "02": "N - nákladné",
+        "03": "S - špeciálne(na údržbu)"
+      }
+    },
+    "14": {
+      "value": "ZE - železničné dráhové vozidlo",
+      "children": {
+        "01": "E - elektrický rušeň",
+        "02": "M - motorový rušeň",
+        "03": "MVJ - motorový vozeň alebo jednotka",
+        "04": "EVJ - elektrický vozeň alebo jednotka",
+        "05": "O - osobný vozeň",
+        "06": "N - nákladný vozeň",
+        "07": "T - traťový stroj určený na rekonštrukciu, kontrolu stavu, opravy a údržbu dráh"
+      }
+    },
+    "15": {
+      "value": "LD - dráhové vozidlo lanovej dráhy (aj pozemnej)",
+      "children": {
+        "01": "O - osobné",
+        "02": "N - nákladné",
+        "03": "S - špeciálne (na údržbu)"
+      }
+    },
+    "16": {
+      "value": "VDŠ - dráhové vozidlo špeciálnej dráhy",
+      "children": {
+        "01": "O - osobné",
+        "02": "N - nákladné",
+        "03": "S - špeciálne(na údržbu)",
+        "04": "M - rušeň"
+      }
+    }
+  },
+  "NdnPriciny": {
+    "01": {
+      "value": "vplyv prírodnej sily",
+      "children": {
+        "01": "hustá hmla",
+        "02": "začiatok dažďa",
+        "03": "náhle krupobitie",
+        "04": "náhle sneženie",
+        "05": "nečakaná tvorba námrazy, poľadovice",
+        "06": "náraz vetra",
+        "07": "nečakané oslnenie slnkom, bleskom"
+      }
+    },
+    "02": {
+      "value": "vplyv prevádzky",
+      "children": {
+        "01": "rozbitie skla odrazeným kameňom",
+        "02": "znemožnenie výhľadu"
+      }
+    },
+    "03": {
+      "value": "pôsobenie zvierať",
+      "children": {
+        "01": "vbehnutie (vlietnutie) domáceho zvieraťa na vozovku (pokiaľ nie je preukázaná zodpovednosť za zviera)",
+        "02": "vbehnutie (vlietnutie) zveri na vozovku"
+      }
+    },
+    "04": {
+      "value": "technická porucha",
+      "children": {
+        "01": "porucha riadenia",
+        "02": "porucha prevádzkovej brzdy",
+        "03": "porucha parkovacej brzdy",
+        "04": "poškodenie pneumatiky s náhlym únikom vzduchu",
+        "05": "porucha palivového systému",
+        "06": "porucha diaľkových svetiel",
+        "07": "porucha tlmených svetiel",
+        "08": "porucha parkovacích svetiel",
+        "09": "porucha koncových svetiel",
+        "10": "porucha brzdových svetiel",
+        "11": "porucha smerových svetiel",
+        "12": "poškodenie predného skla",
+        "13": "porucha ostrekovača alebo stierača",
+        "14": "odpadnutie kolesa",
+        "15": "zablokovanie kolesa mechanickou poruchou",
+        "16": "zlomenie závesu kolesa alebo nápravy",
+        "17": "porucha pripojenia prívesu, návesu",
+        "18": "náhla porucha komunikácie (prepadnutie mosta, kanalizácie, roztopenie povrchu...)",
+        "19": "náhla porucha zariadenia komunikácie (výpadok signalizácie...)"
+      }
+    },
+    "05": {
+      "value": "indispozícia osoby",
+      "children": {
+        "01": "zdravotná indispozícia (choroba, náhla nevoľnosť a pod.)",
+        "02": "úľak"
+      }
+    },
+    "101": {
+      "value": "porušenie povinnosti účastníka cestnej premávky",
+      "children": {
+        "09": "nedisciplinované a neohľaduplne správanie sa",
+        "10": "neprispôsobenie svojho správania najmä stavebnému a dopravno-technickému stavu cesty",
+        "11": "neprispôsobenie svojho správania situácii v cestnej premávke",
+        "12": "neprispôsobenie sa poveternostným podmienkam v cestnej premávke",
+        "13": "neprispôsobenie správania v cestnej premávke svojim schopnostiam",
+        "14": "nedbanie na dopravné značky a dopravné zariadenia",
+        "15": "neuposlúchnutie pokynu, výzvy, príkazu alebo požiadavku policajta súvisiace s výkonom jeho oprávnení v cestnej premávke",
+        "16": "nerešpektovanie pokynu iných osôb, ktoré na to oprávňuje zákon 8/2009 Z.z.",
+        "17": "nedbanie na dopravné značky a dopravné zariadenia, z toho jazda na signál svetelného signalizačného zariadenia s červeným svetlom Stoj!",
+        "18": "nedbanie na dopravné značky a dopravné zariadenia, z toho chôdza na signál svetelného signalizačného zariadenia s červeným svetlom Stoj!"
+      }
+    },
+    "102": {
+      "value": "porušenie povinnosti vodiča",
+      "children": {
+        "23": "vozidlo nemožno prevádzkovať v cestnej premávke",
+        "24": "nevenovanie sa plne vedeniu vozidla a nesledovanie situácie v cestnej premávke",
+        "25": "nebratie ohľadu na vozidlá označené osobitným označením a na označené výcvikové vozidlo autoškoly",
+        "26": "nedbanie zvýšenej opatrnosti voči cyklistom a chodcom, najmä deťom, zdravotne postihnutým osobám, osobitne voči osobám, ktoré používajú bielu palicu, a starým osobám",
+        "27": "nedanie prednosti chodcovi, ktorý vstúpil na vozovku a prechádza cez priechod pre chodcov",
+        "28": "nepribratie potrebného počtu spôsobilých osôb, a ich náležite nepoučenie",
+        "29": "ponechanie predmetov odvádzajúcich pozornosť od bezpečného vedenia vozidla vo výhľadovom poli vodiča",
+        "34": "vedenie vozidla, ak je schopnosť vodiča viesť vozidlo znížená užitím liekov",
+        "35": "vedenie vozidla, ak je schopnosť vodiča viesť vozidlo znížená najmä úrazom, chorobou, nevoľnosťou alebo únavou",
+        "36": "nerešpektovanie chodcov prechádzajúcich cez cestu, na ktorú vodič odbočuje, pri odbočovaní na miesto mimo cesty, pri vchádzaní na cestu a pri otáčaní alebo pri cúvaní",
+        "37": "nerešpektovanie cyklistov prechádzajúcich cez priechod pre cyklistov",
+        "38": "prekážanie v jazde rýchlejšie idúcim vozidlám a obmedzovanie plynulosti cestnej premávky",
+        "39": "náhle zníženie rýchlosti jazdy alebo náhle zastavenie, ak to nevyžaduje bezpečnosť cestnej premávky",
+        "40": "používanie telefónneho prístroja počas vedenia vozidla alebo vykonávať inej obdobnej činnosti, ktorá nesúvisí s vedením vozidla",
+        "41": "zastavenie vozidla na priechode pre chodcov alebo na priechode pre cyklistov",
+        "42": "nezníženie rýchlosti jazdy alebo nezastavenie vozidlo idúceho rovnakým smerom ako zastaví vozidlo ktoré zastavilo pred priechodom pre chodcov alebo pred priechodom pre cyklistov, aby umožnil prejsť cez cestu chodcom alebo cyklistom",
+        "43": "neodstránenie chyby vozidla alebo nákladu, ktorý nespĺňa ustanovené podmienky",
+        "44": "požitie alkoholického nápoja počas vedenia vozidla",
+        "45": "užitie inej návykovej látky počas vedenia vozidla",
+        "47": "vedenie vozidla po užití inej návykovej látky v takom čase, keď sa iná návyková látka nachádza v organizme vodiča",
+        "48": "vedenie vozidla po požití alkoholu v takom čase, keď sa alkohol nachádza v organizme vodiča"
+      }
+    },
+    "103": {
+      "value": "porušenie povinnosti niektorých vodičov a spolujazdcov",
+      "children": {
+        "09": "nechránenie si zraku vodičom motorového vozidla kategórie L a P5 okuliarmi alebo ochranným štítom",
+        "10": "nedržanie riadidla motorového vozidla kategórie L a P5 oboma rukami vodičom počas jazdy okrem prípadu, keď dáva predpísané znamenie",
+        "11": "jedenie, pitie, fajčenie vodiča motorového vozidla kategórie Ps s najväčšou konštrukčnou rýchlosťou prevyšujúcou 45 km⋅h⁻¹ a vodiča motorového vozidla kategórie L alebo jeho spolujazdca počas jazdy",
+        "12": "zdržiavanie sa na vozovke bez bezpečnostného odevu pri núdzovom státí",
+        "13": "nezaradenie rýchlostného stupňa vodičom motorového vozidla s celkovou hmotnosťou prevyšujúcou 3 500 kg pri jazde zo svahu",
+        "14": "nezaradenie rýchlostného stupňa vodičom iného motorového vozidla, ak to vyžaduje bezpečnosť jazdy",
+        "15": "neumožnenie prejazdu rýchlejších vozidiel idúcich pri jazde do svahu za motorovým vozidlom s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg"
+      }
+    },
+    "104": {
+      "value": "porušenie pravidiel používania bezpečnostných pásov a iných zadržiavacích zariadení",
+      "children": {
+        "05": "neoprávnené nepoužitie bezpečnostného pásu alebo iného zadržiavacieho zariadenia"
+      }
+    },
+    "105": {
+      "value": "nesprávny spôsob jazdy",
+      "children": {
+        "03": "jazda po nesprávnej strane, okraju vozovky",
+        "04": "jazda po krajnici, okrem obchádzania a vyhýbania"
+      }
+    },
+    "106": {
+      "value": "nesprávna jazda v jazdných pruhoch",
+      "children": {
+        "11": "jazda v nesprávnom pruhu mimo obce",
+        "12": "jazda mimo obce v nepovolenom pruhu na ceste s troma alebo s viacerými jazdnými pruhmi vyznačenými na vozovke v jednom smere jazdy vodičom nákladného automobilu s celkovou hmotnosťou prevyšujúcou 3 500 kg jazdnej súpravy, ktorej celková dĺžka presahuje 7 m, vodičom zvláštneho motorového vozidla a vodičom motocykla s najväčšou konštrukčnou rýchlosťou do 45 km⋅h⁻¹",
+        "13": "bránenie v jazde rýchlejšiemu vozidlu v ľavom jazdnom pruhu v obci",
+        "16": "nedanie prednosti v jazde vodičovi prechádzajúcemu do stredného jazdného pruhu z pravého jazdného pruhu vodičom prechádzajúcim do stredného jazdného pruhu z ľavého jazdného pruhu",
+        "17": "nepoužitie pripájacieho pruhu pri zaraďovaní do priebežného jazdného pruhu",
+        "18": "nedanie prednosti v jazde vodičovi idúcemu v priebežnom pruhu pri zaraďovaní z pripájacieho pruhu",
+        "21": "nesprávne prechádzanie medzi pruhmi",
+        "22": "nedanie prednosti pri zbiehaní sa pruhov",
+        "23": "neumožnenie obídenia prekážky v cestnej premávke vozidlu pri súbežnej jazde",
+        "24": "nesprávna jazda pri obchádzaniu prekážky v cestnej premávke pri súbežnej jazde",
+        "25": "neumožnenie vytvorenia záchranárskej uličky medzi jazdnými pruhmi"
+      }
+    },
+    "107": {
+      "value": "nesprávna jazda v mimoriadnych prípadoch",
+      "children": {
+        "14": "nesprávna jazda pozdĺž nástupného ostrovčeka alebo ochranného ostrovčeka",
+        "15": "nesprávna jazda pozdĺž električky",
+        "16": "nesprávne vchádzanie na električkový koľajový pás",
+        "17": "nesprávne prechádzanie električkového koľajového pása",
+        "18": "nedovolené vchádzanie do vyhradeného jazdného pruhu",
+        "19": "nesprávne prechádzanie vyhradeného jazdného pruhu",
+        "20": "nepoužitie vyhradeného jazdného pruhu vodičom vozidla, pre ktoré je vyhradený jazdný pruh určený",
+        "21": "neumožnenie vyjdenia autobusu alebo trolejbusu z vyhradeného jazdného pruhu do priľahlého jazdného pruhu",
+        "22": "nesprávne vyjdenie z vyhradeného jazdného pruhu",
+        "23": "bezdôvodné riadenie sa vodičov v inom pruhu osobitnými svetelnými signálmi platnými iba pre vodičov jazdiacich vo vyhradenom jazdnom pruhu",
+        "24": "obmedzovanie jazdy vozidiel vo vyhradenom jazdnom pruhu pre autobusy alebo trolejbusy vozidlom taxislužby",
+        "25": "nesprávne správanie sa za vozidlom pravidelnej verejnej dopravy osôb, ktoré zastavilo v obci na zastávke bez nástupného ostrovčeka alebo bez nástupišťa na zvýšenom električkovom koľajovom páse",
+        "26": "neopatrnosť alebo neprimeraná rýchlosť v úseku zastávky pravidelnej verejnej dopravy osôb pri nastupovaní alebo vystupovaní osôb"
+      }
+    },
+    "108": {
+      "value": "nesprávne obchádzanie",
+      "children": {
+        "06": "nesprávne obchádzanie vozidla, ktoré zastavilo alebo stojí",
+        "07": "nesprávne obchádzanie prekážky cestnej premávky",
+        "08": "nesprávne obchádzanie chodca",
+        "09": "neopatrné obchádzanie alebo míňanie stojaceho vozidla pravidelnej verejnej dopravy osôb",
+        "10": "nesprávne obchádzanie stojaceho autobusu, ktorý je označený ako autobus prepravujúci deti"
+      }
+    },
+    "109": {
+      "value": "nesprávne predchádzanie",
+      "children": {
+        "16": "predchádzanie po nesprávnej strane vpravo",
+        "17": "nesprávne vybočenie zo smeru jazdy pri predchádzaní",
+        "18": "nesprávne zaradenie sa pred predchádzané vozidlo",
+        "19": "nedostatočný bočný odstup pri predchádzaní",
+        "20": "bránenie v predchádzaní",
+        "21": "predchádzanie pri nedostatočnom rozhľade pred sebe",
+        "22": "predchádzanie bez možnosti bezpečného zaradenia pred predchádzané vozidlo",
+        "23": "predchádzanie bez ohľadu na vodiča jazdiaceho v protismere alebo iných účastníkov cestnej premávky",
+        "24": "predchádzanie vľavo odbočujúceho vozidla vľavo",
+        "25": "predchádzanie cez pripájací alebo odbočovací jazdný pruh",
+        "26": "predchádzanie po krajnici",
+        "27": "predchádzanie pri jazde cez križovatku a v takej vzdialenosti pred križovatkou, ktorá nie je dostatočná na bezpečné dokončenie predchádzania pred úrovňou križovatky",
+        "28": "predchádzanie pri jazde cez železničné priecestie",
+        "29": "predchádzanie výrazne nižšou rýchlosťou ako za ním idúce vozidlo, ktoré začalo úkon predchádzania skôr",
+        "30": "predchádzanie na priechode pre chodcov, priechode pre cyklistov alebo bezprostredne pred nimi"
+      }
+    },
+    "110": {
+      "value": "nedovolená rýchlosť jazdy",
+      "children": {
+        "13": "neprispôsobenie rýchlosti jazdy svojim schopnostiam",
+        "14": "neprispôsobenie rýchlosti jazdy vlastnostiam vozidla a nákladu",
+        "15": "neprispôsobenie rýchlosti jazdy poveternostným podmienkam",
+        "16": "neprispôsobenie rýchlosti jazdy stavu a povahe vozovky",
+        "17": "neprispôsobenie rýchlosti jazdy iným okolnostiam, ktoré možno predvídať",
+        "18": "neprispôsobenie rýchlosti jazdy vzdialenosti, na ktorú má vodič rozhľad",
+        "26": "prekročenie najvyššej dovolenej rýchlosti pre iné motorové vozidlo ako autobus a motorové vozidlo s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 3500 kg, autobus s prípojným vozidlom, ktorého najväčšia prípustná celková hmotnosť prevyšuje 750 kg, a motorového vozidla s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 3 500 kg s prípojným vozidlom, ktorého najväčšia prípustná celková hmotnosť prevyšuje 750 kg",
+        "29": "prekročenie najvyššej dovolenej rýchlosť jazdy vozidiel určenej dopravnou značkou alebo dopravným zariadením",
+        "30": "prekročenie najvyššej dovolenej rýchlosti niektorého z vozidiel jazdnej súpravy",
+        "31": "prekročenie najvyššej dovolenej rýchlosti pre autobus, motorové vozidlo s najväčšou prípustnou celkovou hmotnosťou neprevyšujúcou 3500 kg",
+        "32": "prekročenie dovolenej rýchlosti v obci",
+        "33": "prekročenie dovolenej rýchlosti na diaľnici v obci"
+      }
+    },
+    "111": {
+      "value": "nedodržanie vzdialenosti medzi vozidlami",
+      "children": {
+        "04": "nedodržanie dostatočnej vzdialenosti od vozidla jazdiaceho vpredu",
+        "05": "od vozidla jazdiaceho vpredu pre bezpečné zaradenie predchádzajúceho vozidlá",
+        "06": "od električky pokiaľ nechce alebo nemôže prejsť pozdĺž električky vpravo"
+      }
+    },
+    "112": {
+      "value": "nesprávne vyhýbanie",
+      "children": {
+        "03": "protiidúcich vozidiel",
+        "04": "protiidúcej električke"
+      }
+    },
+    "113": {
+      "value": "nesprávne odbočovanie",
+      "children": {
+        "13": "odbočovanie bez znamenia o zmene smeru jazdy",
+        "14": "neopatrné odbočovanie",
+        "15": "neopatrná jazda za odbočujúcim vozidlom",
+        "16": "odbočenie bez pomoci spôsobilej a náležite poučenej osoby",
+        "17": "nesprávne zaradenie sa pred odbočením vpravo",
+        "18": "nesprávne zaradenie sa pred odbočením vľavo",
+        "19": "nesprávne vyhýbanie sa protiidúcich vozidiel odbočujúcich vľavo",
+        "20": "nedanie prednosti v jazde protiidúcim motorovým vozidlám i nemotorovým vozidlám a električkám idúcim v oboch smeroch pri odbočovaní vľavo",
+        "21": "nedanie prednosti chodcom prechádzajúcim cez vozovku pri odbočovaní vľavo",
+        "22": "nedanie prednosti v jazde električke dávajúcej znamenie o zmene smeru jazdy, križujúcej smer jazdy vozidla idúceho po jej pravej alebo po jej ľavej strane",
+        "23": "nedanie prednosti v jazde cyklistovi idúcemu rovno vodičom odbočujúcim vpravo",
+        "24": "ohrozenie cyklisty odbočujúceho vľavo vodičom motorového vozidla pri odbočovaní doľava"
+      }
+    },
+    "114": {
+      "value": "nesprávna jazda cez križovatku",
+      "children": {
+        "08": "nedanie prednosti v jazde z vedľajšej cesty na značku Daj prednosť v jazde! vozidlám prichádzajúcim po hlavnej ceste",
+        "09": "nezastavenie, nedanie prednosti v jazde z vedľajšej cesty na značku Stoj, daj prednosť v jazde! vozidlám prichádzajúcim po hlavnej ceste",
+        "10": "nedanie prednosti v jazde vozidlám prichádzajúcim sprava",
+        "11": "zastavenie vozidla na križovatke, pretože situácia nedovoľuje pokračovať za križovatkou v jazde",
+        "12": "zastavenie vozidla na príkaz dopravnej značky Stoj, daj prednosť v jazde! na mieste, odkiaľ nie je na križovatku náležitý rozhľad",
+        "15": "nedanie prednosti vodičovi na kruhovom objazde označenom dopravnou značkou Kruhový objazd spolu s dopravnou značkou Daj prednosť v jazde! alebo Stoj, daj prednosť v jazde!"
+      }
+    },
+    "115": {
+      "value": "nesprávne vchádzanie na cestu",
+      "children": {
+        "04": "nedanie prednosti v jazde vozidlám idúcim po ceste pri vchádzaní na cestu z miesta mimo cesty",
+        "05": "nezaistenie bezpečného vjazdu na cestu pomocou spôsobilej a náležite poučenej osoby",
+        "06": "znečistenie cesty pri vchádzaní na cestu z miesta mimo cesty"
+      }
+    },
+    "116": {
+      "value": "nesprávne otáčanie a cúvanie",
+      "children": {
+        "19": "porušenie pravidiel pre odbočovanie (§ 19) a pre prejazd cez križovatku (§ 20) pri otáčaní",
+        "20": "nebezpečné cúvanie",
+        "21": "nezaistenie bezpečného otáčania pomocou spôsobilej a náležite poučenej osoby",
+        "22": "nezaistenie bezpečného cúvania pomocou spôsobilej a náležite poučenej osoby",
+        "23": "otáčanie na neprehľadných alebo na inak nebezpečných miestach",
+        "24": "otáčanie na križovatke s riadenou premávkou, pokiaľ to nedovoľuje dopravná značka ale zariadenie",
+        "25": "otáčanie na priechode pre chodcov alebo na priechode pre cyklistov",
+        "26": "otáčanie na železničnom priecestí a v jeho tesnej blízkosti",
+        "27": "otáčanie v tuneli a v jeho tesnej blízkosti",
+        "28": "otáčanie na jednosmernej ceste",
+        "29": "otáčanie na moste",
+        "30": "cúvanie na neprehľadných alebo na inak nebezpečných miestach",
+        "31": "cúvanie na križovatke s riadenou premávkou",
+        "33": "cúvanie na železničnom priecestí a v jeho tesnej blízkosti",
+        "34": "cúvanie v tuneli a v jeho tesnej blízkosti",
+        "35": "cúvanie na jednosmernej ceste, ak to nie je potrebné k zaradení alebo vyjdení z radu stojacich vozidiel",
+        "36": "cúvanie na moste",
+        "37": "cúvanie na priechode pre chodcov, na mieste na prechádzanie alebo na priechode pre cyklistov"
+      }
+    },
+    "117": {
+      "value": "nesprávne zastavenie a státie",
+      "children": {
+        "43": "bezdôvodné zastavenie alebo státie mimo parkovisko",
+        "44": "obmedzovanie premávky alebo prekážanie na parkovisku",
+        "45": "nedanie znamenia o zmene smeru jazdy ak chce vodič zastaviť alebo stáť, zachádza na okraj cesty alebo chodníka",
+        "46": "nepozornosť pri opätovnom vychádzaní od okraja cesty alebo od chodníka",
+        "47": "nedanie znamenia o zmene smeru jazdy pri opätovnom vychádzaní od okraja cesty alebo od chodníka",
+        "48": "neumožnenie vodičovi vozidla pravidelnej verejnej dopravy osôb vyjdenie zo zastávky alebo zo zastávkového pruhu",
+        "49": "nebezpečné vychádzanie s vozidlom pravidelnej verejnej dopravy osôb v obci zo zastávky, ohrozenie vodičov idúcich rovnakým smerom",
+        "50": "zastavenie a státie v protismere alebo uprostred cesty",
+        "51": "znemožnenie alebo obmedzenie prejazdu vozidiel pri zastavení a státí na nevhodnom mieste (prekážanie)",
+        "52": "nebezpečné otvorení dverí alebo bočné steny vozidla",
+        "53": "nebezpečné nastupovanie do vozidla alebo vystupovanie z neho",
+        "54": "nezabezpečenie vozidla pri vzdialení sa od vozidla",
+        "55": "nezaistenie vozidla proti pohybu pri vzdialení sa od vozidla",
+        "56": "nezaistenie vozidla alebo súpravy povinne vybavených zakladacími klinmi proti pohybu",
+        "60": "zastavenie a státie v neprehľadnej zákrute a v jej tesnej blízkosti",
+        "61": "zastavenie a státie pred neprehľadným vrcholom stúpania cesty, na ňom a za ním",
+        "63": "zastavenie a státie na križovatke a vo vzdialenosti kratšej ako 5 m pred hranicou križovatky a 5 m za ňou; okrem obci na križovatke tvaru T na náprotivnej strane vyúsťujúcej cesty",
+        "64": "zastavenie a státie na pripájacom alebo na odbočovacom pruhu",
+        "65": "zastavenie a státie na zastávke vozidla pravidelnej verejnej dopravy osôb v úseku, ktorý sa začína dopravnou značkou pre zastávku a končí sa 5 m za označníkom zastávky, a tam, kde taká dopravná značka nie je, vo vzdialenosti kratšej ako 30 m pred označníkom zastávky a 5 m za ním; ak je priestor zastávky vyznačený príslušnou vodorovnou dopravnou značkou, platí tento zákaz len pre nástupište a vyznačený priestor",
+        "66": "zastavenie a státie na železničnom priecestí, v podjazde a v tuneli a vo vzdialenosti kratšej ako 15 m pred nimi a 15 m za nimi",
+        "67": "zastavenie a státie na mieste, kde vozidlo zakrýva zvislú dopravnú značku, vodorovnú dopravnú značku vyznačujúcu spôsob radenia do jazdných pruhov a určený smer jazdy cez križovatku alebo vyjadrujúcu doplňujúci údaj nápisom alebo svetelné signály",
+        "68": "zastavenie a státie na vnútorných jazdných pruhoch vyznačených na vozovke",
+        "69": "zastavenie a státie na vyhradenom jazdnom pruhu, okrem vozidla, pre ktoré je vyhradený jazdný pruh určený a ak nejde o vnútorný jazdný pruh",
+        "71": "zastavenie a státie vo vzdialenosti kratšej ako 5 m od začiatku a 5 m od konca pozdĺžnej súvislej čiary alebo nástupného ostrovčeka tam, kde by medzi touto čiarou alebo nástupným ostrovčekom a vozidlom nezostal voľný aspoň jeden jazdný pruh široký najmenej 3 m",
+        "72": "zastavenie a státie na moste",
+        "73": "zastavenie a státie pred vjazdom na cestu z miesta mimo cesty, alebo na vyhradenom parkovisku, ak nejde o vozidlo, pre ktoré je parkovisko vyhradené",
+        "74": "zastavenie a státie na električkovom koľajovom páse",
+        "75": "nedovolené zastavenie a státie na chodníku",
+        "76": "zastavenie a státie na kruhovom objazde",
+        "77": "nedovolené zastavenie a státie na ostrovčekoch a deliacich pásoch",
+        "78": "zastavenie a státie na mieste, kde by medzi vozidlom a najbližšou električkovou koľajnicou nezostal voľný jazdný pruh široký najmenej 3,5 m",
+        "79": "zastavenie a státie na inom mieste, kde je ohrozená bezpečnosť a plynulosť cestnej premávky alebo obmedzená jazda vozidiel",
+        "80": "zastavenie a státie na cestách I. triedy a za zníženej viditeľnosti aj na ostatných cestách s výnimkou účelových komunikácií mimo obce na inom mieste než na mieste označenom ako parkovisko",
+        "81": "státie na okruhu vyznačenom dopravnými značkami",
+        "82": "nepoužitie výstražného trojuholníka vozidla povinne vybaveného prenosným výstražným trojuholníkom počas núdzového státia",
+        "83": "nesprávne umiestenie prenosného výstražného trojuholníka počas núdzového státia",
+        "84": "nepoužitie výstražnej funkcie smerových svetiel, kým je umiestnený výstražný trojuholník na vozovke",
+        "85": "zastavenie a státie na priechode pre chodcov, na mieste na prechádzanie alebo na priechode pre cyklistov a vo vzdialenosti kratšej ako 5 m pred nimi",
+        "86": "zastavenie a státie na cestičke pre cyklistov alebo na ochrannom pruhu pre cyklistov"
+      }
+    },
+    "118": {
+      "value": "nesprávne správanie sa pri vynútenom zastavení vozidla v tuneli",
+      "children": {
+        "06": "nevykonanie vhodného opatrenia, aby nebola ohrozená bezpečnosť cestnej premávky v tuneli",
+        "07": "neoznámenie zastavenia vozidla osobe vykonávajúcej dohľad nad prevádzkou tunela",
+        "08": "manipulácia s otvoreným ohňom v tuneli",
+        "09": "neposlúchnutie pokynu osoby vykonávajúcej dohľad nad prevádzkou tunela opustiť vozidlo a sústrediť sa do miest na to určených, prípadne tunel opustiť",
+        "10": "bezdôvodné vystupovanie z vozidla alebo bezdôvodný pohyb osôb po vozovke v tuneli bez reflexného odevu"
+      }
+    },
+    "119": {
+      "value": "nesprávne správanie sa na železničnom priecestí",
+      "children": {
+        "14": "nepresvedčenie sa, či môže vozidlo bezpečne prejsť cez železničné priecestie",
+        "15": "prechádzanie cez železničné priecestie mimo jeden jazdný prúd",
+        "16": "nedodržanie rýchlosti a plynulosti jazdy pri prejazdu železničného priecestia",
+        "17": "neodstránenie vozidla zo železničnej trate, nezabezpečenie varovania vodiča koľajového vozidla pred nebezpečenstvom",
+        "18": "nezastavenie a nerozhliadnutie sa pred železničným priecestím, pri ktorom je umiestnená dopravná značka Stoj, daj prednosť v jazde!",
+        "19": "nerešpektovanie svetelného signálu priecestného zabezpečovacieho zariadenia",
+        "20": "nerešpektovanie zvukového signálu priecestného zabezpečovacieho zariadenia",
+        "21": "nerešpektovanie spúšťaných alebo spustených závor priecestného zabezpečovacieho zariadenia",
+        "22": "nerešpektovanie prichádzajúceho vlaku alebo dráhového vozidla",
+        "23": "nerešpektovanie znamenia osoby pribratej na zaistenie bezpečnej prevádzky železničného priecestia",
+        "24": "nerešpektovanie situácie na železničnom priecestí alebo za ním, ktorá nedovoľuje, aby ho bezpečne prešiel a pokračoval v jazde",
+        "25": "neuposlúchnutie pokynu osoby pribratej na zaistenie bezpečnej prevádzky železničného priecestia na jazdu cez železničné priecestie",
+        "26": "nerešpektovanie ustanovení o železničnom priecestí chodcom"
+      }
+    },
+    "120": {
+      "value": "nesprávne znamenie o zmene smeru jazdy",
+      "children": {
+        "06": "nedanie znamenia o zmene smeru jazdy pri zmene smeru jazdy, vybočovaní z neho a ak to vyžaduje bezpečnosť alebo plynulosť cestnej premávky",
+        "07": "neskoré danie znamenia o zmene smeru jazdy bez ohľadu na cestnú premávku",
+        "08": "nezaistenie náhradného spôsobu znamenia o zmene smeru jazdy",
+        "09": "bezdôvodné ponechanie znamenia o zmene smeru jazdy",
+        "10": "nedanie znamenia o zmene smeru jazdy pri vychádzaní z kruhového objazdu"
+      }
+    },
+    "121": {
+      "value": "nesprávne dané výstražné znamenie",
+      "children": {
+        "04": "neodôvodnené zvukové výstražné znamenie",
+        "05": "neodôvodnené svetelné výstražné znamenie",
+        "06": "neupozornenie ostatných účastníkov cestnej premávky na hroziace nebezpečenstvo svetelným výstražným znamením zapnutím výstražnej funkcie smerových svietidiel"
+      }
+    },
+    "122": {
+      "value": "nesprávne osvetlenie vozidla",
+      "children": {
+        "07": "neosvetlené alebo nesprávne osvetlené motorové vozidlo počas jazdy",
+        "08": "neosvetlené nemotorové vozidlo svietidlami počas zníženej viditeľnosti",
+        "09": "oslnenie diaľkovými svetlami",
+        "10": "oslnenie svetlami do hmly",
+        "11": "zakrytá alebo nadmerne znečistená činná plocha predpísaných svetiel",
+        "12": "neosvetlenie vozidla stojaceho za zníženej viditeľnosti v obci na mieste, kde tvorí prekážku cestnej premávky, alebo na ceste mimo obce"
+      }
+    },
+    "123": {
+      "value": "nesprávne vlečenie motorového vozidla",
+      "children": {
+        "13": "prekročenie povolenej rýchlosti pri vlečení motorového vozidla",
+        "14": "vlečenie nespôsobilého vozidla",
+        "15": "vlečenie vozidla s nespôsobilým vodičom",
+        "16": "nedohodnutie sa vodičov vopred na spôsobe dorozumievania počas jazdy",
+        "17": "nevybavenie vozidla vlečeného osobitným zariadením prenosným osvetlením vozidla s napojením na vlečné vozidlo",
+        "18": "neosvetlenie vlečeného vozidla za zníženej viditeľnosti pri poruche osvetlenia alebo inej poruche nedovoľujúcej použitie osvetlenia",
+        "19": "vlečenie viacerých motorových vozidiel ako jedného motorového vozidla",
+        "20": "vlečenie motorového vozidla s prívesom",
+        "21": "vlečenie za motorovým vozidlom s prívesom",
+        "22": "vlečenie motocykla bez postranného vozíka alebo motocyklom bez postranného vozíka",
+        "23": "neoznačenie spojnice pri vlečení motorových vozidiel",
+        "24": "nespôsobilá spojnica vlečených vozidiel"
+      }
+    },
+    "124": {
+      "value": "nerešpektovanie osobitosti premávky na diaľnici",
+      "children": {
+        "25": "zastavenie a státie na diaľnici",
+        "26": "neoznačenie vozidla pri núdzovom státí",
+        "27": "otáčanie",
+        "28": "cúvanie",
+        "29": "vchádzanie na stredný deliaci pás",
+        "30": "neopustenie diaľnice po zistení chyby na vozidle alebo náklade počas jazdy, pre ktoré nemožno dosiahnuť na rovine rýchlosť stanovenú pre diaľnicu",
+        "31": "neoprávnené vlečenie motorového vozidla",
+        "32": "obmedzenie iného motorového vozidla výrazne nižšou rýchlosťou pri predchádzaní iného motorového vozidla",
+        "33": "použitie diaľnice iným účastníkom cestnej premávky ako vodičom motorového vozidla",
+        "34": "premávka motorových vozidiel a jazdných súprav, ktorých najvyššia povolená rýchlosť je nižšia ako 80 km⋅h⁻¹",
+        "35": "premávka motorových vozidiel a jazdných súprav v úseku diaľnice prechádzajúcom cez obec, ktorých najvyššia povolená rýchlosť je nižšia ako 65 km⋅h⁻¹",
+        "36": "vchádzanie na diaľnicu alebo vychádzanie z diaľnice na nepovolenom mieste",
+        "37": "nepoužitie pripájacieho pruhu pre vjazd na diaľnicu",
+        "38": "nedanie prednosti v jazde vozidlám idúcim v priebežných pruhoch v miestach, kde nie je pripájací pruh",
+        "39": "predchádzanie iného motorové vozidlo vodičom motorového vozidla kategórie N, ktorého najväčšia prípustná celková hmotnosť presahuje 7 500 kg alebo vodičom jazdnej súpravy, ktorej najväčšia prípustná hmotnosť presahuje 7 500 kg pri jazde po diaľnici",
+        "40": "nedodržanie bezpečnej vzdialenosti od vpredu idúceho vozidla"
+      }
+    },
+    "125": {
+      "value": "",
+      "children": {
+        "33": "použitie rýchlostnej cesty iným účastníkom cestnej premávky ako vodičom motorového vozidla",
+        "34": "premávka motorových vozidiel a jazdných súprav, ktorých najvyššia povolená rýchlosť je nižšia ako 80 km⋅h⁻¹",
+        "35": "premávka motorových vozidiel a jazdných súprav v úseku rýchlostnej cesty prechádzajúcom cez obec, ktorých najvyššia povolená rýchlosť je nižšia ako 65 km⋅h⁻¹",
+        "36": "vchádzanie na rýchlostnú cestu alebo vychádzanie z rýchlostnej cesty na nepovolenom mieste",
+        "37": "nepoužitie pripájacieho pruhu pre vjazd na rýchlostnú cestu",
+        "38": "nedanie prednosti v jazde vozidlám idúcim v priebežných pruhoch v miestach, kde nie je pripájací pruh",
+        "39": "predchádzanie iného motorové vozidlo vodičom motorového vozidla kategórie N, ktorého najväčšia prípustná celková hmotnosť presahuje 7 500 kg alebo vodičom jazdnej súpravy, ktorej najväčšia prípustná hmotnosť presahuje 7 500 kg pri jazde po rýchlostnej ceste",
+        "40": "nedodržanie bezpečnej vzdialenosti od vpredu idúceho vozidla",
+        "41": "zastavenie a státie na ceste pre motorové vozidlá",
+        "42": "neoznačenie vozidla pri núdzovom státí",
+        "43": "otáčanie",
+        "44": "cúvanie",
+        "45": "vchádzanie na stredný deliaci pás",
+        "46": "neopustenie rýchlostnej cesty po zistení chyby na vozidle alebo náklade počas jazdy, pre ktoré nemožno dosiahnuť na rovine rýchlosť stanovenú pre diaľnicu",
+        "47": "neoprávnené vlečenie motorového vozidla",
+        "48": "obmedzenie iného motorového vozidla výrazne nižšou rýchlosťou pri predchádzaní iného motorového vozidla"
+      }
+    },
+    "126": {
+      "value": "nerešpektovanie osobitosti premávky v zimnom období",
+      "children": {
+        "04": "nevybavenie stanovenej kategórie vozidla v cestnej premávke zimnými pneumatikami, ak sa na vozovke nachádza súvislá snehová vrstva, ľad alebo námraza",
+        "05": "nevybavenie stanovenej kategórie vozidla v cestnej premávke zimnými pneumatikami aspoň na jednej z hnacích náprav, ak sa na vozovke nachádza súvislá snehová vrstva, ľad alebo námraza, v čase od 15. novembra do 31. marca",
+        "06": "neodstránenie kusov ľadu a snehu, ktoré by sa počas jazdy mohli uvoľniť z vozidla a z nákladu, pred jazdou"
+      }
+    },
+    "127": {
+      "value": "nerešpektovanie obmedzenia jazdy niektorých druhov vozidiel",
+      "children": {
+        "17": "porušenie zákazu jazdy na ceste III. triedy nákladným motorovým vozidlom alebo jazdnou súpravou s najväčšou prípustnou celkovou hmotnosťou presahujúcou 12 000 kg",
+        "18": "použitie zvláštneho motorového vozidla na ceste, s výnimkou ciest III. triedy, miestnych komunikácií a účelových komunikácií, okrem výnimok stanovených zákonom alebo na základe povolenia",
+        "19": "porušenie zákazu jazdy záprahovým vozidlám a ručným vozíkom s celkovou šírkou väčšou ako 600 mm na ceste I. Triedy",
+        "20": "porušenie zákazu jazdy záprahovým vozidlám a ručným vozíkom s celkovou šírkou väčšou ako 600 mm na ceste II. triedy od 06.00 do 09.00 hodín, od 15.00 do 20.00 hodín a od 23.00 do 04.00 hodín",
+        "21": "porušenie zákazu jazdy záprahovým vozidlám a ručným vozíkom s celkovou šírkou väčšou ako 600 mm na ceste II. triedy v čase od 15.00 do 21.00 hodiny v prvý deň pracovného pokoja a v sobotu, ak táto nasleduje po pracovnom dni v období od 1. júla do 31. augusta v čase od 07.00 do 19.00 hodín a v nedeľu a v posledný deň pracovného pokoja v čase od 00.00 do 22.00 hodín",
+        "22": "porušenie zákazu používania vozidiel, ktorým bolo pridelené zvláštne evidenčné číslo obsahujúce písmeno C podľa § 127 ods. 12, na stanovených cestách",
+        "23": "porušenie zákazu jazdy v prvý deň pracovného pokoja a v sobotu, ak táto nasleduje po pracovnom dni v období od 1. júla do 31. augusta v čase od 07.00 do 19.00 hodín motorovým vozidlom s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 7 500 kg a motorovým vozidlám s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg s prípojným vozidlom na diaľnici, na ceste pre motorové vozidlá a na ceste I. triedy",
+        "24": "porušenie zákazu jazdy v nedeľu a v posledný deň pracovného pokoja v čase od 00.00 do 22.00 hodín motorovým vozidlom s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 7 500 kg a motorovým vozidlám s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg s prípojným vozidlom na diaľnici, na ceste pre motorové vozidlá a na ceste I. triedy",
+        "25": "porušenie zákazu jazdy v jeden deň pracovného pokoja, ktorý nasleduje po pracovnom dni v čase od 00.00 do 22.00 hodín motorovým vozidlom s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 7 500 kg a motorovým vozidlám s najväčšou prípustnou celkovou hmotnosťou prevyšujúcou 3 500 kg s prípojným vozidlom na diaľnici, na ceste pre motorové vozidlá a na ceste I. triedy"
+      }
+    },
+    "128": {
+      "value": "porušenie pravidiel prevádzky vozidiel so zvláštnymi výstražnými zvukovými znameniami alebo svetlami",
+      "children": {
+        "19": "neopatrnosť vodiča vozidla so zvláštnym výstražným znamením",
+        "20": "nespôsobilosť vodiča stanovená pre jazdu vozidla so zvláštnym výstražným znamením (vek, prax)",
+        "21": "porušenie ustanovení pre prednostnú jazdu vodičmi vozidiel sprevádzaných vymenovanými vozidlami",
+        "22": "nepoužitie výstražného modré, prípadne červeného svetla alebo osobitné zariadenia umožňujúce výstražnú funkciu smerových svetiel na sprevádzaných vozidlách, ak je nimi vozidlo vybavené",
+        "23": "neumožnenie bezpečného a plynulého prejazdu vozidlám s právom prednostnej jazdy a vozidlám, ktoré sprevádzajú",
+        "24": "zaradenie sa do skupiny tvorenej vozidlami s právom prednostnej jazdy a vozidlami, ktoré sprevádzajú",
+        "25": "neopatrnosť vodiča vozidla s právom prednostnej jazdy pri oprávnenom použití krajnice alebo inej časti cesty, ktorá nie je určená na jazdu vozidiel",
+        "26": "nerešpektovanie stojaceho vozidla na ktorom svieti zvláštne výstražné svetlo modrej alebo červenej farby",
+        "27": "nedanie prednosti vozidlu s právom prednostnej jazdy a vozidlu, ktoré sprevádza, pri čerpaní pohonných látok",
+        "28": "neoprávnené užitie zariadení umožňujúceho používanie typického zvukového znamenia a zvláštneho výstražného svetla ustanovených pre vozidlá s právom prednostnej jazdy",
+        "29": "neoprávnené použitie zvláštnych výstražných znamení vozidlom s právom prednostnej jazdy",
+        "30": "neoprávnené použitie zvláštneho výstražného svetla oranžovej farby",
+        "31": "neopatrnosť vodiča vozidla vybaveného zvláštnym výstražným svetlom oranžovej farby",
+        "32": "nebratie ohľadu na vozidlo ktoré používa zvláštne výstražné svetlo oranžovej farby",
+        "33": "neopatrnosť vodiča kolóny vozidiel ozbrojených síl, ozbrojených bezpečnostných zborov alebo ozbrojených zborov vpredu i vzadu sprevádzanej vozidlami používajúcimi zvláštne výstražné svetlo oranžovej farby",
+        "34": "použitie zvláštneho výstražného svetla oranžovej farby neschváleným vozidlom"
+      }
+    },
+    "129": {
+      "value": "porušenie pravidiel o prekážke cestnej premávky",
+      "children": {
+        "05": "spôsobenie prekážky cestnej premávky",
+        "06": "neodstránenie prekážky cestnej premávky a predmetov a odpadov prekážajúcich v zjazdnosti na ceste, ktoré s prekážkou cestnej premávky súvisia",
+        "07": "neoznačenie prekážky cestnej premávky",
+        "08": "nesprávne označenie prekážky cestnej premávky"
+      }
+    },
+    "130": {
+      "value": "porušenie pravidiel pri preprave osôb",
+      "children": {
+        "09": "prekročenie povoleného počtu prepravovaných osôb",
+        "10": "porušenie povinností osoby odpovedajúcej za prepravu detí alebo osôb, ktoré pre poruchu zdravia nezodpovedajú za svoje konanie",
+        "11": "nebezpečné správanie sa prepravovaných osôb",
+        "12": "prekročenie prípustnej užitočnej hmotnosti vozidla prepravovanými osobami",
+        "13": "preprava osoby mladšej ako 12 rokov na druhom sedadle motocykla",
+        "14": "preprava osôb v prípojnom vozidle, ktoré nie je určené na prepravu osôb",
+        "15": "bočné sedenie osoby prepravovanej na motocykli"
+      }
+    },
+    "131": {
+      "value": "porušenie povinnosti pri preprave osôb vozidlom pravidelnej verejnej dopravy osôb",
+      "children": {
+        "03": "nebezpečné správanie sa pri čakaní, nastupovaní, počas jazdy a pri vystupovaní",
+        "04": "nepoužitie osobitného zariadenia umožňujúceho výstražnú funkciu smerových svetiel autobusa počas nastupovania a vystupovania detí alebo osoby zdravotným postihnutím"
+      }
+    },
+    "132": {
+      "value": "porušenie povinnosti pri preprave osôb v ložnom priestore nákladného automobilu a v ložnom priestore nákladného prívesu traktora",
+      "children": {
+        "13": "nepovolená a preprava osôb v ložnom priestore nákladného automobilu",
+        "14": "nespôsobilosť vodiča nákladného automobilu prepravujúceho v ložnom priestore osoby",
+        "15": "prekročenie počtu prepravovaných osôb v ložnom priestore nákladného automobilu",
+        "16": "preprava osôb v prípojnom vozidle nákladného automobilu",
+        "17": "nebezpečné správanie sa osôb prepravovaných v ložnom priestore nákladného automobilu",
+        "18": "nepovolená a preprava osôb v ložnom priestore nákladného prívesu traktora",
+        "19": "nespôsobilosť vodiča traktora s nákladným prívesom, v ktorého ložnom priestore sa prepravujú osoby",
+        "20": "prekročenie povoleného počtu osôb prepravovaných v ložnom priestore nákladného prívesu traktora",
+        "21": "prekročenie povolenej rýchlosti jazdy pri preprave osôb v ložnom priestore nákladného prívesu traktora",
+        "22": "správanie sa osôb prepravovaných v ložnom priestore nákladného prívesu traktora",
+        "23": "neprítomnosť sprievodu osoby staršej ako 18 rokov pri preprave osôb mladších ako 15 rokov v ložnom priestore nákladného automobilu a nákladného prívesu traktora"
+      }
+    },
+    "133": {
+      "value": "porušenie pravidiel pri preprave nákladu",
+      "children": {
+        "09": "prekročenie najväčšej prípustnej celkovej hmotnosti vozidla pri preprave nákladu",
+        "10": "prekročenie najväčšej prípustnej hmotnosti jazdnej súpravy pri preprave nákladu",
+        "11": "prekročenie najväčšej prípustnej celkovej hmotnosti prípojného vozidla pri preprave nákladu",
+        "12": "prekročenie najväčšej prípustnej hmotnosti pripadajúcej na nápravy vozidla pri preprave nákladu",
+        "14": "nebezpečná preprava živých zvierat",
+        "15": "nakladanie alebo skladanie nákladu na ceste",
+        "16": "nesprávne označenie nákladu prečnievajúceho vozidlo",
+        "17": "nesprávne umiestnenie alebo rozloženie alebo upevnenie nákladu na vozidle"
+      }
+    },
+    "134": {
+      "value": "porušenie povinnosti účastníka dopravnej nehody alebo škodovej udalosti",
+      "children": {
+        "03": "neurobenie opatrenia na mieste dopravnej nehody, aby nebola ohrozená bezpečnosť cestnej premávky na mieste dopravnej nehody",
+        "04": "neurobenie opatrenia na mieste škodovej udalosti, aby nebola ohrozená bezpečnosť alebo plynulosť cestnej premávky na mieste škodovej udalosti"
+      }
+    },
+    "135": {
+      "value": "porušenie osobitných ustanovení o chodcoch",
+      "children": {
+        "21": "pohyb chodca mimo chodník po nesprávnej strane vozovky",
+        "22": "neoprávnené použitie chodníka iným účastníkom cestnej premávky ako chodcom",
+        "23": "nesprávny pohyb chodca po krajnici alebo po vozovke",
+        "24": "pohyb osoby, ktorá tlačí bicykel alebo motocykel, po nesprávnej strane vozovky",
+        "25": "ohrozenie alebo obmedzenie iných účastníkov cestnej premávky osobou, ktorá sa pohybuje po chodníku na lyžiach, korčuliach, kolobežke, skejtborde alebo na obdobnom športovom vybavení",
+        "28": "vstup chodca bezprostredne pred prichádzajúce vozidlo",
+        "29": "používanie priechodu pre chodcov iným účastníkom cestnej premávky ako chodcom",
+        "30": "nesprávne prechádzanie cez vozovku mimo priechodu pre chodcov (v blízkosti miesta nie je priechod, podchod alebo nadchod)",
+        "31": "nepresvedčenie sa pred vstupom na vozovku, či tak môže urobiť bez nebezpečenstva",
+        "32": "bezdôvodné zdržanie sa lebo zastavenie sa vo vozovke",
+        "33": "porušenie povinností pre organizovaný útvar chodcov primeraných povinnostiam vodičov",
+        "34": "neosvetlenie organizovaného útvaru chodcov za zníženej viditeľnosti",
+        "35": "neoblečenie reflexného bezpečnostného odevu vedúcim útvaru chodcov alebo chodcami idúcimi v poslednom rade v smere chôdze mimo obce za zníženej viditeľnosti",
+        "36": "pohyb chodca po krajnici alebo okraji vozovky bez viditeľne umiestnených reflexných prvkov na sebe alebo oblečeného reflexného bezpečnostného odevu",
+        "37": "prechádzanie cez cestu mimo priechodu pre chodcov, miesta na prechádzanie, nadchodu alebo podchodu ak sa nachádzajú v blízkosti",
+        "38": "vstúpenie na vozovku alebo neopustenie vozovky, ak prichádzajú vozidlá s právom prednostnej jazdy"
+      }
+    },
+    "136": {
+      "value": "porušenie osobitných ustanovení o cyklistoch",
+      "children": {
+        "14": "jazda po nesprávnej strane vozovky, cestičky pre cyklistov alebo po nesprávnej krajnici",
+        "15": "nesprávny spôsob jazdy",
+        "16": "jazda bez viditeľne umiestnených reflexných prvkov alebo oblečeného reflexného bezpečnostného odevu pri zníženej viditeľnosti",
+        "17": "nedovolená preprava druhej osoby",
+        "18": "jazda osoby mladšej ako 10 rokov na bicykli po ceste bez dohľadu spôsobilej osoby staršej ako 15 rokov",
+        "19": "nedostatočný dohľad osoby staršej ako 15 rokov nad jazdou osoby mladšej ako 10 rokov na bicykli na ceste",
+        "20": "neopatrné predchádzanie pomaly idúceho alebo stojaceho vozidla rovnakým smerom po pravej strane vozovky alebo krajnici",
+        "21": "nesprávne použitie cestičky pre cyklistov a chodcov",
+        "22": "neoprávnené použitie cestičky pre cyklistov",
+        "23": "nesprávne správanie sa cyklistu na priechode pre cyklistov"
+      }
+    },
+    "137": {
+      "value": "nesprávna jazda so záprahovým vozidlom a ručným vozíkom",
+      "children": {
+        "06": "vekovo nespôsobilý pohonič záprahového vozidla",
+        "07": "chôdza pohoniča vedľa záprahového vozidla po nesprávnej strane vozovky",
+        "08": "nezaistenie záprahového vozidla pred jeho opustením proti pohybu",
+        "09": "chôdza osoby, ktorá tlačí alebo ťahá ručný vozík s celkovou šírkou väčšou ako 600 mm, po nesprávnom okraji vozovky",
+        "10": "neosvetlenie vozíka alebo tlačiacej osoby za zníženej viditeľnosti"
+      }
+    },
+    "138": {
+      "value": "porušenie pravidiel jazdy na zvieratách, vedenia a hnania zvierat",
+      "children": {
+        "18": "porušenie povinností primeraných povinnostiam vodičov",
+        "19": "vekovo nespôsobilý jazdec na zvierati",
+        "20": "nesprávny spôsob jazdy na zvierati po vozovke",
+        "21": "vedenie viac ako jedného zvieraťa jazdcom po vozovke",
+        "22": "bezdôvodná jazda po ceste, nepoužitie cesty pre jazdcov",
+        "23": "nesprávny spôsob vedenia zvierat",
+        "24": "vekovo nespôsobilý sprievodca zvierat",
+        "25": "nedostatočný počet sprievodcov zvierat",
+        "26": "neumiestnenie viditeľných reflexných prvkov alebo neoblečenie reflexného bezpečnostného odevu na sprievodcovi za zníženej viditeľnosti",
+        "27": "neumiestnenie viditeľných reflexných prvkov alebo neoblečenie reflexného bezpečnostného odevu jazdcovi na zvierati za zníženej viditeľnosti",
+        "28": "pohyb útvaru jazdcov za zníženej viditeľnosti bez svetelného označenia",
+        "29": "pohyb sprievodca zvierat za zníženej viditeľnosti bez stanoveného svetelného označenia",
+        "30": "nedovolená jazda na zvierati na ceste I. triedy a II. triedy v stanovenom čase za podmienok podľa § 39 ods. 8.",
+        "31": "nedovolené vedenie a hnanie zvierat na ceste I. triedy a II. triedy v stanovenom čase za podmienok podľa § 39 ods. 8.",
+        "32": "voľný pohyb domácich zvierat na ceste z dôvodu nezabezpečenia domáceho zvieraťa proti voľnému pohybu po ceste"
+      }
+    },
+    "139": {
+      "value": "porušenie pravidiel pre osobu vykonávajúcu prácu na ceste",
+      "children": {
+        "03": "neoznačená osoba vykonávajúca na ceste prácu",
+        "04": "neopatrnosť pri práci na ceste"
+      }
+    },
+    "140": {
+      "value": "nerešpektovanie osobitnosti premávky v obytnej, pešej alebo školskej zóne",
+      "children": {
+        "04": "nepovolený vjazd do pešej zóny",
+        "05": "porušenie najvyššej povolenej rýchlosti alebo iných pravidiel pre správanie sa vodičov v obytnej, pešej a školskej zóne",
+        "06": "neumožnenie jazdy vozidlu v obytnej, pešej alebo školskej zóne"
+      }
+    },
+    "141": {
+      "value": "nerešpektovanie pravidiel o dopravných značkách alebo dopravných zariadeniach alebo pokynoch policajta alebo inej oprávnenej osoby",
+      "children": {
+        "15": "nerešpektovanie nadriadenosti dopravných značiek a dopravného zariadenia nad všeobecnou úpravou cestnej premávky",
+        "25": "neprimeraný rozsah alebo nevhodný spôsob použitia dopravných značiek alebo dopravných zariadení keď to nevyžaduje bezpečnosť a plynulosť cestnej premávky",
+        "26": "neoprávnené použitie dopravných značiek a dopravných zariadení",
+        "28": "nerešpektovanie nadriadenosti pokynov policajta alebo inej oprávnenej osoby nad pokynom vyplývajúcim z dopravných značiek a dopravných zariadení",
+        "29": "zakrytie dopravnej značky alebo dopravného zariadenia pridaným predmetom",
+        "30": "zakrytie dopravnej značky alebo dopravného zariadenia predmetom nevhodne umiestneným na ceste alebo na mieste pri ceste alebo ktoré by rozptyľovali a upútavali pozornosť účastníka cestnej premávky alebo ich prekrytie oslňujúcim predmetom",
+        "31": "umiestnenie svetelného zdroja v blízkosti svetelných signalizačných zariadení vedúce k zámene so svetlami svetelných signalizačných zariadení",
+        "32": "nedostatočná údržba svetelného signalizačného zariadenia správcom cesty",
+        "33": "nerešpektovanie nadriadenosti dočasných dopravných značiek alebo dočasných zariadení trvalým dopravným značkám a dopravným zariadeniam"
+      }
+    },
+    "142": {
+      "value": "porušenie pravidiel riadenia cestnej premávky",
+      "children": {
+        "07": "nerešpektovanie príkazu dopravnej značky",
+        "08": "nerešpektovanie príkazu dopravného zariadenia",
+        "09": "nerešpektovanie pokynu policajta",
+        "10": "nerešpektovanie pokynu vojaka povolaného na plnenie úloh Policajného zboru",
+        "11": "nerešpektovanie pokynu vojenského policajta",
+        "12": "nerešpektovanie pokynu vojaka pri plnení úloh ozbrojených síl"
+      }
+    },
+    "143": {
+      "value": "nerešpektovanie oprávnenia na zastavenie vozidla",
+      "children": {
+        "08": "neuposlúchnutie pokynu na zastavenie vozidla danom policajtom",
+        "09": "neuposlúchnutie pokynu na zastavenie vozidla danom vojenským policajtom v rovnošate alebo profesionálnym vojakom a vojakom mimoriadnej služby v rovnošate s vonkajším označením POLÍCIA",
+        "10": "neuposlúchnutie pokynu na zastavenie vozidla danom obecným policajtom alebo inou osobou podľa osobitého predpisu",
+        "11": "neuposlúchnutie pokynu na zastavenie vozidla danom inou oprávnenou osobou"
+      }
+    },
+    "145": {
+      "value": "nerešpektovanie osobitosti premávky na ceste pre motorové vozidlá",
+      "children": {
+        "01": "použitie cesty pre motorové vozidlá iným účastníkom cestnej premávky ako vodičom motorového vozidla",
+        "02": "premávka motorových vozidiel a jazdných súprav, ktorých najvyššia povolená rýchlosť je nižšia ako 60 km⋅h⁻¹",
+        "03": "neopustenie cesty pre motorové vozidlá po zistení chyby na vozidle alebo náklade počas jazdy, pre ktoré nemožno dosiahnuť na rovine rýchlosť najmenej 60 km⋅h⁻¹",
+        "04": "vchádzanie na cestu pre motorové vozidlá alebo vychádzanie z cesty pre motorové vozidlá na nepovolenom mieste",
+        "05": "nepoužitie pripájacieho pruhu pre vjazd na cestu pre motorové vozidlá",
+        "06": "nedanie prednosti v jazde vozidlám idúcim v priebežných pruhoch v miestach, kde nie je pripájací pruh",
+        "07": "predchádzanie iného motorové vozidlo vodičom motorového vozidla kategórie N, ktorého najväčšia prípustná celková hmotnosť presahuje 7 500 kg alebo vodičom jazdnej súpravy, ktorej najväčšia prípustná hmotnosť presahuje 7 500 kg pri jazde na ceste pre motorové vozidlá",
+        "08": "nedodržanie bezpečnej vzdialenosti od vpredu idúceho vozidla",
+        "09": "zastavenie a státie na ceste pre motorové vozidlá",
+        "10": "otáčanie",
+        "11": "cúvanie",
+        "12": "vchádzanie na deliaci pás",
+        "13": "neoznačenie vozidla pri núdzovom státí",
+        "14": "neoprávnené vlečenie motorového vozidla",
+        "15": "obmedzenie iného motorového vozidla výrazne nižšou rýchlosťou pri predchádzaní iného motorového vozidla"
+      }
+    },
+    "146": {
+      "value": "porušenie povinností vodiča samovyvažovacieho vozidla alebo vodiča kolobežky s pomocným motorčekom",
+      "children": {
+        "01": "vedenie samovyvažovacieho vozidla alebo kolobežky s pomocným motorčekom osobou, ktorá nie je staršia ako 15 rokov",
+        "02": "nesprávna jazda po chodníku, cestičke pre chodcov alebo priechodu pre chodcov",
+        "03": "nesprávna jazda po jazdnom pruhu pre cyklistov, cestičke pre cyklistov alebo priechodu pre cyklistov",
+        "04": "jazda so samovyvažovacími vozidlami alebo s kolobežkami s pomocným motorčekom vedľa seba",
+        "05": "nedržanie samovyvažovacieho vozidla alebo kolobežky s pomocným motorčekom počas jazdy oboma rukami",
+        "06": "vedenie psa alebo iného zvieraťa počas jazdy alebo vezenie predmetu, ktorý sťažoval vedenie vozidla alebo ohrozoval iných účastníkov cestnej premávky",
+        "07": "jazda viacerých osôb na jednomiestnom samovyvažovacom vozidle alebo kolobežke s pomocným motorčekom",
+        "08": "vozenie predmetov, ktoré by sťažovali vedenie vozidla alebo ohrozovali iných účastníkov cestnej premávky",
+        "09": "nesprávne prechádzanie cez cestu alebo cez vozovku"
+      }
+    },
+    "53": {
+      "value": "porušenie pravidiel na úseku správy pozemných komunikácií",
+      "children": {
+        "12": "užitie komunikácie v rozpore s jej účelom",
+        "13": "neoprávnené vykonanie uzávierku cesty",
+        "14": "nepovolená práca (činnosti) ohrozujúci pozemnú komunikáciu alebo premávku na nej",
+        "15": "neoprávnené pripojenie komunikácie na diaľnicu, cestu alebo na miestnu komunikáciu alebo zriadi vjazd z týchto komunikácií na priľahlé nehnuteľnosti alebo zruší napojenie komunikácií a vjazdov",
+        "16": "zamenenie, pozmenenie, premiestnenie, odstránenie, umiestnenie alebo zakrytie dopravnej značky alebo iného zariadenia, ktoré je súčasťou pozemnej komunikácie",
+        "17": "zničenie, poškodenie alebo znečistenie dopravnej značky alebo iného zariadenia, ktoré je súčasťou pozemnej komunikácie, ak škoda neprevyšuje 170 eur",
+        "18": "znečistenie alebo poškodenie diaľnice, cesty alebo miestnej komunikácie tak, že spôsobí alebo môže spôsobiť chybu v zjazdnosti alebo v schodnosti pozemnej komunikácie",
+        "19": "nesplnenie ohlasovacej povinnosti alebo podmienok určených cestným správnym orgánom na vykonanie prác súvisiacich s uvedením komunikácie do pôvodného stavu v prípade opravy porúch na podzemných vedeniach uložených v diaľnici, ceste alebo v miestnej komunikácii",
+        "20": "neplnenie opatrenia uložené orgánom štátneho odborného dozoru na zabránenie ohrozeniu alebo sťaženiu premávky na pozemných komunikáciách",
+        "21": "neodstránenie pevnej prekážky na diaľnici, ceste alebo na miestnej komunikácii v termíne určenom cestným správnym orgánom alebo nesplnenie podmienok udelenej výnimky",
+        "22": "nesprávne alebo neoprávnené umiestnenie reklamného, informačného a propagačného zariadenia na diaľniciach, cestách pre motorové vozidlá a medzinárodných cestných ťahoch a v ich ochranných pásmach (okrem odpočívadiel) pozemných komunikácií"
+      }
+    },
+    "54": {
+      "value": "závada v zjazdnosti komunikácie",
+      "children": {
+        "01": "nesplnenie úlohy správcu cesty pri údržbe komunikácie"
+      }
+    }
+  },
+  "NdnRozsahNahlaseni": {
+    "-1": "nezadané",
+    "01": "do 30 min.",
+    "02": "do 1 hodiny",
+    "03": "do 3 hodín",
+    "04": "do 6 hodín",
+    "05": "od 6 do 12 hodín",
+    "06": "od 12 do 24 hodín",
+    "07": "nad 24 hodín"
+  },
+  "SednAlkohol": {
+    "-1": "nezadané",
+    "0": "nezisťované - vinník nebol na mieste nehody (nemocnica, usmrtený atď.)",
+    "1": "áno",
+    "2": "nie",
+    "3": "nezisťované - nebol k dispozícii merač alkoholu",
+    "4": "nezisťované - nehoda nezavinená účastníkom cestnej premávky"
+  },
+  "SednDeleniKomunikace": {
+    "-1": "nezadané",
+    "0": "žiadna z uvedených",
+    "1": "dvojpruhová",
+    "10": "šesťpruhová s deliacou čiarou",
+    "2": "trojpruhová",
+    "3": "štvorpruhová s deliacim pásom",
+    "4": "štvorpruhová s deliacou čiarou",
+    "5": "viacpruhová",
+    "6": "jednopruhová",
+    "7": "dvojpruhová jednosmerná",
+    "8": "trojpruhová jednosmerná",
+    "9": "šesťpruhová s deliacim pásom"
+  },
+  "SednDruhNehody": {
+    "-1": "nezadané",
+    "0": "Iný druh nehody",
+    "1": "Zrážka s idúcim nekoľajovým vozidlom",
+    "2": "Zrážka so zaparkovaným, odstaveným vozidlom",
+    "3": "Zrážka s pevnou prekážkou",
+    "4": "Zrážka s chodcom",
+    "5": "Zrážka s lesnou zverou",
+    "6": "Zrážka s domácim zvieraťom",
+    "7": "Zrážka s vlakom",
+    "8": "Zrážka s električkou",
+    "9": "Havária"
+  },
+  "SednDruhPrepravy": {
+    "-1": "nezadané",
+    "0": "neprichádza do úvahy",
+    "1": "nebezpečný náklad",
+    "2": "nadrozmerný náklad",
+    "3": "jazda so zvláštnym výstražným znamením",
+    "4": "jazda s právom prednosti v jazde"
+  },
+  "SednChovaniChodce": {
+    "-1": "nezadané",
+    "00": "žiadne z uvedených",
+    "01": "správne - primerané",
+    "02": "zlý odhad vzdialenosti a rýchlosti vozidla",
+    "03": "prehliadnutie možnosti kolízie so vzdialenejším vozidlom",
+    "04": "náhly vstup do vozovky z nástupného ostrovčeka (uprostred vozovky) bez rozhliadnutia",
+    "05": "náhly vstup do vozovky z chodníka (krajnice, okraja vozovky) bez rozhliadnutia",
+    "06": "náhly vstup do vozovky z deliaceho ostrovčeka bez rozhliadnutia",
+    "07": "nasledovanie iného chodca",
+    "08": "nacúvanie chodca pred vozidlo",
+    "09": "pobiehanie chodca pred vozidlom",
+    "10": "náhla zmena smeru chôdze (otočenie, vybočenie pri pozdĺžnej chôdzi)",
+    "11": "náraz do vozidla zboku",
+    "12": "hra detí na vozovke (okrem kódu 13)",
+    "13": "športová činnosť na vozovke (napr. sánkovanie, lyžovanie a pod.)",
+    "14": "chodec sedel, ležal na vozovke"
+  },
+  "SednKvalitaPovrchu": {
+    "-1": "nezadané",
+    "0": "žiadny z uvedených",
+    "1": "dobrý",
+    "2": "nerovný, zvlnený v priečnom smere",
+    "3": "nerovný, zvlnený v pozdĺžnom smere",
+    "4": "súvislé výtlky",
+    "5": "prepadnuté, vystúpené koľajnice"
+  },
+  "SednMistoDn": {
+    "-1": "nezadané",
+    "00": "mimo križovatky",
+    "10": "na križovatke, ak ide o kríženie ciest III. tr., nesledovaných a účelových komunikácií",
+    "11": "vo vnútri zóny 1 predmetnej križovatky",
+    "12": "vo vnútri zóny 2 predmetnej križovatky",
+    "13": "vo vnútri zóny 3 predmetnej križovatky",
+    "14": "vo vnútri zóny 4 predmetnej križovatky",
+    "15": "vo vnútri zóny 5 predmetnej križovatky",
+    "16": "vo vnútri zóny 6 predmetnej križovatky",
+    "17": "vo vnútri zóny 7 predmetnej križovatky",
+    "18": "vo vnútri zóny 8 predmetnej križovatky",
+    "19": "na križovatke, vo vnútri hraníc križovatky (zóna 9)",
+    "22": "na vjazdové alebo výjazdové časti vetvy pri mimoúrovňovom krížení v zóne 2",
+    "23": "na vjazdové alebo výjazdové časti vetvy pri mimoúrovňovom krížení v zóne 3",
+    "24": "na vjazdové alebo výjazdové časti vetvy pri mimoúrovňovom krížení v zóne 4",
+    "25": "na vjazdové alebo výjazdové časti vetvy pri mimoúrovňovom krížení v zóne 5",
+    "26": "na vjazdové alebo výjazdové časti vetvy pri mimoúrovňovom krížení v zóne 6",
+    "27": "na vjazdové alebo výjazdové časti vetvy pri mimoúrovňovom krížení v zóne 7",
+    "28": "na vjazdové alebo výjazdové časti vetvy pri mimoúrovňovom krížení v zóne 8",
+    "29": "mimo zóny 11 - 19 a 22 - 28",
+    "30": "na kruhovom objazde alebo rondeli"
+  },
+  "SednOvlivneniRidice": {
+    "-1": "nezadané",
+    "0": "iné ovplyvnenie",
+    "1": "vodič nebol ovplyvnený",
+    "2": "oslnený slnkom",
+    "3": "oslnený svetlometmi iného vozidla",
+    "4": "ovplyvnený konaním iného účastníka cestnej premávky",
+    "5": "ovplyvnenie pri vyhýbaní lesnej zveri, domácim zvieratám",
+    "6": "zmena organizácie dopravy do 1 mesiaca pred nehodou",
+    "7": "hustý neusmernený peší ruch",
+    "8": "ovplyvnenie jazdou v kolóne",
+    "9": "ovplyvnenie náhlym únikom vzduchu z pneumatík, náhlom rozbití skla, tech. závadou"
+  },
+  "SednPocasi": {
+    "-1": "nezadané",
+    "1": "nesťažené poveternostné podmienky",
+    "2": "hmla",
+    "3": "práve na začiatku dažďa - vozovka ešte nie je omytá",
+    "4": "dážď",
+    "5": "sneženie",
+    "6": "tvorí sa námraza, poľadovica, mrznúci dážď, dážď so snehom",
+    "7": "nárazový vietor (bočný, víchrica a pod.)",
+    "8": "iné sťažené poveternostné podmienky (búrka a pod.)"
+  },
+  "SednPovrchVozovky": {
+    "-1": "nezadané",
+    "0": "žiadny z uvedených (piesok, drevo, iný druh)",
+    "1": "dlažba",
+    "2": "živica",
+    "3": "cementobetón",
+    "4": "panely",
+    "5": "štrk",
+    "6": "povrch nespevnený"
+  },
+  "SednPrekazka": {
+    "-1": "nezadané",
+    "0": "nejde o zrážku s pevnou prekážkou",
+    "1": "strom",
+    "2": "stĺp - telefón, telegraf, stožiar el. vedenia, osvetlenie, signalizácia a pod.",
+    "3": "smerový stĺpik, kilometrovník, dopravná značka a ich samostatné nosiče",
+    "4": "zvodidlo",
+    "5": "prekážka na vozovke spôsobená prevádzkou iného vozidla (strata nákladu, výstroja a výzbroje vozidla)",
+    "6": "múr, pevná stena budov, stánkov, mostov, podjazdov a pod.",
+    "7": "závory železničných priecestí",
+    "8": "stavebný materiál (kopa štrku, piesku, zložené panely, drevo a pod.)",
+    "9": "iná prekážka, zábrana pri stavebnej činnosti, konár, bedňa, majáčik nástupného ostrovčeka, zábradlie, násyp, oplotenie a pod.",
+    "A": "reklamný pútač umiestnený samostatne"
+  },
+  "SednProvozovatel": {
+    "-1": "nezadané",
+    "00": "nezistené",
+    "01": "vozidlo súkromné, nevyužívané na zárobkovú činnosť",
+    "02": "vozidlo súkromné, využívané na zárobkovú činnosť",
+    "03": "súkromná organizácia (podnikateľ, s.r.o., atď)",
+    "04": "mestská hromadná doprava",
+    "05": "verejná hromadná doprava",
+    "06": "medzinárodná kamiónová doprava",
+    "07": "vozidlo registrované mimo územia SR",
+    "08": "štátny podnik, štátna organizácia",
+    "09": "TAXI",
+    "10": "zastupiteľský úrad",
+    "11": "ministerstvo vnútra",
+    "12": "ministerstvo obrany",
+    "13": "obecná, mestská polícia",
+    "14": "iné vozidlo",
+    "15": "ukradnuté, neoprávnene použité vozidlo"
+  },
+  "SednRizeniProvozu": {
+    "-1": "nezadané",
+    "0": "svetelná signalizácia dvojfarebná v prevádzke (napr. pri obchádzkach)",
+    "1": "príslušníkom PZ alebo iným orgánom",
+    "2": "svetelná signalizácia trojfarebná v prevádzke",
+    "3": "svetel. signal. trojfareb. prepnutá na blikajúcu žltú (prednosť vyznačená dopr. značkami)",
+    "4": "svetel. signal. trojfareb. prepnutá na blikajúcu žltú (prednosť nevyznačená dopr. značkami",
+    "5": "svetel. signal. trojfareb. mimo prevádzky (prednosť vyznačená dopravnými značkami)",
+    "6": "svetel. signal. trojfareb. mimo prevádzky (prednosť nevyznačená dopravnými značkami)",
+    "7": "prednosť vyznačená dopravnými značkami",
+    "8": "prednosť nevyznačená - premávka neriadená, vyplýva z pravidiel cestnej premávky",
+    "9": "svetelná signalizácia dvojfarebná mimo prevádzky (napr. pri obchádzkach)"
+  },
+  "SednRozhled": {
+    "-1": "nezadané",
+    "0": "iné zlé",
+    "1": "dobré",
+    "2": "zlé vplyvom okolitej zástavby (budovy, plné zábradlie, lešenie a pod.)",
+    "3": "zlé vplyvom profilu komunikácie (neprehľadný vrchol stúpania, zárez komunikácie a pod.)",
+    "4": "zlé vplyvom vegetácie - trvalej (stromy, kry a pod.)",
+    "5": "zlé vplyvom vegetácie - prechodnej (tráva, obilie, parková úprava a pod.)",
+    "6": "výhľad zakrytý stojacim vozidlom"
+  },
+  "SednSituaceChodce": {
+    "-1": "nezadané",
+    "00": "iná siuácia",
+    "01": "chodec vstúpil na riadený priechod na signál 'voľno'",
+    "02": "vstúpil na riadený priechod na signál 'stoj'",
+    "03": "vstúpil do vozovky v blízkosti riadeného priechodu v čase signálu 'stoj'",
+    "04": "prechádzal po neriadenom vyznačenom priechode",
+    "05": "prechádzal tesne pred alebo za stojacim vozidlom na zastávke",
+    "06": "prechádzal tesne pred alebo za vozidlom parkujúcim",
+    "07": "chôdza po chodníku",
+    "08": "státie na chodníku",
+    "09": "chôdza po správnej strane cesty",
+    "10": "chôdza po nesprávnej strane cesty",
+    "11": "prechádzanie mimo priechodu pre chodcov (cca 20 m a viac)",
+    "12": "chôdza cez vozovku v miestach, kde je chodník alebo krajnica"
+  },
+  "SednSituovaniDn": {
+    "-1": "nezadané",
+    "0": "žiadne z uvedených",
+    "1": "na jazdnom pruhu",
+    "2": "na odstavnom pruhu",
+    "3": "na krajnici",
+    "4": "na pruhu odbočovacom alebo pripájacom",
+    "5": "na jazdnom pruhu pre pomalé vozidlá",
+    "6": "na chodníku alebo zvýšenom ostrovčeku",
+    "7": "na koľajniciach električky",
+    "8": "mimo komunikácie",
+    "9": "na cestičke pre cyklistov"
+  },
+  "SednSmerJizdy": {
+    "-1": "nezadané",
+    "00": "10 – 99 potom vo tvaru xy, kde x – 1-9 a y – 0-9 viď pravidlá pre ŠEDN",
+    "01": "v smere staničenia na komunikácii (napr. od km 1 ku km 2) - vozidlo idúce",
+    "02": "v smere staničenia na komunikácii - vozidlo odstavené (parkujúce)",
+    "03": "proti smeru staničenia na komunikácii - vozidlo idúce",
+    "04": "proti smeru staničenia na komunikácii - vozidlo odstavené (parkujúce)",
+    "05": "vozidlo idúce na komunikácii bez staničenia",
+    "06": "vozidlo odstavené (parkujúce) na komunikácii bez staničenia",
+    "10": "10: číslo zóny z a číslo zóny do",
+    "11": "11: číslo zóny z a číslo zóny do",
+    "12": "12: číslo zóny z a číslo zóny do",
+    "13": "13: číslo zóny z a číslo zóny do",
+    "14": "14: číslo zóny z a číslo zóny do",
+    "15": "15: číslo zóny z a číslo zóny do",
+    "16": "16: číslo zóny z a číslo zóny do",
+    "17": "17: číslo zóny z a číslo zóny do",
+    "18": "18: číslo zóny z a číslo zóny do",
+    "19": "19: číslo zóny z a číslo zóny do",
+    "20": "20: číslo zóny z a číslo zóny do",
+    "21": "21: číslo zóny z a číslo zóny do",
+    "22": "22: číslo zóny z a číslo zóny do",
+    "23": "23: číslo zóny z a číslo zóny do",
+    "24": "24: číslo zóny z a číslo zóny do",
+    "25": "25: číslo zóny z a číslo zóny do",
+    "26": "26: číslo zóny z a číslo zóny do",
+    "27": "27: číslo zóny z a číslo zóny do",
+    "28": "28: číslo zóny z a číslo zóny do",
+    "29": "29: číslo zóny z a číslo zóny do",
+    "30": "30: číslo zóny z a číslo zóny do",
+    "31": "31: číslo zóny z a číslo zóny do",
+    "32": "32: číslo zóny z a číslo zóny do",
+    "33": "33: číslo zóny z a číslo zóny do",
+    "34": "34: číslo zóny z a číslo zóny do",
+    "35": "35: číslo zóny z a číslo zóny do",
+    "36": "36: číslo zóny z a číslo zóny do",
+    "37": "37: číslo zóny z a číslo zóny do",
+    "38": "38: číslo zóny z a číslo zóny do",
+    "39": "39: číslo zóny z a číslo zóny do",
+    "40": "40: číslo zóny z a číslo zóny do",
+    "41": "41: číslo zóny z a číslo zóny do",
+    "42": "42: číslo zóny z a číslo zóny do",
+    "43": "43: číslo zóny z a číslo zóny do",
+    "44": "44: číslo zóny z a číslo zóny do",
+    "45": "45: číslo zóny z a číslo zóny do",
+    "46": "46: číslo zóny z a číslo zóny do",
+    "47": "47: číslo zóny z a číslo zóny do",
+    "48": "48: číslo zóny z a číslo zóny do",
+    "49": "49: číslo zóny z a číslo zóny do",
+    "50": "50: číslo zóny z a číslo zóny do",
+    "51": "51: číslo zóny z a číslo zóny do",
+    "52": "52: číslo zóny z a číslo zóny do",
+    "53": "53: číslo zóny z a číslo zóny do",
+    "54": "54: číslo zóny z a číslo zóny do",
+    "55": "55: číslo zóny z a číslo zóny do",
+    "56": "56: číslo zóny z a číslo zóny do",
+    "57": "57: číslo zóny z a číslo zóny do",
+    "58": "58: číslo zóny z a číslo zóny do",
+    "59": "59: číslo zóny z a číslo zóny do",
+    "60": "60: číslo zóny z a číslo zóny do",
+    "61": "61: číslo zóny z a číslo zóny do",
+    "62": "62: číslo zóny z a číslo zóny do",
+    "63": "63: číslo zóny z a číslo zóny do",
+    "64": "64: číslo zóny z a číslo zóny do",
+    "65": "65: číslo zóny z a číslo zóny do",
+    "66": "66: číslo zóny z a číslo zóny do",
+    "67": "67: číslo zóny z a číslo zóny do",
+    "68": "68: číslo zóny z a číslo zóny do",
+    "69": "69: číslo zóny z a číslo zóny do",
+    "70": "70: číslo zóny z a číslo zóny do",
+    "71": "71: číslo zóny z a číslo zóny do",
+    "72": "72: číslo zóny z a číslo zóny do",
+    "73": "73: číslo zóny z a číslo zóny do",
+    "74": "74: číslo zóny z a číslo zóny do",
+    "75": "75: číslo zóny z a číslo zóny do",
+    "76": "76: číslo zóny z a číslo zóny do",
+    "77": "77: číslo zóny z a číslo zóny do",
+    "78": "78: číslo zóny z a číslo zóny do",
+    "79": "79: číslo zóny z a číslo zóny do",
+    "80": "80: číslo zóny z a číslo zóny do",
+    "81": "81: číslo zóny z a číslo zóny do",
+    "82": "82: číslo zóny z a číslo zóny do",
+    "83": "83: číslo zóny z a číslo zóny do",
+    "84": "84: číslo zóny z a číslo zóny do",
+    "85": "85: číslo zóny z a číslo zóny do",
+    "86": "86: číslo zóny z a číslo zóny do",
+    "87": "87: číslo zóny z a číslo zóny do",
+    "88": "88: číslo zóny z a číslo zóny do",
+    "89": "89: číslo zóny z a číslo zóny do",
+    "90": "90: číslo zóny z a číslo zóny do",
+    "91": "91: číslo zóny z a číslo zóny do",
+    "92": "92: číslo zóny z a číslo zóny do",
+    "93": "93: číslo zóny z a číslo zóny do",
+    "94": "94: číslo zóny z a číslo zóny do",
+    "95": "95: číslo zóny z a číslo zóny do",
+    "96": "96: číslo zóny z a číslo zóny do",
+    "97": "97: číslo zóny z a číslo zóny do",
+    "98": "98: číslo zóny z a číslo zóny do",
+    "99": "99: číslo zóny z a číslo zóny do"
+  },
+  "SednSmerovePomery": {
+    "-1": "nezadané",
+    "1": "priamy úsek",
+    "2": "priamy úsek pre prejazd zákrutou (do vzdialenosti cca 100m od optického konca zákruty)",
+    "3": "zákruta",
+    "4": "križovatka priesečná - štvorramenná",
+    "5": "križovatka styková - trojramenná",
+    "6": "križovatka päťramenná a viac",
+    "7": "kruhový objazd (Rondel)"
+  },
+  "SednSpecifickeObjektyDn": {
+    "-1": "nezadané",
+    "0": "žiadne alebo žiadne z uvedených",
+    "1": "priechod pre chodcov",
+    "2": "v blízkosti priechodu pre chodcov (do vzdialenosti 20 m)",
+    "3": "železničné priecestie nezabezpečené závorami ani svetelným výstražným zariadením",
+    "4": "železničné priecestie zabezpečené",
+    "5": "most, nadjazd, podjazd, tunel, a pod.",
+    "6": "zastávka električky, autobusu, trolejbusu",
+    "7": "čerpacia stanica pohonných hmôt",
+    "8": "parkovisko"
+  },
+  "SednStavChodce": {
+    "-1": "nezadané",
+    "0": "nezistené",
+    "1": "dobrý - žiadne nepriaznivé okolnosti neboli zistené",
+    "2": "nepozornosť, roztržitosť",
+    "3": "pod vplyvom liekov, narkotík (znižujúcich vnímavosť a pozornosť)",
+    "4": "pod vplyvom alkoholu a inej návykovej látky",
+    "5": "náhla fyzická neschopnosť, nevoľnosť a pod.",
+    "6": "pokus o samovraždu, samovražda",
+    "7": "invalidita",
+    "8": "iný neuvedený stav"
+  },
+  "SednStavKrajnice": {
+    "-1": "nezadané",
+    "1": "dobrý stav krajnice, výrazne viditeľný vodiaci pruh (biela čiara, dlaždice a pod.)",
+    "2": "dobrý stav krajnice bez vodiaceho pruhu (ojazdené značenie, bez značenia)",
+    "3": "zlý stav krajnice s vodiacim pruhom (biela čiara, dlaždice a pod.)",
+    "4": "zlý stav krajnice (znížený, poprask., rozrušená, nedobud.) bez vodiaceho pruhu",
+    "5": "krajnica chýba"
+  },
+  "SednStavPoNehode": {
+    "-1": "nezadané",
+    "0": "žiadne z uvedených (i voz. jednostopové a nemotorové)",
+    "1": "vozidlo zostalo na kolesách neprevrátené - bez požiaru",
+    "2": "vozidlo prevrátené na bok - bez požiaru",
+    "3": "vozidlo prevrátené na strechu - bez požiaru (i niekoľkonásobné prevrátenie)",
+    "4": "vozidlo zostalo na kolesách neprevrátené - s požiarom",
+    "5": "vozidlo prevrátené na bok - s požiarom",
+    "6": "vozidlo prevrátené na strechu - s požiarom (i niekoľkonásobné prevrátenie)",
+    "7": "vodič ušiel - zistený"
+  },
+  "SednStavPovrchu": {
+    "-1": "nezadané",
+    "0": "iný stav vozovky v čase nehody",
+    "1": "povrch suchý, neznečistený",
+    "2": "povrch suchý, znečistený (piesok, prach, opadané lístie, štrk a pod.)",
+    "3": "povrch mokrý",
+    "4": "na vozovke je blato",
+    "5": "na vozovke je námraza alebo ujazdený sneh - posypané",
+    "6": "na vozovke je námraza alebo ujazdený sneh - neposypané",
+    "7": "na vozovke je rozliaty olej, nafta (na suchej aj mokrej)",
+    "8": "topiaci sa sneh - snehová kaša",
+    "9": "súvislá snehová vrstva na vozovke - neujazdený sneh"
+  },
+  "SednStavRidice": {
+    "-1": "nezadané",
+    "0": "iný nepriaznivý stav",
+    "1": "dobrý, žiadne nepriaznivé okolnosti neboli zistené",
+    "2": "únava, zaspatie",
+    "3": "pod vplyvom liekov (znižujúcich schopnosť na vedenie alebo vnímavosť a pozornosť vodiča), narkotík",
+    "4": "pod vplyvom alkoholu a inej návykovej látky",
+    "5": "náhla fyzická neschopnosť, nevoľnosť a pod.",
+    "6": "choroba, telesná vada, úraz",
+    "7": "invalidita",
+    "8": "náhle úmrtie počas jazdy",
+    "9": "pokus o samovraždu, samovražda",
+    "A": "nezistené"
+  },
+  "SednStretnuti": {
+    "-1": "nezadané",
+    "0": "nejde o zrážku idúcich vozidiel",
+    "1": "čelná",
+    "2": "bočná",
+    "3": "zboku (v kolmom nebo šikmom smere)",
+    "4": "zozadu"
+  },
+  "SednViditelnost": {
+    "-1": "nezadané",
+    "1": "cez deň, viditeľnosť neznížená vplyvom poveternostných podmienok",
+    "2": "cez deň, znížená viditeľnosť (svitanie, súmrak)",
+    "3": "cez deň, znížená viditeľnosť vplyvom poveter. podmienok (hmla, sneženie, dážď ...)",
+    "4": "v noci - s verejným osvetlením, viditeľnosť neznížená vplyvom poveter. podmienok",
+    "5": "v noci - s verejným osvetlením, znížená viditeľnosť vplyvom poveter. podmienok",
+    "6": "v noci bez verejného osvetlenia, viditeľnosť neznížená vplyvom poveter. podmienok",
+    "7": "v noci bez verejného osvetlenia, znížená viditeľnosť vplyvom poveter. podmienok"
+  },
+  "SednVObci": {
+    "-1": "nezadané",
+    "1": "v obci",
+    "2": "mimo obec"
+  },
+  "SednZavadaKomunikace": {
+    "-1": "nezadané",
+    "0": "iná závada",
+    "1": "bez závad",
+    "2": "pozdĺžny sklon - nad 8 %",
+    "3": "nadmerný alebo inak nevhodný priečny sklon (i nevhodne klopená zákruta)",
+    "4": "náhle zúženie vozovky",
+    "5": "nerovnosť vozovky",
+    "6": "ojedinelá závada v inak dobrom povrchu vozovky",
+    "7": "neoznačená nebo nedostatočne označená prekážka na komunikácii",
+    "8": "prekážka na ceste v súvislosti s prácou mimo komunikácie",
+    "9": "práca na ceste"
+  },
+  "SednZavineni": {
+    "-1": "nezadané",
+    "0": "zavinenie nezistené",
+    "1": "vodičom motorového vozidla",
+    "2": "vodičom nemotorového vozidla",
+    "3": "chodcom",
+    "4": "zamestnancom SŽD",
+    "5": "iným účastníkom cestnej premávky",
+    "6": "závadou komunikácie",
+    "7": "technickou závadou vozidla",
+    "8": "lesnou zverou a domácimi zvieratami",
+    "9": "iné zavinenie",
+    "A": "odrazeným kameňom"
+  }
+}

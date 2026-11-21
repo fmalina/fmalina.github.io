@@ -1,0 +1,53 @@
+:root{ /* color palette */
+  --bg:#f4f0e8;
+  --ink:#25241f;
+  --border:#ddd;
+  --tea:#c4d6b0;      /* Tea Green */
+  --blue:#477998;     /* Cerulean */
+  --dark:#291f1e;     /* Coffee Bean */
+  --red:#f64740;      /* Cinnabar */
+  --darkred:#a3333d;  /* Brown Red */
+  --muted:gray;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:sans-serif;line-height:1.55}
+#map{height:85svh;border-bottom:1px solid var(--border);background:var(--bg)}
+.content{margin:2em auto 5em;text-align:center;max-width:800px}
+.content p{text-align:left}
+.docs .content{text-align:left}
+h1{font-weight:normal;text-transform:uppercase;letter-spacing:.5rem;font-size:1.4rem}
+h2{font-size:1.1rem}
+h3{font-size:1rem}
+hr{border:0;border-bottom:1px solid var(--tea);margin:2rem 0}
+a{color:var(--blue);text-decoration:none}
+a:hover,code a,nav.main a{text-decoration:underline}
+nav,.lead{padding:2rem}
+nav.main{padding:1rem;display:flex;justify-content:center;gap:1.5rem;text-transform:uppercase;font-size:.9rem}
+nav.main a{color:var(--darkred)}
+nav ul{list-style:none;padding:0}
+#charts,nav>ul{display:flex;flex-wrap:wrap;justify-content:center;gap:3rem;font-size:.9rem}
+#charts{margin-bottom:5rem}
+#charts canvas{max-width:250px;max-height:250px}
+#charts canvas#lineMonthly{max-width:750px;max-height:350px}
+.leaderboard{margin-bottom:2em;padding:0;list-style-type:none}
+table{border-collapse:collapse;margin:0 auto;
+    tr, td{border-bottom:1px solid var(--border)}
+    th{padding:0 .5rem}
+    tbody .th{text-align:left}
+    tbody td{text-align:center}
+    th{cursor:pointer;position:relative;padding-right:16px}
+    th::after{content:"⇅";position:absolute;right:4px;opacity:.3;font-size:.8em}
+    th.sort-asc::after{content:"↑";opacity:1}
+    th.sort-desc::after{content:"↓";opacity:1}}
+.infobox{padding:0 1rem;background:var(--bg);border-bottom:1px solid var(--border)}
+.infobox p{margin:0}
+.infobox,#map{box-shadow:rgba(100,100,111,.2)0 7px 29px 0}
+code a{color:inherit}
+p.subtitle{text-align:center;font-style:italic;font-family:serif;margin-top:-.3rem;color:var(--dark)}
+.head,.foot{text-align:center}
+.head{text-transform:uppercase;margin:2em;letter-spacing:.3rem}
+.district-label span{cursor:pointer;color:#fff;background:rgba(246,71,64,.85);padding:2px 6px;
+    white-space:nowrap;display:inline-block;box-shadow:rgba(0,0,0,.15)2px 2px 3px}
+.district-label:hover span,.district-label.hover span{text-decoration:none;background:var(--darkred)}
+.leaflet-popup-content{line-height:1.5 !important}
+.leaflet-popup-content small{color:var(--muted);overflow:hidden;display:block}

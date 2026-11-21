@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Jednosmerkovo  | Mapa dopravných nehôd</title>
+<link rel="stylesheet" href="assets/style.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-polylinedecorator"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+</head>
+<body>
+<div id="map"></div>
+<script>
+const home = true;
+const slug = '';
+const latlon = [49.22, 18.74];
+const districtStats = {'hlohovec': {'vinnik': {'vodic': 358, 'chodec': 9, 'cyklista': 11, 'spolujazdec': 0, 'alkohol': 36, 'drogy': 3}, 'gender': {'muz': 202, 'zena': 66, 'nezname': 108}, 'fem_alko': 3, 'total_accidents': 376, 'total_damage': 2568590, 'name': 'Hlohovec', 'hard': 0.077, 'avg_price': 6831, 'accs_per_1k': 8.84, 'hard_per_1k': 0.682, 'population': 42519, 'density': 159.1, 'alko': 36, 'alko_pct': 9.6, 'drogy_pct': 0.8}, 'bytca': {'vinnik': {'vodic': 203, 'chodec': 3, 'cyklista': 11, 'spolujazdec': 0, 'alkohol': 36, 'drogy': 1}, 'gender': {'muz': 127, 'zena': 39, 'nezname': 50}, 'fem_alko': 8, 'total_accidents': 216, 'total_damage': 1102890, 'name': 'Bytča', 'hard': 0.093, 'avg_price': 5106, 'accs_per_1k': 6.85, 'hard_per_1k': 0.635, 'population': 31511, 'density': 111.9, 'alko': 36, 'alko_pct': 16.7, 'drogy_pct': 0.5}, 'presov': {'vinnik': {'vodic': 1669, 'chodec': 76, 'cyklista': 29, 'spolujazdec': 2, 'alkohol': 141, 'drogy': 5}, 'gender': {'muz': 869, 'zena': 247, 'nezname': 688}, 'fem_alko': 12, 'total_accidents': 1804, 'total_damage': 5890680, 'name': 'Prešov', 'hard': 0.044, 'avg_price': 3265, 'accs_per_1k': 10.24, 'hard_per_1k': 0.449, 'population': 176096, 'density': 188.5, 'alko': 141, 'alko_pct': 7.8, 'drogy_pct': 0.3}, 'dolnykubin': {'vinnik': {'vodic': 198, 'chodec': 7, 'cyklista': 12, 'spolujazdec': 1, 'alkohol': 22, 'drogy': 1}, 'gender': {'muz': 127, 'zena': 30, 'nezname': 54}, 'fem_alko': 3, 'total_accidents': 211, 'total_damage': 1291640, 'name': 'Dolný Kubín', 'hard': 0.104, 'avg_price': 6122, 'accs_per_1k': 5.47, 'hard_per_1k': 0.57, 'population': 38608, 'density': 78.5, 'alko': 22, 'alko_pct': 10.4, 'drogy_pct': 0.5}, 'kosiceokolie': {'vinnik': {'vodic': 680, 'chodec': 22, 'cyklista': 36, 'spolujazdec': 0, 'alkohol': 114, 'drogy': 11}, 'gender': {'muz': 517, 'zena': 116, 'nezname': 82}, 'fem_alko': 10, 'total_accidents': 715, 'total_damage': 4405790, 'name': 'Košice - okolie', 'hard': 0.193, 'avg_price': 6162, 'accs_per_1k': 5.31, 'hard_per_1k': 1.026, 'population': 134540, 'density': 87.7, 'alko': 114, 'alko_pct': 15.9, 'drogy_pct': 1.5}, 'zilina': {'vinnik': {'vodic': 1507, 'chodec': 24, 'cyklista': 58, 'spolujazdec': 2, 'alkohol': 130, 'drogy': 2}, 'gender': {'muz': 888, 'zena': 212, 'nezname': 475}, 'fem_alko': 11, 'total_accidents': 1575, 'total_damage': 5287780, 'name': 'Žilina', 'hard': 0.1, 'avg_price': 3357, 'accs_per_1k': 9.84, 'hard_per_1k': 0.988, 'population': 159997, 'density': 196.3, 'alko': 130, 'alko_pct': 8.3, 'drogy_pct': 0.1}, 'cadca': {'vinnik': {'vodic': 524, 'chodec': 10, 'cyklista': 16, 'spolujazdec': 0, 'alkohol': 84, 'drogy': 4}, 'gender': {'muz': 281, 'zena': 69, 'nezname': 189}, 'fem_alko': 13, 'total_accidents': 539, 'total_damage': 2675900, 'name': 'Čadca', 'hard': 0.106, 'avg_price': 4965, 'accs_per_1k': 6.26, 'hard_per_1k': 0.662, 'population': 86104, 'density': 113.2, 'alko': 84, 'alko_pct': 15.6, 'drogy_pct': 0.7}, 'zlatemoravce': {'vinnik': {'vodic': 360, 'chodec': 7, 'cyklista': 14, 'spolujazdec': 1, 'alkohol': 32, 'drogy': 0}, 'gender': {'muz': 202, 'zena': 72, 'nezname': 103}, 'fem_alko': 5, 'total_accidents': 377, 'total_damage': 1798530, 'name': 'Zlaté Moravce', 'hard': 0.064, 'avg_price': 4771, 'accs_per_1k': 9.29, 'hard_per_1k': 0.591, 'population': 40585, 'density': 77.9, 'alko': 32, 'alko_pct': 8.5, 'drogy_pct': 0.0}, 'turciansketeplice': {'vinnik': {'vodic': 103, 'chodec': 0, 'cyklista': 3, 'spolujazdec': 0, 'alkohol': 8, 'drogy': 0}, 'gender': {'muz': 61, 'zena': 11, 'nezname': 32}, 'fem_alko': 1, 'total_accidents': 104, 'total_damage': 841470, 'name': 'Turčianske Teplice', 'hard': 0.115, 'avg_price': 8091, 'accs_per_1k': 6.68, 'hard_per_1k': 0.77, 'population': 15580, 'density': 39.7, 'alko': 8, 'alko_pct': 7.7, 'drogy_pct': 0.0}, 'brezno': {'vinnik': {'vodic': 277, 'chodec': 8, 'cyklista': 11, 'spolujazdec': 1, 'alkohol': 37, 'drogy': 4}, 'gender': {'muz': 173, 'zena': 33, 'nezname': 85}, 'fem_alko': 4, 'total_accidents': 291, 'total_damage': 1387830, 'name': 'Brezno', 'hard': 0.162, 'avg_price': 4769, 'accs_per_1k': 5.06, 'hard_per_1k': 0.817, 'population': 57517, 'density': 45.5, 'alko': 37, 'alko_pct': 12.7, 'drogy_pct': 1.4}, 'skalica': {'vinnik': {'vodic': 306, 'chodec': 3, 'cyklista': 17, 'spolujazdec': 1, 'alkohol': 45, 'drogy': 3}, 'gender': {'muz': 188, 'zena': 50, 'nezname': 80}, 'fem_alko': 11, 'total_accidents': 318, 'total_damage': 1275170, 'name': 'Skalica', 'hard': 0.11, 'avg_price': 4010, 'accs_per_1k': 6.85, 'hard_per_1k': 0.754, 'population': 46440, 'density': 130.1, 'alko': 45, 'alko_pct': 14.2, 'drogy_pct': 0.9}, 'trencin': {'vinnik': {'vodic': 384, 'chodec': 9, 'cyklista': 23, 'spolujazdec': 0, 'alkohol': 46, 'drogy': 3}, 'gender': {'muz': 235, 'zena': 75, 'nezname': 89}, 'fem_alko': 10, 'total_accidents': 399, 'total_damage': 1935500, 'name': 'Trenčín', 'hard': 0.075, 'avg_price': 4851, 'accs_per_1k': 3.53, 'hard_per_1k': 0.265, 'population': 113057, 'density': 167.5, 'alko': 46, 'alko_pct': 11.5, 'drogy_pct': 0.8}, 'senica': {'vinnik': {'vodic': 392, 'chodec': 11, 'cyklista': 20, 'spolujazdec': 0, 'alkohol': 45, 'drogy': 4}, 'gender': {'muz': 241, 'zena': 62, 'nezname': 113}, 'fem_alko': 9, 'total_accidents': 416, 'total_damage': 1846630, 'name': 'Senica', 'hard': 0.084, 'avg_price': 4439, 'accs_per_1k': 7.1, 'hard_per_1k': 0.597, 'population': 58584, 'density': 85.7, 'alko': 45, 'alko_pct': 10.8, 'drogy_pct': 1.0}, 'bratislava1': {'vinnik': {'vodic': 418, 'chodec': 26, 'cyklista': 6, 'spolujazdec': 3, 'alkohol': 26, 'drogy': 2}, 'gender': {'muz': 259, 'zena': 75, 'nezname': 115}, 'fem_alko': 2, 'total_accidents': 449, 'total_damage': 1746570, 'name': 'Bratislava - 1', 'hard': 0.053, 'avg_price': 3890, 'accs_per_1k': 9.37, 'hard_per_1k': 0.501, 'population': 47896, 'density': 4994.4, 'alko': 26, 'alko_pct': 5.8, 'drogy_pct': 0.4}, 'novemestonadvahom': {'vinnik': {'vodic': 310, 'chodec': 12, 'cyklista': 12, 'spolujazdec': 0, 'alkohol': 59, 'drogy': 3}, 'gender': {'muz': 202, 'zena': 42, 'nezname': 87}, 'fem_alko': 7, 'total_accidents': 331, 'total_damage': 1276110, 'name': 'Nové Mesto nad Váhom', 'hard': 0.051, 'avg_price': 3855, 'accs_per_1k': 5.42, 'hard_per_1k': 0.278, 'population': 61105, 'density': 105.4, 'alko': 59, 'alko_pct': 17.8, 'drogy_pct': 0.9}, 'nitra': {'vinnik': {'vodic': 2119, 'chodec': 43, 'cyklista': 30, 'spolujazdec': 0, 'alkohol': 135, 'drogy': 3}, 'gender': {'muz': 1075, 'zena': 399, 'nezname': 737}, 'fem_alko': 11, 'total_accidents': 2211, 'total_damage': 6351650, 'name': 'Nitra', 'hard': 0.031, 'avg_price': 2873, 'accs_per_1k': 13.46, 'hard_per_1k': 0.42, 'population': 164220, 'density': 188.6, 'alko': 135, 'alko_pct': 6.1, 'drogy_pct': 0.1}, 'spisskanovaves': {'vinnik': {'vodic': 491, 'chodec': 31, 'cyklista': 21, 'spolujazdec': 3, 'alkohol': 56, 'drogy': 1}, 'gender': {'muz': 266, 'zena': 66, 'nezname': 210}, 'fem_alko': 9, 'total_accidents': 542, 'total_damage': 1433190, 'name': 'Spišská Nová Ves', 'hard': 0.116, 'avg_price': 2644, 'accs_per_1k': 5.5, 'hard_per_1k': 0.639, 'population': 98622, 'density': 167.9, 'alko': 56, 'alko_pct': 10.3, 'drogy_pct': 0.2}, 'myjava': {'vinnik': {'vodic': 107, 'chodec': 1, 'cyklista': 5, 'spolujazdec': 0, 'alkohol': 16, 'drogy': 1}, 'gender': {'muz': 64, 'zena': 16, 'nezname': 28}, 'fem_alko': 3, 'total_accidents': 108, 'total_damage': 562490, 'name': 'Myjava', 'hard': 0.083, 'avg_price': 5208, 'accs_per_1k': 4.4, 'hard_per_1k': 0.367, 'population': 24551, 'density': 75.0, 'alko': 16, 'alko_pct': 14.8, 'drogy_pct': 0.9}, 'humenne': {'vinnik': {'vodic': 461, 'chodec': 10, 'cyklista': 18, 'spolujazdec': 1, 'alkohol': 47, 'drogy': 2}, 'gender': {'muz': 220, 'zena': 79, 'nezname': 202}, 'fem_alko': 6, 'total_accidents': 501, 'total_damage': 1609130, 'name': 'Humenné', 'hard': 0.074, 'avg_price': 3212, 'accs_per_1k': 8.66, 'hard_per_1k': 0.64, 'population': 57846, 'density': 76.7, 'alko': 47, 'alko_pct': 9.4, 'drogy_pct': 0.4}, 'revuca': {'vinnik': {'vodic': 153, 'chodec': 5, 'cyklista': 3, 'spolujazdec': 0, 'alkohol': 21, 'drogy': 0}, 'gender': {'muz': 91, 'zena': 28, 'nezname': 44}, 'fem_alko': 3, 'total_accidents': 163, 'total_damage': 581810, 'name': 'Revúca', 'hard': 0.19, 'avg_price': 3569, 'accs_per_1k': 4.34, 'hard_per_1k': 0.826, 'population': 37528, 'density': 51.4, 'alko': 21, 'alko_pct': 12.9, 'drogy_pct': 0.0}, 'sala': {'vinnik': {'vodic': 260, 'chodec': 6, 'cyklista': 18, 'spolujazdec': 1, 'alkohol': 41, 'drogy': 3}, 'gender': {'muz': 157, 'zena': 39, 'nezname': 76}, 'fem_alko': 2, 'total_accidents': 272, 'total_damage': 1271030, 'name': 'Šaľa', 'hard': 0.147, 'avg_price': 4673, 'accs_per_1k': 5.49, 'hard_per_1k': 0.808, 'population': 49514, 'density': 139.1, 'alko': 41, 'alko_pct': 15.1, 'drogy_pct': 1.1}, 'prievidza': {'vinnik': {'vodic': 475, 'chodec': 24, 'cyklista': 20, 'spolujazdec': 0, 'alkohol': 77, 'drogy': 3}, 'gender': {'muz': 318, 'zena': 98, 'nezname': 96}, 'fem_alko': 12, 'total_accidents': 512, 'total_damage': 1220090, 'name': 'Prievidza', 'hard': 0.082, 'avg_price': 2383, 'accs_per_1k': 4.04, 'hard_per_1k': 0.331, 'population': 126771, 'density': 132.1, 'alko': 77, 'alko_pct': 15.0, 'drogy_pct': 0.6}, 'bardejov': {'vinnik': {'vodic': 682, 'chodec': 15, 'cyklista': 10, 'spolujazdec': 0, 'alkohol': 48, 'drogy': 1}, 'gender': {'muz': 366, 'zena': 112, 'nezname': 238}, 'fem_alko': 8, 'total_accidents': 716, 'total_damage': 1720390, 'name': 'Bardejov', 'hard': 0.077, 'avg_price': 2403, 'accs_per_1k': 9.48, 'hard_per_1k': 0.728, 'population': 75554, 'density': 80.7, 'alko': 48, 'alko_pct': 6.7, 'drogy_pct': 0.1}, 'zarnovica': {'vinnik': {'vodic': 216, 'chodec': 4, 'cyklista': 5, 'spolujazdec': 0, 'alkohol': 32, 'drogy': 2}, 'gender': {'muz': 143, 'zena': 31, 'nezname': 51}, 'fem_alko': 5, 'total_accidents': 225, 'total_damage': 1670490, 'name': 'Žarnovica', 'hard': 0.084, 'avg_price': 7424, 'accs_per_1k': 9.25, 'hard_per_1k': 0.781, 'population': 24327, 'density': 57.2, 'alko': 32, 'alko_pct': 14.2, 'drogy_pct': 0.9}, 'levoca': {'vinnik': {'vodic': 250, 'chodec': 7, 'cyklista': 5, 'spolujazdec': 1, 'alkohol': 17, 'drogy': 2}, 'gender': {'muz': 144, 'zena': 31, 'nezname': 90}, 'fem_alko': 2, 'total_accidents': 265, 'total_damage': 2103720, 'name': 'Levoča', 'hard': 0.125, 'avg_price': 7939, 'accs_per_1k': 7.96, 'hard_per_1k': 0.991, 'population': 33305, 'density': 79.1, 'alko': 17, 'alko_pct': 6.4, 'drogy_pct': 0.8}, 'michalovce': {'vinnik': {'vodic': 721, 'chodec': 30, 'cyklista': 20, 'spolujazdec': 3, 'alkohol': 88, 'drogy': 3}, 'gender': {'muz': 419, 'zena': 113, 'nezname': 241}, 'fem_alko': 12, 'total_accidents': 773, 'total_damage': 2497370, 'name': 'Michalovce', 'hard': 0.093, 'avg_price': 3231, 'accs_per_1k': 7.18, 'hard_per_1k': 0.669, 'population': 107617, 'density': 105.6, 'alko': 88, 'alko_pct': 11.4, 'drogy_pct': 0.4}, 'senec': {'vinnik': {'vodic': 519, 'chodec': 8, 'cyklista': 11, 'spolujazdec': 2, 'alkohol': 61, 'drogy': 1}, 'gender': {'muz': 287, 'zena': 86, 'nezname': 172}, 'fem_alko': 7, 'total_accidents': 545, 'total_damage': 4545200, 'name': 'Senec', 'hard': 0.066, 'avg_price': 8340, 'accs_per_1k': 5.03, 'hard_per_1k': 0.332, 'population': 108313, 'density': 301.0, 'alko': 61, 'alko_pct': 11.2, 'drogy_pct': 0.2}, 'rimavskasobota': {'vinnik': {'vodic': 338, 'chodec': 14, 'cyklista': 6, 'spolujazdec': 1, 'alkohol': 57, 'drogy': 1}, 'gender': {'muz': 223, 'zena': 48, 'nezname': 90}, 'fem_alko': 6, 'total_accidents': 361, 'total_damage': 1461240, 'name': 'Rimavská Sobota', 'hard': 0.319, 'avg_price': 4048, 'accs_per_1k': 4.56, 'hard_per_1k': 1.452, 'population': 79222, 'density': 53.9, 'alko': 57, 'alko_pct': 15.8, 'drogy_pct': 0.3}, 'bratislava3': {'vinnik': {'vodic': 500, 'chodec': 32, 'cyklista': 11, 'spolujazdec': 2, 'alkohol': 42, 'drogy': 3}, 'gender': {'muz': 274, 'zena': 91, 'nezname': 176}, 'fem_alko': 5, 'total_accidents': 541, 'total_damage': 2053380, 'name': 'Bratislava - 3', 'hard': 0.05, 'avg_price': 3796, 'accs_per_1k': 6.88, 'hard_per_1k': 0.343, 'population': 78663, 'density': 1053.5, 'alko': 42, 'alko_pct': 7.8, 'drogy_pct': 0.6}, 'zvolen': {'vinnik': {'vodic': 628, 'chodec': 15, 'cyklista': 11, 'spolujazdec': 0, 'alkohol': 54, 'drogy': 4}, 'gender': {'muz': 314, 'zena': 99, 'nezname': 249}, 'fem_alko': 10, 'total_accidents': 662, 'total_damage': 2867420, 'name': 'Zvolen', 'hard': 0.068, 'avg_price': 4331, 'accs_per_1k': 10.18, 'hard_per_1k': 0.692, 'population': 65001, 'density': 85.6, 'alko': 54, 'alko_pct': 8.2, 'drogy_pct': 0.6}, 'kosice': {'vinnik': {'vodic': 1699, 'chodec': 73, 'cyklista': 37, 'spolujazdec': 4, 'alkohol': 139, 'drogy': 7}, 'gender': {'muz': 992, 'zena': 261, 'nezname': 549}, 'fem_alko': 18, 'total_accidents': 1802, 'total_damage': 8834830, 'name': 'Košice', 'hard': 0.088, 'avg_price': 4903, 'accs_per_1k': 8.11, 'hard_per_1k': 0.711, 'population': 222286, 'density': 912.1, 'alko': 139, 'alko_pct': 7.7, 'drogy_pct': 0.4}, 'staralubovna': {'vinnik': {'vodic': 422, 'chodec': 20, 'cyklista': 10, 'spolujazdec': 2, 'alkohol': 54, 'drogy': 10}, 'gender': {'muz': 241, 'zena': 62, 'nezname': 155}, 'fem_alko': 5, 'total_accidents': 458, 'total_damage': 1432360, 'name': 'Stará Ľubovňa', 'hard': 0.085, 'avg_price': 3127, 'accs_per_1k': 8.57, 'hard_per_1k': 0.73, 'population': 53435, 'density': 75.5, 'alko': 54, 'alko_pct': 11.8, 'drogy_pct': 2.2}, 'bratislava5': {'vinnik': {'vodic': 811, 'chodec': 23, 'cyklista': 22, 'spolujazdec': 7, 'alkohol': 45, 'drogy': 3}, 'gender': {'muz': 386, 'zena': 141, 'nezname': 329}, 'fem_alko': 3, 'total_accidents': 856, 'total_damage': 3616520, 'name': 'Bratislava - 5', 'hard': 0.028, 'avg_price': 4225, 'accs_per_1k': 7.03, 'hard_per_1k': 0.197, 'population': 121698, 'density': 1291.9, 'alko': 45, 'alko_pct': 5.3, 'drogy_pct': 0.4}, 'poprad': {'vinnik': {'vodic': 1101, 'chodec': 38, 'cyklista': 43, 'spolujazdec': 3, 'alkohol': 104, 'drogy': 5}, 'gender': {'muz': 547, 'zena': 147, 'nezname': 473}, 'fem_alko': 18, 'total_accidents': 1167, 'total_damage': 4578300, 'name': 'Poprad', 'hard': 0.1, 'avg_price': 3923, 'accs_per_1k': 11.48, 'hard_per_1k': 1.151, 'population': 101671, 'density': 92.0, 'alko': 104, 'alko_pct': 8.9, 'drogy_pct': 0.4}, 'galanta': {'vinnik': {'vodic': 358, 'chodec': 7, 'cyklista': 16, 'spolujazdec': 1, 'alkohol': 47, 'drogy': 0}, 'gender': {'muz': 201, 'zena': 57, 'nezname': 114}, 'fem_alko': 6, 'total_accidents': 372, 'total_damage': 2027920, 'name': 'Galanta', 'hard': 0.105, 'avg_price': 5451, 'accs_per_1k': 3.91, 'hard_per_1k': 0.41, 'population': 95106, 'density': 148.2, 'alko': 47, 'alko_pct': 12.6, 'drogy_pct': 0.0}, 'ilava': {'vinnik': {'vodic': 197, 'chodec': 9, 'cyklista': 6, 'spolujazdec': 1, 'alkohol': 34, 'drogy': 1}, 'gender': {'muz': 124, 'zena': 45, 'nezname': 38}, 'fem_alko': 9, 'total_accidents': 207, 'total_damage': 985240, 'name': 'Ilava', 'hard': 0.077, 'avg_price': 4760, 'accs_per_1k': 3.69, 'hard_per_1k': 0.285, 'population': 56166, 'density': 156.7, 'alko': 34, 'alko_pct': 16.4, 'drogy_pct': 0.5}, 'dunajskastreda': {'vinnik': {'vodic': 666, 'chodec': 17, 'cyklista': 21, 'spolujazdec': 0, 'alkohol': 105, 'drogy': 10}, 'gender': {'muz': 372, 'zena': 141, 'nezname': 180}, 'fem_alko': 19, 'total_accidents': 693, 'total_damage': 4751050, 'name': 'Dunajská Streda', 'hard': 0.124, 'avg_price': 6856, 'accs_per_1k': 5.39, 'hard_per_1k': 0.669, 'population': 128458, 'density': 119.5, 'alko': 105, 'alko_pct': 15.2, 'drogy_pct': 1.4}, 'kysuckenovemesto': {'vinnik': {'vodic': 173, 'chodec': 2, 'cyklista': 9, 'spolujazdec': 0, 'alkohol': 30, 'drogy': 1}, 'gender': {'muz': 99, 'zena': 11, 'nezname': 66}, 'fem_alko': 4, 'total_accidents': 176, 'total_damage': 762160, 'name': 'Kysucké Nové Mesto', 'hard': 0.125, 'avg_price': 4330, 'accs_per_1k': 5.44, 'hard_per_1k': 0.68, 'population': 32370, 'density': 186.4, 'alko': 30, 'alko_pct': 17.0, 'drogy_pct': 0.6}, 'malacky': {'vinnik': {'vodic': 360, 'chodec': 13, 'cyklista': 9, 'spolujazdec': 3, 'alkohol': 65, 'drogy': 6}, 'gender': {'muz': 220, 'zena': 52, 'nezname': 109}, 'fem_alko': 4, 'total_accidents': 381, 'total_damage': 3569270, 'name': 'Malacky', 'hard': 0.21, 'avg_price': 9368, 'accs_per_1k': 4.74, 'hard_per_1k': 0.996, 'population': 80324, 'density': 84.6, 'alko': 65, 'alko_pct': 17.1, 'drogy_pct': 1.6}, 'ruzomberok': {'vinnik': {'vodic': 471, 'chodec': 7, 'cyklista': 17, 'spolujazdec': 0, 'alkohol': 37, 'drogy': 2}, 'gender': {'muz': 261, 'zena': 70, 'nezname': 158}, 'fem_alko': 5, 'total_accidents': 489, 'total_damage': 2035320, 'name': 'Ružomberok', 'hard': 0.088, 'avg_price': 4162, 'accs_per_1k': 8.73, 'hard_per_1k': 0.768, 'population': 56022, 'density': 86.6, 'alko': 37, 'alko_pct': 7.6, 'drogy_pct': 0.4}, 'piestany': {'vinnik': {'vodic': 505, 'chodec': 13, 'cyklista': 22, 'spolujazdec': 2, 'alkohol': 41, 'drogy': 1}, 'gender': {'muz': 258, 'zena': 77, 'nezname': 201}, 'fem_alko': 8, 'total_accidents': 536, 'total_damage': 2165460, 'name': 'Piešťany', 'hard': 0.05, 'avg_price': 4040, 'accs_per_1k': 8.72, 'hard_per_1k': 0.439, 'population': 61476, 'density': 161.3, 'alko': 41, 'alko_pct': 7.6, 'drogy_pct': 0.2}, 'bratislava4': {'vinnik': {'vodic': 581, 'chodec': 29, 'cyklista': 5, 'spolujazdec': 7, 'alkohol': 56, 'drogy': 6}, 'gender': {'muz': 349, 'zena': 91, 'nezname': 184}, 'fem_alko': 5, 'total_accidents': 624, 'total_damage': 2677230, 'name': 'Bratislava - 4', 'hard': 0.046, 'avg_price': 4290, 'accs_per_1k': 5.93, 'hard_per_1k': 0.276, 'population': 105236, 'density': 1088.3, 'alko': 56, 'alko_pct': 9.0, 'drogy_pct': 1.0}, 'sabinov': {'vinnik': {'vodic': 370, 'chodec': 27, 'cyklista': 15, 'spolujazdec': 0, 'alkohol': 54, 'drogy': 1}, 'gender': {'muz': 240, 'zena': 59, 'nezname': 110}, 'fem_alko': 7, 'total_accidents': 409, 'total_damage': 1093410, 'name': 'Sabinov', 'hard': 0.081, 'avg_price': 2673, 'accs_per_1k': 6.56, 'hard_per_1k': 0.529, 'population': 62360, 'density': 114.3, 'alko': 54, 'alko_pct': 13.2, 'drogy_pct': 0.2}, 'svidnik': {'vinnik': {'vodic': 241, 'chodec': 2, 'cyklista': 3, 'spolujazdec': 1, 'alkohol': 23, 'drogy': 1}, 'gender': {'muz': 119, 'zena': 28, 'nezname': 113}, 'fem_alko': 3, 'total_accidents': 260, 'total_damage': 1122410, 'name': 'Svidník', 'hard': 0.054, 'avg_price': 4317, 'accs_per_1k': 8.43, 'hard_per_1k': 0.454, 'population': 30855, 'density': 56.2, 'alko': 23, 'alko_pct': 8.8, 'drogy_pct': 0.4}, 'lucenec': {'vinnik': {'vodic': 351, 'chodec': 14, 'cyklista': 7, 'spolujazdec': 0, 'alkohol': 55, 'drogy': 8}, 'gender': {'muz': 239, 'zena': 59, 'nezname': 75}, 'fem_alko': 6, 'total_accidents': 373, 'total_damage': 1523980, 'name': 'Lučenec', 'hard': 0.252, 'avg_price': 4086, 'accs_per_1k': 5.46, 'hard_per_1k': 1.377, 'population': 68259, 'density': 82.7, 'alko': 55, 'alko_pct': 14.7, 'drogy_pct': 2.1}, 'trnava': {'vinnik': {'vodic': 1046, 'chodec': 24, 'cyklista': 45, 'spolujazdec': 7, 'alkohol': 118, 'drogy': 1}, 'gender': {'muz': 573, 'zena': 185, 'nezname': 332}, 'fem_alko': 13, 'total_accidents': 1090, 'total_damage': 5474880, 'name': 'Trnava', 'hard': 0.056, 'avg_price': 5023, 'accs_per_1k': 8.2, 'hard_per_1k': 0.459, 'population': 132879, 'density': 179.3, 'alko': 118, 'alko_pct': 10.8, 'drogy_pct': 0.1}, 'snina': {'vinnik': {'vodic': 208, 'chodec': 8, 'cyklista': 8, 'spolujazdec': 0, 'alkohol': 31, 'drogy': 0}, 'gender': {'muz': 124, 'zena': 33, 'nezname': 67}, 'fem_alko': 4, 'total_accidents': 224, 'total_damage': 792720, 'name': 'Snina', 'hard': 0.085, 'avg_price': 3539, 'accs_per_1k': 6.7, 'hard_per_1k': 0.568, 'population': 33425, 'density': 41.5, 'alko': 31, 'alko_pct': 13.8, 'drogy_pct': 0.0}, 'bratislava2': {'vinnik': {'vodic': 664, 'chodec': 25, 'cyklista': 18, 'spolujazdec': 1, 'alkohol': 60, 'drogy': 14}, 'gender': {'muz': 361, 'zena': 144, 'nezname': 199}, 'fem_alko': 18, 'total_accidents': 704, 'total_damage': 3427220, 'name': 'Bratislava - 2', 'hard': 0.033, 'avg_price': 4868, 'accs_per_1k': 5.53, 'hard_per_1k': 0.181, 'population': 127409, 'density': 1377.5, 'alko': 60, 'alko_pct': 8.5, 'drogy_pct': 2.0}, 'roznava': {'vinnik': {'vodic': 490, 'chodec': 16, 'cyklista': 7, 'spolujazdec': 1, 'alkohol': 56, 'drogy': 2}, 'gender': {'muz': 325, 'zena': 68, 'nezname': 125}, 'fem_alko': 6, 'total_accidents': 518, 'total_damage': 1150840, 'name': 'Rožňava', 'hard': 0.116, 'avg_price': 2222, 'accs_per_1k': 8.9, 'hard_per_1k': 1.031, 'population': 58189, 'density': 49.6, 'alko': 56, 'alko_pct': 10.8, 'drogy_pct': 0.4}, 'liptovskymikulas': {'vinnik': {'vodic': 785, 'chodec': 13, 'cyklista': 37, 'spolujazdec': 1, 'alkohol': 66, 'drogy': 5}, 'gender': {'muz': 433, 'zena': 138, 'nezname': 260}, 'fem_alko': 14, 'total_accidents': 831, 'total_damage': 4834910, 'name': 'Liptovský Mikuláš', 'hard': 0.091, 'avg_price': 5818, 'accs_per_1k': 11.71, 'hard_per_1k': 1.07, 'population': 70995, 'density': 52.9, 'alko': 66, 'alko_pct': 7.9, 'drogy_pct': 0.6}, 'vranovnadtoplou': {'vinnik': {'vodic': 396, 'chodec': 13, 'cyklista': 8, 'spolujazdec': 2, 'alkohol': 63, 'drogy': 1}, 'gender': {'muz': 207, 'zena': 45, 'nezname': 177}, 'fem_alko': 1, 'total_accidents': 429, 'total_damage': 1437120, 'name': 'Vranov nad Topľou', 'hard': 0.098, 'avg_price': 3350, 'accs_per_1k': 5.41, 'hard_per_1k': 0.53, 'population': 79320, 'density': 103.1, 'alko': 63, 'alko_pct': 14.7, 'drogy_pct': 0.2}, 'pezinok': {'vinnik': {'vodic': 229, 'chodec': 7, 'cyklista': 7, 'spolujazdec': 0, 'alkohol': 55, 'drogy': 0}, 'gender': {'muz': 153, 'zena': 35, 'nezname': 51}, 'fem_alko': 7, 'total_accidents': 239, 'total_damage': 1126750, 'name': 'Pezinok', 'hard': 0.067, 'avg_price': 4714, 'accs_per_1k': 3.41, 'hard_per_1k': 0.228, 'population': 70096, 'density': 186.7, 'alko': 55, 'alko_pct': 23.0, 'drogy_pct': 0.0}, 'martin': {'vinnik': {'vodic': 560, 'chodec': 21, 'cyklista': 28, 'spolujazdec': 1, 'alkohol': 79, 'drogy': 0}, 'gender': {'muz': 296, 'zena': 83, 'nezname': 215}, 'fem_alko': 20, 'total_accidents': 594, 'total_damage': 2108510, 'name': 'Martin', 'hard': 0.125, 'avg_price': 3550, 'accs_per_1k': 6.43, 'hard_per_1k': 0.801, 'population': 92401, 'density': 125.6, 'alko': 79, 'alko_pct': 13.3, 'drogy_pct': 0.0}, 'kezmarok': {'vinnik': {'vodic': 519, 'chodec': 27, 'cyklista': 23, 'spolujazdec': 0, 'alkohol': 62, 'drogy': 3}, 'gender': {'muz': 325, 'zena': 82, 'nezname': 157}, 'fem_alko': 10, 'total_accidents': 564, 'total_damage': 1849660, 'name': 'Kežmarok', 'hard': 0.126, 'avg_price': 3280, 'accs_per_1k': 7.38, 'hard_per_1k': 0.93, 'population': 76376, 'density': 121.3, 'alko': 62, 'alko_pct': 11.0, 'drogy_pct': 0.5}, 'povazskabystrica': {'vinnik': {'vodic': 155, 'chodec': 1, 'cyklista': 2, 'spolujazdec': 0, 'alkohol': 32, 'drogy': 0}, 'gender': {'muz': 97, 'zena': 27, 'nezname': 34}, 'fem_alko': 5, 'total_accidents': 158, 'total_damage': 908690, 'name': 'Považská Bystrica', 'hard': 0.165, 'avg_price': 5751, 'accs_per_1k': 2.63, 'hard_per_1k': 0.433, 'population': 60099, 'density': 129.8, 'alko': 32, 'alko_pct': 20.3, 'drogy_pct': 0.0}, 'banskastiavnica': {'vinnik': {'vodic': 124, 'chodec': 1, 'cyklista': 2, 'spolujazdec': 0, 'alkohol': 19, 'drogy': 1}, 'gender': {'muz': 68, 'zena': 25, 'nezname': 35}, 'fem_alko': 3, 'total_accidents': 128, 'total_damage': 325090, 'name': 'Banská Štiavnica', 'hard': 0.07, 'avg_price': 2540, 'accs_per_1k': 8.39, 'hard_per_1k': 0.59, 'population': 15258, 'density': 52.2, 'alko': 19, 'alko_pct': 14.8, 'drogy_pct': 0.8}, 'stropkov': {'vinnik': {'vodic': 107, 'chodec': 2, 'cyklista': 2, 'spolujazdec': 0, 'alkohol': 6, 'drogy': 1}, 'gender': {'muz': 61, 'zena': 12, 'nezname': 39}, 'fem_alko': 1, 'total_accidents': 112, 'total_damage': 300160, 'name': 'Stropkov', 'hard': 0.054, 'avg_price': 2680, 'accs_per_1k': 5.8, 'hard_per_1k': 0.311, 'population': 19314, 'density': 49.7, 'alko': 6, 'alko_pct': 5.4, 'drogy_pct': 0.9}, 'novezamky': {'vinnik': {'vodic': 593, 'chodec': 13, 'cyklista': 12, 'spolujazdec': 0, 'alkohol': 83, 'drogy': 1}, 'gender': {'muz': 303, 'zena': 81, 'nezname': 223}, 'fem_alko': 9, 'total_accidents': 607, 'total_damage': 3020620, 'name': 'Nové Zámky', 'hard': 0.148, 'avg_price': 4976, 'accs_per_1k': 4.55, 'hard_per_1k': 0.675, 'population': 133309, 'density': 99.0, 'alko': 83, 'alko_pct': 13.7, 'drogy_pct': 0.2}, 'namestovo': {'vinnik': {'vodic': 233, 'chodec': 8, 'cyklista': 4, 'spolujazdec': 0, 'alkohol': 41, 'drogy': 0}, 'gender': {'muz': 143, 'zena': 63, 'nezname': 36}, 'fem_alko': 8, 'total_accidents': 242, 'total_damage': 1389560, 'name': 'Námestovo', 'hard': 0.112, 'avg_price': 5742, 'accs_per_1k': 3.73, 'hard_per_1k': 0.416, 'population': 64935, 'density': 94.0, 'alko': 41, 'alko_pct': 16.9, 'drogy_pct': 0.0}, 'topolcany': {'vinnik': {'vodic': 188, 'chodec': 13, 'cyklista': 6, 'spolujazdec': 0, 'alkohol': 41, 'drogy': 1}, 'gender': {'muz': 123, 'zena': 47, 'nezname': 32}, 'fem_alko': 9, 'total_accidents': 202, 'total_damage': 952240, 'name': 'Topoľčany', 'hard': 0.119, 'avg_price': 4714, 'accs_per_1k': 2.93, 'hard_per_1k': 0.349, 'population': 68831, 'density': 115.2, 'alko': 41, 'alko_pct': 20.3, 'drogy_pct': 0.5}, 'velkykrtis': {'vinnik': {'vodic': 197, 'chodec': 3, 'cyklista': 5, 'spolujazdec': 0, 'alkohol': 39, 'drogy': 1}, 'gender': {'muz': 129, 'zena': 25, 'nezname': 50}, 'fem_alko': 6, 'total_accidents': 204, 'total_damage': 579550, 'name': 'Veľký Krtíš', 'hard': 0.162, 'avg_price': 2841, 'accs_per_1k': 5.07, 'hard_per_1k': 0.82, 'population': 40235, 'density': 47.4, 'alko': 39, 'alko_pct': 19.1, 'drogy_pct': 0.5}, 'ziarnadhronom': {'vinnik': {'vodic': 322, 'chodec': 4, 'cyklista': 8, 'spolujazdec': 0, 'alkohol': 31, 'drogy': 1}, 'gender': {'muz': 193, 'zena': 46, 'nezname': 93}, 'fem_alko': 2, 'total_accidents': 332, 'total_damage': 1890550, 'name': 'Žiar nad Hronom', 'hard': 0.066, 'avg_price': 5694, 'accs_per_1k': 7.73, 'hard_per_1k': 0.512, 'population': 42955, 'density': 83.0, 'alko': 31, 'alko_pct': 9.3, 'drogy_pct': 0.3}, 'banskabystrica': {'vinnik': {'vodic': 561, 'chodec': 7, 'cyklista': 15, 'spolujazdec': 0, 'alkohol': 67, 'drogy': 2}, 'gender': {'muz': 327, 'zena': 99, 'nezname': 154}, 'fem_alko': 13, 'total_accidents': 580, 'total_damage': 2888410, 'name': 'Banská Bystrica', 'hard': 0.06, 'avg_price': 4980, 'accs_per_1k': 5.47, 'hard_per_1k': 0.33, 'population': 106000, 'density': 131.0, 'alko': 67, 'alko_pct': 11.6, 'drogy_pct': 0.3}, 'komarno': {'vinnik': {'vodic': 179, 'chodec': 5, 'cyklista': 13, 'spolujazdec': 1, 'alkohol': 37, 'drogy': 0}, 'gender': {'muz': 136, 'zena': 25, 'nezname': 27}, 'fem_alko': 4, 'total_accidents': 188, 'total_damage': 1007110, 'name': 'Komárno', 'hard': 0.415, 'avg_price': 5357, 'accs_per_1k': 1.91, 'hard_per_1k': 0.794, 'population': 98217, 'density': 89.3, 'alko': 37, 'alko_pct': 19.7, 'drogy_pct': 0.0}, 'krupina': {'vinnik': {'vodic': 135, 'chodec': 4, 'cyklista': 6, 'spolujazdec': 0, 'alkohol': 31, 'drogy': 1}, 'gender': {'muz': 87, 'zena': 18, 'nezname': 39}, 'fem_alko': 7, 'total_accidents': 144, 'total_damage': 874680, 'name': 'Krupina', 'hard': 0.125, 'avg_price': 6074, 'accs_per_1k': 6.82, 'hard_per_1k': 0.852, 'population': 21129, 'density': 36.1, 'alko': 31, 'alko_pct': 21.5, 'drogy_pct': 0.7}, 'trebisov': {'vinnik': {'vodic': 497, 'chodec': 39, 'cyklista': 43, 'spolujazdec': 0, 'alkohol': 90, 'drogy': 1}, 'gender': {'muz': 332, 'zena': 102, 'nezname': 115}, 'fem_alko': 10, 'total_accidents': 549, 'total_damage': 1650840, 'name': 'Trebišov', 'hard': 0.124, 'avg_price': 3007, 'accs_per_1k': 5.35, 'hard_per_1k': 0.662, 'population': 102677, 'density': 95.7, 'alko': 90, 'alko_pct': 16.4, 'drogy_pct': 0.2}, 'detva': {'vinnik': {'vodic': 147, 'chodec': 9, 'cyklista': 3, 'spolujazdec': 0, 'alkohol': 31, 'drogy': 1}, 'gender': {'muz': 92, 'zena': 26, 'nezname': 48}, 'fem_alko': 6, 'total_accidents': 166, 'total_damage': 731700, 'name': 'Detva', 'hard': 0.175, 'avg_price': 4408, 'accs_per_1k': 5.5, 'hard_per_1k': 0.96, 'population': 30199, 'density': 67.2, 'alko': 31, 'alko_pct': 18.7, 'drogy_pct': 0.6}, 'banovcenadbebravou': {'vinnik': {'vodic': 167, 'chodec': 5, 'cyklista': 10, 'spolujazdec': 0, 'alkohol': 20, 'drogy': 2}, 'gender': {'muz': 113, 'zena': 23, 'nezname': 37}, 'fem_alko': 2, 'total_accidents': 173, 'total_damage': 710850, 'name': 'Bánovce nad Bebravou', 'hard': 0.092, 'avg_price': 4109, 'accs_per_1k': 4.98, 'hard_per_1k': 0.461, 'population': 34714, 'density': 75.1, 'alko': 20, 'alko_pct': 11.6, 'drogy_pct': 1.2}, 'levice': {'vinnik': {'vodic': 436, 'chodec': 8, 'cyklista': 12, 'spolujazdec': 2, 'alkohol': 70, 'drogy': 3}, 'gender': {'muz': 290, 'zena': 97, 'nezname': 66}, 'fem_alko': 8, 'total_accidents': 453, 'total_damage': 1361790, 'name': 'Levice', 'hard': 0.124, 'avg_price': 3006, 'accs_per_1k': 4.22, 'hard_per_1k': 0.522, 'population': 107319, 'density': 69.2, 'alko': 70, 'alko_pct': 15.5, 'drogy_pct': 0.7}, 'gelnica': {'vinnik': {'vodic': 100, 'chodec': 10, 'cyklista': 4, 'spolujazdec': 0, 'alkohol': 14, 'drogy': 1}, 'gender': {'muz': 75, 'zena': 17, 'nezname': 20}, 'fem_alko': 2, 'total_accidents': 112, 'total_damage': 338900, 'name': 'Gelnica', 'hard': 0.223, 'avg_price': 3026, 'accs_per_1k': 3.51, 'hard_per_1k': 0.784, 'population': 31884, 'density': 54.6, 'alko': 14, 'alko_pct': 12.5, 'drogy_pct': 0.9}, 'tvrdosin': {'vinnik': {'vodic': 138, 'chodec': 6, 'cyklista': 7, 'spolujazdec': 0, 'alkohol': 23, 'drogy': 0}, 'gender': {'muz': 91, 'zena': 28, 'nezname': 27}, 'fem_alko': 3, 'total_accidents': 146, 'total_damage': 753710, 'name': 'Tvrdošín', 'hard': 0.151, 'avg_price': 5162, 'accs_per_1k': 4.09, 'hard_per_1k': 0.617, 'population': 35667, 'density': 74.5, 'alko': 23, 'alko_pct': 15.8, 'drogy_pct': 0.0}, 'medzilaborce': {'vinnik': {'vodic': 48, 'chodec': 4, 'cyklista': 1, 'spolujazdec': 0, 'alkohol': 11, 'drogy': 0}, 'gender': {'muz': 33, 'zena': 12, 'nezname': 10}, 'fem_alko': 2, 'total_accidents': 55, 'total_damage': 142740, 'name': 'Medzilaborce', 'hard': 0.036, 'avg_price': 2595, 'accs_per_1k': 5.23, 'hard_per_1k': 0.19, 'population': 10518, 'density': 24.6, 'alko': 11, 'alko_pct': 20.0, 'drogy_pct': 0.0}, 'sobrance': {'vinnik': {'vodic': 108, 'chodec': 4, 'cyklista': 2, 'spolujazdec': 0, 'alkohol': 25, 'drogy': 1}, 'gender': {'muz': 75, 'zena': 17, 'nezname': 26}, 'fem_alko': 3, 'total_accidents': 118, 'total_damage': 379700, 'name': 'Sobrance', 'hard': 0.11, 'avg_price': 3218, 'accs_per_1k': 5.34, 'hard_per_1k': 0.588, 'population': 22118, 'density': 41.1, 'alko': 25, 'alko_pct': 21.2, 'drogy_pct': 0.8}, 'puchov': {'vinnik': {'vodic': 119, 'chodec': 4, 'cyklista': 6, 'spolujazdec': 0, 'alkohol': 25, 'drogy': 1}, 'gender': {'muz': 86, 'zena': 20, 'nezname': 18}, 'fem_alko': 6, 'total_accidents': 124, 'total_damage': 613170, 'name': 'Púchov', 'hard': 0.202, 'avg_price': 4945, 'accs_per_1k': 2.86, 'hard_per_1k': 0.577, 'population': 43318, 'density': 115.5, 'alko': 25, 'alko_pct': 20.2, 'drogy_pct': 0.8}, 'poltar': {'vinnik': {'vodic': 66, 'chodec': 2, 'cyklista': 1, 'spolujazdec': 1, 'alkohol': 15, 'drogy': 2}, 'gender': {'muz': 55, 'zena': 10, 'nezname': 5}, 'fem_alko': 0, 'total_accidents': 70, 'total_damage': 276880, 'name': 'Poltár', 'hard': 0.343, 'avg_price': 3955, 'accs_per_1k': 3.51, 'hard_per_1k': 1.203, 'population': 19951, 'density': 41.9, 'alko': 15, 'alko_pct': 21.4, 'drogy_pct': 2.9}, 'partizanske': {'vinnik': {'vodic': 130, 'chodec': 3, 'cyklista': 7, 'spolujazdec': 0, 'alkohol': 23, 'drogy': 0}, 'gender': {'muz': 101, 'zena': 27, 'nezname': 6}, 'fem_alko': 2, 'total_accidents': 134, 'total_damage': 679620, 'name': 'Partizánske', 'hard': 0.149, 'avg_price': 5072, 'accs_per_1k': 3.13, 'hard_per_1k': 0.468, 'population': 42755, 'density': 142.0, 'alko': 23, 'alko_pct': 17.2, 'drogy_pct': 0.0}};
+let stats = {'vinnik': {'vodic': 33562, 'chodec': 1075, 'cyklista': 1067, 'spolujazdec': 73, 'alkohol': 3906, 'drogy': 185}, 'gender': [19388, 5496, 10627], 'injuries': [41378, 15000, 2581, 770], 'fem_alko': 534, 'days': [5550, 5139, 5115, 5218, 5823, 4664, 4002], 'hours': [503, 389, 320, 328, 328, 775, 1144, 1741, 1718, 1880, 2103, 2244, 2287, 2302, 2579, 2702, 2639, 2421, 1977, 1492, 1218, 939, 856, 626], 'total_accidents': 35511, 'total_damage': 152434310, 'daily': {'2023-01-01': {'count': 21, 'damage': 99530}, '2023-01-02': {'count': 25, 'damage': 137710}, '2023-01-03': {'count': 23, 'damage': 107450}, '2023-01-04': {'count': 29, 'damage': 102010}, '2023-01-05': {'count': 29, 'damage': 107430}, '2023-01-06': {'count': 11, 'damage': 94150}, '2023-01-07': {'count': 19, 'damage': 55010}, '2023-01-08': {'count': 12, 'damage': 33900}, '2023-01-09': {'count': 36, 'damage': 58960}, '2023-01-10': {'count': 37, 'damage': 139950}, '2023-01-11': {'count': 31, 'damage': 151790}, '2023-01-12': {'count': 23, 'damage': 46370}, '2023-01-13': {'count': 41, 'damage': 138460}, '2023-01-14': {'count': 26, 'damage': 58300}, '2023-01-15': {'count': 22, 'damage': 74570}, '2023-01-16': {'count': 36, 'damage': 170070}, '2023-01-17': {'count': 40, 'damage': 120700}, '2023-01-18': {'count': 32, 'damage': 139680}, '2023-01-19': {'count': 32, 'damage': 66870}, '2023-01-20': {'count': 32, 'damage': 257880}, '2023-01-21': {'count': 27, 'damage': 72640}, '2023-01-22': {'count': 25, 'damage': 75700}, '2023-01-23': {'count': 38, 'damage': 96550}, '2023-01-24': {'count': 30, 'damage': 102020}, '2023-01-25': {'count': 26, 'damage': 68370}, '2023-01-26': {'count': 31, 'damage': 90350}, '2023-01-27': {'count': 25, 'damage': 61100}, '2023-01-28': {'count': 19, 'damage': 67600}, '2023-01-29': {'count': 21, 'damage': 43970}, '2023-01-30': {'count': 40, 'damage': 262200}, '2023-01-31': {'count': 36, 'damage': 91440}, '2023-02-01': {'count': 35, 'damage': 172000}, '2023-02-02': {'count': 23, 'damage': 82400}, '2023-02-03': {'count': 52, 'damage': 133150}, '2023-02-04': {'count': 48, 'damage': 708500}, '2023-02-05': {'count': 13, 'damage': 76800}, '2023-02-06': {'count': 37, 'damage': 97910}, '2023-02-07': {'count': 26, 'damage': 78030}, '2023-02-08': {'count': 15, 'damage': 13700}, '2023-02-09': {'count': 31, 'damage': 56210}, '2023-02-10': {'count': 35, 'damage': 146600}, '2023-02-11': {'count': 24, 'damage': 71210}, '2023-02-12': {'count': 14, 'damage': 45400}, '2023-02-13': {'count': 13, 'damage': 33700}, '2023-02-14': {'count': 24, 'damage': 77930}, '2023-02-15': {'count': 36, 'damage': 160310}, '2023-02-16': {'count': 26, 'damage': 56050}, '2023-02-17': {'count': 39, 'damage': 124200}, '2023-02-18': {'count': 17, 'damage': 67350}, '2023-02-19': {'count': 25, 'damage': 99920}, '2023-02-20': {'count': 27, 'damage': 68900}, '2023-02-21': {'count': 25, 'damage': 80620}, '2023-02-22': {'count': 26, 'damage': 76780}, '2023-02-23': {'count': 25, 'damage': 127600}, '2023-02-24': {'count': 31, 'damage': 87520}, '2023-02-25': {'count': 22, 'damage': 60100}, '2023-02-26': {'count': 18, 'damage': 57840}, '2023-02-27': {'count': 28, 'damage': 85410}, '2023-02-28': {'count': 23, 'damage': 22050}, '2023-03-01': {'count': 24, 'damage': 30950}, '2023-03-02': {'count': 18, 'damage': 44500}, '2023-03-03': {'count': 32, 'damage': 52350}, '2023-03-04': {'count': 24, 'damage': 94310}, '2023-03-05': {'count': 13, 'damage': 46750}, '2023-03-06': {'count': 25, 'damage': 54750}, '2023-03-07': {'count': 25, 'damage': 41400}, '2023-03-08': {'count': 22, 'damage': 69840}, '2023-03-09': {'count': 32, 'damage': 182400}, '2023-03-10': {'count': 26, 'damage': 70980}, '2023-03-11': {'count': 24, 'damage': 90700}, '2023-03-12': {'count': 20, 'damage': 69700}, '2023-03-13': {'count': 27, 'damage': 130750}, '2023-03-14': {'count': 33, 'damage': 102100}, '2023-03-15': {'count': 16, 'damage': 41900}, '2023-03-16': {'count': 16, 'damage': 28470}, '2023-03-17': {'count': 26, 'damage': 53500}, '2023-03-18': {'count': 30, 'damage': 88150}, '2023-03-19': {'count': 10, 'damage': 28100}, '2023-03-20': {'count': 40, 'damage': 159150}, '2023-03-21': {'count': 29, 'damage': 52260}, '2023-03-22': {'count': 29, 'damage': 168450}, '2023-03-23': {'count': 25, 'damage': 73150}, '2023-03-24': {'count': 30, 'damage': 76740}, '2023-03-25': {'count': 29, 'damage': 66610}, '2023-03-26': {'count': 18, 'damage': 19100}, '2023-03-27': {'count': 24, 'damage': 74110}, '2023-03-28': {'count': 28, 'damage': 131100}, '2023-03-29': {'count': 28, 'damage': 86990}, '2023-03-30': {'count': 31, 'damage': 69540}, '2023-03-31': {'count': 37, 'damage': 71810}, '2023-04-01': {'count': 31, 'damage': 253620}, '2023-04-02': {'count': 17, 'damage': 51700}, '2023-04-03': {'count': 30, 'damage': 69370}, '2023-04-04': {'count': 28, 'damage': 35950}, '2023-04-05': {'count': 25, 'damage': 62960}, '2023-04-06': {'count': 30, 'damage': 104660}, '2023-04-07': {'count': 21, 'damage': 68710}, '2023-04-08': {'count': 24, 'damage': 102940}, '2023-04-09': {'count': 16, 'damage': 27800}, '2023-04-10': {'count': 21, 'damage': 81410}, '2023-04-11': {'count': 18, 'damage': 44650}, '2023-04-12': {'count': 28, 'damage': 68650}, '2023-04-13': {'count': 33, 'damage': 72810}, '2023-04-14': {'count': 29, 'damage': 93990}, '2023-04-15': {'count': 24, 'damage': 120780}, '2023-04-16': {'count': 27, 'damage': 115950}, '2023-04-17': {'count': 35, 'damage': 68720}, '2023-04-18': {'count': 35, 'damage': 146790}, '2023-04-19': {'count': 26, 'damage': 55550}, '2023-04-20': {'count': 39, 'damage': 409930}, '2023-04-21': {'count': 34, 'damage': 72050}, '2023-04-22': {'count': 36, 'damage': 68050}, '2023-04-23': {'count': 30, 'damage': 120790}, '2023-04-24': {'count': 30, 'damage': 130080}, '2023-04-25': {'count': 35, 'damage': 201810}, '2023-04-26': {'count': 25, 'damage': 180600}, '2023-04-27': {'count': 28, 'damage': 88150}, '2023-04-28': {'count': 31, 'damage': 94000}, '2023-04-29': {'count': 27, 'damage': 60370}, '2023-04-30': {'count': 34, 'damage': 165300}, '2023-05-01': {'count': 31, 'damage': 65690}, '2023-05-02': {'count': 37, 'damage': 268100}, '2023-05-03': {'count': 38, 'damage': 140240}, '2023-05-04': {'count': 42, 'damage': 78790}, '2023-05-05': {'count': 42, 'damage': 164150}, '2023-05-06': {'count': 27, 'damage': 104450}, '2023-05-07': {'count': 27, 'damage': 108250}, '2023-05-08': {'count': 20, 'damage': 78050}, '2023-05-09': {'count': 32, 'damage': 70000}, '2023-05-10': {'count': 30, 'damage': 53000}, '2023-05-11': {'count': 37, 'damage': 96520}, '2023-05-12': {'count': 35, 'damage': 53960}, '2023-05-13': {'count': 32, 'damage': 114040}, '2023-05-14': {'count': 34, 'damage': 94850}, '2023-05-15': {'count': 39, 'damage': 341700}, '2023-05-16': {'count': 25, 'damage': 96000}, '2023-05-17': {'count': 29, 'damage': 114100}, '2023-05-18': {'count': 27, 'damage': 213620}, '2023-05-19': {'count': 29, 'damage': 150200}, '2023-05-20': {'count': 40, 'damage': 219780}, '2023-05-21': {'count': 46, 'damage': 122390}, '2023-05-22': {'count': 32, 'damage': 244550}, '2023-05-23': {'count': 37, 'damage': 143400}, '2023-05-24': {'count': 27, 'damage': 250000}, '2023-05-25': {'count': 29, 'damage': 121990}, '2023-05-26': {'count': 34, 'damage': 59550}, '2023-05-27': {'count': 28, 'damage': 57760}, '2023-05-28': {'count': 33, 'damage': 101560}, '2023-05-29': {'count': 37, 'damage': 189850}, '2023-05-30': {'count': 27, 'damage': 59250}, '2023-05-31': {'count': 39, 'damage': 84500}, '2023-06-01': {'count': 36, 'damage': 106620}, '2023-06-02': {'count': 35, 'damage': 61270}, '2023-06-03': {'count': 30, 'damage': 90940}, '2023-06-04': {'count': 32, 'damage': 172550}, '2023-06-05': {'count': 45, 'damage': 174040}, '2023-06-06': {'count': 32, 'damage': 124290}, '2023-06-07': {'count': 28, 'damage': 128770}, '2023-06-08': {'count': 31, 'damage': 97620}, '2023-06-09': {'count': 41, 'damage': 102900}, '2023-06-10': {'count': 29, 'damage': 83550}, '2023-06-11': {'count': 21, 'damage': 120790}, '2023-06-12': {'count': 27, 'damage': 85890}, '2023-06-13': {'count': 35, 'damage': 98470}, '2023-06-14': {'count': 26, 'damage': 112150}, '2023-06-15': {'count': 28, 'damage': 50860}, '2023-06-16': {'count': 41, 'damage': 129850}, '2023-06-17': {'count': 31, 'damage': 663850}, '2023-06-18': {'count': 31, 'damage': 134670}, '2023-06-19': {'count': 30, 'damage': 84250}, '2023-06-20': {'count': 36, 'damage': 119550}, '2023-06-21': {'count': 40, 'damage': 122580}, '2023-06-22': {'count': 30, 'damage': 227200}, '2023-06-23': {'count': 47, 'damage': 146000}, '2023-06-24': {'count': 32, 'damage': 50150}, '2023-06-25': {'count': 39, 'damage': 200440}, '2023-06-26': {'count': 36, 'damage': 447700}, '2023-06-27': {'count': 23, 'damage': 34260}, '2023-06-28': {'count': 31, 'damage': 61750}, '2023-06-29': {'count': 31, 'damage': 229030}, '2023-06-30': {'count': 33, 'damage': 118950}, '2023-07-01': {'count': 39, 'damage': 200690}, '2023-07-02': {'count': 14, 'damage': 54670}, '2023-07-03': {'count': 37, 'damage': 192270}, '2023-07-04': {'count': 34, 'damage': 107190}, '2023-07-05': {'count': 34, 'damage': 216530}, '2023-07-06': {'count': 30, 'damage': 74050}, '2023-07-07': {'count': 32, 'damage': 91080}, '2023-07-08': {'count': 35, 'damage': 86640}, '2023-07-09': {'count': 36, 'damage': 122710}, '2023-07-10': {'count': 34, 'damage': 144770}, '2023-07-11': {'count': 37, 'damage': 160850}, '2023-07-12': {'count': 35, 'damage': 265590}, '2023-07-13': {'count': 38, 'damage': 78580}, '2023-07-14': {'count': 41, 'damage': 207640}, '2023-07-15': {'count': 33, 'damage': 170750}, '2023-07-16': {'count': 19, 'damage': 53870}, '2023-07-17': {'count': 45, 'damage': 322150}, '2023-07-18': {'count': 36, 'damage': 183500}, '2023-07-19': {'count': 28, 'damage': 60270}, '2023-07-20': {'count': 38, 'damage': 72160}, '2023-07-21': {'count': 38, 'damage': 153140}, '2023-07-22': {'count': 37, 'damage': 130940}, '2023-07-23': {'count': 32, 'damage': 84500}, '2023-07-24': {'count': 33, 'damage': 105780}, '2023-07-25': {'count': 29, 'damage': 163910}, '2023-07-26': {'count': 21, 'damage': 51520}, '2023-07-27': {'count': 27, 'damage': 125000}, '2023-07-28': {'count': 26, 'damage': 88460}, '2023-07-29': {'count': 31, 'damage': 107190}, '2023-07-30': {'count': 31, 'damage': 148170}, '2023-07-31': {'count': 36, 'damage': 171800}, '2023-08-01': {'count': 33, 'damage': 122850}, '2023-08-02': {'count': 34, 'damage': 46550}, '2023-08-03': {'count': 29, 'damage': 206950}, '2023-08-04': {'count': 29, 'damage': 86350}, '2023-08-05': {'count': 25, 'damage': 144500}, '2023-08-06': {'count': 28, 'damage': 209400}, '2023-08-07': {'count': 26, 'damage': 251920}, '2023-08-08': {'count': 27, 'damage': 39830}, '2023-08-09': {'count': 31, 'damage': 94460}, '2023-08-10': {'count': 37, 'damage': 130950}, '2023-08-11': {'count': 48, 'damage': 186720}, '2023-08-12': {'count': 34, 'damage': 118960}, '2023-08-13': {'count': 42, 'damage': 197990}, '2023-08-14': {'count': 33, 'damage': 168780}, '2023-08-15': {'count': 35, 'damage': 72980}, '2023-08-16': {'count': 36, 'damage': 171220}, '2023-08-17': {'count': 26, 'damage': 56180}, '2023-08-18': {'count': 43, 'damage': 225330}, '2023-08-19': {'count': 36, 'damage': 56890}, '2023-08-20': {'count': 41, 'damage': 133750}, '2023-08-21': {'count': 31, 'damage': 154750}, '2023-08-22': {'count': 36, 'damage': 86350}, '2023-08-23': {'count': 35, 'damage': 172750}, '2023-08-24': {'count': 32, 'damage': 143400}, '2023-08-25': {'count': 33, 'damage': 50550}, '2023-08-26': {'count': 27, 'damage': 200910}, '2023-08-27': {'count': 34, 'damage': 88870}, '2023-08-28': {'count': 43, 'damage': 98230}, '2023-08-29': {'count': 23, 'damage': 177290}, '2023-08-30': {'count': 25, 'damage': 80000}, '2023-08-31': {'count': 32, 'damage': 125940}, '2023-09-01': {'count': 20, 'damage': 41650}, '2023-09-02': {'count': 35, 'damage': 100000}, '2023-09-03': {'count': 20, 'damage': 80200}, '2023-09-04': {'count': 38, 'damage': 128330}, '2023-09-05': {'count': 29, 'damage': 80700}, '2023-09-06': {'count': 36, 'damage': 121300}, '2023-09-07': {'count': 33, 'damage': 146900}, '2023-09-08': {'count': 43, 'damage': 106680}, '2023-09-09': {'count': 42, 'damage': 283880}, '2023-09-10': {'count': 31, 'damage': 122730}, '2023-09-11': {'count': 30, 'damage': 85680}, '2023-09-12': {'count': 42, 'damage': 339660}, '2023-09-13': {'count': 44, 'damage': 152200}, '2023-09-14': {'count': 49, 'damage': 165910}, '2023-09-15': {'count': 31, 'damage': 35250}, '2023-09-16': {'count': 46, 'damage': 163770}, '2023-09-17': {'count': 32, 'damage': 101100}, '2023-09-18': {'count': 32, 'damage': 65130}, '2023-09-19': {'count': 45, 'damage': 315780}, '2023-09-20': {'count': 37, 'damage': 91270}, '2023-09-21': {'count': 32, 'damage': 100010}, '2023-09-22': {'count': 33, 'damage': 106310}, '2023-09-23': {'count': 35, 'damage': 228050}, '2023-09-24': {'count': 23, 'damage': 287200}, '2023-09-25': {'count': 28, 'damage': 45720}, '2023-09-26': {'count': 44, 'damage': 260820}, '2023-09-27': {'count': 33, 'damage': 113350}, '2023-09-28': {'count': 18, 'damage': 36410}, '2023-09-29': {'count': 36, 'damage': 100800}, '2023-09-30': {'count': 42, 'damage': 207220}, '2023-10-01': {'count': 28, 'damage': 151900}, '2023-10-02': {'count': 35, 'damage': 83900}, '2023-10-03': {'count': 30, 'damage': 96360}, '2023-10-04': {'count': 28, 'damage': 153840}, '2023-10-05': {'count': 37, 'damage': 133200}, '2023-10-06': {'count': 38, 'damage': 201800}, '2023-10-07': {'count': 29, 'damage': 78100}, '2023-10-08': {'count': 26, 'damage': 87250}, '2023-10-09': {'count': 35, 'damage': 101000}, '2023-10-10': {'count': 32, 'damage': 258750}, '2023-10-11': {'count': 29, 'damage': 161400}, '2023-10-12': {'count': 34, 'damage': 122850}, '2023-10-13': {'count': 48, 'damage': 160860}, '2023-10-14': {'count': 34, 'damage': 167710}, '2023-10-15': {'count': 34, 'damage': 99420}, '2023-10-16': {'count': 35, 'damage': 159340}, '2023-10-17': {'count': 27, 'damage': 61700}, '2023-10-18': {'count': 31, 'damage': 123250}, '2023-10-19': {'count': 28, 'damage': 277510}, '2023-10-20': {'count': 39, 'damage': 182350}, '2023-10-21': {'count': 24, 'damage': 102550}, '2023-10-22': {'count': 25, 'damage': 193500}, '2023-10-23': {'count': 39, 'damage': 150220}, '2023-10-24': {'count': 41, 'damage': 96200}, '2023-10-25': {'count': 36, 'damage': 237900}, '2023-10-26': {'count': 40, 'damage': 158210}, '2023-10-27': {'count': 48, 'damage': 203520}, '2023-10-28': {'count': 38, 'damage': 215400}, '2023-10-29': {'count': 24, 'damage': 50800}, '2023-10-30': {'count': 39, 'damage': 184240}, '2023-10-31': {'count': 28, 'damage': 139920}, '2023-11-01': {'count': 19, 'damage': 27300}, '2023-11-02': {'count': 48, 'damage': 105630}, '2023-11-03': {'count': 39, 'damage': 185120}, '2023-11-04': {'count': 30, 'damage': 140940}, '2023-11-05': {'count': 16, 'damage': 61480}, '2023-11-06': {'count': 38, 'damage': 190830}, '2023-11-07': {'count': 26, 'damage': 84300}, '2023-11-08': {'count': 26, 'damage': 105800}, '2023-11-09': {'count': 28, 'damage': 140230}, '2023-11-10': {'count': 43, 'damage': 108080}, '2023-11-11': {'count': 29, 'damage': 54450}, '2023-11-12': {'count': 29, 'damage': 192050}, '2023-11-13': {'count': 51, 'damage': 127450}, '2023-11-14': {'count': 29, 'damage': 286190}, '2023-11-15': {'count': 50, 'damage': 165300}, '2023-11-16': {'count': 44, 'damage': 233620}, '2023-11-17': {'count': 21, 'damage': 75770}, '2023-11-18': {'count': 27, 'damage': 282150}, '2023-11-19': {'count': 22, 'damage': 73400}, '2023-11-20': {'count': 38, 'damage': 97920}, '2023-11-21': {'count': 37, 'damage': 98310}, '2023-11-22': {'count': 33, 'damage': 81900}, '2023-11-23': {'count': 28, 'damage': 140850}, '2023-11-24': {'count': 46, 'damage': 77480}, '2023-11-25': {'count': 33, 'damage': 115450}, '2023-11-26': {'count': 24, 'damage': 139650}, '2023-11-27': {'count': 32, 'damage': 184950}, '2023-11-28': {'count': 44, 'damage': 158880}, '2023-11-29': {'count': 30, 'damage': 63350}, '2023-11-30': {'count': 41, 'damage': 170590}, '2023-12-01': {'count': 46, 'damage': 179150}, '2023-12-02': {'count': 21, 'damage': 74850}, '2023-12-03': {'count': 15, 'damage': 17450}, '2023-12-04': {'count': 25, 'damage': 99370}, '2023-12-05': {'count': 23, 'damage': 92820}, '2023-12-06': {'count': 45, 'damage': 217470}, '2023-12-07': {'count': 43, 'damage': 75100}, '2023-12-08': {'count': 40, 'damage': 163660}, '2023-12-09': {'count': 20, 'damage': 69110}, '2023-12-10': {'count': 21, 'damage': 62650}, '2023-12-11': {'count': 34, 'damage': 230100}, '2023-12-12': {'count': 34, 'damage': 115580}, '2023-12-13': {'count': 39, 'damage': 158850}, '2023-12-14': {'count': 39, 'damage': 128530}, '2023-12-15': {'count': 40, 'damage': 242900}, '2023-12-16': {'count': 29, 'damage': 102410}, '2023-12-17': {'count': 23, 'damage': 120100}, '2023-12-18': {'count': 47, 'damage': 386800}, '2023-12-19': {'count': 36, 'damage': 140650}, '2023-12-20': {'count': 36, 'damage': 193100}, '2023-12-21': {'count': 47, 'damage': 157660}, '2023-12-22': {'count': 57, 'damage': 202480}, '2023-12-23': {'count': 48, 'damage': 198550}, '2023-12-24': {'count': 11, 'damage': 31900}, '2023-12-25': {'count': 18, 'damage': 50850}, '2023-12-26': {'count': 13, 'damage': 21140}, '2023-12-27': {'count': 33, 'damage': 118900}, '2023-12-28': {'count': 25, 'damage': 97860}, '2023-12-29': {'count': 18, 'damage': 45750}, '2023-12-30': {'count': 19, 'damage': 19950}, '2023-12-31': {'count': 18, 'damage': 52270}, '2024-01-01': {'count': 16, 'damage': 65860}, '2024-01-02': {'count': 15, 'damage': 19800}, '2024-01-03': {'count': 31, 'damage': 222430}, '2024-01-04': {'count': 25, 'damage': 81750}, '2024-01-05': {'count': 21, 'damage': 61100}, '2024-01-06': {'count': 15, 'damage': 41390}, '2024-01-07': {'count': 12, 'damage': 53610}, '2024-01-08': {'count': 40, 'damage': 77640}, '2024-01-09': {'count': 23, 'damage': 99550}, '2024-01-10': {'count': 27, 'damage': 173100}, '2024-01-11': {'count': 32, 'damage': 217320}, '2024-01-12': {'count': 31, 'damage': 109300}, '2024-01-13': {'count': 21, 'damage': 80150}, '2024-01-14': {'count': 20, 'damage': 65450}, '2024-01-15': {'count': 30, 'damage': 160140}, '2024-01-16': {'count': 32, 'damage': 74920}, '2024-01-17': {'count': 36, 'damage': 186730}, '2024-01-18': {'count': 34, 'damage': 128500}, '2024-01-19': {'count': 29, 'damage': 96730}, '2024-01-20': {'count': 26, 'damage': 98670}, '2024-01-21': {'count': 16, 'damage': 45560}, '2024-01-22': {'count': 33, 'damage': 184170}, '2024-01-23': {'count': 29, 'damage': 69350}, '2024-01-24': {'count': 40, 'damage': 238320}, '2024-01-25': {'count': 28, 'damage': 81000}, '2024-01-26': {'count': 31, 'damage': 142550}, '2024-01-27': {'count': 12, 'damage': 64520}, '2024-01-28': {'count': 19, 'damage': 188750}, '2024-01-29': {'count': 30, 'damage': 145290}, '2024-01-30': {'count': 37, 'damage': 301100}, '2024-01-31': {'count': 28, 'damage': 103860}, '2024-02-01': {'count': 25, 'damage': 86500}, '2024-02-02': {'count': 31, 'damage': 209260}, '2024-02-03': {'count': 20, 'damage': 74500}, '2024-02-04': {'count': 17, 'damage': 33120}, '2024-02-05': {'count': 36, 'damage': 175670}, '2024-02-06': {'count': 32, 'damage': 84730}, '2024-02-07': {'count': 20, 'damage': 90450}, '2024-02-08': {'count': 24, 'damage': 101050}, '2024-02-09': {'count': 34, 'damage': 76730}, '2024-02-10': {'count': 20, 'damage': 62130}, '2024-02-11': {'count': 21, 'damage': 44200}, '2024-02-12': {'count': 42, 'damage': 120950}, '2024-02-13': {'count': 29, 'damage': 37910}, '2024-02-14': {'count': 37, 'damage': 185500}, '2024-02-15': {'count': 23, 'damage': 115570}, '2024-02-16': {'count': 35, 'damage': 102100}, '2024-02-17': {'count': 21, 'damage': 64750}, '2024-02-18': {'count': 19, 'damage': 58100}, '2024-02-19': {'count': 37, 'damage': 60570}, '2024-02-20': {'count': 21, 'damage': 31850}, '2024-02-21': {'count': 23, 'damage': 34350}, '2024-02-22': {'count': 23, 'damage': 103050}, '2024-02-23': {'count': 42, 'damage': 196570}, '2024-02-24': {'count': 22, 'damage': 47150}, '2024-02-25': {'count': 19, 'damage': 56200}, '2024-02-26': {'count': 22, 'damage': 49950}, '2024-02-27': {'count': 32, 'damage': 54010}, '2024-02-28': {'count': 28, 'damage': 86850}, '2024-02-29': {'count': 28, 'damage': 111350}, '2024-03-01': {'count': 34, 'damage': 197720}, '2024-03-02': {'count': 26, 'damage': 101960}, '2024-03-03': {'count': 18, 'damage': 43000}, '2024-03-04': {'count': 44, 'damage': 207100}, '2024-03-05': {'count': 18, 'damage': 96180}, '2024-03-06': {'count': 31, 'damage': 67150}, '2024-03-07': {'count': 26, 'damage': 119000}, '2024-03-08': {'count': 25, 'damage': 78550}, '2024-03-09': {'count': 23, 'damage': 88140}, '2024-03-10': {'count': 19, 'damage': 40900}, '2024-03-11': {'count': 42, 'damage': 115400}, '2024-03-12': {'count': 33, 'damage': 87450}, '2024-03-13': {'count': 24, 'damage': 78750}, '2024-03-14': {'count': 32, 'damage': 90370}, '2024-03-15': {'count': 34, 'damage': 204900}, '2024-03-16': {'count': 31, 'damage': 84360}, '2024-03-17': {'count': 23, 'damage': 80600}, '2024-03-18': {'count': 29, 'damage': 413200}, '2024-03-19': {'count': 26, 'damage': 64570}, '2024-03-20': {'count': 34, 'damage': 173940}, '2024-03-21': {'count': 28, 'damage': 71850}, '2024-03-22': {'count': 25, 'damage': 87560}, '2024-03-23': {'count': 12, 'damage': 19150}, '2024-03-24': {'count': 14, 'damage': 90500}, '2024-03-25': {'count': 29, 'damage': 116270}, '2024-03-26': {'count': 37, 'damage': 170400}, '2024-03-27': {'count': 28, 'damage': 99550}, '2024-03-28': {'count': 30, 'damage': 77320}, '2024-03-29': {'count': 16, 'damage': 27350}, '2024-03-30': {'count': 34, 'damage': 173770}, '2024-03-31': {'count': 20, 'damage': 59500}, '2024-04-01': {'count': 20, 'damage': 65050}, '2024-04-02': {'count': 43, 'damage': 210770}, '2024-04-03': {'count': 28, 'damage': 56950}, '2024-04-04': {'count': 28, 'damage': 126350}, '2024-04-05': {'count': 30, 'damage': 145710}, '2024-04-06': {'count': 26, 'damage': 81850}, '2024-04-07': {'count': 28, 'damage': 81580}, '2024-04-08': {'count': 35, 'damage': 103070}, '2024-04-09': {'count': 32, 'damage': 106520}, '2024-04-10': {'count': 32, 'damage': 52510}, '2024-04-11': {'count': 39, 'damage': 289730}, '2024-04-12': {'count': 48, 'damage': 196510}, '2024-04-13': {'count': 34, 'damage': 108100}, '2024-04-14': {'count': 21, 'damage': 78140}, '2024-04-15': {'count': 31, 'damage': 81340}, '2024-04-16': {'count': 31, 'damage': 76470}, '2024-04-17': {'count': 28, 'damage': 93540}, '2024-04-18': {'count': 27, 'damage': 140150}, '2024-04-19': {'count': 33, 'damage': 99560}, '2024-04-20': {'count': 21, 'damage': 142700}, '2024-04-21': {'count': 16, 'damage': 31200}, '2024-04-22': {'count': 44, 'damage': 158310}, '2024-04-23': {'count': 30, 'damage': 90200}, '2024-04-24': {'count': 37, 'damage': 120750}, '2024-04-25': {'count': 25, 'damage': 102290}, '2024-04-26': {'count': 39, 'damage': 245920}, '2024-04-27': {'count': 32, 'damage': 106150}, '2024-04-28': {'count': 29, 'damage': 74520}, '2024-04-29': {'count': 46, 'damage': 136170}, '2024-04-30': {'count': 43, 'damage': 212050}, '2024-05-01': {'count': 19, 'damage': 38860}, '2024-05-02': {'count': 39, 'damage': 88610}, '2024-05-03': {'count': 44, 'damage': 156850}, '2024-05-04': {'count': 21, 'damage': 159700}, '2024-05-05': {'count': 26, 'damage': 74560}, '2024-05-06': {'count': 25, 'damage': 158800}, '2024-05-07': {'count': 47, 'damage': 155600}, '2024-05-08': {'count': 12, 'damage': 75650}, '2024-05-09': {'count': 46, 'damage': 86430}, '2024-05-10': {'count': 39, 'damage': 117260}, '2024-05-11': {'count': 27, 'damage': 150600}, '2024-05-12': {'count': 29, 'damage': 276700}, '2024-05-13': {'count': 38, 'damage': 1253280}, '2024-05-14': {'count': 28, 'damage': 180840}, '2024-05-15': {'count': 38, 'damage': 161670}, '2024-05-16': {'count': 31, 'damage': 169160}, '2024-05-17': {'count': 47, 'damage': 344350}, '2024-05-18': {'count': 30, 'damage': 120400}, '2024-05-19': {'count': 21, 'damage': 56480}, '2024-05-20': {'count': 35, 'damage': 175580}, '2024-05-21': {'count': 38, 'damage': 165350}, '2024-05-22': {'count': 34, 'damage': 110200}, '2024-05-23': {'count': 28, 'damage': 140500}, '2024-05-24': {'count': 43, 'damage': 149510}, '2024-05-25': {'count': 41, 'damage': 200220}, '2024-05-26': {'count': 28, 'damage': 102350}, '2024-05-27': {'count': 36, 'damage': 374790}, '2024-05-28': {'count': 35, 'damage': 204490}, '2024-05-29': {'count': 22, 'damage': 159720}, '2024-05-30': {'count': 32, 'damage': 89800}, '2024-05-31': {'count': 32, 'damage': 164600}, '2024-06-01': {'count': 36, 'damage': 157730}, '2024-06-02': {'count': 32, 'damage': 106450}, '2024-06-03': {'count': 32, 'damage': 131000}, '2024-06-04': {'count': 25, 'damage': 115550}, '2024-06-05': {'count': 31, 'damage': 113360}, '2024-06-06': {'count': 34, 'damage': 154220}, '2024-06-07': {'count': 37, 'damage': 113420}, '2024-06-08': {'count': 38, 'damage': 139900}, '2024-06-09': {'count': 27, 'damage': 69750}, '2024-06-10': {'count': 35, 'damage': 367440}, '2024-06-11': {'count': 41, 'damage': 323830}, '2024-06-12': {'count': 36, 'damage': 178100}, '2024-06-13': {'count': 22, 'damage': 97400}, '2024-06-14': {'count': 34, 'damage': 326550}, '2024-06-15': {'count': 35, 'damage': 94540}, '2024-06-16': {'count': 27, 'damage': 75890}, '2024-06-17': {'count': 44, 'damage': 202060}, '2024-06-18': {'count': 28, 'damage': 88040}, '2024-06-19': {'count': 34, 'damage': 56820}, '2024-06-20': {'count': 31, 'damage': 113980}, '2024-06-21': {'count': 39, 'damage': 89910}, '2024-06-22': {'count': 30, 'damage': 68250}, '2024-06-23': {'count': 29, 'damage': 117740}, '2024-06-24': {'count': 41, 'damage': 97600}, '2024-06-25': {'count': 34, 'damage': 157780}, '2024-06-26': {'count': 46, 'damage': 154170}, '2024-06-27': {'count': 39, 'damage': 1135560}, '2024-06-28': {'count': 43, 'damage': 170030}, '2024-06-29': {'count': 36, 'damage': 157760}, '2024-06-30': {'count': 27, 'damage': 83860}, '2024-07-01': {'count': 34, 'damage': 273640}, '2024-07-02': {'count': 31, 'damage': 100410}, '2024-07-03': {'count': 24, 'damage': 42900}, '2024-07-04': {'count': 45, 'damage': 92050}, '2024-07-05': {'count': 23, 'damage': 120050}, '2024-07-06': {'count': 35, 'damage': 248870}, '2024-07-07': {'count': 36, 'damage': 129750}, '2024-07-08': {'count': 32, 'damage': 103430}, '2024-07-09': {'count': 41, 'damage': 178060}, '2024-07-10': {'count': 30, 'damage': 164690}, '2024-07-11': {'count': 35, 'damage': 216010}, '2024-07-12': {'count': 48, 'damage': 290490}, '2024-07-13': {'count': 30, 'damage': 130850}, '2024-07-14': {'count': 36, 'damage': 183300}, '2024-07-15': {'count': 26, 'damage': 75900}, '2024-07-16': {'count': 33, 'damage': 170160}, '2024-07-17': {'count': 18, 'damage': 26600}, '2024-07-18': {'count': 36, 'damage': 132710}, '2024-07-19': {'count': 42, 'damage': 212810}, '2024-07-20': {'count': 26, 'damage': 221650}, '2024-07-21': {'count': 24, 'damage': 74450}, '2024-07-22': {'count': 31, 'damage': 112760}, '2024-07-23': {'count': 34, 'damage': 92890}, '2024-07-24': {'count': 30, 'damage': 142440}, '2024-07-25': {'count': 30, 'damage': 101770}, '2024-07-26': {'count': 30, 'damage': 101200}, '2024-07-27': {'count': 40, 'damage': 128350}, '2024-07-28': {'count': 31, 'damage': 63080}, '2024-07-29': {'count': 26, 'damage': 117860}, '2024-07-30': {'count': 32, 'damage': 85920}, '2024-07-31': {'count': 37, 'damage': 138150}, '2024-08-01': {'count': 35, 'damage': 87130}, '2024-08-02': {'count': 31, 'damage': 145080}, '2024-08-03': {'count': 27, 'damage': 99920}, '2024-08-04': {'count': 23, 'damage': 61450}, '2024-08-05': {'count': 37, 'damage': 279350}, '2024-08-06': {'count': 28, 'damage': 90370}, '2024-08-07': {'count': 33, 'damage': 80790}, '2024-08-08': {'count': 38, 'damage': 148040}, '2024-08-09': {'count': 36, 'damage': 160300}, '2024-08-10': {'count': 30, 'damage': 87700}, '2024-08-11': {'count': 36, 'damage': 202050}, '2024-08-12': {'count': 41, 'damage': 223820}, '2024-08-13': {'count': 41, 'damage': 121350}, '2024-08-14': {'count': 32, 'damage': 133990}, '2024-08-15': {'count': 34, 'damage': 104180}, '2024-08-16': {'count': 41, 'damage': 86220}, '2024-08-17': {'count': 43, 'damage': 227980}, '2024-08-18': {'count': 21, 'damage': 106400}, '2024-08-19': {'count': 37, 'damage': 85570}, '2024-08-20': {'count': 29, 'damage': 136980}, '2024-08-21': {'count': 44, 'damage': 251000}, '2024-08-22': {'count': 29, 'damage': 155200}, '2024-08-23': {'count': 40, 'damage': 177660}, '2024-08-24': {'count': 27, 'damage': 77150}, '2024-08-25': {'count': 27, 'damage': 93000}, '2024-08-26': {'count': 35, 'damage': 86970}, '2024-08-27': {'count': 23, 'damage': 82950}, '2024-08-28': {'count': 44, 'damage': 168830}, '2024-08-29': {'count': 25, 'damage': 79980}, '2024-08-30': {'count': 36, 'damage': 89800}, '2024-08-31': {'count': 28, 'damage': 79200}, '2024-09-01': {'count': 34, 'damage': 170300}, '2024-09-02': {'count': 39, 'damage': 160550}, '2024-09-03': {'count': 30, 'damage': 69710}, '2024-09-04': {'count': 25, 'damage': 46250}, '2024-09-05': {'count': 28, 'damage': 89200}, '2024-09-06': {'count': 37, 'damage': 151140}, '2024-09-07': {'count': 22, 'damage': 60200}, '2024-09-08': {'count': 26, 'damage': 127680}, '2024-09-09': {'count': 37, 'damage': 250110}, '2024-09-10': {'count': 28, 'damage': 97700}, '2024-09-11': {'count': 38, 'damage': 185620}, '2024-09-12': {'count': 37, 'damage': 114760}, '2024-09-13': {'count': 41, 'damage': 221540}, '2024-09-14': {'count': 34, 'damage': 165580}, '2024-09-15': {'count': 33, 'damage': 174990}, '2024-09-16': {'count': 33, 'damage': 255500}, '2024-09-17': {'count': 25, 'damage': 53050}, '2024-09-18': {'count': 30, 'damage': 211530}, '2024-09-19': {'count': 33, 'damage': 90700}, '2024-09-20': {'count': 45, 'damage': 217160}, '2024-09-21': {'count': 34, 'damage': 141520}, '2024-09-22': {'count': 36, 'damage': 140320}, '2024-09-23': {'count': 36, 'damage': 224300}, '2024-09-24': {'count': 40, 'damage': 165580}, '2024-09-25': {'count': 31, 'damage': 97200}, '2024-09-26': {'count': 22, 'damage': 111410}, '2024-09-27': {'count': 37, 'damage': 176220}, '2024-09-28': {'count': 25, 'damage': 483010}, '2024-09-29': {'count': 25, 'damage': 237030}, '2024-09-30': {'count': 35, 'damage': 107850}, '2024-10-01': {'count': 30, 'damage': 86000}, '2024-10-02': {'count': 26, 'damage': 79310}, '2024-10-03': {'count': 30, 'damage': 79300}, '2024-10-04': {'count': 43, 'damage': 207110}, '2024-10-05': {'count': 25, 'damage': 65860}, '2024-10-06': {'count': 19, 'damage': 152430}, '2024-10-07': {'count': 35, 'damage': 58830}, '2024-10-08': {'count': 29, 'damage': 158450}, '2024-10-09': {'count': 34, 'damage': 202810}, '2024-10-10': {'count': 26, 'damage': 132600}, '2024-10-11': {'count': 42, 'damage': 363210}, '2024-10-12': {'count': 25, 'damage': 117730}, '2024-10-13': {'count': 25, 'damage': 118050}, '2024-10-14': {'count': 41, 'damage': 260970}, '2024-10-15': {'count': 32, 'damage': 52600}, '2024-10-16': {'count': 37, 'damage': 161410}, '2024-10-17': {'count': 18, 'damage': 215250}, '2024-10-18': {'count': 36, 'damage': 186500}, '2024-10-19': {'count': 27, 'damage': 73740}, '2024-10-20': {'count': 24, 'damage': 160700}, '2024-10-21': {'count': 35, 'damage': 193310}, '2024-10-22': {'count': 26, 'damage': 85600}, '2024-10-23': {'count': 30, 'damage': 55550}, '2024-10-24': {'count': 40, 'damage': 143420}, '2024-10-25': {'count': 33, 'damage': 633400}, '2024-10-26': {'count': 34, 'damage': 149000}, '2024-10-27': {'count': 27, 'damage': 127230}, '2024-10-28': {'count': 40, 'damage': 136270}, '2024-10-29': {'count': 31, 'damage': 109950}, '2024-10-30': {'count': 41, 'damage': 123250}, '2024-10-31': {'count': 38, 'damage': 168880}, '2024-11-01': {'count': 21, 'damage': 71170}, '2024-11-02': {'count': 23, 'damage': 67800}, '2024-11-03': {'count': 20, 'damage': 59520}, '2024-11-04': {'count': 24, 'damage': 91500}, '2024-11-05': {'count': 21, 'damage': 98960}, '2024-11-06': {'count': 31, 'damage': 79000}, '2024-11-07': {'count': 35, 'damage': 88880}, '2024-11-08': {'count': 28, 'damage': 91560}, '2024-11-09': {'count': 23, 'damage': 136400}, '2024-11-10': {'count': 34, 'damage': 172100}, '2024-11-11': {'count': 31, 'damage': 71870}, '2024-11-12': {'count': 23, 'damage': 29600}, '2024-11-13': {'count': 32, 'damage': 379700}, '2024-11-14': {'count': 30, 'damage': 173710}, '2024-11-15': {'count': 39, 'damage': 344470}, '2024-11-16': {'count': 27, 'damage': 194750}, '2024-11-17': {'count': 16, 'damage': 39850}, '2024-11-18': {'count': 39, 'damage': 110870}, '2024-11-19': {'count': 25, 'damage': 75730}, '2024-11-20': {'count': 42, 'damage': 224880}, '2024-11-21': {'count': 32, 'damage': 202900}, '2024-11-22': {'count': 37, 'damage': 101250}, '2024-11-23': {'count': 26, 'damage': 88100}, '2024-11-24': {'count': 27, 'damage': 107750}, '2024-11-25': {'count': 32, 'damage': 113460}, '2024-11-26': {'count': 25, 'damage': 136000}, '2024-11-27': {'count': 33, 'damage': 147260}, '2024-11-28': {'count': 41, 'damage': 225450}, '2024-11-29': {'count': 35, 'damage': 86350}, '2024-11-30': {'count': 31, 'damage': 177270}, '2024-12-01': {'count': 24, 'damage': 131860}, '2024-12-02': {'count': 50, 'damage': 258100}, '2024-12-03': {'count': 37, 'damage': 169750}, '2024-12-04': {'count': 28, 'damage': 94350}, '2024-12-05': {'count': 28, 'damage': 66100}, '2024-12-06': {'count': 42, 'damage': 186200}, '2024-12-07': {'count': 23, 'damage': 68000}, '2024-12-08': {'count': 24, 'damage': 149300}, '2024-12-09': {'count': 36, 'damage': 170560}, '2024-12-10': {'count': 42, 'damage': 357000}, '2024-12-11': {'count': 26, 'damage': 112650}, '2024-12-12': {'count': 39, 'damage': 121250}, '2024-12-13': {'count': 21, 'damage': 62600}, '2024-12-14': {'count': 25, 'damage': 66800}, '2024-12-15': {'count': 25, 'damage': 143720}, '2024-12-16': {'count': 45, 'damage': 179780}, '2024-12-17': {'count': 40, 'damage': 108020}, '2024-12-18': {'count': 40, 'damage': 133250}, '2024-12-19': {'count': 36, 'damage': 91490}, '2024-12-20': {'count': 37, 'damage': 128200}, '2024-12-21': {'count': 25, 'damage': 122300}, '2024-12-22': {'count': 25, 'damage': 119270}, '2024-12-23': {'count': 32, 'damage': 143800}, '2024-12-24': {'count': 13, 'damage': 64520}, '2024-12-25': {'count': 10, 'damage': 202400}, '2024-12-26': {'count': 12, 'damage': 88550}, '2024-12-27': {'count': 23, 'damage': 96150}, '2024-12-28': {'count': 24, 'damage': 75590}, '2024-12-29': {'count': 27, 'damage': 110870}, '2024-12-30': {'count': 32, 'damage': 224880}, '2024-12-31': {'count': 22, 'damage': 44450}, '2025-01-01': {'count': 15, 'damage': 51700}, '2025-01-02': {'count': 14, 'damage': 54300}, '2025-01-03': {'count': 36, 'damage': 163050}, '2025-01-04': {'count': 14, 'damage': 41800}, '2025-01-05': {'count': 21, 'damage': 60950}, '2025-01-06': {'count': 11, 'damage': 91150}, '2025-01-07': {'count': 19, 'damage': 24900}, '2025-01-08': {'count': 29, 'damage': 87510}, '2025-01-09': {'count': 27, 'damage': 167300}, '2025-01-10': {'count': 31, 'damage': 130530}, '2025-01-11': {'count': 22, 'damage': 66500}, '2025-01-12': {'count': 13, 'damage': 44600}, '2025-01-13': {'count': 30, 'damage': 67700}, '2025-01-14': {'count': 34, 'damage': 154650}, '2025-01-15': {'count': 25, 'damage': 88100}, '2025-01-16': {'count': 28, 'damage': 140420}, '2025-01-17': {'count': 33, 'damage': 87110}, '2025-01-18': {'count': 21, 'damage': 143400}, '2025-01-19': {'count': 15, 'damage': 53600}, '2025-01-20': {'count': 27, 'damage': 64450}, '2025-01-21': {'count': 38, 'damage': 124400}, '2025-01-22': {'count': 33, 'damage': 109680}, '2025-01-23': {'count': 35, 'damage': 84350}, '2025-01-24': {'count': 49, 'damage': 158150}, '2025-01-25': {'count': 28, 'damage': 173880}, '2025-01-26': {'count': 25, 'damage': 89630}, '2025-01-27': {'count': 39, 'damage': 73150}, '2025-01-28': {'count': 32, 'damage': 136600}, '2025-01-29': {'count': 22, 'damage': 99720}, '2025-01-30': {'count': 30, 'damage': 56400}, '2025-01-31': {'count': 31, 'damage': 209700}, '2025-02-01': {'count': 23, 'damage': 289500}, '2025-02-02': {'count': 18, 'damage': 28480}, '2025-02-03': {'count': 27, 'damage': 97830}, '2025-02-04': {'count': 18, 'damage': 160970}, '2025-02-05': {'count': 29, 'damage': 103850}, '2025-02-06': {'count': 28, 'damage': 57900}, '2025-02-07': {'count': 30, 'damage': 95750}, '2025-02-08': {'count': 19, 'damage': 105200}, '2025-02-09': {'count': 12, 'damage': 22520}, '2025-02-10': {'count': 28, 'damage': 102950}, '2025-02-11': {'count': 22, 'damage': 56060}, '2025-02-12': {'count': 19, 'damage': 91700}, '2025-02-13': {'count': 29, 'damage': 155800}, '2025-02-14': {'count': 33, 'damage': 223500}, '2025-02-15': {'count': 22, 'damage': 74920}, '2025-02-16': {'count': 16, 'damage': 39050}, '2025-02-17': {'count': 23, 'damage': 96460}, '2025-02-18': {'count': 28, 'damage': 86000}, '2025-02-19': {'count': 25, 'damage': 220660}, '2025-02-20': {'count': 23, 'damage': 85650}, '2025-02-21': {'count': 23, 'damage': 115300}, '2025-02-22': {'count': 22, 'damage': 58900}, '2025-02-23': {'count': 14, 'damage': 71510}, '2025-02-24': {'count': 27, 'damage': 160780}, '2025-02-25': {'count': 26, 'damage': 151820}, '2025-02-26': {'count': 24, 'damage': 128800}, '2025-02-27': {'count': 22, 'damage': 107910}, '2025-02-28': {'count': 26, 'damage': 139300}, '2025-03-01': {'count': 28, 'damage': 99350}, '2025-03-02': {'count': 15, 'damage': 25350}, '2025-03-03': {'count': 36, 'damage': 303000}, '2025-03-04': {'count': 41, 'damage': 111770}, '2025-03-05': {'count': 31, 'damage': 86730}, '2025-03-06': {'count': 34, 'damage': 124600}, '2025-03-07': {'count': 43, 'damage': 176150}, '2025-03-08': {'count': 36, 'damage': 111240}, '2025-03-09': {'count': 22, 'damage': 198200}, '2025-03-10': {'count': 21, 'damage': 70500}, '2025-03-11': {'count': 33, 'damage': 96150}, '2025-03-12': {'count': 40, 'damage': 255080}, '2025-03-13': {'count': 33, 'damage': 218320}, '2025-03-14': {'count': 30, 'damage': 97690}, '2025-03-15': {'count': 16, 'damage': 54300}, '2025-03-16': {'count': 15, 'damage': 35100}, '2025-03-17': {'count': 31, 'damage': 191370}, '2025-03-18': {'count': 38, 'damage': 48150}, '2025-03-19': {'count': 33, 'damage': 96250}, '2025-03-20': {'count': 37, 'damage': 241230}, '2025-03-21': {'count': 34, 'damage': 110350}, '2025-03-22': {'count': 25, 'damage': 198960}, '2025-03-23': {'count': 18, 'damage': 82650}, '2025-03-24': {'count': 27, 'damage': 179370}, '2025-03-25': {'count': 31, 'damage': 48380}, '2025-03-26': {'count': 38, 'damage': 100680}, '2025-03-27': {'count': 29, 'damage': 176170}, '2025-03-28': {'count': 25, 'damage': 65800}, '2025-03-29': {'count': 21, 'damage': 85940}, '2025-03-30': {'count': 19, 'damage': 61500}, '2025-03-31': {'count': 25, 'damage': 72910}, '2025-04-01': {'count': 23, 'damage': 72250}, '2025-04-02': {'count': 33, 'damage': 149320}, '2025-04-03': {'count': 40, 'damage': 189350}, '2025-04-04': {'count': 60, 'damage': 238660}, '2025-04-05': {'count': 22, 'damage': 47630}, '2025-04-06': {'count': 20, 'damage': 191800}, '2025-04-07': {'count': 20, 'damage': 56300}, '2025-04-08': {'count': 23, 'damage': 51110}, '2025-04-09': {'count': 35, 'damage': 86160}, '2025-04-10': {'count': 25, 'damage': 76610}, '2025-04-11': {'count': 30, 'damage': 111200}, '2025-04-12': {'count': 19, 'damage': 52460}, '2025-04-13': {'count': 22, 'damage': 104650}, '2025-04-14': {'count': 32, 'damage': 107890}, '2025-04-15': {'count': 33, 'damage': 139360}, '2025-04-16': {'count': 39, 'damage': 160080}, '2025-04-17': {'count': 53, 'damage': 166000}, '2025-04-18': {'count': 22, 'damage': 52800}, '2025-04-19': {'count': 35, 'damage': 115830}, '2025-04-20': {'count': 26, 'damage': 73560}, '2025-04-21': {'count': 28, 'damage': 183950}, '2025-04-22': {'count': 25, 'damage': 90400}, '2025-04-23': {'count': 27, 'damage': 275650}, '2025-04-24': {'count': 32, 'damage': 81380}, '2025-04-25': {'count': 42, 'damage': 107410}, '2025-04-26': {'count': 24, 'damage': 67600}, '2025-04-27': {'count': 32, 'damage': 176110}, '2025-04-28': {'count': 34, 'damage': 75600}, '2025-04-29': {'count': 40, 'damage': 72650}, '2025-04-30': {'count': 49, 'damage': 271930}, '2025-05-01': {'count': 16, 'damage': 64400}, '2025-05-02': {'count': 40, 'damage': 80440}, '2025-05-03': {'count': 32, 'damage': 138910}, '2025-05-04': {'count': 25, 'damage': 109670}, '2025-05-05': {'count': 46, 'damage': 142800}, '2025-05-06': {'count': 21, 'damage': 26250}, '2025-05-07': {'count': 32, 'damage': 52170}, '2025-05-08': {'count': 22, 'damage': 53220}, '2025-05-09': {'count': 32, 'damage': 143870}, '2025-05-10': {'count': 27, 'damage': 119700}, '2025-05-11': {'count': 30, 'damage': 150930}, '2025-05-12': {'count': 35, 'damage': 186200}, '2025-05-13': {'count': 29, 'damage': 137650}, '2025-05-14': {'count': 45, 'damage': 168960}, '2025-05-15': {'count': 26, 'damage': 81810}, '2025-05-16': {'count': 37, 'damage': 113750}, '2025-05-17': {'count': 28, 'damage': 163500}, '2025-05-18': {'count': 23, 'damage': 64200}, '2025-05-19': {'count': 30, 'damage': 117050}, '2025-05-20': {'count': 33, 'damage': 110660}, '2025-05-21': {'count': 27, 'damage': 63900}, '2025-05-22': {'count': 36, 'damage': 208830}, '2025-05-23': {'count': 46, 'damage': 172500}, '2025-05-24': {'count': 28, 'damage': 79600}, '2025-05-25': {'count': 19, 'damage': 75350}, '2025-05-26': {'count': 41, 'damage': 150140}, '2025-05-27': {'count': 27, 'damage': 99450}, '2025-05-28': {'count': 35, 'damage': 130750}, '2025-05-29': {'count': 32, 'damage': 135420}, '2025-05-30': {'count': 21, 'damage': 85450}, '2025-05-31': {'count': 33, 'damage': 124830}, '2025-06-01': {'count': 31, 'damage': 155540}, '2025-06-02': {'count': 37, 'damage': 149000}, '2025-06-03': {'count': 27, 'damage': 207170}, '2025-06-04': {'count': 40, 'damage': 98400}, '2025-06-05': {'count': 41, 'damage': 189980}, '2025-06-06': {'count': 39, 'damage': 141010}, '2025-06-07': {'count': 32, 'damage': 113560}, '2025-06-08': {'count': 31, 'damage': 141310}, '2025-06-09': {'count': 41, 'damage': 173830}, '2025-06-10': {'count': 34, 'damage': 109610}, '2025-06-11': {'count': 35, 'damage': 55700}, '2025-06-12': {'count': 39, 'damage': 94860}, '2025-06-13': {'count': 41, 'damage': 120570}, '2025-06-14': {'count': 32, 'damage': 88600}, '2025-06-15': {'count': 35, 'damage': 105560}, '2025-06-16': {'count': 38, 'damage': 136360}, '2025-06-17': {'count': 27, 'damage': 75660}, '2025-06-18': {'count': 39, 'damage': 148430}, '2025-06-19': {'count': 31, 'damage': 91100}, '2025-06-20': {'count': 33, 'damage': 151200}, '2025-06-21': {'count': 50, 'damage': 249300}, '2025-06-22': {'count': 37, 'damage': 106200}, '2025-06-23': {'count': 41, 'damage': 306720}, '2025-06-24': {'count': 38, 'damage': 155200}, '2025-06-25': {'count': 38, 'damage': 78390}, '2025-06-26': {'count': 42, 'damage': 269820}, '2025-06-27': {'count': 34, 'damage': 193200}, '2025-06-28': {'count': 35, 'damage': 165420}, '2025-06-29': {'count': 28, 'damage': 110300}, '2025-06-30': {'count': 45, 'damage': 219870}, '2025-07-01': {'count': 38, 'damage': 89700}, '2025-07-02': {'count': 37, 'damage': 73200}, '2025-07-03': {'count': 40, 'damage': 113050}, '2025-07-04': {'count': 37, 'damage': 237230}, '2025-07-05': {'count': 24, 'damage': 63370}, '2025-07-06': {'count': 32, 'damage': 88900}, '2025-07-07': {'count': 35, 'damage': 440520}, '2025-07-08': {'count': 39, 'damage': 148920}, '2025-07-09': {'count': 32, 'damage': 156400}, '2025-07-10': {'count': 27, 'damage': 57900}, '2025-07-11': {'count': 33, 'damage': 118450}, '2025-07-12': {'count': 37, 'damage': 121410}, '2025-07-13': {'count': 26, 'damage': 88430}, '2025-07-14': {'count': 38, 'damage': 143150}, '2025-07-15': {'count': 32, 'damage': 114650}, '2025-07-16': {'count': 28, 'damage': 87250}, '2025-07-17': {'count': 43, 'damage': 144150}, '2025-07-18': {'count': 32, 'damage': 165200}, '2025-07-19': {'count': 26, 'damage': 151870}, '2025-07-20': {'count': 23, 'damage': 60700}, '2025-07-21': {'count': 33, 'damage': 113450}, '2025-07-22': {'count': 36, 'damage': 80850}, '2025-07-23': {'count': 38, 'damage': 149310}, '2025-07-24': {'count': 43, 'damage': 94970}, '2025-07-25': {'count': 37, 'damage': 189150}, '2025-07-26': {'count': 28, 'damage': 256040}, '2025-07-27': {'count': 32, 'damage': 196910}, '2025-07-28': {'count': 39, 'damage': 279140}, '2025-07-29': {'count': 29, 'damage': 234360}, '2025-07-30': {'count': 29, 'damage': 279900}, '2025-07-31': {'count': 31, 'damage': 117100}, '2025-08-01': {'count': 50, 'damage': 124910}, '2025-08-02': {'count': 28, 'damage': 129800}, '2025-08-03': {'count': 21, 'damage': 84010}, '2025-08-04': {'count': 29, 'damage': 81360}, '2025-08-05': {'count': 29, 'damage': 94800}, '2025-08-06': {'count': 41, 'damage': 200860}, '2025-08-07': {'count': 41, 'damage': 181310}, '2025-08-08': {'count': 36, 'damage': 140130}, '2025-08-09': {'count': 24, 'damage': 80600}, '2025-08-10': {'count': 37, 'damage': 232130}, '2025-08-11': {'count': 41, 'damage': 189280}, '2025-08-12': {'count': 38, 'damage': 130350}, '2025-08-13': {'count': 32, 'damage': 80560}, '2025-08-14': {'count': 31, 'damage': 92770}, '2025-08-15': {'count': 39, 'damage': 158320}, '2025-08-16': {'count': 34, 'damage': 143820}, '2025-08-17': {'count': 29, 'damage': 124100}, '2025-08-18': {'count': 33, 'damage': 156000}, '2025-08-19': {'count': 35, 'damage': 201510}, '2025-08-20': {'count': 46, 'damage': 145030}, '2025-08-21': {'count': 31, 'damage': 163080}, '2025-08-22': {'count': 22, 'damage': 62800}, '2025-08-23': {'count': 34, 'damage': 154880}, '2025-08-24': {'count': 26, 'damage': 130110}, '2025-08-25': {'count': 31, 'damage': 331770}, '2025-08-26': {'count': 37, 'damage': 235270}, '2025-08-27': {'count': 35, 'damage': 165100}, '2025-08-28': {'count': 36, 'damage': 99110}, '2025-08-29': {'count': 26, 'damage': 187900}, '2025-08-30': {'count': 46, 'damage': 377760}, '2025-08-31': {'count': 17, 'damage': 75050}, '2025-09-01': {'count': 35, 'damage': 140050}, '2025-09-02': {'count': 40, 'damage': 120600}, '2025-09-03': {'count': 28, 'damage': 446300}, '2025-09-04': {'count': 29, 'damage': 191880}, '2025-09-05': {'count': 43, 'damage': 89940}, '2025-09-06': {'count': 37, 'damage': 207650}, '2025-09-07': {'count': 36, 'damage': 171560}, '2025-09-08': {'count': 47, 'damage': 604590}, '2025-09-09': {'count': 38, 'damage': 182260}, '2025-09-10': {'count': 29, 'damage': 118100}, '2025-09-11': {'count': 36, 'damage': 112110}, '2025-09-12': {'count': 39, 'damage': 141350}, '2025-09-13': {'count': 28, 'damage': 107750}, '2025-09-14': {'count': 31, 'damage': 199480}, '2025-09-15': {'count': 23, 'damage': 36450}, '2025-09-16': {'count': 34, 'damage': 212410}, '2025-09-17': {'count': 25, 'damage': 254400}, '2025-09-18': {'count': 37, 'damage': 151400}, '2025-09-19': {'count': 38, 'damage': 143160}, '2025-09-20': {'count': 36, 'damage': 97850}, '2025-09-21': {'count': 47, 'damage': 126150}, '2025-09-22': {'count': 31, 'damage': 140550}, '2025-09-23': {'count': 32, 'damage': 76450}, '2025-09-24': {'count': 37, 'damage': 203900}, '2025-09-25': {'count': 31, 'damage': 108130}, '2025-09-26': {'count': 41, 'damage': 157530}, '2025-09-27': {'count': 24, 'damage': 97100}, '2025-09-28': {'count': 25, 'damage': 84400}, '2025-09-29': {'count': 27, 'damage': 205900}, '2025-09-30': {'count': 22, 'damage': 100250}, '2025-10-01': {'count': 31, 'damage': 119360}, '2025-10-02': {'count': 34, 'damage': 140430}, '2025-10-03': {'count': 41, 'damage': 111790}, '2025-10-04': {'count': 33, 'damage': 196620}, '2025-10-05': {'count': 19, 'damage': 50830}, '2025-10-06': {'count': 39, 'damage': 195000}, '2025-10-07': {'count': 30, 'damage': 82920}, '2025-10-08': {'count': 29, 'damage': 103900}, '2025-10-09': {'count': 35, 'damage': 117400}, '2025-10-10': {'count': 45, 'damage': 123410}, '2025-10-11': {'count': 24, 'damage': 129650}, '2025-10-12': {'count': 19, 'damage': 105650}, '2025-10-13': {'count': 36, 'damage': 196310}, '2025-10-14': {'count': 22, 'damage': 73100}, '2025-10-15': {'count': 29, 'damage': 162600}, '2025-10-16': {'count': 38, 'damage': 73360}, '2025-10-17': {'count': 47, 'damage': 203900}, '2025-10-18': {'count': 35, 'damage': 289100}, '2025-10-19': {'count': 34, 'damage': 359550}, '2025-10-20': {'count': 40, 'damage': 105750}, '2025-10-21': {'count': 43, 'damage': 161850}, '2025-10-22': {'count': 22, 'damage': 150400}, '2025-10-23': {'count': 48, 'damage': 128500}, '2025-10-24': {'count': 57, 'damage': 320230}, '2025-10-25': {'count': 36, 'damage': 102400}, '2025-10-26': {'count': 29, 'damage': 167650}, '2025-10-27': {'count': 33, 'damage': 241820}, '2025-10-28': {'count': 36, 'damage': 91830}, '2025-10-29': {'count': 34, 'damage': 183600}, '2025-10-30': {'count': 40, 'damage': 167150}, '2025-10-31': {'count': 40, 'damage': 171350}, '2025-11-01': {'count': 30, 'damage': 75650}, '2025-11-02': {'count': 25, 'damage': 97450}, '2025-11-03': {'count': 42, 'damage': 140050}, '2025-11-04': {'count': 26, 'damage': 61860}, '2025-11-05': {'count': 37, 'damage': 58330}, '2025-11-06': {'count': 37, 'damage': 120240}, '2025-11-07': {'count': 46, 'damage': 286140}, '2025-11-08': {'count': 48, 'damage': 216520}, '2025-11-09': {'count': 23, 'damage': 77400}, '2025-11-10': {'count': 29, 'damage': 390500}, '2025-11-11': {'count': 27, 'damage': 103050}, '2025-11-12': {'count': 29, 'damage': 150300}, '2025-11-13': {'count': 30, 'damage': 159400}, '2025-11-14': {'count': 37, 'damage': 226600}, '2025-11-15': {'count': 26, 'damage': 52900}, '2025-11-16': {'count': 22, 'damage': 105900}, '2025-11-17': {'count': 44, 'damage': 542840}, '2025-11-18': {'count': 40, 'damage': 156470}, '2025-11-19': {'count': 24, 'damage': 105150}, '2025-11-20': {'count': 33, 'damage': 94390}, '2025-11-21': {'count': 40, 'damage': 162800}, '2025-11-22': {'count': 28, 'damage': 114550}, '2025-11-23': {'count': 26, 'damage': 237340}, '2025-11-24': {'count': 34, 'damage': 85300}, '2025-11-25': {'count': 42, 'damage': 109310}, '2025-11-26': {'count': 38, 'damage': 181060}, '2025-11-27': {'count': 30, 'damage': 114460}, '2025-11-28': {'count': 37, 'damage': 268280}, '2025-11-29': {'count': 33, 'damage': 167860}, '2025-11-30': {'count': 23, 'damage': 67850}, '2025-12-01': {'count': 33, 'damage': 167450}, '2025-12-02': {'count': 27, 'damage': 61450}, '2025-12-03': {'count': 24, 'damage': 45450}, '2025-12-04': {'count': 21, 'damage': 53410}, '2025-12-05': {'count': 53, 'damage': 386410}, '2025-12-06': {'count': 26, 'damage': 168520}, '2025-12-07': {'count': 20, 'damage': 81700}, '2025-12-08': {'count': 42, 'damage': 221150}, '2025-12-09': {'count': 31, 'damage': 206570}, '2025-12-10': {'count': 37, 'damage': 121130}, '2025-12-11': {'count': 51, 'damage': 247600}, '2025-12-12': {'count': 43, 'damage': 279340}, '2025-12-13': {'count': 30, 'damage': 130500}, '2025-12-14': {'count': 25, 'damage': 136670}, '2025-12-15': {'count': 37, 'damage': 214600}, '2025-12-16': {'count': 42, 'damage': 400510}, '2025-12-17': {'count': 41, 'damage': 79150}, '2025-12-18': {'count': 36, 'damage': 237130}, '2025-12-19': {'count': 50, 'damage': 183660}, '2025-12-20': {'count': 26, 'damage': 142250}, '2025-12-21': {'count': 34, 'damage': 104660}, '2025-12-22': {'count': 57, 'damage': 241780}, '2025-12-23': {'count': 35, 'damage': 104340}, '2025-12-24': {'count': 11, 'damage': 30100}, '2025-12-25': {'count': 24, 'damage': 163050}, '2025-12-26': {'count': 24, 'damage': 101800}, '2025-12-27': {'count': 28, 'damage': 120600}, '2025-12-28': {'count': 15, 'damage': 27550}, '2025-12-29': {'count': 36, 'damage': 225320}, '2025-12-30': {'count': 42, 'damage': 170900}, '2025-12-31': {'count': 29, 'damage': 84100}, '2026-01-01': {'count': 24, 'damage': 59230}, '2026-01-02': {'count': 24, 'damage': 175300}, '2026-01-03': {'count': 12, 'damage': 61200}, '2026-01-04': {'count': 22, 'damage': 58910}, '2026-01-05': {'count': 31, 'damage': 79350}, '2026-01-06': {'count': 22, 'damage': 102650}, '2026-01-07': {'count': 23, 'damage': 54960}, '2026-01-08': {'count': 19, 'damage': 55760}, '2026-01-09': {'count': 34, 'damage': 166620}, '2026-01-10': {'count': 19, 'damage': 136000}, '2026-01-11': {'count': 16, 'damage': 111640}, '2026-01-12': {'count': 34, 'damage': 340660}, '2026-01-13': {'count': 43, 'damage': 279660}, '2026-01-14': {'count': 35, 'damage': 187700}, '2026-01-15': {'count': 30, 'damage': 127250}, '2026-01-16': {'count': 29, 'damage': 173290}, '2026-01-17': {'count': 19, 'damage': 52700}, '2026-01-18': {'count': 13, 'damage': 56100}, '2026-01-19': {'count': 40, 'damage': 90820}, '2026-01-20': {'count': 31, 'damage': 99780}, '2026-01-21': {'count': 36, 'damage': 227620}, '2026-01-22': {'count': 21, 'damage': 52800}, '2026-01-23': {'count': 22, 'damage': 77600}, '2026-01-24': {'count': 27, 'damage': 87590}, '2026-01-25': {'count': 15, 'damage': 44650}, '2026-01-26': {'count': 30, 'damage': 123120}, '2026-01-27': {'count': 36, 'damage': 243900}, '2026-01-28': {'count': 24, 'damage': 71700}, '2026-01-29': {'count': 46, 'damage': 164630}, '2026-01-30': {'count': 22, 'damage': 70850}, '2026-01-31': {'count': 24, 'damage': 91050}, '2026-02-01': {'count': 22, 'damage': 283250}, '2026-02-02': {'count': 16, 'damage': 151930}, '2026-02-03': {'count': 35, 'damage': 107460}, '2026-02-04': {'count': 35, 'damage': 132450}, '2026-02-05': {'count': 28, 'damage': 100010}, '2026-02-06': {'count': 33, 'damage': 117750}, '2026-02-07': {'count': 14, 'damage': 58700}, '2026-02-08': {'count': 13, 'damage': 47800}, '2026-02-09': {'count': 29, 'damage': 94850}, '2026-02-10': {'count': 22, 'damage': 41960}, '2026-02-11': {'count': 27, 'damage': 99050}, '2026-02-12': {'count': 27, 'damage': 64800}, '2026-02-13': {'count': 33, 'damage': 93960}, '2026-02-14': {'count': 21, 'damage': 106100}, '2026-02-15': {'count': 23, 'damage': 94150}, '2026-02-16': {'count': 42, 'damage': 239300}, '2026-02-17': {'count': 29, 'damage': 210780}, '2026-02-18': {'count': 31, 'damage': 239950}, '2026-02-19': {'count': 29, 'damage': 147950}, '2026-02-20': {'count': 27, 'damage': 67750}, '2026-02-21': {'count': 18, 'damage': 50610}}, 'points': [{'x': 0, 'y': 7.157057654075547, 'r': 6.471911639266198, 'alko': 0.3518886679920477, 'acc': 503}, {'x': 1, 'y': 7.969151670951156, 'r': 5.691456061039621, 'alko': 0.37017994858611825, 'acc': 389}, {'x': 2, 'y': 10.625, 'r': 5.162066272466127, 'alko': 0.35625, 'acc': 320}, {'x': 3, 'y': 8.841463414634147, 'r': 5.226193778110955, 'alko': 0.3353658536585366, 'acc': 328}, {'x': 4, 'y': 11.585365853658537, 'r': 5.226193778110955, 'alko': 0.27134146341463417, 'acc': 328}, {'x': 5, 'y': 11.225806451612904, 'r': 8.033400851295905, 'alko': 0.12903225806451613, 'acc': 775}, {'x': 6, 'y': 9.527972027972027, 'r': 9.760264766888403, 'alko': 0.07342657342657342, 'acc': 1144}, {'x': 7, 'y': 6.950028719126938, 'r': 12.040595655754485, 'alko': 0.04250430786904078, 'acc': 1741}, {'x': 8, 'y': 7.043073341094296, 'r': 11.9607982919579, 'alko': 0.050058207217694994, 'acc': 1718}, {'x': 9, 'y': 7.925531914893617, 'r': 12.51202234584112, 'alko': 0.04148936170212766, 'acc': 1880}, {'x': 10, 'y': 6.657156443176415, 'r': 13.233301979216337, 'alko': 0.047075606276747506, 'acc': 2103}, {'x': 11, 'y': 7.575757575757576, 'r': 13.669732404544103, 'alko': 0.06372549019607843, 'acc': 2244}, {'x': 12, 'y': 7.3021425448185395, 'r': 13.800082064571106, 'alko': 0.05596851770878881, 'acc': 2287}, {'x': 13, 'y': 7.558644656820157, 'r': 13.845264163183547, 'alko': 0.0634231103388358, 'acc': 2302}, {'x': 14, 'y': 7.018224117875145, 'r': 14.654609751631494, 'alko': 0.07018224117875145, 'acc': 2579}, {'x': 15, 'y': 7.253886010362693, 'r': 15.0, 'alko': 0.07216876387860843, 'acc': 2702}, {'x': 16, 'y': 8.753315649867375, 'r': 14.824098151670565, 'alko': 0.09662751042061386, 'acc': 2639}, {'x': 17, 'y': 8.467575382073523, 'r': 14.19861493854964, 'alko': 0.10987195373812474, 'acc': 2421}, {'x': 18, 'y': 8.902377339403136, 'r': 12.830746404393487, 'alko': 0.14011127971674253, 'acc': 1977}, {'x': 19, 'y': 9.383378016085791, 'r': 11.14635827249026, 'alko': 0.1722520107238606, 'acc': 1492}, {'x': 20, 'y': 8.949096880131362, 'r': 10.07099153342516, 'alko': 0.2110016420361248, 'acc': 1218}, {'x': 21, 'y': 8.732694355697552, 'r': 8.84262856512613, 'alko': 0.21192758253461128, 'acc': 939}, {'x': 22, 'y': 7.476635514018691, 'r': 8.442779929535297, 'alko': 0.26985981308411217, 'acc': 856}, {'x': 23, 'y': 9.424920127795527, 'r': 7.219975989839329, 'alko': 0.3450479233226837, 'acc': 626}], 'min_date': '01.01.2023', 'max_date': '21.02.2026', 'avg_age': 42, 'age_bins': [317, 2145, 4885, 4747, 4612, 3678, 2682, 1437, 348, 26], 'smrt': 770, 'rany': 17581, 'bezo': 41378, 'vina_alko': 11.0, 'vina_drog': 0.5, 'total_acc': '35\u202f511', 'total_dmg': '152\u202f434\u202f310'};
+const incidents = 0;
+const oneways = 0;
+</script>
+<script src="assets/map.js"></script>
+<script src="assets/map_features.js"></script>
+
+
+<div class="content">
+
+    <h1>Jednosmerkovo</h1>
+    <p class="subtitle">Mapa dopravných nehôd a jednosmeriek na Slovensku</p>
+    <p>Vizualizuje dopravné nehody 💥 a jednosmerky 🚫 na mape.
+        Ukazuje rozdiely medzi okresmi – počet nehôd, ich závažnosť aj prepočet na obyvateľov.
+        Vedeli by ste, že napriek tomu že sa v Pezinku najviac jazdí pod vplyvom alkoholu
+        je to jeden z najbezpečnejších okresov?<br>
+    Pomáhame aj odhaliť, kde sú nehody častejšie alebo vážnejšie, a kde majú jednosmerky najväčší dopad.</p>
+
+<ul class="leaderboard">
+<li><p><b>Najrizikovejšie okresy sú</b>
+    
+        <a href="rimavskasobota">Rimavská Sobota</a>, 
+        <a href="lucenec">Lučenec</a>, 
+        <a href="poltar">Poltár</a>, 
+        <a href="poprad">Poprad</a>, 
+        <a href="liptovskymikulas">Liptovský Mikuláš</a>
+    majú najviac ťažkých nehôd na obyvateľa. Zato <b>najbezpečnejšie okresy</b>
+    
+        <a href="bratislava2">Bratislava - 2</a>, 
+        <a href="medzilaborce">Medzilaborce</a>, 
+        <a href="bratislava5">Bratislava - 5</a>, 
+        <a href="pezinok">Pezinok</a>, 
+        <a href="trencin">Trenčín</a>
+    majú najnižší výskyt vážnych nehôd.
+<li><p><b>Alkohol za volantom:</b> Najvyšší podiel nehôd pod vplyvom alkoholu je v okresoch
+    
+        <a href="pezinok">Pezinok</a>, 
+        <a href="krupina">Krupina</a>, 
+        <a href="poltar">Poltár</a>, 
+        <a href="sobrance">Sobrance</a>, 
+        <a href="povazskabystrica">Považská Bystrica</a>.
+        Ženy a alkohol, teda najviac prípadov, kde bol vinník pod vplyvom alkoholu žena je v okresoch
+        
+        <a href="martin">Martin</a>, 
+        <a href="dunajskastreda">Dunajská Streda</a>, 
+        <a href="kosice">Košice</a>, 
+        <a href="poprad">Poprad</a>, 
+        <a href="bratislava2">Bratislava - 2</a>.
+</ul>
+
+
+<nav class="main">
+    <a href=".">Domov</a>
+    <a href="assets/docs.html">Dokumentácia</a>
+    <a href="assets/slides.pdf">Prezentácia</a>
+</nav>
+</div>
+
+<script src="assets/stats.js" defer></script>
+<div id="charts">
+    <div class="infobox" id="totals">
+        <h2>Prehľad</h2>
+        <p><b>Obdobie</b>       <span id="t-min">01.01.2023</span>
+                              – <span id="t-max">21.02.2026</span>
+        <p><b>Počet nehôd</b>   <span id="t-acc">35 511</span>
+        <p><b>Celková škoda</b> <span id="t-dmg">152 434 310</span> €
+        <p><b>Úmrtia ✝</b>      <span id="t-smrt">770</span> &nbsp; 
+            <b>zranení</b>      <span id="t-rany">17581</span>
+        <p><b>Bez zranenia</b>  <span id="t-bezo">41378</span>
+        <p><b>% nehôd s alkoholom:</b>  <span id="t-alko">11.0</span>%
+        <p><b>% s drogami:</b>          <span id="t-drog">0.5</span>%
+        <p><b>Priemerný vek vinníka</b> <span id="t-age">42</span> rokov
+    </div>
+    
+</div>
+
+<nav><ul>
+<li>Bratislavský kraj
+    <ul>
+    <li><a href="bratislava1">Bratislava - 1</a></li>
+    <li><a href="bratislava2">Bratislava - 2</a></li>
+    <li><a href="bratislava3">Bratislava - 3</a></li>
+    <li><a href="bratislava4">Bratislava - 4</a></li>
+    <li><a href="bratislava5">Bratislava - 5</a></li>
+    <li><a href="malacky">Malacky</a></li>
+    <li><a href="pezinok">Pezinok</a></li>
+    <li><a href="senec">Senec</a></li>
+    </ul></li>
+<li>Trnavský kraj
+    <ul>
+    <li><a href="trnava">Trnava</a></li>
+    <li><a href="dunajskastreda">Dunajská Streda</a></li>
+    <li><a href="galanta">Galanta</a></li>
+    <li><a href="hlohovec">Hlohovec</a></li>
+    <li><a href="piestany">Piešťany</a></li>
+    <li><a href="senica">Senica</a></li>
+    <li><a href="skalica">Skalica</a></li>
+    </ul></li>
+<li>Trenčiansky kraj
+    <ul>
+    <li><a href="trencin">Trenčín</a></li>
+    <li><a href="banovcenadbebravou">Bánovce nad Bebravou</a></li>
+    <li><a href="ilava">Ilava</a></li>
+    <li><a href="myjava">Myjava</a></li>
+    <li><a href="novemestonadvahom">Nové Mesto nad Váhom</a></li>
+    <li><a href="partizanske">Partizánske</a></li>
+    <li><a href="povazskabystrica">Považská Bystrica</a></li>
+    <li><a href="prievidza">Prievidza</a></li>
+    <li><a href="puchov">Púchov</a></li>
+    </ul></li>
+<li>Nitriansky kraj
+    <ul>
+    <li><a href="nitra">Nitra</a></li>
+    <li><a href="komarno">Komárno</a></li>
+    <li><a href="levice">Levice</a></li>
+    <li><a href="novezamky">Nové Zámky</a></li>
+    <li><a href="sala">Šaľa</a></li>
+    <li><a href="topolcany">Topoľčany</a></li>
+    <li><a href="zlatemoravce">Zlaté Moravce</a></li>
+    </ul></li>
+<li>Žilinský kraj
+    <ul>
+    <li><a href="zilina">Žilina</a></li>
+    <li><a href="bytca">Bytča</a></li>
+    <li><a href="cadca">Čadca</a></li>
+    <li><a href="dolnykubin">Dolný Kubín</a></li>
+    <li><a href="kysuckenovemesto">Kysucké Nové Mesto</a></li>
+    <li><a href="liptovskymikulas">Liptovský Mikuláš</a></li>
+    <li><a href="martin">Martin</a></li>
+    <li><a href="namestovo">Námestovo</a></li>
+    <li><a href="ruzomberok">Ružomberok</a></li>
+    <li><a href="turciansketeplice">Turčianske Teplice</a></li>
+    <li><a href="tvrdosin">Tvrdošín</a></li>
+    </ul></li>
+<li>Banskobystrický kraj
+    <ul>
+    <li><a href="banskabystrica">Banská Bystrica</a></li>
+    <li><a href="banskastiavnica">Banská Štiavnica</a></li>
+    <li><a href="brezno">Brezno</a></li>
+    <li><a href="detva">Detva</a></li>
+    <li><a href="krupina">Krupina</a></li>
+    <li><a href="lucenec">Lučenec</a></li>
+    <li><a href="poltar">Poltár</a></li>
+    <li><a href="revuca">Revúca</a></li>
+    <li><a href="rimavskasobota">Rimavská Sobota</a></li>
+    <li><a href="velkykrtis">Veľký Krtíš</a></li>
+    <li><a href="zvolen">Zvolen</a></li>
+    <li><a href="zarnovica">Žarnovica</a></li>
+    <li><a href="ziarnadhronom">Žiar nad Hronom</a></li>
+    </ul></li>
+<li>Prešovský kraj
+    <ul>
+    <li><a href="presov">Prešov</a></li>
+    <li><a href="bardejov">Bardejov</a></li>
+    <li><a href="humenne">Humenné</a></li>
+    <li><a href="kezmarok">Kežmarok</a></li>
+    <li><a href="levoca">Levoča</a></li>
+    <li><a href="medzilaborce">Medzilaborce</a></li>
+    <li><a href="poprad">Poprad</a></li>
+    <li><a href="sabinov">Sabinov</a></li>
+    <li><a href="snina">Snina</a></li>
+    <li><a href="staralubovna">Stará Ľubovňa</a></li>
+    <li><a href="stropkov">Stropkov</a></li>
+    <li><a href="svidnik">Svidník</a></li>
+    <li><a href="vranovnadtoplou">Vranov nad Topľou</a></li>
+    </ul></li>
+<li>Košický kraj
+    <ul>
+    <li><a href="kosice">Košice</a></li>
+    <li><a href="kosiceokolie">Košice - okolie</a></li>
+    <li><a href="gelnica">Gelnica</a></li>
+    <li><a href="michalovce">Michalovce</a></li>
+    <li><a href="roznava">Rožňava</a></li>
+    <li><a href="sobrance">Sobrance</a></li>
+    <li><a href="spisskanovaves">Spišská Nová Ves</a></li>
+    <li><a href="trebisov">Trebišov</a></li>
+    </ul></li>
+</ul></nav>
+
+
+<table class="table sortable">
+    <thead>
+        <tr>
+            <th data-key="name">Okres</th>
+            <th data-key="total_accidents">Nehody</th>
+            <th data-key="accidents_per_1k">Na 1000 obyv.</th>
+            <th data-key="hard_per_1k">Ťažké / 1000</th>
+            <th data-key="hard">Podiel ťažkých</th>
+            <th data-key="avg_price">Priemerná škoda (€)</th>
+            <th data-key="alko_pct">Alkohol %</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td data-value="Hlohovec" class="th"><a href="hlohovec">Hlohovec</a></td>
+            <td data-value="376">376</td>
+            
+            <td data-value="8.84">8.84</td>
+            <td data-value="0.682">0.68</td>
+            <td data-value="0.077">0.077</td>
+            <td data-value="6831">
+                €6 831
+            </td>
+            <td data-value="9.6">9.6</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Bytča" class="th"><a href="bytca">Bytča</a></td>
+            <td data-value="216">216</td>
+            
+            <td data-value="6.85">6.85</td>
+            <td data-value="0.635">0.64</td>
+            <td data-value="0.093">0.093</td>
+            <td data-value="5106">
+                €5 106
+            </td>
+            <td data-value="16.7">16.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Prešov" class="th"><a href="presov">Prešov</a></td>
+            <td data-value="1804">1804</td>
+            
+            <td data-value="10.24">10.24</td>
+            <td data-value="0.449">0.45</td>
+            <td data-value="0.044">0.044</td>
+            <td data-value="3265">
+                €3 265
+            </td>
+            <td data-value="7.8">7.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Dolný Kubín" class="th"><a href="dolnykubin">Dolný Kubín</a></td>
+            <td data-value="211">211</td>
+            
+            <td data-value="5.47">5.47</td>
+            <td data-value="0.57">0.57</td>
+            <td data-value="0.104">0.104</td>
+            <td data-value="6122">
+                €6 122
+            </td>
+            <td data-value="10.4">10.4</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Košice - okolie" class="th"><a href="kosiceokolie">Košice - okolie</a></td>
+            <td data-value="715">715</td>
+            
+            <td data-value="5.31">5.31</td>
+            <td data-value="1.026">1.03</td>
+            <td data-value="0.193">0.193</td>
+            <td data-value="6162">
+                €6 162
+            </td>
+            <td data-value="15.9">15.9</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Žilina" class="th"><a href="zilina">Žilina</a></td>
+            <td data-value="1575">1575</td>
+            
+            <td data-value="9.84">9.84</td>
+            <td data-value="0.988">0.99</td>
+            <td data-value="0.1">0.100</td>
+            <td data-value="3357">
+                €3 357
+            </td>
+            <td data-value="8.3">8.3</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Čadca" class="th"><a href="cadca">Čadca</a></td>
+            <td data-value="539">539</td>
+            
+            <td data-value="6.26">6.26</td>
+            <td data-value="0.662">0.66</td>
+            <td data-value="0.106">0.106</td>
+            <td data-value="4965">
+                €4 965
+            </td>
+            <td data-value="15.6">15.6</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Zlaté Moravce" class="th"><a href="zlatemoravce">Zlaté Moravce</a></td>
+            <td data-value="377">377</td>
+            
+            <td data-value="9.29">9.29</td>
+            <td data-value="0.591">0.59</td>
+            <td data-value="0.064">0.064</td>
+            <td data-value="4771">
+                €4 771
+            </td>
+            <td data-value="8.5">8.5</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Turčianske Teplice" class="th"><a href="turciansketeplice">Turčianske Teplice</a></td>
+            <td data-value="104">104</td>
+            
+            <td data-value="6.68">6.68</td>
+            <td data-value="0.77">0.77</td>
+            <td data-value="0.115">0.115</td>
+            <td data-value="8091">
+                €8 091
+            </td>
+            <td data-value="7.7">7.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Brezno" class="th"><a href="brezno">Brezno</a></td>
+            <td data-value="291">291</td>
+            
+            <td data-value="5.06">5.06</td>
+            <td data-value="0.817">0.82</td>
+            <td data-value="0.162">0.162</td>
+            <td data-value="4769">
+                €4 769
+            </td>
+            <td data-value="12.7">12.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Skalica" class="th"><a href="skalica">Skalica</a></td>
+            <td data-value="318">318</td>
+            
+            <td data-value="6.85">6.85</td>
+            <td data-value="0.754">0.75</td>
+            <td data-value="0.11">0.110</td>
+            <td data-value="4010">
+                €4 010
+            </td>
+            <td data-value="14.2">14.2</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Trenčín" class="th"><a href="trencin">Trenčín</a></td>
+            <td data-value="399">399</td>
+            
+            <td data-value="3.53">3.53</td>
+            <td data-value="0.265">0.27</td>
+            <td data-value="0.075">0.075</td>
+            <td data-value="4851">
+                €4 851
+            </td>
+            <td data-value="11.5">11.5</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Senica" class="th"><a href="senica">Senica</a></td>
+            <td data-value="416">416</td>
+            
+            <td data-value="7.1">7.10</td>
+            <td data-value="0.597">0.60</td>
+            <td data-value="0.084">0.084</td>
+            <td data-value="4439">
+                €4 439
+            </td>
+            <td data-value="10.8">10.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Bratislava - 1" class="th"><a href="bratislava1">Bratislava - 1</a></td>
+            <td data-value="449">449</td>
+            
+            <td data-value="9.37">9.37</td>
+            <td data-value="0.501">0.50</td>
+            <td data-value="0.053">0.053</td>
+            <td data-value="3890">
+                €3 890
+            </td>
+            <td data-value="5.8">5.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Nové Mesto nad Váhom" class="th"><a href="novemestonadvahom">Nové Mesto nad Váhom</a></td>
+            <td data-value="331">331</td>
+            
+            <td data-value="5.42">5.42</td>
+            <td data-value="0.278">0.28</td>
+            <td data-value="0.051">0.051</td>
+            <td data-value="3855">
+                €3 855
+            </td>
+            <td data-value="17.8">17.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Nitra" class="th"><a href="nitra">Nitra</a></td>
+            <td data-value="2211">2211</td>
+            
+            <td data-value="13.46">13.46</td>
+            <td data-value="0.42">0.42</td>
+            <td data-value="0.031">0.031</td>
+            <td data-value="2873">
+                €2 873
+            </td>
+            <td data-value="6.1">6.1</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Spišská Nová Ves" class="th"><a href="spisskanovaves">Spišská Nová Ves</a></td>
+            <td data-value="542">542</td>
+            
+            <td data-value="5.5">5.50</td>
+            <td data-value="0.639">0.64</td>
+            <td data-value="0.116">0.116</td>
+            <td data-value="2644">
+                €2 644
+            </td>
+            <td data-value="10.3">10.3</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Myjava" class="th"><a href="myjava">Myjava</a></td>
+            <td data-value="108">108</td>
+            
+            <td data-value="4.4">4.40</td>
+            <td data-value="0.367">0.37</td>
+            <td data-value="0.083">0.083</td>
+            <td data-value="5208">
+                €5 208
+            </td>
+            <td data-value="14.8">14.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Humenné" class="th"><a href="humenne">Humenné</a></td>
+            <td data-value="501">501</td>
+            
+            <td data-value="8.66">8.66</td>
+            <td data-value="0.64">0.64</td>
+            <td data-value="0.074">0.074</td>
+            <td data-value="3212">
+                €3 212
+            </td>
+            <td data-value="9.4">9.4</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Revúca" class="th"><a href="revuca">Revúca</a></td>
+            <td data-value="163">163</td>
+            
+            <td data-value="4.34">4.34</td>
+            <td data-value="0.826">0.83</td>
+            <td data-value="0.19">0.190</td>
+            <td data-value="3569">
+                €3 569
+            </td>
+            <td data-value="12.9">12.9</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Šaľa" class="th"><a href="sala">Šaľa</a></td>
+            <td data-value="272">272</td>
+            
+            <td data-value="5.49">5.49</td>
+            <td data-value="0.808">0.81</td>
+            <td data-value="0.147">0.147</td>
+            <td data-value="4673">
+                €4 673
+            </td>
+            <td data-value="15.1">15.1</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Prievidza" class="th"><a href="prievidza">Prievidza</a></td>
+            <td data-value="512">512</td>
+            
+            <td data-value="4.04">4.04</td>
+            <td data-value="0.331">0.33</td>
+            <td data-value="0.082">0.082</td>
+            <td data-value="2383">
+                €2 383
+            </td>
+            <td data-value="15.0">15.0</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Bardejov" class="th"><a href="bardejov">Bardejov</a></td>
+            <td data-value="716">716</td>
+            
+            <td data-value="9.48">9.48</td>
+            <td data-value="0.728">0.73</td>
+            <td data-value="0.077">0.077</td>
+            <td data-value="2403">
+                €2 403
+            </td>
+            <td data-value="6.7">6.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Žarnovica" class="th"><a href="zarnovica">Žarnovica</a></td>
+            <td data-value="225">225</td>
+            
+            <td data-value="9.25">9.25</td>
+            <td data-value="0.781">0.78</td>
+            <td data-value="0.084">0.084</td>
+            <td data-value="7424">
+                €7 424
+            </td>
+            <td data-value="14.2">14.2</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Levoča" class="th"><a href="levoca">Levoča</a></td>
+            <td data-value="265">265</td>
+            
+            <td data-value="7.96">7.96</td>
+            <td data-value="0.991">0.99</td>
+            <td data-value="0.125">0.125</td>
+            <td data-value="7939">
+                €7 939
+            </td>
+            <td data-value="6.4">6.4</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Michalovce" class="th"><a href="michalovce">Michalovce</a></td>
+            <td data-value="773">773</td>
+            
+            <td data-value="7.18">7.18</td>
+            <td data-value="0.669">0.67</td>
+            <td data-value="0.093">0.093</td>
+            <td data-value="3231">
+                €3 231
+            </td>
+            <td data-value="11.4">11.4</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Senec" class="th"><a href="senec">Senec</a></td>
+            <td data-value="545">545</td>
+            
+            <td data-value="5.03">5.03</td>
+            <td data-value="0.332">0.33</td>
+            <td data-value="0.066">0.066</td>
+            <td data-value="8340">
+                €8 340
+            </td>
+            <td data-value="11.2">11.2</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Rimavská Sobota" class="th"><a href="rimavskasobota">Rimavská Sobota</a></td>
+            <td data-value="361">361</td>
+            
+            <td data-value="4.56">4.56</td>
+            <td data-value="1.452">1.45</td>
+            <td data-value="0.319">0.319</td>
+            <td data-value="4048">
+                €4 048
+            </td>
+            <td data-value="15.8">15.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Bratislava - 3" class="th"><a href="bratislava3">Bratislava - 3</a></td>
+            <td data-value="541">541</td>
+            
+            <td data-value="6.88">6.88</td>
+            <td data-value="0.343">0.34</td>
+            <td data-value="0.05">0.050</td>
+            <td data-value="3796">
+                €3 796
+            </td>
+            <td data-value="7.8">7.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Zvolen" class="th"><a href="zvolen">Zvolen</a></td>
+            <td data-value="662">662</td>
+            
+            <td data-value="10.18">10.18</td>
+            <td data-value="0.692">0.69</td>
+            <td data-value="0.068">0.068</td>
+            <td data-value="4331">
+                €4 331
+            </td>
+            <td data-value="8.2">8.2</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Košice" class="th"><a href="kosice">Košice</a></td>
+            <td data-value="1802">1802</td>
+            
+            <td data-value="8.11">8.11</td>
+            <td data-value="0.711">0.71</td>
+            <td data-value="0.088">0.088</td>
+            <td data-value="4903">
+                €4 903
+            </td>
+            <td data-value="7.7">7.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Stará Ľubovňa" class="th"><a href="staralubovna">Stará Ľubovňa</a></td>
+            <td data-value="458">458</td>
+            
+            <td data-value="8.57">8.57</td>
+            <td data-value="0.73">0.73</td>
+            <td data-value="0.085">0.085</td>
+            <td data-value="3127">
+                €3 127
+            </td>
+            <td data-value="11.8">11.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Bratislava - 5" class="th"><a href="bratislava5">Bratislava - 5</a></td>
+            <td data-value="856">856</td>
+            
+            <td data-value="7.03">7.03</td>
+            <td data-value="0.197">0.20</td>
+            <td data-value="0.028">0.028</td>
+            <td data-value="4225">
+                €4 225
+            </td>
+            <td data-value="5.3">5.3</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Poprad" class="th"><a href="poprad">Poprad</a></td>
+            <td data-value="1167">1167</td>
+            
+            <td data-value="11.48">11.48</td>
+            <td data-value="1.151">1.15</td>
+            <td data-value="0.1">0.100</td>
+            <td data-value="3923">
+                €3 923
+            </td>
+            <td data-value="8.9">8.9</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Galanta" class="th"><a href="galanta">Galanta</a></td>
+            <td data-value="372">372</td>
+            
+            <td data-value="3.91">3.91</td>
+            <td data-value="0.41">0.41</td>
+            <td data-value="0.105">0.105</td>
+            <td data-value="5451">
+                €5 451
+            </td>
+            <td data-value="12.6">12.6</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Ilava" class="th"><a href="ilava">Ilava</a></td>
+            <td data-value="207">207</td>
+            
+            <td data-value="3.69">3.69</td>
+            <td data-value="0.285">0.28</td>
+            <td data-value="0.077">0.077</td>
+            <td data-value="4760">
+                €4 760
+            </td>
+            <td data-value="16.4">16.4</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Dunajská Streda" class="th"><a href="dunajskastreda">Dunajská Streda</a></td>
+            <td data-value="693">693</td>
+            
+            <td data-value="5.39">5.39</td>
+            <td data-value="0.669">0.67</td>
+            <td data-value="0.124">0.124</td>
+            <td data-value="6856">
+                €6 856
+            </td>
+            <td data-value="15.2">15.2</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Kysucké Nové Mesto" class="th"><a href="kysuckenovemesto">Kysucké Nové Mesto</a></td>
+            <td data-value="176">176</td>
+            
+            <td data-value="5.44">5.44</td>
+            <td data-value="0.68">0.68</td>
+            <td data-value="0.125">0.125</td>
+            <td data-value="4330">
+                €4 330
+            </td>
+            <td data-value="17.0">17.0</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Malacky" class="th"><a href="malacky">Malacky</a></td>
+            <td data-value="381">381</td>
+            
+            <td data-value="4.74">4.74</td>
+            <td data-value="0.996">1.00</td>
+            <td data-value="0.21">0.210</td>
+            <td data-value="9368">
+                €9 368
+            </td>
+            <td data-value="17.1">17.1</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Ružomberok" class="th"><a href="ruzomberok">Ružomberok</a></td>
+            <td data-value="489">489</td>
+            
+            <td data-value="8.73">8.73</td>
+            <td data-value="0.768">0.77</td>
+            <td data-value="0.088">0.088</td>
+            <td data-value="4162">
+                €4 162
+            </td>
+            <td data-value="7.6">7.6</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Piešťany" class="th"><a href="piestany">Piešťany</a></td>
+            <td data-value="536">536</td>
+            
+            <td data-value="8.72">8.72</td>
+            <td data-value="0.439">0.44</td>
+            <td data-value="0.05">0.050</td>
+            <td data-value="4040">
+                €4 040
+            </td>
+            <td data-value="7.6">7.6</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Bratislava - 4" class="th"><a href="bratislava4">Bratislava - 4</a></td>
+            <td data-value="624">624</td>
+            
+            <td data-value="5.93">5.93</td>
+            <td data-value="0.276">0.28</td>
+            <td data-value="0.046">0.046</td>
+            <td data-value="4290">
+                €4 290
+            </td>
+            <td data-value="9.0">9.0</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Sabinov" class="th"><a href="sabinov">Sabinov</a></td>
+            <td data-value="409">409</td>
+            
+            <td data-value="6.56">6.56</td>
+            <td data-value="0.529">0.53</td>
+            <td data-value="0.081">0.081</td>
+            <td data-value="2673">
+                €2 673
+            </td>
+            <td data-value="13.2">13.2</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Svidník" class="th"><a href="svidnik">Svidník</a></td>
+            <td data-value="260">260</td>
+            
+            <td data-value="8.43">8.43</td>
+            <td data-value="0.454">0.45</td>
+            <td data-value="0.054">0.054</td>
+            <td data-value="4317">
+                €4 317
+            </td>
+            <td data-value="8.8">8.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Lučenec" class="th"><a href="lucenec">Lučenec</a></td>
+            <td data-value="373">373</td>
+            
+            <td data-value="5.46">5.46</td>
+            <td data-value="1.377">1.38</td>
+            <td data-value="0.252">0.252</td>
+            <td data-value="4086">
+                €4 086
+            </td>
+            <td data-value="14.7">14.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Trnava" class="th"><a href="trnava">Trnava</a></td>
+            <td data-value="1090">1090</td>
+            
+            <td data-value="8.2">8.20</td>
+            <td data-value="0.459">0.46</td>
+            <td data-value="0.056">0.056</td>
+            <td data-value="5023">
+                €5 023
+            </td>
+            <td data-value="10.8">10.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Snina" class="th"><a href="snina">Snina</a></td>
+            <td data-value="224">224</td>
+            
+            <td data-value="6.7">6.70</td>
+            <td data-value="0.568">0.57</td>
+            <td data-value="0.085">0.085</td>
+            <td data-value="3539">
+                €3 539
+            </td>
+            <td data-value="13.8">13.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Bratislava - 2" class="th"><a href="bratislava2">Bratislava - 2</a></td>
+            <td data-value="704">704</td>
+            
+            <td data-value="5.53">5.53</td>
+            <td data-value="0.181">0.18</td>
+            <td data-value="0.033">0.033</td>
+            <td data-value="4868">
+                €4 868
+            </td>
+            <td data-value="8.5">8.5</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Rožňava" class="th"><a href="roznava">Rožňava</a></td>
+            <td data-value="518">518</td>
+            
+            <td data-value="8.9">8.90</td>
+            <td data-value="1.031">1.03</td>
+            <td data-value="0.116">0.116</td>
+            <td data-value="2222">
+                €2 222
+            </td>
+            <td data-value="10.8">10.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Liptovský Mikuláš" class="th"><a href="liptovskymikulas">Liptovský Mikuláš</a></td>
+            <td data-value="831">831</td>
+            
+            <td data-value="11.71">11.71</td>
+            <td data-value="1.07">1.07</td>
+            <td data-value="0.091">0.091</td>
+            <td data-value="5818">
+                €5 818
+            </td>
+            <td data-value="7.9">7.9</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Vranov nad Topľou" class="th"><a href="vranovnadtoplou">Vranov nad Topľou</a></td>
+            <td data-value="429">429</td>
+            
+            <td data-value="5.41">5.41</td>
+            <td data-value="0.53">0.53</td>
+            <td data-value="0.098">0.098</td>
+            <td data-value="3350">
+                €3 350
+            </td>
+            <td data-value="14.7">14.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Pezinok" class="th"><a href="pezinok">Pezinok</a></td>
+            <td data-value="239">239</td>
+            
+            <td data-value="3.41">3.41</td>
+            <td data-value="0.228">0.23</td>
+            <td data-value="0.067">0.067</td>
+            <td data-value="4714">
+                €4 714
+            </td>
+            <td data-value="23.0">23.0</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Martin" class="th"><a href="martin">Martin</a></td>
+            <td data-value="594">594</td>
+            
+            <td data-value="6.43">6.43</td>
+            <td data-value="0.801">0.80</td>
+            <td data-value="0.125">0.125</td>
+            <td data-value="3550">
+                €3 550
+            </td>
+            <td data-value="13.3">13.3</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Kežmarok" class="th"><a href="kezmarok">Kežmarok</a></td>
+            <td data-value="564">564</td>
+            
+            <td data-value="7.38">7.38</td>
+            <td data-value="0.93">0.93</td>
+            <td data-value="0.126">0.126</td>
+            <td data-value="3280">
+                €3 280
+            </td>
+            <td data-value="11.0">11.0</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Považská Bystrica" class="th"><a href="povazskabystrica">Považská Bystrica</a></td>
+            <td data-value="158">158</td>
+            
+            <td data-value="2.63">2.63</td>
+            <td data-value="0.433">0.43</td>
+            <td data-value="0.165">0.165</td>
+            <td data-value="5751">
+                €5 751
+            </td>
+            <td data-value="20.3">20.3</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Banská Štiavnica" class="th"><a href="banskastiavnica">Banská Štiavnica</a></td>
+            <td data-value="128">128</td>
+            
+            <td data-value="8.39">8.39</td>
+            <td data-value="0.59">0.59</td>
+            <td data-value="0.07">0.070</td>
+            <td data-value="2540">
+                €2 540
+            </td>
+            <td data-value="14.8">14.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Stropkov" class="th"><a href="stropkov">Stropkov</a></td>
+            <td data-value="112">112</td>
+            
+            <td data-value="5.8">5.80</td>
+            <td data-value="0.311">0.31</td>
+            <td data-value="0.054">0.054</td>
+            <td data-value="2680">
+                €2 680
+            </td>
+            <td data-value="5.4">5.4</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Nové Zámky" class="th"><a href="novezamky">Nové Zámky</a></td>
+            <td data-value="607">607</td>
+            
+            <td data-value="4.55">4.55</td>
+            <td data-value="0.675">0.68</td>
+            <td data-value="0.148">0.148</td>
+            <td data-value="4976">
+                €4 976
+            </td>
+            <td data-value="13.7">13.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Námestovo" class="th"><a href="namestovo">Námestovo</a></td>
+            <td data-value="242">242</td>
+            
+            <td data-value="3.73">3.73</td>
+            <td data-value="0.416">0.42</td>
+            <td data-value="0.112">0.112</td>
+            <td data-value="5742">
+                €5 742
+            </td>
+            <td data-value="16.9">16.9</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Topoľčany" class="th"><a href="topolcany">Topoľčany</a></td>
+            <td data-value="202">202</td>
+            
+            <td data-value="2.93">2.93</td>
+            <td data-value="0.349">0.35</td>
+            <td data-value="0.119">0.119</td>
+            <td data-value="4714">
+                €4 714
+            </td>
+            <td data-value="20.3">20.3</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Veľký Krtíš" class="th"><a href="velkykrtis">Veľký Krtíš</a></td>
+            <td data-value="204">204</td>
+            
+            <td data-value="5.07">5.07</td>
+            <td data-value="0.82">0.82</td>
+            <td data-value="0.162">0.162</td>
+            <td data-value="2841">
+                €2 841
+            </td>
+            <td data-value="19.1">19.1</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Žiar nad Hronom" class="th"><a href="ziarnadhronom">Žiar nad Hronom</a></td>
+            <td data-value="332">332</td>
+            
+            <td data-value="7.73">7.73</td>
+            <td data-value="0.512">0.51</td>
+            <td data-value="0.066">0.066</td>
+            <td data-value="5694">
+                €5 694
+            </td>
+            <td data-value="9.3">9.3</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Banská Bystrica" class="th"><a href="banskabystrica">Banská Bystrica</a></td>
+            <td data-value="580">580</td>
+            
+            <td data-value="5.47">5.47</td>
+            <td data-value="0.33">0.33</td>
+            <td data-value="0.06">0.060</td>
+            <td data-value="4980">
+                €4 980
+            </td>
+            <td data-value="11.6">11.6</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Komárno" class="th"><a href="komarno">Komárno</a></td>
+            <td data-value="188">188</td>
+            
+            <td data-value="1.91">1.91</td>
+            <td data-value="0.794">0.79</td>
+            <td data-value="0.415">0.415</td>
+            <td data-value="5357">
+                €5 357
+            </td>
+            <td data-value="19.7">19.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Krupina" class="th"><a href="krupina">Krupina</a></td>
+            <td data-value="144">144</td>
+            
+            <td data-value="6.82">6.82</td>
+            <td data-value="0.852">0.85</td>
+            <td data-value="0.125">0.125</td>
+            <td data-value="6074">
+                €6 074
+            </td>
+            <td data-value="21.5">21.5</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Trebišov" class="th"><a href="trebisov">Trebišov</a></td>
+            <td data-value="549">549</td>
+            
+            <td data-value="5.35">5.35</td>
+            <td data-value="0.662">0.66</td>
+            <td data-value="0.124">0.124</td>
+            <td data-value="3007">
+                €3 007
+            </td>
+            <td data-value="16.4">16.4</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Detva" class="th"><a href="detva">Detva</a></td>
+            <td data-value="166">166</td>
+            
+            <td data-value="5.5">5.50</td>
+            <td data-value="0.96">0.96</td>
+            <td data-value="0.175">0.175</td>
+            <td data-value="4408">
+                €4 408
+            </td>
+            <td data-value="18.7">18.7</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Bánovce nad Bebravou" class="th"><a href="banovcenadbebravou">Bánovce nad Bebravou</a></td>
+            <td data-value="173">173</td>
+            
+            <td data-value="4.98">4.98</td>
+            <td data-value="0.461">0.46</td>
+            <td data-value="0.092">0.092</td>
+            <td data-value="4109">
+                €4 109
+            </td>
+            <td data-value="11.6">11.6</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Levice" class="th"><a href="levice">Levice</a></td>
+            <td data-value="453">453</td>
+            
+            <td data-value="4.22">4.22</td>
+            <td data-value="0.522">0.52</td>
+            <td data-value="0.124">0.124</td>
+            <td data-value="3006">
+                €3 006
+            </td>
+            <td data-value="15.5">15.5</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Gelnica" class="th"><a href="gelnica">Gelnica</a></td>
+            <td data-value="112">112</td>
+            
+            <td data-value="3.51">3.51</td>
+            <td data-value="0.784">0.78</td>
+            <td data-value="0.223">0.223</td>
+            <td data-value="3026">
+                €3 026
+            </td>
+            <td data-value="12.5">12.5</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Tvrdošín" class="th"><a href="tvrdosin">Tvrdošín</a></td>
+            <td data-value="146">146</td>
+            
+            <td data-value="4.09">4.09</td>
+            <td data-value="0.617">0.62</td>
+            <td data-value="0.151">0.151</td>
+            <td data-value="5162">
+                €5 162
+            </td>
+            <td data-value="15.8">15.8</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Medzilaborce" class="th"><a href="medzilaborce">Medzilaborce</a></td>
+            <td data-value="55">55</td>
+            
+            <td data-value="5.23">5.23</td>
+            <td data-value="0.19">0.19</td>
+            <td data-value="0.036">0.036</td>
+            <td data-value="2595">
+                €2 595
+            </td>
+            <td data-value="20.0">20.0</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Sobrance" class="th"><a href="sobrance">Sobrance</a></td>
+            <td data-value="118">118</td>
+            
+            <td data-value="5.34">5.34</td>
+            <td data-value="0.588">0.59</td>
+            <td data-value="0.11">0.110</td>
+            <td data-value="3218">
+                €3 218
+            </td>
+            <td data-value="21.2">21.2</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Púchov" class="th"><a href="puchov">Púchov</a></td>
+            <td data-value="124">124</td>
+            
+            <td data-value="2.86">2.86</td>
+            <td data-value="0.577">0.58</td>
+            <td data-value="0.202">0.202</td>
+            <td data-value="4945">
+                €4 945
+            </td>
+            <td data-value="20.2">20.2</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Poltár" class="th"><a href="poltar">Poltár</a></td>
+            <td data-value="70">70</td>
+            
+            <td data-value="3.51">3.51</td>
+            <td data-value="1.203">1.20</td>
+            <td data-value="0.343">0.343</td>
+            <td data-value="3955">
+                €3 955
+            </td>
+            <td data-value="21.4">21.4</td>
+        </tr>
+        
+        <tr>
+            <td data-value="Partizánske" class="th"><a href="partizanske">Partizánske</a></td>
+            <td data-value="134">134</td>
+            
+            <td data-value="3.13">3.13</td>
+            <td data-value="0.468">0.47</td>
+            <td data-value="0.149">0.149</td>
+            <td data-value="5072">
+                €5 072
+            </td>
+            <td data-value="17.2">17.2</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<footer>
+    <p class="content">Mapa dopravných nehôd a jednosmeriek<br>
+        &copy; 2026 <a href="/">somstrom</a> · 
+        <a href="https://unilexicon.com/fm">František Malina</a> ·  
+        dáta <a href="https://hackathon.uniza.sk/">Hackaton UNIZA</a><br><br>
+        <a href="/"><img src="/logo.svg" width="50" height="92" alt=""></a>
+</footer>
+</body>
+</html>

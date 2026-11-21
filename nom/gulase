@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Guláše  - Normy jedál</title>
+<meta name="description" content="Hovädzí guláš 120g hovädzie mäso – krk, nožina 50g slnečnicový olej 5g rajčinový pretlak + cukor 20g cibuľa 2g sladká mletá maďarská paprika 5g hladká…">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<base href="/nom/">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/nom/style.css">
+<link rel="canonical" href="https://somstrom.com/nom/gulase">
+<script src="scripts.js"></script>
+</head>
+<body class="gulase">
+<header class="nav">
+    <div class="brand">
+        <a href="/"><img src="/logo.svg" width="50" height="92" alt=""></a>
+        <a href="/nom/">Normy jedál</a>
+    </div>
+</header>
+<div class="container">
+<main>
+<div class="content">
+
+<h1>Guláše</h1>
+<h2>Hovädzí guláš</h2>
+
+<ul>
+<li>120g hovädzie mäso – krk, nožina</li>
+<li>50g slnečnicový olej</li>
+<li>5g rajčinový pretlak + cukor</li>
+<li>20g cibuľa</li>
+<li>2g sladká mletá maďarská paprika</li>
+<li>5g hladká múka</li>
+<li>soľ, vegeta, mleté korenie, drtený kmín</li>
+</ul>
+
+<h2>Nármonícke mäso</h2>
+
+<ul>
+<li>120g zadné hovädzie mäso zo stehna, šál</li>
+<li>5g slanina prerastaná</li>
+<li>5g hladká múka</li>
+<li>5g olej, masť</li>
+<li>40g koreňová zelenina (mrkva-20g, petržlen, zeler)</li>
+<li>10g cibuľa</li>
+<li>20g kyslá smotana (sladká smotana 12%, cukor, citrón)</li>
+<li>20g varené vajce</li>
+<li>voda, soľ, vegeta, bobkový list, tymian, borievky</li>
+</ul>
+
+<p>Podávame s ryžou.</p>
+
+<h2>Hovädzí znojemský guláš</h2>
+
+<ul>
+<li>120g hovädzia kližka</li>
+<li>5g olej</li>
+<li>20g cibuľa</li>
+<li>20g uhorky sterilizované</li>
+<li>5g hladká múka</li>
+<li>soľ, vegeta, mleté korenie</li>
+</ul>
+
+<h2>Moravský guláš</h2>
+
+<ul>
+<li>120g hovädzej kližky</li>
+<li>5g slnečnicový olej</li>
+<li>20g cibuľa</li>
+<li>10g rajčinový pretlak</li>
+<li>10g zemiakov</li>
+<li>soľ, zelený petržlen, majoránka, sladká mletá paprika, drtený kmín, cesnak</li>
+</ul>
+
+<h2>Slovenský guláš</h2>
+
+<ul>
+<li>120g hovädzie mäso, nožina</li>
+<li>10g masti</li>
+<li>10g cibuľa</li>
+<li>60g zemiakov, zahusťujeme zemiakmi</li>
+<li>rasca, soľ, cesnak, červená paprika, vegeta, majorán</li>
+</ul>
+
+<h2>Maďarský guláš</h2>
+
+<ul>
+<li>120g hovädzieho mäsa so svalu na nohách, nožiny</li>
+<li>10g olej</li>
+<li>30g Cibuľa, môže byť červená</li>
+<li>2g červená maďarská paprika</li>
+<li>soľ, vegeta, čierne korenie</li>
+</ul>
+
+<h2>Srbský guláš</h2>
+
+<ul>
+<li>120g hovädzej nožiny</li>
+<li>10g masť, olej</li>
+<li>10g cibuľa</li>
+<li>20g rajčín</li>
+<li>20g paprík alebo ½ leča bez tuku</li>
+<li>5g hladká múka</li>
+<li>soľ, červená paprika, korenie</li>
+</ul>
+
+<h2>Viedenský hovädzí guláš</h2>
+
+<ul>
+<li>120g hovädzej nožiny</li>
+<li>10g masť, olej</li>
+<li>20g cibuľa</li>
+<li>10g hladkej múky</li>
+<li>soľ, vegeta, biele a čierne korenie</li>
+</ul>
+
+<h2>Kotlíkový guláš</h2>
+
+<ul>
+<li>100g hovädzieho mäsa</li>
+<li>10g masť, olej</li>
+<li>10g cibuľa</li>
+<li>vajce, krupicová múka, cesnak na halušky</li>
+<li>80g zemiaky, časť zemiakov postrúhame</li>
+<li>15g rajčín</li>
+<li>10g paprík, lečo</li>
+<li>soľ, vegeta, majorán, cesnak, červená paprika, drtená rasca, čierne a biele korenie</li>
+</ul>
+
+</div>
+</main>
+<nav>
+    <ul>
+    <li><a href="polievky">Polievky</a></li>
+    <li><a href="bylinky">Použitie bylín</a></li>
+    <li><b>Stravovanie</b>
+        <ul>
+        <li><a href="slovenske">Typické slovenské jedlá</a></li>
+        <li><a href="smasombezmasa">Rôzne mäsité a bezmäsité jedlá</a></li>
+        <li><a href="miesane">Miešané pokrmy</a></li>
+        <li><a href="omacky-salaty">Omáčky, prílohy a šaláty</a></li>
+        <li><a href="predjedla">Predjedlá teplé a studené, nátierky</a></li>
+        <li><a href="mucniky">Múčniky a pečenie</a></li>
+        <li><a href="kolace">Koláče a iné</a></li>
+        <li><a href="napoje">Kokteily, drinky</a></li>
+        <li><a href="recepty">Recepty pokračovanie</a></li>
+        <li><a href="recepty-zo-zivota">Výber receptov zo života</a></li>
+        <li><a href="zkazdehorozka">Z každého rožka troška</a></li>
+        <li><a href="gurman">Gurmánske tajomstvá</a></li>
+        <li><a href="tabulka">Normovacia tabuľka</a></li>
+        <li><a href="tech-stolovanie">Technológia a stolovanie</a></li>
+        <li><a href="jedalne-listky">Výberové jedálne lístky</a></li>
+        </ul></li>
+    <li><b>Mäso</b>
+        <ul>
+        <li><a href="bravcove">Bravčové</a></li>
+        <li><a href="bravcove-gulase">Bravčové, miešané guláše</a></li>
+        <li><a href="gulase">Pravé guláše</a></li>
+        <li><a href="bravcove-minutky">Minútky z bravčoviny, vnútornosti</a></li>
+        <li><a href="minutky">Minútky</a></li>
+        <li><a href="jahnacie-baranie">Jahňacie a baranina</a></li>
+        <li><a href="mlete-maso">Mleté mäso</a></li>
+        <li><a href="hovadzie">Hovädzie</a></li>
+        <li><a href="hovadzie-rostenky">Hovädzie roštenky a plátky</a></li>
+        <li><a href="telacie">Teľacie mäso</a></li>
+        <li><a href="telacie-dusene">Teľacie dusené</a></li>
+        <li><a href="telacie-pecene">Teľacie pečené</a></li>
+        <li><a href="hydina">Hydinové jedlá a pochúťky</a></li>
+        <li><a href="zverina">Zverina/Divina</a></li>
+        <li><a href="ryby">Ryby</a></li>
+        </ul></li>
+    </ul>
+</nav>
+</div>
+<footer>
+  <span>© 2002-2026 <a href="/">somstrom</a> · <a href="/nom/">Normy jedál</a></span>
+  <span>Všetky práva vyhradené · <a href="https://unilexicon.com/fm">F. Malina</a></span>
+</footer>
+</body>
+</html>
