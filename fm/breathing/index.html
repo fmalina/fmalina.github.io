@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html ⚡ lang="en-gb">
+<head>
+<meta charset="utf-8">
+<title>Breathing under water - method for separation of dissolved gases</title>
+<meta name="description" content="Early design proposal for water degassing device for extraction of dissolved gases. Theory of low temperature water degassing explained.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/fm/style.css">
+<style>
+#toc ol ol{padding:0 0 0 1em}
+#toc ol{padding:0;list-style:none}
+
+blockquote cite{font-style:normal;font-size:small}
+blockquote p{padding:0 0 0 1em;margin:0}
+blockquote{font-size:1em;margin-top:1em;padding:.5em;background:#f6f6f6;border:1px solid gainsboro}
+blockquote, img{border-radius:5px}
+blockquote,header h2,.lunch{margin:0 auto;max-width:500px}
+
+.lunch{text-align:center}
+.clear{clear:both}
+dt,th{font-weight:600}
+dt{margin-top:.5em}
+dd img{margin:1em}
+h2{font-size:1.4em}
+h3{clear:both}
+
+table{margin:0 auto}
+th,td{text-align:center}
+th,td{padding:.1em .5em}
+tr.t1{background:#fff}
+tr.t2{background:#f6f6f6}
+thead th{border:0;padding:.2em .5em}
+tfoot td{border:0;padding:.2em .5em}
+
+.left-padded{float:left;margin-right:1em}
+.right-padded{float:right;margin:0 0 1em 1em}
+@media (min-width:960px) {
+    main{max-width:700px;margin:1em}
+	#toc{position:fixed;top:0;right:0;padding:1em;width:180px}
+	#to_toc{display:none}
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>Breathing under water</h1>
+    <h2>Application of the Henry-Dalton's law,
+        method for separation of dissolved&nbsp;gases</h2>
+    <p>for <a href="http://ec.europa.eu/research/eucys/index_en.cfm?pg=photos-country&contest=2005">
+        the EU Contest for Young Scientists</a>;
+        Moscow 2005<br>
+        <a href="/fm/">
+            František Malina</a>, Slovakia: physics
+        <a href="#toc" id="to_toc"><br><br>Jump to contents</a>
+</header>
+
+<main>
+<h2 id="a1">1. Introduction</h2>
+<p>Project <strong>Breathing under water</strong> started when I was filling a syringe through thin needle.
+    I noticed bubbles of air appearing in the syringe.</p>
+
+<video src="video.mp4"
+           controls
+           layout="responsive"
+           poster="inj.jpg"
+           width="472"
+           height="378">
+  <div fallback>
+  Sorry, your browser doesn't support embedded videos, 
+  you can still <a href="video.mp4">download the movie</a>
+  and watch it with your favorite video player or try
+  <a href="video.swf">version for old web browsers</a>.
+  Alternatively, just get wet for yourself to repeat the experiment.
+  </div>
+</video>
+
+<p>This was an exciting discovery. I realised the water had degassed and parted from the dissolved air. Fish breath this same air. I decided I want to understand this and explore. I realised it is possible to breathe the air dissolved in water.</p>
+<p>The aim of the project <ins>was</ins>  <del>is</del> to develop an appliance which allows to a man <strong>to breathe air extracted from water</strong>. In other words, aim of the project is to explain physical mechanism of degassing water and to construct an efficient <strong>design</strong> to supply a man with breathable healthy fresh air under water. Build it. Test it and get it on the market.</p>
+
+<blockquote>
+<a href="/fm/">
+    <img class="left-padded"
+             src="malina.jpg"
+             width="190" height="190"
+             alt="F. Malina - author" />
+</a>
+<p><q>14 years on, it's mind-blowing to reflect back and see how this has changed the world... from diving gear to fracking and what it triggered.<br>
+A scientific paper
+<a href="http://ec.europa.eu/research/eucys/index.cfm?pg=photos-country&contest=2005">published in Russia</a> in public domain by an
+<a href="booth.jpg">18 year old dad</a>.</q><br>
+<div class="clear"></div>
+</blockquote>
+
+<h2 id="a2">2. Methodology</h2>
+<p>The project has a definite aim so I searched and studied in different sources only for specific information related to the topic.</p>
+<p>The design of an appliance for separating natural water components <del>is still abstract. Appliance is still being developed at a theoretical level</del>.</p>
+<p>Experiment: The way of obtaining and checking information about the solution of gases is described in <a href="#a4">4. Water degassing</a>, section <a href="#a43">4.3 Advance</a>.</p>
+<h2 id="a3">3. Introductory information</h2>
+<h3 id="a31">3.1 Natural laws</h3>
+
+<dl>
+<dt>Dalton’s law</dt>
+<dd>is physical law that states that the total pressure exerted by a homogeneous mixture of gases is equal to the sum of the partial pressures of the individual gases. The partial pressure of a gas is the pressure it would exert if all the other gases in the mixture were absent.</dd>
+<dd>It is principle that each gas in a mixture of gases exerts a pressure proportionately to the percentage of the gas and independently of the presence of the other gases present. It is also called law of partial pressures.</dd>
+<dt>Henry’s law</dt>
+<dd>is chemical law stating that the amount of a gas that dissolves in a liquid is proportional to the partial pressure of the gas over the liquid, provided no chemical reaction takes place between the liquid and the gas. It is named after William Henry (1774 - 1836), the English chemist who first reported the relationship.</dd>
+<dd>The mass of a gas which will dissolve into a solution is directly proportional to the partial pressure of that gas above the solution.</dd>
+<dd>The pressure of the gas above a solution is proportional to the concentration of the gas in the solution.</dd>
+<dd>When a gas is in contact with the surface of a liquid, the amount of the gas which will go into solution is proportional to the partial pressure of that gas. A simple rationale for Henry’s law is that if the partial pressure of a gas is twice as high, then on the average twice as many molecules will hit the liquid surface in a given time interval, and on the average twice as many will be captured and go into solution.</dd>
+<dd>For a gas mixture, Henry’s law helps to predict the amount of each gas which will go into solution, but different gases have different solubility and this also affects the rate. The constant of proportionality in Henry’s law must take this into account.</dd>
+<dd>For example, in the gas exchange processes in breathing, the solubility of carbon dioxide is about 22 times that of oxygen in contact with human tissue.</dd>
+
+<dt>Bernoulli’s principle<br></dt>
+<dd><img class="right-padded"
+             src="graf1.png" alt=""
+             layout="intrinsic"
+             width="429" height="292" /></dd>
+<dd>is a statement of the conservation of energy in a form useful for solving problems involving fluids. For a non-viscous, incompressible fluid in steady flow, the sum of pressure, potential and kinetic energies per unit volume is constant at any point.</dd>
+<dd>Bernoulli’s principle states that as the speed of a moving fluid increases, the pressure within the fluid decreases.</dd>
+<dt>Boyle’s law</dt>
+<dd>is the principle that at a constant temperature the volume of a confined gas varies inversely with its pressure.</dd>
+</dl>
+<h3 id="a32">3.2 Water and gases</h3>
+
+<blockquote><p>Natural water should be considered a gas solution with a balance of water and gases.</p>
+<p><cite>Bondarenko, N. F. - Gak, J. Z.: Elektromagnitnyje javlenija v prirodnych vodach. Saint Petersburg, Gidrometeoizdat 1984, p.7</cite></p></blockquote>
+<p>It means that dissolving of gases in water decreases with a rise in temperature and increases with part pressure above solution. Water 293.15K contains this amount of gases: nitrogen 16.84 mg/l, oxygen 9.07 mg/l, argon 0.43 mg/l, carbon dioxide 0.36mg/l.</p>
+<h3 id="a33">3.3 Cavitation and centrifugal pump</h3>
+<p>A fluid vaporises when its pressure gets too low, or its temperature too high. This problem is connected with low pressure pumps. Gas binding of a centrifugal pump is a condition where the pump casing is filled with gases or vapours to the point where the impeller is no longer able to contact enough fluid to function correctly. The impeller spins in the gas bubble, but is unable to force liquid through the pump. This can lead to cooling problems for the pump’s packing and bearings.</p>
+<p>Centrifugal pumps are designed so that their pump casings are completely filled with liquid during pump operation. Most centrifugal pumps can still operate when a small amount of gas accumulates in the pump casing, but pumps in systems containing dissolved gases that are not designed to be self-venting should be periodically vented manually to ensure that gases do not build up in the pump casing.</p>
+<h3 id="a34">3.4 Human breathing</h3>
+
+<h4 id="a341">3.4.1 Mechanics of breathing</h4>
+<dl>
+<dt><strong>Ventilation</strong></dt>
+<dd>Movement of air into and out of lungs</dd>
+<dd>Air moves from area of higher pressure to area of lower pressure</dd>
+<dd>Pressure is inversely related to volume</dd>
+<dt><strong>External breathing</strong></dt>
+<dd>Gas exchange between air in lungs and blood</dd>
+<dd>Transport of oxygen in the blood and carbon dioxide in the lungs</dd>
+
+<dt><strong>Internal breathing</strong></dt>
+<dd>Gas exchange between the blood and tissues</dd>
+<dd>Transport of oxygen in the tissues and carbon dioxide in the blood</dd>
+<dt><strong>Pulmonary Volumes</strong></dt>
+<dt>Tidal volume</dt>
+<dd>Volume of air inspired or expired during a normal inspiration or expiration - cca 500 ml</dd>
+<dt>Inspiratory reserve volume</dt>
+<dd>Amount of air inspired forcefully after inspiration of normal tidal volume - cca 2500</dd>
+<dt>Expiratory reserve volume</dt>
+
+<dd>Amount of air forcefully expired after expiration of normal tidal volume - cca 1000 ml</dd>
+<dt>Residual volume</dt>
+<dd>Volume of air remaining in respiratory passages and lungs after the most forceful expiration - cca 1500 ml</dd>
+</dl>
+<table class="table">
+    <thead>
+    <tr>
+    <th>Residual volume</th>
+    <th colspan="3">Vital capacity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>(cca 1.5 l)</td>
+    <td>Expiratory reserve volume (cca 1 l)</td>
+    <td>Tidal volume cca (0.5 l)</td>
+    <td>Inspiratory reserve volume (cca 2.5 l)</td>
+    </tr>
+    </tbody>
+</table>
+<dl>
+<dt><strong>Pulmonary Capacities</strong></dt>
+<dt>Inspiratory capacity</dt>
+
+<dd>Tidal volume plus inspiratory reserve volume</dd>
+<dt>Functional residual capacity</dt>
+<dd>Expiratory reserve volume plus the residual volume</dd>
+<dt>Vital capacity</dt>
+<dd>Sum of inspiratory reserve volume, tidal volume, and expiratory reserve volume</dd>
+<dt>Total lung capacity</dt>
+<dd>Sum of inspiratory and expiratory reserve volumes plus the tidal volume and residual volume</dd>
+<dt><strong>Minute and Alveolar Ventilation</strong></dt>
+<dt>Minute ventilation</dt>
+
+<dd>Total amount of air moved into and out of respiratory system per minute, at rest 7 -9 l</dd>
+<dt>Respiratory rate or frequency</dt>
+<dd>Number of breaths taken per minute, at rest 14 -18</dd>
+<dt>Anatomic dead space</dt>
+<dd>Part of respiratory system where gas exchange does not take place</dd>
+<dt>Alveolar ventilation</dt>
+<dd>How much air per minute enters the parts of the respiratory system in which gas exchange takes place</dd>
+</dl>
+<h4 id="a342">3.4.2 Air exchange in lungs and tissues</h4>
+
+<dl>
+<dt><strong>Physical Principles of Gas Exchange</strong></dt>
+<dt>Diffusion of gases through the respiratory membrane</dt>
+<dd>depends on: membranes thickness, the diffusion coefficient of gas, surface areas of membrane and partial pressure of gases in alveoli and blood.</dd>
+<dt>Relationship between ventilation and pulmonary capillary flow</dt>
+<dd>Increased ventilation or increased pulmonary capillary blood flow increases gas exchange.</dd>
+<dd>Physiologic shunt is deoxygenated blood returning from lungs.</dd>
+</dl>
+<table>
+    <thead>
+    <tr>
+    <th>Air</th>
+    <th colspan="3">Gases in %</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th></th>
+    <th> O<sub>2</sub></th>
+    <th>CO<sub>2</sub></th>
+    <th> N<sub>2</sub></th>
+    </tr>
+    <tr>
+    <td>atmospheric</td>
+    <td>20.92</td>
+    <td>0.04</td>
+    <td>79.04</td>
+    </tr>
+    <tr>
+    <td>alveolar</td>
+    <td>14.1</td>
+    <td>5.6</td>
+    <td>79.7</td>
+    </tr>
+    <tr>
+    <td>exspirated</td>
+    <td>16,3</td>
+    <td>4.0</td>
+    <td>79.3</td>
+    </tr>
+    </tbody>
+</table>
+<dl>
+<dt><strong>Oxygen and Carbon Dioxide Diffusion Gradients</strong></dt>
+
+<dt>Oxygen</dt>
+<dd>Moves from alveoli into blood. Blood is almost completely saturated with oxygen when it leaves the capillary</dd>
+<dd>Oxygen moves from tissue capillaries into the tissues</dd>
+<dt>Carbon dioxide</dt>
+<dd>Moves from tissues into tissue capillaries</dd>
+<dd>Moves from pulmonary capillaries into the alveoli</dd>
+</dl>
+<h4 id="a343">3.4.3 Respiration underwater</h4>
+<p>Revolution in a history of a Diving has taken place in 1943. Jacques-Yves Cousteau and Emile Gagnan have devised the first working vehicle with an open-air circuit of breathing. Diving with compressed air or other gas mixture stored in tanks used by the diver (SCUBA-Diving). There are 2 types of aqualung: with opened and closed cycle of breathing (the systems with an open breathing circuit eject all used air, popular for recreational diving).</p>
+
+<p>Systems with the closed breathing cycle are those where inhaled air circles back in a respiration system and after absorption of a carbon dioxide and adding of oxygen will be used again for breathing. Such systems were used before occurence of open circuit systems and were used by military divers, who tried to avoid bubbles that could be spotted on the surface.</p>
+<p>Water is not a natural environment for a human. The main limiting factors are:</p>
+<ol>
+<li>Need to breath</li>
+<li>Hydrostatic pressure</li>
+</ol>
+<p>To survive under the water for longer one needs to eliminate these limitations.</p>
+<h2 id="a4">4. Water degassing</h2>
+<p>A stimulated separation of dissolved gases from natural water.</p>
+<h3 id="a41">4.1 Equipment</h3>
+
+<h5>Experiment</h5>
+<ol>
+<li>Syringe volume 20 ml or more</li>
+<li>needles (various diameters)</li>
+<li>thermometer</li>
+<li>measure of separated gas volume (capillary tube)</li>
+<li>pipette</li>
+<li>tank with water</li>
+</ol>
+<h5>Observation</h5>
+
+<p>Sparkling water</p>
+<h3 id="a42">4.2 Principle</h3>
+<dl>
+<dt>Hypothesis for experiment</dt>
+<dd>Large difference between pressure in the needle and the syringe leads to a larger volume of extracted gas.</dd>
+<dt>Hypothesis for observation</dt>
+<dd>Liquid solution of water, gases and another substances has an inner structure. And so releasing of gases depends on more factors than just partial pressure and temperature.</dd>
+</dl>
+<h3 id="a43">4.3 Advance</h3>
+<h5>Experiment</h5>
+
+<p><img src="inj.jpg"
+            layout="responsive"
+            alt="Water degassing using a syringe"
+            width="600" height="320" /></p>
+<ol>
+<li>Sink the syringe</li>
+<li>Admission water, low pressure in syringe - near vacuum, cavitation</li>
+<li>Admission water, low pressure in syringe - rising of pressure, cavitation</li>
+<li>Rising of pressure, reducing of bubble volume</li>
+<li>Rising of pressure, reducing of bubble volume</li>
+<li>End, gas is now in gas phase</li>
+</ol>
+<ol>
+<li>Measuring of separated gas volume</li>
+
+<li>Notation values</li>
+<li>Evaluation and interpretation</li>
+</ol>
+<h5>Observation</h5>
+<p>Observation of solution behaviour in different conditions.</p>
+<h3 id="a44">4.4 Results</h3>
+<p>Using this primitive method we can extract 1% of dissolved gases into gas phase. We can see that bigger difference of pressure (using thin needle) has not better effect than fast putting water without needle.</p>
+<p>1st hypothesis was disproved by evidence. There is only so much air that can be extracted from water. Pressure difference stops being a factor at certain treshold.</p>
+<p>2nd hypothesis was established. The degassing process depends on variety of conditions. Foreign-matter content - “condensing” cores for gases, free surface of the liquid, it's motion, material of the tank. We can see that abrasive materials increased degassing speed. Abrasive materials have large free surface where gases can condense. Intro change in partial pressure of gases above solution volume of eliminate gases per time is linear depending on water free surface.</p>
+
+<h2 id="a5">5. Appliance</h2>
+<h3 id="a51">5.1 Parameters</h3>
+<ol>
+<li>Human breathing: Total amount of air moved into and out of respiratory system per minute, at rest and normal pressure 7-9 l</li>
+<li>We are able to obtain from water 1% of dissolved gases into the gas phase so we have to degas at least 700-900 l of water per minute to supply a man with respiratory gases on the level.</li>
+<li>Hydrostatic pressure and stress increases body oxygen requests. Depth can increases the amount of air required by the body on such a level that no pump could manage it. But there are still systems with a closed cycle of breathing, in which inhaled air is returned in a respiratory contour, and after absorpting carbon dioxide and adding of oxygen, again the air can be utilized for breathing. Such combination of appliances could maximize divers limited work time.</li>
+<li>Volume of gases dissolved in water we are able to separate depends on temperature and pressure of gases above the water surface.</li>
+</ol>
+<h3 id="a52">5.2 Centrifugal Pump</h3>
+<p>We need strong flow, lower pressure and low consumption of energy. Jet centrifugal pump is the best type of pump for the purpose.</p>
+
+<h3 id="a53">5.3 Scheme</h3>
+<p><img src="app.jpg"
+            alt="Water degassing appliance - scheme"
+            layout="responsive"
+            width="625" height="128" /></p>
+<ol>
+<li>Suction</li>
+<li>1st centrifugal pump</li>
+<li>Degas tank - Low pressure centre</li>
+<li>Centrifugal separating turbine</li>
+<li>Gas</li>
+<li>2nd centrifugal pump</li>
+<li>Degassed water</li>
+</ol>
+<h3 id="a54">5.4 Exploitation</h3>
+<ul>
+<li>Supply of air for breathing under water.</li>
+<li>Clean water by efficient extraction of dissolved polluting substances like methane, ethane and chlorine <ins>and obtain these in the process</ins>.</li>
+</ul>
+<h2 id="a6">6. Conclusion</h2>
+<p>The aims of the project are <del>still not</del> complete. The appliance that is able to supply the respiratory gas for man extracted from water while helping propulsion under water is <del>not yet</del> a reality but probably the first step has been made towards its realisation.</p>
+<p>The amount of energy in batteries would be the first limiting factor for using this appliance under water.</p>
+<p>Its advantage is that two problems are solved. The first one is a air supply and the second is a simplified motion of a diver or submarine crew.
+<p>Various modifications of the appliance can be used in different industries, where degassed water is needed <ins>or where the dissolved gases are of value</ins>.</p>
+</main>
+
+<aside id="toc">
+<h3>Contents</h3>
+<nav>
+<ol>
+    <li>1. <a href="#a1">Introduction</a></li>
+    <li>2. <a href="#a2">Methodology</a></li>
+    <li>3. <a href="#a3">Introductory information</a>
+        <ol>
+        <li>3.1 <a href="#a31">Natural laws</a></li>
+        <li>3.2 <a href="#a32">Water and gases</a></li>
+        <li>3.3 <a href="#a33">Cavitation and centrifugal pump</a></li>
+        <li>3.4 <a href="#a34">Human breathing</a>
+            <ol>
+            <li>3.4.1 <a href="#a341">Mechanics of breathing</a></li>
+            <li>3.4.2 <a href="#a342">Air exchange in lungs and tissues</a></li>
+            <li>3.4.3 <a href="#a343">Respiration underwater</a></li>
+            </ol>
+        </li>
+        </ol>
+    </li>
+    <li>4. <a href="#a4">Water degassing</a>
+        <ol>
+        <li>4.1 <a href="#a41">Equipment</a></li>
+        <li>4.2 <a href="#a42">Principle</a></li>
+        <li>4.3 <a href="#a43">Advance</a></li>
+        <li>4.4 <a href="#a44">Results</a></li>
+        </ol>
+    </li>
+    <li>5. <a href="#a5">Appliance</a>
+        <ol>
+        <li>5.1 <a href="#a51">Parameters</a></li>
+        <li>5.2 <a href="#a52">Centrifugal pump</a></li>
+        <li>5.3 <a href="#a53">Scheme</a></li>
+        <li>5.4 <a href="#a54">Exploitation</a></li>
+        </ol>
+    </li>
+    <li>6. <a href="#a6">Conclusion</a></li>
+</ol>
+</nav>
+</aside>
+
+<hr>
+<footer>
+<p>Original published for the first time in Slovak language April, 2005 in public domain.</p>
+<p><b>Breathing under water</b>, Copyright © 2005-2018 <a href="/fm/">F. Malina</a></p>
+</footer>
+</body>
+</html>

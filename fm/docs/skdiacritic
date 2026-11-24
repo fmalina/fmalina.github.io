@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Understand the rich Slovak diacritics: a cheatsheet</title>
+    <link rel="stylesheet" href="/fm/style.css">
+    <link rel="stylesheet" href="_style.css">
+</head>
+<body>
+<main>
+<nav><a href="../">F. Malina</a></nav>
+<hgroup>
+<h1>Understand the rich Slovak diacritics</h1>
+<p>a cheatsheet for lengtheners, softeners, hat sign and umlaut</p>
+</hgroup>
+<p><img src="sk.jpg" alt="Slovak vista">
+
+<p>Slavic languages would be much more intelligible using common script, grammar and syntax.
+Each nation reinvented the wheel. I compliment the work of early Czech and Slovak linguists
+for having arrived at a consistent and sensible system enhancing the Latin script for their
+own purpose in a meaningful and systematic manner. I extend my thanks to the linguists who
+provided their keen feedback. Let us commence friends…
+
+<hr>
+
+<p>There are 4 types of diacritics in Slovak writing, lengtheners and softeners and two edge
+cases we can call a hat and an umlaut. These distinguishing marks are not for decoration.
+
+<p><b>Lengtheners</b> or Slovak long accents are only ever right pointing (unlike in French è)
+and are used only with vowels á, é, í, ý, ó, ú including ŕ and ĺ that function as vowels in many words.
+
+<p>Pronunciation is simple, about 2 or 3 times the length of a short sound.
+Depending on enunciation and speed of delivery. The mark is also called an acute accent.
+
+<p>Y/ý is pronounced same as i/í. They are called a hard and soft ee respectively in Slovak.
+The hard Y confuses school children and many slovaks consider is a nuisance. It’s used for traditional
+reasons. This letter tortures everyone at school and causes children much distress in tests not to mention adults
+feeling like utter failures realising they got it wrong and already hit send. Back to diacritics.
+
+<p><b>The softeners</b> are only ever used with consonants and are written as small hooks on top, although
+some look more like apostrophes with lowercase letters on computer font ď, ť, ň, ľ, Ď, Ť, Ň, Ľ, ž, š, č, dž.
+They are not apostrophes though and don't confuse the two. The apostrophe follows a letter, softener is a part of it.
+
+<p>These represent sounds either hardly used in English such as ď, ť, ň, ľ or sounds used a lot in English like č, š.
+
+<p>Slovak Ň sounds much like Spanish “ñ” in Mañana. Ď, Ť and Ľ are almost completely absent in English,
+but present in some local accents, and could be written as dh, th or lh.
+
+<blockquote>
+    <p>Ď and ť are not really completely absent in English. Consider the words dune and tune. There are essentially
+    three ways to pronounce these and I’m writing the first consonant in a Slovak way:
+    <p>dune ďune džune<br>
+    tune ťune čune
+    <p>In general, the first is American English and the last is British English. The middle however is found
+    in very posh RP (received pronunciation).
+    If you listen to people like Old Etonians (bloody Tories cough cough) you will find such pronunciations.
+    I believe they also do it with L and N.
+    <p><cite>Johan Petur Klüver Dam</cite> (editors notes yours truly)</p>
+</blockquote>
+
+<p>Ž sounds a lot like french “J” in “J’adore”. Š and Č are used a lot in english as sh and ch, in shell or check.
+There is also dž, one of our digraphs, which is equivalent to English “J” in Juice, same pronunciation in Slovak
+is written as “džús”. While at it, we also have another fave Slovak word adopted from English early by great
+grandparents. It’s “Hemendex”.
+
+<p>Following that fun part comes the danger zone. Careful, Ř/ř is only found in Czech and never in Slovak,
+ů likewise only in Czech. Most Slovaks including me can’t say Czech ř properly at all. Ř is a killer sound
+and you WILL need help of a Czech elocutionist to master it if you don’t have Czech parents. It may just be me.
+I am a lost case with ř. They tried. Don’t let me put you off, but I’d rather the click sounds of Xhosa.
+
+<p>Slovak R is always hard, read it like a Scott would and you’re bang on.
+
+<p>Softener mark is also called a caron by typographers. Czechs call it a small hook.
+
+<p>And last but not least for that rare <b>hat sign and umlaut</b> used only with Ô/ô and ä.
+The marks on top of the letters are called circulflex and two overdots or diaeresis respectively.
+
+<p>Ô is only found in Slovak
+and it sounds a bit like english “W”, but is in fact a diphthong uo. Letter “w” is never used in Slovak and Czech
+and it is used a lot in writing Polish although for a hard V sound.
+
+<p>The umlaut that is much more common in German but is used in some Slovak words containing letter “ä”,
+such as “mäso” (meat). It should be pronounced as a very open e with your tongue slightly raised bit like eeh
+when expressing disgust but your tongue will stay behind your teeth, a very short sound does the job.
+In places, while pronounced as a simple middle e, it's indicating semantic differences as in
+mätie - metie (3rd person confuses vs. sweeps) and lexical peculiarities as in päť - piaty (five, fifth)
+or hovädo - hoviadko (large bovine, small bovine).
+
+<h2>How do you type diacritics on your keyboard?</h2>
+<p><b>Press and hold the key on your keyboard</b>, a small menu will pop up, hit the number representing the letter.
+Small caveat is it will not work on english keyboard for ŕ, ĺ and Czech Ř/ř and ů. All others are readily available.
+<p>For full functionality including autocomplete, add a keyboard layout in keyboard settings for Slovak or Czech.
+I recommend QWERTY or you will be confused by swapped letters Z and Y on traditional Slovak keyboards.
+
+<p>…And that’s the easy part of the Slovak language.
+
+<hr>
+
+<blockquote align="center">
+    <p>Almost the same sounds in a few alphabets:
+
+    <pre>
+    🇸🇰 ď,  ľ,  ň,  ô,   -,   ť,  ž<br>
+    🇵🇱 dź, l,  ń,  ło,  rz,  ć,  ż<br>
+    🇨🇿 ď,  l,  ň,  vo*, ř,   ť,  ž<br>
+    🇷🇸 ђ,  љ,  њ,  -,   -,   ћ,  ж<br>
+    🇷🇺 дь, ль, нь, -,   pь*, ть, ж<br>
+    🇭🇺 gy, l,  ny, -,   -,   ty, zs
+    </pre>
+    <p>* not similar but often has the same role in words
+    <p>cheatsheet contributed by <cite>Emil Sawicki</cite></p>
+</blockquote>
+
+<hr>
+
+<p>Thank you for reading,<br>
+<a href="../">F. Malina</a>
+</main>
+</body>
+</html>

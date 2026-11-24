@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Testing and assessing expert software developers and engineers</title>
+    <link rel="stylesheet" href="/fm/style.css">
+    <link rel="stylesheet" href="_style.css">
+</head>
+<body>
+<main>
+    <nav><a href="../">F. Malina</a></nav>
+    <hgroup>
+        <h1>Testing and assessing expert software developers and engineers</h1>
+        <p>&hellip; same way to you'd test a doctor before taking treatment</p>
+    </hgroup>
+    <p><strong>Programmers ordinarily have a conversation around the project with
+        the customer. They may reject opportunities that require them to be assessed by time-consuming tests.
+        ChatGPT made online tests obsolete. What now? TL;DR Pay for their time taking the tests.</strong></p>
+
+    <blockquote><p>Applied for a job, received a test to complete, told them to get f*cked</p>
+        <p>—anon. software engineer</p></blockquote>
+    <p>This article comes with a list of examples of tech tests going wrong, a compiled top 10 list of legitimate
+        tools and tips for unobtrusively assessing software engineers as well as extensive footnotes for non-tech
+        people, customers and recruiters alike.</p>
+
+    <p>If I go to and old doctor now, I tell him and show him my problem and keep quiet. With respect and even if I
+        genuinely studied my ailment I don’t diagnose myself proposing a cure or ask him to name different knee
+        ligaments.</p>
+    <p>As a software and web developer once I establish a relationship with the client I figure out how can I help them
+        and propose what needs doing and at what price and do it. I used to write a SWOT
+        <sup><a id="fa1" href="#fn1">[1]</a></sup>
+        or do an initial kanban
+        <sup><a id="fa2" href="#fn2">[2]</a></sup>
+        board, but a list of tasks suffices. Good client lets me get on with the agreed work after an initial
+        conversation.</p>
+    <p>At the start of a project often customer has a wrong idea of what needs doing. His developers deeply involved
+        with the project are even deeper in the rabbit hole doing the wrong thing. They often get to a point where
+        they can’t achieve what they wanted with their tool of choice, then seek to hire a person looking for
+        particular tool knowledge ignoring the fact that they may be using the wrong tool and most of the time
+        fixing the wrong problem. The buy-in and investment keeps them going the wrong direction.</p>
+    <p>With that out of the way my list of <b>examples of testing going wrong</b></p>
+    <ul>
+        <li><p>I once got hit by car and fell off my cycle en route to get to a test interview, run with the bike on
+            my shoulder to catch a bus and was refused by bus driver with it, stopped a builders lorry and dropped
+            the bike on a pile of sand at the back, caught my train to London, run to Old Street, got there on time
+            looking like nothing happened. Smashed the test. Didn't get the job</p></li>
+        <li><p>When I was a lad, 18yr old student with a first baby to feed, a well known Norwegian web browser
+            maker sent me an assessment making CSS templates that took my entire weekend to complete instead of
+            focusing on client work. I completed the test work over the weekend. Had a converstaion with the director who praised it. Didn't get the job</p></li>
+    </ul>
+    <ul>
+        <li><p>Junior devs of a UK subsidiary of a large Russian gas company were testing me for Pandas
+            <sup><a id="fa3" href="#fn3">[3]</a></sup>
+            knowledge, wanting to push their meter readings analysis prototype to production system when they needed a
+            solid relational time series database and solid systems engineering using strong data types in place based
+            on their research prototypes. I told them what they are doing wrong and why. Didn't get the job</p>
+        </li>
+        <li><p>Developers at a government department were wanting Terraform
+            <sup><a id="fa4" href="#fn4">[4]</a></sup>
+            knowledge, where they needed to get their AWS
+            <sup><a id="fa5" href="#fn5">[5]</a></sup>
+            infrastructure cost under control best by moving away from it altogether
+            and do it the hard way establishing use of each VM
+            <sup><a id="fa6" href="#fn6">[6]</a></sup>
+            instance and not abusing micro-services <a id="fa7" href="#fn7">[7]</a></sup>.
+            So they left me coding head to head with a <b>psychopath candidate who spiked my water while
+            I went to the toilet during an hour long test</b>... Didn't get the job</p></li>
+        <li><p>A large online product search engine wanted XML sitemaps
+            <sup><a id="fa8" href="#fn8">[8]</a></sup>
+            specifically seeking this knowledge when their website had poor information architecture and lots of
+            temporary redirects preventing Google from crawling and assigning link value properly.
+            I told them they want the wrong thing. Ok, I got the job this time but you get the point.</p>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>Advice for assessing software engineers</h2>
+    <p>Assessing a software engineer really is similar to evaluating a doctor, where you may read their published
+        peer reviewed papers and online reviews.
+        <b>Prudence</b> is important and with that, <b>due diligence</b>.</p>
+    <ol>
+        <li><p>Google them. Check their <a href="https://unilexicon.com/fm">website</a>. Is it solid and well presented?
+        </p></li>
+        <li><p>Look at their reviews. What do their customers say? There may be some on their
+            <a href="https://www.linkedin.com/in/fmalina/">LinkedIn.com</a> profile too.
+        </p></li>
+        <li><p>Look up and call up their past customers and employers, people they managed. Your diligence can only
+            be appreciated and you may make an industry connection.</p></li>
+        <li><p>Look at their
+            <a href="https://profile.codersrank.io/user/fmalina/">Github.com</a> profile,
+            a website that would host their open source programming contributions. You can look
+            them up by their handle, usually first part of their email address. There will be forks and stars on
+            their code repositories if they are any good.
+        </p></li>
+        <li><p>Look at their coder’s rank profile, yes there’s a website ranking developers,
+            <a href="https://profile.codersrank.io/user/fmalina/">codersrank.io</a></p>
+        </li>
+        <li><p>See their contributions at
+            <a href="https://stackoverflow.com/users/90263/fmalina">stackoverflow.com</a>.
+            They would have answered questions of newbie developers and their answers would have
+            been voted for by the community of software engineers. They would have asked good questions themselves.
+        </p></li>
+        <li><p>Look up their
+            <a href="https://www.google.com/search?q=&quot;fmalina%40gmail.com&quot;+OR+&quot;vizualbod%40vizualbod.com&quot;">
+                email</a> in your favourite search engine and see how they advised on mailing lists in open source
+            community where they would have collaborated on development of software tools used in their daily job to
+            improve them. Keep in mind they may have multiple email addresses and some not in use anymore. Ageing
+            content dropping out of search indexes makes this digging harder plus we reached the stalking boundary.
+        </p></li>
+        <li><p>Now if you do test them, <b>pay them in cash</b> their hourly rate for a consultation plus any travel
+            cost. Set aside say 100 EUR per candidate for hour long interviews and just pay saying you appreciate
+            their time whether you take them or not. Best test by using your real past problems to see if they can
+            give you a batter solution or advice. Candidates looking for a job often are in a <b>dire
+                financial situation, so don’t abuse your position</b>. This also massively increases your chances of
+            them accepting shall you make an offer because you bought yourself a bit of time.
+        </p></li>
+        <li><p><b>Cover their travel and food costs</b>, lodging if needed and make sure to take care of their
+            <b>physical safety and well being</b>. See the spiked drink example.</p></li>
+    </ol>
+    <p>I hope this will help you <b>assessing a programmer</b> you are about to hire and wish you best of luck in
+        this endeavour.</p>
+
+    <hr>
+    <p><a id="fn1" href="#fa1">[1]</a> SWOT is a business case document listing strengths, weaknesses,
+        opportunities and threats.</p>
+
+    <p><a id="fn2" href="#fa2">[2]</a> Kanban is a “board” in Japanese a real or virtual one usually with short
+        task oriented tickets in columns named “to do”, “in progress” and “done” where tickets move left to
+        right as project progresses.</p>
+
+    <p><a id="fn3" href="#fa3">[3]</a> Pandas is a software package used by data researchers to glean knowledge
+        from data. It is meant for research and is known to be unstable handling data types of columns when
+        wrong data comes in much like Excel and any other tool guessing datatype of a column.</p>
+
+    <p><a id="fn4" href="#fa4">[4]</a> Terraform is a tool used to declaratively manage virtual cloud computer
+        infrastructure with cumbersome and hard to read repetitive configuration files that describes its final
+        state.</p>
+
+    <p><a id="fn5" href="#fa5">[5]</a> Amazon Web Services, Jeff Bezos controlled platform providing virtual
+        computers and their services holding the industry by the balls because IT people were too lazy managing
+        real iron forged computer servers and mostly forgot how it feels or what a chicken is meant to taste
+        like.</p>
+
+    <p><a id="fn6" href="#fa6">[6]</a> Virtual machine, overpriced time-share piece running on a larger computer a
+        developer never seen</p>
+
+    <p><a id="fn7" href="#fa7">[7]</a> Micro services, theory goes that a large system is meant to be made of
+        smaller independent systems called microservices that don’t have much in common, just talk in agreed
+        formats, so that these can grow independently. A microservice usually has its own VM or a container.
+        Megalomaniac goblin minds tend to setup a bunch of these ahead of time before they are needed where they
+        were meant to design a simple integrated system. This makes development of said systems next to
+        impossible.</p>
+
+    <p><a id="fn8" href="#fa8">[8]</a>
+        XML sitemap is a list of all links or URLs on a website optionally along with their priority value
+        and last update date, it helps search engine crawlers to scan the website and usually sits hidden
+        at an address such as <a
+                href="https://unilexicon.com/fm/sitemap.xml">unilexicon.com/fm/sitemap.xml</a>.
+        XML stands for extensible markup language, developed by Microsoft, it uses &lt;tags&gt; and
+        their attributes and helps systems talk together.
+        It looks like this <code>&lt;url&gt;&lt;loc&gt;https://unilexicon.com/fm/&lt;/loc&gt;…</code></p>
+
+
+    <p><a id="fn9" href="#fa9">[9]</a> Pydantic is library following latest bleeding edge Python development for
+        validating data types in classes, a bit like those columns in rows of Excel data. It currently changes
+        around regularly as this part of Python language is developing.</p>
+
+
+    <p><a id="fn10" href="#fa10">[10]</a> Django is a framework for writing web apps I used for best part of past 16
+        years, it’s a well documented solid industry standard running some of the world's biggest sites and apps
+        like Instagram and Pinterest. It had those things aforementioned Pydantic and its relations is solving
+        worked out when some of its users were still in the nappies.</p>
+
+</main>
+</body>
+</html>

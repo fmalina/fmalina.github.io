@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Coding by deletion:
+        My approach to refactoring, testing and deployment</title>
+    <link rel="stylesheet" href="/fm/style.css">
+    <link rel="stylesheet" href="_style.css">
+</head>
+<body>
+<main>
+    <nav><a href="../">F. Malina</a></nav>
+    <hgroup>
+        <h1>Coding by Deletion:<br>
+        My Approach to API Refactoring, Testing and Deployment</h1>
+        <p>Case study, <time>March 2024</time></p>
+    </hgroup>
+    <h2>How I use strategic code reduction, crust testing, and CI pipelines to transform legacy APIs into maintainable, scalable systems.</h2>
+    <p>First step is to establish a test suite. Existing code can’t have unit tests easily written, so it must have an
+        integration test suite. The suite is created by collecting various responses of various endpoints using
+        different permutations of input. The point is that after the changes are done to the system under the hood,
+        these responses are not to change unexpectedly. I call this a <b>crust test</b> and it is something I did for multiple
+        clients prior to starting work on untested APIs. Crust test, which is a term I coined myself, differs from
+        normal integration tests because it runs off live data before a minimal test database loaded from fixtures is
+        established, if ever.</p>
+    <p>Once the crust test suite is in place, which I normally run using PyTest, Nose or Django Test framework with my
+        custom <b>multi test case</b> class. Work can be started on maintainability and reliability. Good starting point is
+        upgrading underlying libraries or requirements used to their latest version, upgrading Python and carrying out
+        any fixes. Test suite is regularly run making sure that changes didn't break anything. I usually start with a
+        tool called <a href="https://prospector.landscape.io/en/master/">prospector</a> or <a href="https://docs.astral.sh/ruff/">ruff</a>
+        and clean up the warnings emitted.
+        There is much that can be done to Python code to make
+        it better, this is an iterative process and it is not unusual that after several iterations and many thousands
+        of small changes the outputs are the same but the underlying system code is much more performant, smaller,
+        better documented, typed, tested, future-proof, less blocking, PEP8 and upgraded to use latest tools.</p>
+    <p>Sometimes thousands of lines of dead code get deleted, sometimes thousands of lines of live code can be replaced
+        using a great new or old external library, sometimes a huge ageing external library can be replaced with few
+        lines of own custom code.</p>
+    <p>It’s opportunistic. What I love about this work is that it is akin to creating a classic sculpture, working by
+        removing material. <b>Coding by deletion</b> is a valid way to operate as a coder in many existing systems.</p>
+    <p>Importantly errors should not pass silently unless explicitly silenced. One code smell I always track like a hawk
+        is empty except when handling exceptions. Each one in the code base that I find, I track and address as a
+        separate bug with tests until they are all addressed. <b>Empty excepts</b> are a fairly common practice, which I find
+        unacceptable.</p>
+    <h2>Robust error logging framework to facilitate efficient issue identification and&nbsp;debugging</h2>
+    <p>I normally use <a href="https://sentry.io">sentry.io</a>, that I configure with one environment variable called
+        the DSN, I import sentry library and voilà. Sentry can be run on site in a container.</p>
+    <p>In the past I used a custom Django app for collecting errors into my database and grouping them using a hash and
+        this worked well too. Any new regression triggered an email sent to me and texts can be done too. Sentry
+        replaced this effort.</p>
+    <p>For debugging, I use my custom tools that I build into the API UI and docs that are only visible during
+        development, especially a small <b>toolbar</b> showing me all database queries run with time they took, as needed also
+        any other blocking external calls that may cause a lag.</p>
+    <h2>Automated testing methodologies and tools I use to ensure that new developments do not introduce
+        regressions</h2>
+    <p>Already mentioned crust test with multi test running on PyTest or other. Next step is adding <b>coverage</b>.py to see
+        my blind spots, which is normally amazing at identifying dead code and code smells by generating a HTML report
+        for each Python file which I examine and take actions.</p>
+    <p>Crust test is called that because it’s about getting maximum coverage quickly with minimum code and effort, while
+        also because untested code isn’t malleable and is prone to breaking hence crust. Once this is established,
+        testing can go deeper with some unit tests or acceptance tests when code is malleable again and can be changed
+        to fit new requirements.</p>
+    <h2>Streamlined deployment architecture using GitLab/GitHub/bare origin repository and CI pipelines</h2>
+    <p>My standard work architecture consists of three repositories. Local working repo on my and each developer's
+        machine. Remote origin bare repository, which may or may not be same as GitLab's and may or may not sit on the
+        same server as the edge deployment repository.</p>
+    <p>Once work is done and tested locally, it is pushed to bare origin, where CI/CD can run usually based on a
+        testing/post commit bash script. Travis is one good way to run CI/CD including test, coverage, prospector and
+        any other hooks over different possible deployment environments. Some teams use Jenkins for CI, black and isort
+        for formatting. While I used these in the past I am not a proponent of these tools. Other options exist in
+        plenty. Once all passed a build is ready and can be deployed straight to a beta/preview environment if one
+        exists.</p>
+    <p>If it doesn't exist I tend to set it up depending on size of the team and project and also depending on how
+        different are local dev environment compared to deployment.</p>
+    <p>Deployment to live when downtime is required I normally do completely manually by pulling from bare origin to
+        live environment along with running any migration scripts and making sure all is working 100 percent. Once some
+        trust is established in the pipeline, this can be automated for smaller releases, but not for the big ones.</p>
+    <p>I normally have a main/master branch that is always ready to deploy and development and feature branches merged
+        to this one when passing.</p>
+    <h2>Coordinating with stakeholders and vendors, to define and execute deployment procedures and ensure smooth
+        integration processes</h2>
+    <p>I study vendor documentation and work out a way to develop a procedure. When I hit a snag, I contact their
+        customer support for help and resolve any issues. Deployment has to be agreed with the business or product owner
+        to minimise downtime to end users and ensure they are happy with it. In some places I worked to a specific
+        deployment procedure for official release. Such as when security testing, pentesting and making sure that the
+        running code hash matches approved release hash has to be ensured. This is often done in banking and
+        finance.</p>
+    <p>Other developers on the team normally get training from me on using ssh, linux shell and local testing. Sometimes
+        I task junior developers with writing tests.</p>
+    <p>Pull requests and code reviews are established to ensure different stakeholders get their say.</p>
+    <h2>Prioritizing the refactoring efforts to balance the need for code optimisation with the need to minimize
+        disruption to the existing system</h2>
+    <p>Code optimisation and refactoring is not meant to cause business disruption. That’s why extensive testing and a
+        deployment procedure is in place. It did happen in the past when unexpected behaviour of a live database caused
+        me to sit there fixing it for 18 hours straight with unlimited downtime agreed by my co-founder to push an
+        important release. If a live system is down, I fix it or rollback. While personally I never had the luxury, some
+        businesses ensure to have an experienced backup developer at hand for cases of a bigger deployment turning sour.
+        There are human limitations to consider, we all need to eat and sleep.</p>
+    <p>Before a deployment I ensure there is always backups to rollback to including recent working full image and
+        database dumps.</p>
+    <p>I also tend to use the same operating system and database to develop, test and deploy code and with many clients
+        Docker images are used to ensure consistency of test and deployment environment but this is not a rule.</p>
+    <h2>Strategies to collaborate effectively with cross-functional teams, including Data Scientists, Data Engineers,
+        and ML Engineers, to gather requirements and ensure smooth integration</h2>
+    <p>Initial requirements gathering meeting, regular pair programming rotating different team members for integrating
+        our changes and expert knowledge, merging, pull requests and code reviews, live coding sessions with product
+        owner. Iterative regular feedback gathering via regular phone calls, chat or email to ensure API responses match
+        the requirements of various team members once the work is done. Committing work daily to CI to ensure work does
+        not get stuck on a broken local or in case of accident. Working on smaller manageable tasks.</p>
+    <h2>Ensuring that the API remains performant and scalable as the company grows and the data volume increases</h2>
+    <p>The initial architecture has to be good enough to handle X times expected load. Swarm testing is one way. Having
+        plenty of resources to spare under current peak load. Making sure that by adding resources such as application
+        servers I can handle additional load. Having a replication strategy (master/slave) for database servers,
+        database/data sharding etc. There is many things that can be done to plan ahead as well as remove bottlenecks as
+        and when they crop up. PaaS and IaaS solutions as well as good working relationship with dedicated operations
+        staff is also important. I am more and more keen on clients running owned on-premise infrastructure where
+        additional compute resources can be purchased and owned rather than cloud rented.</p>
+    <h2>Monitoring and evaluating the success of refactoring and deployment optimisation efforts. Metrics tracked, and
+        use of that data to inform future improvements</h2>
+    <p>Initial benchmarks and continuous improvement to ongoing benchmarks. I normally benchmark time of API responses,
+        time that any blocking queries took, I track various page load metrics, warnings count, number of
+        opened issues.</p>
+    <p>Timing is for example collected using a loop over all tested endpoints in a crust test.</p>
+    <p>API response timing I incorporate into my test suite as a linked table that gets committed with rest of the test
+        code making sure that responses not only stay unchanged to expected output but are also equal or faster than
+        their previous time before any changes are deployed. One can then see history of the times in the linked table
+        (a simple tuple of tests and times) and lower the accepted times for a release to pass. Instant is fast
+        enough.</p>
+    <p>Number of warnings generated by prospector and other tools and linters (with agreed config as to line length and
+        acceptable style) is another tracked metric and release should not pass if these go over set threshold. This
+        accepted threshold similarly will be continuously lowered. No warnings is good enough. One can always mark some
+        lines as #noQA </p>
+    <p><a href="/fm/">Francis Malina, fullstack software developer</a></p>
+    <p>14th of March 2024</p>
+    <p>Copyright and confidentiality notice. This document is subject to copyright, author reserves all rights. It is
+        not treated as confidential.</p>
+</main>
+</body>
+</html>

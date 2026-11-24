@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yahoo Search Engine Optimisation (SEO) Interview Q and A</title>
+<link rel="stylesheet" href="/fm/style.css">
+<link rel="stylesheet" href="_style.css">
+<style>
+h2{border-top:1px solid #ddd;padding-top:1em}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="../">F. Malina</a></nav>
+<hgroup>
+<h1>Search Engine Optimisation Interview</h1>
+<p>for Yahoo; <time>2008</time></p>
+</hgroup>
+<h2>1: Outline the roles of people you work with during the course of an average week and detail the type of work undertaken for example:</h2>
+<ol>
+<li><b>with internal sales team – providing SEO tutorials &amp; guidance</b></li>
+<li><b>client marketing executives – Marketing strategy meetings</b></li>
+<li><b>client engineering – Server config recommendations</b></li>
+</ol>
+
+<p>Answer:
+<ol>
+<li>Web developers – briefings (web design, web architecture, URL structures, redirects...)
+<li>Clients/client’s marketing directors – strategy meetings, progress
+    reports, research findings and proposals
+<li>Account managers – making sure the clients are happy, chasing developers
+    and 3<sup>rd</sup> parties
+<li>Sales – providing guidance, SWOT analysis
+</ol>
+
+<h2>2: Outline your experience working with large databases / content management systems.</h2>
+<ul>
+    <li>DesignerPages.com - 35,000 products user generated content
+        (Ruby on Rails ap.)</li>
+    <li>FastTrackSki.co.uk - over 5,000,000+ ski deals packages, 204
+        ski resorts, 16 countries, 18 tour operators (PHP, custom
+        made CMS)</li>
+    <li>VirginHolidaysCruises.com (Fasttrackcruise.co.uk) – 50,000+
+        cruise deals, 131 Ships, 15 cruise operators (PHP, custom
+        made CMS)</li>
+    <li>Implementations of Drupal, Joomla, WordPress (PHP) – only up
+        to 1000 content items.</li>
+</ul>
+
+<h2>3: Outline your experience working with any web analytics / stat packages and reporting tools.</h2>
+
+<p>3 years of analysis using Urchin, Google analytics, Indextools, Hitwise,
+    PPC data, the Yahoo keyword tool and Google trends.</p>
+<p>Researching the search market gaps and filling them in: content creation
+    opportunities, link-building/content creation strategies of competitors,
+    understanding the searching habits and trends in many different
+    e-commerce niches.</p>
+
+<h2>4: Outline your experience working with content syndication or affiliation schemes.</h2>
+
+<p>I’ve successfully used Google product several times on a small scale
+    (up to 2000 products) and created several scripts to generate feeds
+    from the product databases.</p>
+<p>I don’t syndicate content of my clients to affiliates. My current job
+    is to get content to search results using SEO strategies. It is
+    often one of my goals to decrease costs clients need to pay to
+    affiliates.</p>
+
+<h2>5: Outline three problems that typically arise when attempting to SEO dynamic, multiple language, CMS driven sites.</h2>
+<ol>
+    <li>Keyword research in foreign languages.</li>
+    <li>Making sure the templates (views) us the best possible structure</li>
+    <li>Yahoo crawler unable to recognize unique content within infinite
+        URL spaces will not index unique content – there are associated
+        web architecture , content categorisation &amp; URL routing
+        issues.</li>
+</ol>
+<p>Non-navigational links such as: links to related products, tag based
+    navigation etc. don’t work well with Yahoo’s current algorithm.
+    Only tree navigation structures are applicable.</p>
+<ol start="4">
+    <li>Issues with changes in URL structures when rewriting is implemented
+        or amended. Keeping track of internal 301 redirects. Complex
+        .htaccess files.</li>
+    <li>Duplicated content issues when the same chunks of information
+        are pulled from the database repeatedly on different URLs
+        – keyword cannibalisation issues associated.</li>
+</ol>
+
+<h2>6: Outline three typical SEO problems one can face when attempting to track user-clicks of individual lead generating links.</h2>
+<p>If a JavaScript link with tracking hashes is used (such as Kelkoo’s):</p>
+<ol>
+    <li>This link will not pass value.</li>
+    <li>Search Engines do not understand JavaScript so the link is
+        not followed. Good for rankings of Kelkoo’s pages. Value
+        of pages is not drained away.</li>
+    <li>Bad for popularity in the circles of SEO wise web-marketers</li>
+</ol>
+
+<h2>7: Outline three typical SEO problems one can encounter when syndicating content to 3<sup>rd</sup> party affiliates</h2>
+<ol>
+    <li>Duplicated content problems – Search engines will use natural
+        language processing methods such as w-shingling to
+        determine the similarity of two documents. The problem
+        occurs when the affiliate is considered the original resource
+        of information. E.g.: If two documents are too similar,
+        Google will in most scenarios pick the document with higher
+        PR value and the original document will be outranked or
+        buried in search results.</li>
+    <li>Affiliates can outrank the original source of information (That’s
+        the point of affiliates) and harvest the organic search
+        traffic, there would be usually associated expenses for
+        leads/clicks generated by the affiliates.</li>
+    <li>Affiliate could misuse the value of content and advertiser’s
+        own content can become his search market competition. Sometimes
+        the syndicated content might even end up rehashed using
+        Markov chain as a link farm for different projects of the
+        affiliate.</li>
+</ol>
+
+<h2>8: Provide an example URL of the last SEO project you have worked upon,
+    together with one paragraph detailing the problems addressed.</h2>
+<p>Last project: designerpages.com</p>
+
+<p>One line of code ensured five-fold increase in organic search traffic over
+    one month. How? Search friendly permanent redirects were used
+    instead of temporary redirects for all the product lists. We are
+    also separating the search functionality controller from the category/tag
+    navigation controllers to remove infinite URL spaces making the
+    site more Yahoo friendly.</p>
+
+<h2>9: What would you say is/are the main technical problem(s) affecting the potential SEO performance of the following sites in local country indices:</h2>
+<p><kbd>http://nl.kelkoo.be -
+    http://fr.kelkoo.com -
+    http://shopping.yahoo.de</kbd></p>
+</ul>
+<p>Question left unanswered.</p>
+
+<h2>10: What is the biggest challenge/issue facing the long term SEO performance of product comparison sites?</h2>
+<p>SEO agencies, SEO contractors – strategic web marketers understand
+    that they will have higher sustainable source of traffic if they
+    don’t feed their content to 3rd parties or affiliates such as product
+    comparison sites.</p>
+<p>Corporate web marketers prefer to optimize their own DB driven systems
+    to reap the search traffic themselves rather than constantly “flushing”
+    the budget towards affiliates. It is probably getting harder to
+    get web marketers to feed their content to 3<sup>rd</sup> parties
+    as they understand the duplicated content issues. There is also
+    a strong competition from the players such as Google product.</p>
+<p>It is getting easier to create DB driven sites with tools such as Rails/Django
+    and competition in the long tail part of search market is slowly
+    saturating as well.</p>
+
+<h2>11: Under what circumstances would you use the following:</h2>
+<ol>
+<li>noscript – used if a user-agent (e.g a crawler) doesn’t understand javascript. Can be used to put in crawlable content which is the equivalent of javascript content.
+<li>index, follow – You want that page to be index and the links to be followed from that page.
+<li>nofollow – can be part of rel=”nofollow” attribute telling crawlers not to follow links (used to stop flow of page rank through those links – implemented by wikipedia and by a lot of forums and blogs in their user generated content sections.
+<li>[R,L] – flags used in apache mod-rewrite RewriteRule code – R means redirect i.e R=301 and L meaning last.
+<li>* / - is this referring to a robots.txt command to disallow or allow a user agent access to the whole of a site?
+</ol>
+
+<p>Answer:
+<ol>
+    <li>I would not use noscript these days anymore. DOM/AJAX is the
+        preferred method. Accessible content can be used in any
+        element not just noscript. DOM will be used to replace
+        the content with its interactive alternative if the scripting
+        is available in the user-agent. Can be useful to hide tracking
+        pixels without complex coding.</li>
+    <li>There is no need to use index, follow. This is the default
+        behaviour of any search engine. Search engines index pages
+        and follow the links. Again, no use for this.</li>
+    <li>
+        <ul>
+        <li>Can be used to sculpt the internal link-flow &amp; sculpt the
+            flow of the value of internal links. E.g. ensure the search
+            engines will not pass value to the site-wide links unimportant
+            from the SEO perspective such as personalisation features
+            of the website, T&amp;Cs, other language versions, mobile
+            version etc.</li>
+        <li>Stopping the drainage of the page value to external resources.</li>
+        <li>Discourage link spamming in user-generated content.</li>
+        </ul>
+    </li>
+    <li>E.g.: <code>RewriteRule ^cv /f/cv.html [L,R=301]</code><br>
+        I use it so that I can easily spell URLs on the phone. In everyday
+        SEO practice I use it to redirect old version of the URIs
+        to its new counterparts.</li>
+    <li>(5) * / - does not make sense without “Allow:” or “Disallow:”
+        directives</li>
+</ol>
+</main>
+</body>
+</html>

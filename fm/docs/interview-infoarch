@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions for Information Architect</title>
+<link rel="stylesheet" href="/fm/style.css">
+<link rel="stylesheet" href="_style.css">
+</head>
+<body>
+<main class="side">
+<nav><a href="../">F. Malina</a></nav>
+<hgroup>
+<h1>Questions for Information Architect</h1>
+<p>for the Department for Education; <time>March 2010</time></p>
+</hgroup>
+<h2>How would you use a vocabulary in helping with information discovery in a website?</h2>
+<p>I would use the vocabulary fully in every aspect of the website's information architecture.</p>
+<ul>
+<li>to generate vertical navigation hierarchy including main navigation, section navigations and breadcrumb trails from broader to narrower&nbsp;concepts</li>
+<li>create horizontal navigation helping users to discover interesting related concepts</li>
+<li>create effective titles and meta data for public search engines</li>
+<li>improve the relevance and usefulness of results in the internal site search</li>
+<li>guide to consistent subject headings</li>
+<li>help editors to use the right terms within the website copy</li>
+<li>help the members of the organisation to communicate effectively online and offline</li>
+</ul>
+<p>To what extend can website information be helpful and discoverable without attention to its vocabulary?</p>
+
+<hr>
+
+<h2>Can you tell us some of the data formats used for building vocabularies?  Which would you use to design a new vocabulary and&nbsp;why?</h2>
+
+<p>SKOS, Zthes, BS8723 and now ISO 25964... I would primarily use a relational database. Lifespan of vocabulary formats is short. I would want my vocabulary to live long and be very maintainable. Which format is the standard if there are many standards?</p>
+<p>I would not use XML based formats for storage of vocabulary data, nor design of my data models. XML is good for data exchange and intersystem communication... I would serialize my vocabulary data to a particular XML or non-XML human readable vocabulary format in the very last step, based on what format is required by the user of the vocabulary. E.g. the data of my vocabulary would be served to user agents based on their capabilities as ISO25964 formatted XML, Zthes, SKOS+OWL or more realistically as XHTML web pages, RSS feeds and PDF documents.</p>
+<p>More specifically I use MPTT database tables (Modified Preorder Tree Traversal) to create and maintain vertical hierarchies (broader, narrower). I use joining tables with many-to-many relationships to maintain horizontal relations of related concepts. I use object oriented programming to create my data models. I use object-relational mapper to maintain my vocabularies through easy to use web interfaces.</p>
+<p>I understand that XML format can be transformed to any other XML format using XSLT and other XML technologies. However I prefer the tools I know best and this keeps me productive.</p>
+
+<hr>
+
+<h2>How would you go about determining the appropriate level of granularity for the content you were going to store in a website’s information store?</h2>
+
+<p>I'd store the data as granular as the structure of provided information allows. I'd store the smallest concept units that can be retrieved:</p>
+<ul>
+<li>and assembled together into a meaningful webpage or other format</li>
+<li>in a structure that does not affect the meaning of a concept in context of the original work entered into the system.</li>
+<li>so that each new concept entered into system becomes a meaningful part of the growing knowledge organisation system</li>
+</ul>
+<p>The right question to answer is perhaps the level of granularity of the content distributed from the data store. Same content can be distributed in different granularities and formats as web pages, PDF chapters or books, slide-shows, XML responses to API calls. Generated response can consist of one or more concepts as a web page, or of all concepts under a certain broad concept forming a PDF book.</p>
+<p>Level of granularity of the information distributed should be based on its purpose and therefore on user's preferences.</p>
+<p>E.g.: users prefer bite-sized chapters for online reading. Not too short to involve too much clicking and not too long to require too much scrolling. Short chapters involve clicking and subsequent slow page-loads to read next & previous. Long ones involve scrolling to navigate chapters back and forth. Users who want a PDF might need the whole book as it would not be acceptable to print chapter by chapter. Users of search engines expect to receive the data in digestible chapters size of a regular press release or a blog post.</p>
+<p>I would determine the presentation of distributed content on good consideration of user stories, light repeated iterative user testing and dialogue with stake holders involved.</p>
+</main>
+</body>
+</html>

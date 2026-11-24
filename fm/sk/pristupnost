@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Prístupnosť obsahu webstránok = bezbariérovosť = Web content accessibility</title>
+    <link rel="stylesheet" href="/fm/style.css">
+    <link rel="stylesheet" href="../docs/_style.css">
+</head>
+<body>
+<main>
+    <nav><a href="../">F. Malina</a></nav>
+    <hgroup>
+        <h1>Prístupnosť obsahu web-stránok, bezbariérovosť<br>
+        (Web content accessibility)</h1>
+        <p>alebo ako zabezpečiť bezbariérovosť Vašich stránok, teda prístupnosť pre všetkých užívateľov</p>
+    </hgroup>
+    <p><small>Služba sa týka opravy a re-dizajnu stránok už vyhotovených iným web-dizajnérom.
+        Pre mojich klientov je prístupnosť samozrejmou súčasťou zakúpených web-stránok.
+        Prístupnosť je pre mňa základnou charakteristikou tvorby web systémov.</small></p>
+    <h2>Úvod k prístupnosti</h2>
+    <blockquote>
+        <p><cite>"Sila webu je v jeho univerzalite. Prístup pre každého nezávisle na schopnostiach je jeho
+            základný prvok."</cite></p>
+        <p>Tim Barners - Lee<br>
+            zakladateľ technológie www<br>
+            riaditeľ konzorcia W3C</p>
+    </blockquote>
+    <p>Táto veta je základnou filozofiou internetu. <b>Skutočnosť je však iná a horšia.</b> Napriek výrazným pokrokom,
+        väčšina dnešných webových stránok v sebe obsahuje prekážky, ktoré vo výsledku spôsobujú to, že daný web
+        je pre značnú časť užívateľov neprístupný. Ak už prevádzkujete stránku pravdepodobne k nim patrí tiež,
+        ak prevádzkujete stránku dlhší čas toto riziko môže byť len vyššie.</p>
+    <p>Preto Vám ponúkam službu Prístupnosť obsahu web-stránok (Web content accessibility)</p>
+    <h2>Čo všetko Prístupnosť obsahu web-stránok dokáže?</h2>
+    <p>Prístupnosť obsahu web-stránok Vám zaručí 100%-nú prístupnosť Vašich stránok pre všetkých užívateľov Internetu.
+        Prístupnosť bez ohľadu na ich schopnosti, úroveň znalosti používania Internetu, momentálny zdravotný či duševný
+        stav alebo používané výstupné či zobrazovacie zariadenie.</p>
+    <p>Zaručí Vám súlad so slovenskou, českou i svetovou legislatívou:</p>
+    <ul>
+        <li><a href="https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/2000/211/">
+            Zákon č. 211/2000 Z.z. o slobodnom prístupe k informáciám (SR)</a></li>
+        <li><a href="https://www.psp.cz/sqw/sbirka.sqw?cz=365&r=2000">
+            Zákon č.365/2000 Sb.o informačních systémech veřejné správy ISVS (ČR)</a></li>
+        <li><a href="https://www.ada.gov">Americans with Disabilities Act - ADA (USA)</a></li>
+        <li><a href="https://www.section508.gov">Špecifická právna norma - Section 508 (USA)</a></li>
+        <li><a href="https://www.legislation.gov.uk/ukpga/1995/50/contents">
+            Disabilities Discrimination Act - DDA (UK)</a></li>
+    </ul>
+    <p>Zvýši sa:</p>
+    <ul>
+        <li>denná návštevnosť stránky</li>
+        <li>kvalita prezentácie</li>
+        <li>rýchlosť načítania stránky</li>
+    </ul>
+    <h2>Čo je pomocou "Prístupnosť obsahu web-stránok (Web content accessibility)" možné dosiahnuť?</h2>
+    <ul>
+        <li>zlepší sa prístupnosť a použiteľnosť</li>
+        <li>zvýši sa konkurencieschopnosť</li>
+        <li>prispôsobenie oficiálnym slovenským, českým i svetovým zákonom o prístupe k informáciám</li>
+        <li>zvýši sa návštevnosť</li>
+        <li>zvýši sa kvalita webových stránok</li>
+        <li>zvýšia sa zisky z internetových stránok</li>
+        <li>znížia sa náklady na obslúženie zákazníka</li>
+        <li>budovanie značky na internete</li>
+        <li>prilákanie nových návštevníkov, ktorý web nemohli alebo nevedeli použiť</li>
+        <li>ekvivalentné a bezchybné zobrazovanie vo všetkých dnešných grafických prehliadačoch</li>
+    </ul>
+    <h2>Čo je prístupnosť?</h2>
+    <p>Prístupnosť vychádza zo samotných základov webu a nejde o nijakú nadstavbu. Za to, že dnes majú
+        bezbariérovosť a web k sebe veľmi ďaleko, môžu len tvorcovia web-stránok, ktorí dobre neovládajú
+        pravidlá tvorby webových stránok.</p>
+    <p>Bezbariérový web nie je web, ku ktorému bolo niečo pridané, aby sa stal prístupným. Je to presne
+        naopak. Je to web, u ktorého boli dodržané pôvodné pravidlá, a tým bola prístupnosť zachovaná.</p>
+    <p>Prístupná webová stránka je použiteľná pre každého užívateľa Internetu, a to nezávisle na jeho
+        postihnutí, schopnostiach, znalostiach, skúsenostiach, či možnostiach zobrazenia.</p>
+    <h2>Prečo je prístupnosť tak dôležitá ?</h2>
+    <p><b>Handicapovaných užívateľov</b>, teda všetkých užívateľov u ktorých existuje rozumný dôvod sa
+        domnievať, že s niektorými bariérami na webe budú mať problémy, totiž <b>môže byť až tretina</b> z
+        celkového počtu užívateľov, ktorí by radi vaše webové stránky používali. Je dôležité si uvedomiť, že
+        handicapovanými užívateľmi webu nie sú len zdravotne postihnutí, ale všetci tí, ktorí môžu mať problém vnímať
+        obsah Vášho webu a ovládať jeho funkčnosť.
+        Aj slabo vidiaci užívateľ mobilného zariadenia, čo sa trápi na Vašej starej stránke pre desktopové počítače.
+        Aj zdravotník, pracovník, či vojak v horách, ktorý nutne informácie potrebuje na veľmi pomalej mobilnej linke.</p>
+    <h2>Čo to vlastne prístupnosť znamená?</h2>
+    <p>Ponúkaná služba Prístupnosť obsahu web-stránok je upravenie stránky, ktorým sa prirodzeným
+        spôsobom dosahuje zvýšenie počtu užívateľov stránky.</p>
+    <h2>Fakty prečo zvoliť prístupnosť obsahu web-stránok</h2>
+    <p>Ucelené štatistiky z Veľkej Británie ukazujú:</p>
+    <ul>
+        <li>8.6 milióna ľudí teda 14% britskej populácie trpí niektorou formou zdravotného postihnutia</li>
+        <li>12 miliónov ľudí teda 20% britskej populácie je starších ako 60 rokov</li>
+    </ul>
+    <p>Ďalšie štatistiky:</p>
+    <ul>
+        <li>14.5% svetovej populácie vníma farby inak ako väčšina populácie,
+            7% mužskej populácie trpí niektorou formou farbosleposti</li>
+        <li>V roku 2003 sa celosvetovo predalo takmer 19 miliónov vreckových počítačov PDA, ktoré takmer nečítajú
+            neprístupné stránky, a ich predaj každý rok stúpa (ET Forecasts: Impact PDA Sales)</li>
+        <li>Podľa štatistiky meracieho systému Navrcholu.cz (2005) má vo svojich prehliadačoch nefunkčný Javascript 7%
+            používateľov a Flash až 11% užívateľov</li>
+        <li>81 % užívateľov na celom svete <a href="seo">nachádza www stránky pomocou vyhľadávačov</a>
+            (Search Engine Watch: Search Engines Are Top Method To Find Sites)
+        </li>
+    </ul>
+    <p>Hendikepovaní sú aj Vaša cieľová skupina a ako môžete vidieť vyššie je ich naozaj veľa.</p>
+    <h4>Záverečná pripomienka</h4>
+    <p><small>V prípade, že Vaša stránka s daným vzhľadom je nízko prístupná a bude potrebné jej obsah a vzhľad
+        upraviť, aby bola umožnená bezbariérovosť budete na to vopred upozornený. Pre nízku prístupnosť
+        stránky je často nutné ju prestavať kompletne.</small></p>
+    <p><small>Zdroj: David Špinar - Tvoříme přístupné webové stránky</small></p>
+
+    <p><a href="../">Kontakt</a></p>
+</main>
+</body>
+</html>
